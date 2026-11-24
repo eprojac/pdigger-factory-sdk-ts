@@ -18,7 +18,7 @@ jobs:
     name: Lint, types and formatting
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -35,7 +35,7 @@ jobs:
     name: Unit tests in Docker (no network, 100 % coverage)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: make test
         run: make test
 
@@ -47,7 +47,7 @@ jobs:
       matrix:
         node: [20, 24]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
@@ -59,7 +59,7 @@ jobs:
     name: The built package on Node 18
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -76,7 +76,7 @@ jobs:
     name: The built package on Deno
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -93,7 +93,7 @@ jobs:
     name: The built package on Bun
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -110,7 +110,7 @@ jobs:
     name: The try-it image (Dockerfile)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: make image-check (the quickstart against the fake, the viz page's files with three.js; no network)
         run: make image-check
 
@@ -118,7 +118,7 @@ jobs:
     name: API reference
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -136,7 +136,7 @@ jobs:
     name: Package contents
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v4
         with:
           node-version: 22
