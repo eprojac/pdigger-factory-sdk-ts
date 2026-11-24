@@ -1,7 +1,8 @@
 # Streams
 
-`factory.streams` is the middle level: the frames the Interpreter reads, with the stream rules of the contract
-([spec/SDK-DESIGN.md](../spec/SDK-DESIGN.md), section 2.3) done for you. Use it when you want the layers themselves.
+Use a frame stream for a camera overlay, a feed of scene geometry or your own frame-by-frame analysis. Choose
+server-sent events for a continuous connection, long-poll for individual HTTP requests, or raw packets for model
+outputs. Read `factory.streams` with `for await`. [Stream rules](../spec/SDK-DESIGN.md#23-mid-level-streams).
 
 ## Frames
 

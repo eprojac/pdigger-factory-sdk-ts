@@ -1,9 +1,8 @@
 # Contributing
 
-Thank you for helping. This SDK is one of four (Go, Python, Rust, TypeScript) that follow one contract,
-[spec/SDK-DESIGN.md](spec/SDK-DESIGN.md): behaviour, names, the Interpreter's rules and every sentence it produces are
-shared, and the golden files in `fixtures/golden/` hold all four to it. A change of behaviour is made by the maintainers
-in all four at once: open an issue or a pull request here.
+All four SDKs follow the [same behaviour contract](spec/SDK-DESIGN.md) and [HTTP API](spec/openapi.yaml). The
+maintainers sync the specification, fixtures, camera measurements and architecture diagram from the shared project.
+Open an issue or pull request here to propose a change to these shared files.
 
 ## Setup
 
@@ -14,8 +13,8 @@ make test            # the same in Docker with no network, as CI runs it
 make image-check     # the try-it image: the quickstart against the fake, the viz page's files
 ```
 
-Workflows: actionlint in Docker (see [TESTING.md](TESTING.md#workflows)). Runtimes: `scripts/smoke.mjs` on Node 18,
-Deno and Bun.
+Run `scripts/smoke.mjs` for the Node 18, Deno and Bun compatibility checks. The
+[workflow tests](TESTING.md#workflows) run actionlint in Docker.
 
 Node 20 or newer for the dev tools (the package itself supports Node 18).
 
@@ -35,7 +34,5 @@ Node 20 or newer for the dev tools (the package itself supports Node 18).
 
 ## Releasing
 
-1. Update `version` in `package.json` and `src/version.ts`, and `CHANGELOG.md`.
-2. Tag `vX.Y.Z` and push the tag. The `release` workflow runs the Docker tests, checks that the tag matches the
-   version, publishes to npm with provenance (`npm publish --provenance --access public`, the `NPM_TOKEN` secret of the
-   `npm` environment), and creates the GitHub release with the package attached.
+Use the [release guide](RELEASING.md) to update the two version fields, tag the tested commit and publish the
+package.

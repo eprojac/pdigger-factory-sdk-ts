@@ -6,8 +6,8 @@
 make test
 ```
 
-builds `Dockerfile.test` (Node 22 pinned by digest, the lockfile's dependencies installed with `npm ci` at build time)
-and runs it with `docker run --rm --network none`. The container runs `npm run check`:
+`make test` builds the test image from a pinned Node 22 base and installs the lockfile dependencies with `npm ci`.
+It then runs `npm run check` in a container with networking disabled. The checks run in this order.
 
 1. `tsc --noEmit` over the sources, tests and examples (strict, `noUncheckedIndexedAccess`);
 2. `eslint` (typescript-eslint, type-checked rules) and `prettier --check`;

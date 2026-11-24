@@ -1,8 +1,9 @@
-# TypeScript: what is particular to this SDK
+# TypeScript API conventions
 
-The four languages share their levels, their models and their sentences ([the four languages](../../README.md#the-four-languages)).
-This page is about what is TypeScript's own: one package for Node, Deno, Bun and the browser, async iterables with
-signals, replays without `await`, the three.js views, errors narrowed by code, and the fake unit as a `fetch`.
+<a id="typescript-what-is-particular-to-this-sdk"></a>
+
+Use the SDK across Node, Deno, Bun and browsers. This guide covers cancellation with `AbortSignal`, replay, typed
+errors, the three.js views and testing with a fake `fetch`.
 
 ## One package, four runtimes
 

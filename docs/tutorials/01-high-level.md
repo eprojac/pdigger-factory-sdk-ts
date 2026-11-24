@@ -1,19 +1,17 @@
-# High level: what the hands did
+# Follow hand movements
 
-The interpreter turns the unit's frames into what a person would say happened at the work area: events
-(`1:19.2 Left hand lifts stone 155`), activities (a hand moving one stone, or a burst of pushes), the state of both
-hands, the stones in view, and the trays that pass through. It is the same interpreter for a recording replayed
-offline and for a unit followed live, and all four languages give the same sentences for the same frames.
+<a id="high-level-what-the-hands-did"></a>
 
-This tutorial replays a recording first, so it needs no unit, and then follows one. Its code is
-[examples/tutorial-high-level.ts](../../examples/tutorial-high-level.ts) and, for the live steps, the examples they
-name.
+Follow one worker’s hands through a recording. You’ll read individual events, group them into moves and pushes, then
+trace a single stone. The same interpreter can follow a live session.
+
+Run the [examples/tutorial-high-level.ts](../../examples/tutorial-high-level.ts) example on the recording first.
+Later steps use a live client.
 
 ## 1. Replay a recording: the activities
 
-Install the SDK (see [the tutorials' start](README.md#before-you-start)) and take a recording: the fixture
-`fixtures/recordings/dry1-0018-0153.ndjson.gz` is dry1 from 0:18 to 2:33, where a tray arrives with 42 stones, the
-hands take some off and push the others into place. Any published recording works the same, as a path or a URL.
+Follow the [setup steps](README.md#before-you-start). The fixture `fixtures/recordings/dry1-0018-0153.ndjson.gz`
+covers 0:18 to 2:33 of dry1. A worker removes stones from a tray of 42 and pushes others into place.
 
 <!-- snippet: examples/tutorial-high-level.ts#activities -->
 ```ts

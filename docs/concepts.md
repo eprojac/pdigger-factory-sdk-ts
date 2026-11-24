@@ -1,15 +1,14 @@
 # Concepts
 
-What the unit serves, in the words the SDK uses. The measured behaviour of the 20.20 unit is in
-[BEHAVIOUR-20.20.md](BEHAVIOUR-20.20.md).
+A factory unit follows one camera or recording at a time. Its **world** is the tracker’s current view of the stones,
+hands and events. Use this guide to interpret frames, coordinate systems and changes to the shared session.
+[Measurements from the 20.20 unit](BEHAVIOUR-20.20.md).
 
 ## The shared session
 
-A unit runs one interpretation at a time: the **shared session**. Every viewer sees the same one. A select or a seek
-starts a new session (a new `session` number); play, pause and focus change the current one. The controls
-(`factory.session.watch()`, `seek()`, `play()`, `pause()`, `focus()`, `clearFocus()`) therefore move what every viewer
-sees, and their doc comments say so. Each takes `dryRun: true`, which makes the unit validate the control and answer
-with the state it would produce, without applying it.
+The **shared session** has one source and playhead. Selecting a source or seeking gives everyone a new `session`
+number. Play, pause and focus update the current session. Pass `dryRun: true` to a control such as
+`factory.session.watch()` to preview the state it would produce.
 
 The unit interprets only while someone watches. A stream counts as a viewer unless it is opened with `observe: true`
 (`observe=1`). The default of streams and Interpreters is the client's `observe`, false unless the client was made with
@@ -42,17 +41,21 @@ A **source** is what the session can show. The API calls sources videos: `GET /a
   about 0.5 s behind the camera. `factory.cameras()` returns the cameras, and
   `factory.live()` the first (or `live_unavailable`).
 
-Watching a camera (`session.watch(camera)`) starts a session at media time 0 and rate 1.0 with `state.live`:
-`{ phase, warmup, since, lag }`. The phase is `connecting` until the camera's first frame (the worker's reason says why
-when it takes long: `connecting to the camera`, `the camera is not answering`), `warming` while the interpreter runs on
-the first `warmup` seconds of frames, which warm the world but are never released, stored or served, and then `live`.
-Every change of phase bumps `revision`, so the long-poll and the stream's `clock` event carry it;
-`session.untilLive()` waits for `live` by reading the state every 250 ms (`UNTIL_LIVE_POLL_MS`) and rejects with
-`live_timeout` after `timeout` ms (30 000 by default). From then on, frames are released as they are interpreted, at
-the camera's rate: `g` counts the session's camera frames from 0 (the warm-up's included, so the first shown is about
-15 at 5 a second), `t` is a frame's arrival in seconds since `since`, and the playhead runs at 1.0, `lag` behind the
-camera. Each live frame comes with the camera's own picture, the JPEG it was interpreted from
-(`session.picture(g)`, the newest 64 are kept); a recording has none.
+Call `session.watch(camera)` to start a camera session at media time zero and playback rate 1.0. Read `state.live`
+(`phase`, `warmup`, `since`, `lag`) to follow the connection.
+
+| Phase | What the unit is doing |
+| --- | --- |
+| `connecting` | Waiting for the camera’s first frame. The worker status explains a delay. |
+| `warming` | Feeding the first frames to the interpreter. The unit discards these frames after warm-up. |
+| `live` | Publishing each interpreted frame and its camera image. |
+
+Each transition increments the session revision and reaches clients through long-poll or a `clock` event.
+`session.untilLive()` polls every 250 ms. The default timeout is 30,000 ms (`live_timeout`).
+
+Frame numbers start at zero and include warm-up. At five frames per second, the first visible frame is about 15.
+Media time measures seconds since the camera started, and the playhead trails the camera by its reported lag. The
+unit keeps the latest 64 camera JPEGs. Read one with `session.picture(g)`.
 
 A camera has no time. A select with a `time` is refused (`400 not_seekable`, field `time`), and so is a seek
 (`409 not_seekable`, field `video`): `session.watch(camera, { at })` rejects without sending the select (for an id,

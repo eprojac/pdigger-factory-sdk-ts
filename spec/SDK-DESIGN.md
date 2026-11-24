@@ -1,17 +1,16 @@
 # pDigger Factory SDK: design and parity contract
 
-This is the contract our SDK follows in its four languages (Go, Python, Rust, TypeScript), so that the same program
-reads the same way in every language and the same recording gives byte-identical human-readable output everywhere.
-Where this file and a language's habits disagree, the language's habits win for *shape* (naming case, error style,
-async primitive) and this file wins for *behaviour* (what is computed, what text is produced, what is retried).
+The Go, Python, Rust and TypeScript SDKs must compute the same results and produce byte-identical text for the same
+recording. Each SDK follows its language’s conventions for naming, errors and asynchronous calls. This document
+defines the behaviour they share.
 
-Sources of truth, in this order:
+When checking an implementation, use these sources in order.
 
-1. `spec/openapi.yaml`: the HTTP API (v2.2, the shipping API: build claude-20261122-hr4x1 on 20.20, with the stones'
-   looks, the stone head's maps at 4x resolution in the raw packet, and its six plant cameras, see section 3).
-2. This file: SDK behaviour, names, the Interpreter's rules and text templates, tests, CI, docs.
-3. `fixtures/`: recorded API data (real output of the 20.20 unit, and for aug28's two excerpts of a replay of its model
-   and build on a Mac) and the golden outputs every SDK must reproduce exactly.
+1. `spec/openapi.yaml` defines the HTTP API. Version 2.2 covers the 20.20 unit on build `claude-20261122-hr4x1`,
+   including stone appearance data, the stone head’s 4× raw maps and six plant cameras (section 3).
+2. This contract defines SDK behaviour, names, interpreter rules, output templates, tests, CI and documentation.
+3. `fixtures/` contains recorded API inputs and expected outputs. The unit supplied the original data except for the
+   two aug28 excerpts, which came from a Mac replay using the same model and build.
 
 ## 1. Names, folders, packages
 
@@ -22,21 +21,25 @@ Sources of truth, in this order:
 | Rust | `pdigger-factory-sdk-rust` (cargo workspace) | crates `pdigger-factory-sdk` (core, publishable) and `pdigger-factory-viz` (egui UI) | `use pdigger_factory_sdk::...` | Rust stable (edition 2021 or 2024), tokio, reqwest (rustls), serde |
 | TypeScript | `pdigger-factory-sdk-ts` | npm `pdigger-factory-sdk` with subpath exports `/viz` and `/testing` | `import { FactoryClient } from "pdigger-factory-sdk"` | Node 18+, browsers, Deno, Bun; ESM + type declarations; core has no runtime dependencies; `/viz` has `three` as a peer dependency |
 
-Each folder is a self-contained project: it is pushed as its own GitHub repository as it is (its own `.github/workflows`,
-`README.md`, `LICENSE` (Apache-2.0), `CHANGELOG.md`, `Dockerfile`, tests, docs, pictures, and its own copy of the spec and
-fixtures under `spec/` and `fixtures/`, refreshed by the maintainers in all four at once). The SDK version starts at
-`0.1.0`.
-User agent: `pdigger-factory-sdk-<lang>/<version>`.
+Each language ships in its own repository, with its own workflows, tests, documentation, images, changelog and
+Apache-2.0 licence. The maintainers update the copies of `spec/` and `fixtures/` in all four repositories together.
+The initial SDK version is `0.1.0`. Its user agent is `pdigger-factory-sdk-<lang>/<version>`.
 
-Words used everywhere: **source** (a recording or a live camera; the API calls them videos), **session** (the one
-shared interpretation run; a select or seek starts a new one), **frame** (one grid frame `g`, 5 per media second),
-**layer** (raw, overlay, scene, cards, world), **world** (the Stable sim's persistent stones and hands), **event** (what
-the world says happened in a frame), **activity** (events the SDK joins into one human-scale action: a move or a push
-burst), **interpreter** (the SDK object that turns frames into state, events, activities and text).
+| Term | Meaning |
+| --- | --- |
+| Source | A recording or live camera. The HTTP API calls both videos. |
+| Session | The interpretation and playhead shared by all viewers. Selecting a source or seeking starts a new session. |
+| Frame | One grid frame, identified by `g`. Recordings use five grid frames per media second. |
+| Layer | One view of a frame. The five layers are raw, overlay, scene, cards and world. |
+| World | The Stable simulation’s persistent view of stones and hands. |
+| Event | A change the world reports in one frame. |
+| Activity | Events the SDK groups into a move or a burst of pushes. |
+| Interpreter | The SDK object that turns frames into state, events, activities and text. |
 
 ## 2. Layers of every SDK
 
-Every SDK has the same five layers. A user can stay on the top one and never see the others.
+For one report per tray, use [tray reports](#47-tray-reports-simple-mode). For individual events, frames or HTTP
+operations, use the corresponding interface below.
 
 | Level | What | Module / namespace |
 |---|---|---|
@@ -1572,17 +1575,20 @@ busiest frames measured needed 29 and 133 new scores.
 
 #### 4.6.12 The unit's speckle answers (`world.speckle`)
 
-Since build claude-20261123-speckle3 the unit compares each tray's stones between two moments by their speckle, on its
-GPU, and sends the answer once, as `world.speckle` (`WorldSpeckle`), in the world of the first frame after it is ready
-(in test runs on the unit 0.4 to 0.8 s after the frame that asked for it): the reference is the tray's arrival, the
-later moment a calm moment of the tray (at most one a minute) or the last calm frame before the visit ended. Each
-stone not held at one moment was checked at the other (`refs`: the reference's stones, checked at the later moment;
-`stones`: the later moment's, checked at the reference) where that moment's stones are and at its own place (builds
-claude-20261123-speckle3 and -speckle4 searched the whole tray and answered about 7 s later), with its `score` and
-`second` and the world stone `at` the other moment its best place lands on; `pairs` are the stones the unit pairs (a
-clean find from one lands on the other, and the other's find, when clean, lands on the first; a stone in a
-contradiction, or paired twice, is in no pair). A recording whose header notes say so carries answers made offline by
-the same tray reading and the maintainers' reference matcher (`device` then says so).
+From build `claude-20261123-speckle3`, the unit compares stone surface patterns (speckle) on its GPU. It compares
+arrival with a later calm frame, at most once a minute, or with the last calm frame of the visit. It emits one
+`world.speckle` (`WorldSpeckle`) result in the first frame after the calculation finishes. In test runs on the
+device this took 0.4–0.8 s of media time after the requested frame.
+
+The `refs` list contains arrival stones checked in the later image. The `stones` list checks in the reverse
+direction. The unit skips stones held in the image used as the reference. For each remaining stone it searches the
+locations of stones in the other image and its original position. Builds speckle3 and speckle4 searched the whole
+tray and reported about seven seconds later.
+
+Each result gives the best `score`, the runner-up (`second`) and the world stone at the best location (`at`). A
+clean match can form a pair if the reverse match, when clean, agrees. The unit excludes contradictory or duplicate
+pairings. Some recordings contain offline results from the maintainers’ reference matcher. The header notes and
+`device` identify these recordings.
 
 The trays read every answer; the tray rules use one of them, the leaving's (4.6.13): the other answers change no fact,
 count, report or open account. A world fed to the trays (not a revision) whose `speckle` fits `WorldSpeckle` by value (`v` 1; `tray`, `g`s and
@@ -1621,11 +1627,10 @@ stones two spaces, the stone id, its side, `score second` to 3 places (`-` when 
 
 #### 4.6.13 The leaving's speckle answer, and the confidence of a change
 
-Every tray report uses the unit's speckle answer for its tray's leaving, when there is one: the stones the unit pairs
-are sure, the ones the tray rules had lost or swapped are linked again, and every change of the report carries the
-probability that it happened (`confidence`). Nothing needs to be called for it: a source whose worlds carry
-`world.speckle` (4.6.12) gives it; a source without answers gives the account of the rules without a leaving answer,
-with the same numbers for its changes.
+The SDK automatically uses the departure comparison when the source supplies `world.speckle` (4.6.12). A paired
+stone has a confirmed identity. The SDK can also recover a lost stone or correct a swapped link. Every report change
+carries a `confidence` estimate. If the source has no departure comparison, the ordinary tray rules produce the
+report and the same confidence table applies with undecided evidence.
 
 **The leaving's answer.** The newest answer read for the tray while it was on (4.6.12, rule 1: the open tray) whose
 later moment `at.g` is within `SPECKLE_NEAR` frames of the tray's leaving point (4.6.1). The unit asks for it at the
@@ -1722,15 +1727,15 @@ and confirms the others it pairs: 11 removed, 13 added, 8 moved, 1 not sure.
 
 ### 4.7 Tray reports (simple mode)
 
-Simple mode, the quickest way to use the SDK: for each tray, which stones were removed, which were added and which
-moved, when and where, and whether that is the tray's whole account. Everything else is advanced mode: hands, world ids and the
-reasons (2.4, 4.2, 4.6), for research and for correcting a report when it is not complete.
+A tray report lists the stones removed, added or moved, their times and positions, and whether all observed changes
+can be accounted for. The SDK builds it from a single tray’s facts and final stone records. For the evidence behind
+a change, see the interpreter, activity and tray rules (2.4, 4.2 and 4.6).
 
-A report is made from its tray alone, its facts and its final tray stones, once the tray has left.
-- `tray.report()` gives it, null for a tray that has not left or never arrived;
-- `replay.tray_reports()` gives one for every tray of a recording that arrived, in tray order (consumes the file);
-- `interpreter.tray_reports()` yields one as each tray leaves: when the next tray arrives, the session changes, or the
-  frames end.
+| Method | When it returns a report |
+| --- | --- |
+| `tray.report()` | Once the tray has left. Returns null for a tray that is still present or never arrived. |
+| `replay.tray_reports()` | Consumes the recording and returns one report for each tray that arrived, in tray order. |
+| `interpreter.tray_reports()` | Yields the completed report when the next tray arrives, the session changes or the frames end. |
 
 **`TrayReport`**: `session`, `video`, `tray` (the tray's `n`), `arrived` and `left` (the `arrived` and `leaving`
 facts' points, `TrayPoint`), `stones` (the tray stones it arrived with), `removed`, `added` and `moved` (lists of
@@ -1919,12 +1924,13 @@ an absent map.
 
 ## 10. Docs and pictures (each repository)
 
-- `README.md`: one-paragraph what it is (the two modes: simple mode, one report per tray, and advanced mode, the detail
-  underneath); install; a quickstart of simple mode (the reports of a published recording, and from a unit as each tray
-  leaves); a 10-line quickstart that follows the shared session, whatever it shows (a recording or a plant camera), and
-  prints human-readable events; the same with a replay of a published recording; the levels underneath with a short
-  example each; error handling; async notes; links to the Swagger demo (https://factory.pdigger.com/developers/api/) and
-  the other languages; the parity table; licence.
+- Start the `README.md` with the two ways to use the SDK. Simple mode gives one report per tray. Advanced mode
+  exposes the events, frames and API calls behind it.
+- Include installation steps and runnable examples for a published recording and a live unit. Show how to read tray
+  reports, follow events from the shared session (a camera or recording) in a ten-line quickstart, and replay events
+  from a published recording. Give a short example for each API level.
+- Cover errors and asynchronous use. Include the [Swagger demo](https://factory.pdigger.com/developers/api/), links
+  to the other languages, a parity table and the licence.
 - `docs/`: `concepts.md` (shared session, sources and the live cameras, frames and layers, cursors, revisions,
   coordinates, template gauge), `interpreter.md` (events, activities, text, summary), `streams.md`, `low-level.md`,
   `replay.md`, `testing.md`, `viz.md` (TS, Rust).

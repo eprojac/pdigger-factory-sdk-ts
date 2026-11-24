@@ -1,6 +1,7 @@
 # Replay
 
-`Replay` runs the Interpreter over a recording: no unit, no network unless the recording is a URL.
+Pass a recording to `Replay.open` to reproduce its events, activities and tray reports. A local file or in-memory
+recording works offline. A URL is read over HTTP.
 
 <!-- snippet: examples/replay.ts#replay -->
 ```ts
@@ -57,11 +58,10 @@ console.log(JSON.stringify(summary.toJSON().moves));
 
 ## Trays
 
-`trays()` makes a pass that keeps every tray of the recording (the live interpreter keeps the newest 256 that have left)
-and returns them, oldest first: each with its tray stones, whose ids are never reused, its facts, and two points, where
-it had arrived and settled and where it was about to move out ([trays and tray
-stones](interpreter.md#trays-and-tray-stones)). `tray.window()` is the media span between them, the one to replay or to
-show ([examples/tray-points.ts](../examples/tray-points.ts)):
+`trays()` reads the full recording and returns its trays in order. Each tray includes its stones, facts and the
+points when it settled and left. Use these points to seek to the same tray in a player.
+[Tray identity and events](interpreter.md#trays-and-tray-stones). Use `tray.window()` for the media interval. The
+live interpreter retains the most recent 256 closed trays.
 
 <!-- snippet: examples/tray-points.ts#trays -->
 ```ts
@@ -136,13 +136,14 @@ nothing (no frames, no error). `fixtures/damaged` holds a line of each kind; `te
 
 ## Published recordings
 
-The four complete recordings of 22 November (aug28, jul30, dry1, dry2, every frame interpreted, from the start of each
-video to its end: dry1 recorded on the 20.20 unit with build `claude-20261122-hr4x1`, and dry2, aug28 and jul30 the
-same model's outputs replayed on a Mac through the interpreter of the same build, as each header's `recorded_from`
-says) are at https://factory.pdigger.com/developers/data/ as `<video>.world.ndjson.gz` (world and cards layers) and
-`<video>.full.ndjson.gz` (all five layers, redacted), listed in `recordings.json` with sizes, sha256 and their golden
-summaries. `Replay.open(url)` streams them; the opt-in test in [TESTING.md](../TESTING.md#the-published-recordings)
-replays all four and compares their summaries.
+Download `aug28`, `jul30`, `dry1` or `dry2` from the
+[recordings page](https://factory.pdigger.com/developers/data/). The `.world.ndjson.gz` files contain the world and
+cards layers. The `.full.ndjson.gz` files contain all five redacted layers. The manifest, `recordings.json`, lists
+sizes, checksums and expected summaries.
+
+For the hr4x1 data recorded on 22 November, dry1 came from the 20.20 unit. The other three ran the same model
+outputs through the same interpreter build on a Mac. Check the `recorded_from` header for provenance.
+[Run the recording checks](../TESTING.md#the-published-recordings).
 
 The fixtures in `fixtures/recordings/` are nine short excerpts of the four videos and nine synthetic recordings that
 say so in their headers (`revisions-synthetic`, `trays-synthetic`, `trays-looks-synthetic` and its copy without looks,

@@ -2,9 +2,12 @@
 
 ## One method per operation
 
-`factory.api` has a method for every operation of the API (v2.2, [spec/openapi.yaml](../spec/openapi.yaml)), named
-after its `operationId`. Every method takes `signal`, `timeoutMs` and `headers` among its options; controls take
-`dryRun`. Replies are typed with the spec's schemas; unknown fields are kept, and redactable fields are optional.
+Use `factory.api` to request a specific frame, fetch a model output or control the shared session. The 32 typed
+methods correspond to the [OpenAPI operations](../spec/openapi.yaml). The codec decodes packed maps, bitsets, depth
+and joint data.
+
+Each method accepts `signal`, `timeoutMs` and `headers`. Controls also accept `dryRun`. Responses use the
+specification’s types, preserve unknown fields and allow redacted fields to be absent.
 
 | Group | Methods |
 |---|---|

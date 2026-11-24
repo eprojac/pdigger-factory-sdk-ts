@@ -1,27 +1,25 @@
 # Releasing
 
-Releases are tags `v<version>` on `main`. The version is `"version"` in [package.json](package.json) and `VERSION` in
-[src/version.ts](src/version.ts) (the user agent sends it); a unit test checks that the two agree.
+The Git tag triggers an npm publish and a GitHub release.
 
-1. Check that the site the docs, the examples and the integration workflow link to is live: the Swagger demo at
-   https://factory.pdigger.com/developers/api/ and the recordings at https://factory.pdigger.com/developers/data/
-   (`curl -fsSI https://factory.pdigger.com/developers/api/ https://factory.pdigger.com/developers/data/recordings.json`).
-   Then run the Integration workflow by hand: its recordings job downloads every published recording, checks its
-   sha256 and compares its replay with the published summary. Do not release while either fails.
-2. Set the version in both places and give `CHANGELOG.md` a section for it (in the commit you tag, the section's
-   heading has the release date instead of Unreleased).
-3. Merge to `main` and wait for CI.
-4. Tag and push: `git tag v<version> && git push origin v<version>`.
+1. Check that the [API demo](https://factory.pdigger.com/developers/api/) and
+   [recording downloads](https://factory.pdigger.com/developers/data/) are available. Run the Integration workflow
+   manually. It downloads the recordings, verifies their SHA-256 checksums and compares the replay summaries.
+   Continue when both checks pass.
 
-[.github/workflows/release.yml](.github/workflows/release.yml) then runs the unit tests in Docker, checks that the tag
-is `v` + the package version, builds, publishes the package to npm with provenance, and makes the GitHub release with
-the packed tarball.
+2. Set the same version in [package.json](package.json) and [src/version.ts](src/version.ts). Replace `Unreleased`
+   in the changelog heading with the release date.
+
+3. Merge to `main` and wait for CI to pass.
+4. Tag the tested commit with `v` followed by the version, then push that tag. For version 0.1.0, run
+   `git tag v0.1.0` followed by `git push origin v0.1.0`.
+
+The [release workflow](.github/workflows/release.yml) runs the Docker tests, checks the version and publishes the
+npm package with provenance. It attaches the packed tarball to the GitHub release.
 
 ## What the repository needs
 
-- **An npm token** that may publish `pdigger-factory-sdk` (a granular access token), as the secret `NPM_TOKEN` of the
-  GitHub environment `npm`.
-- **A GitHub environment `npm`**, ideally with required reviewers, so a tag alone cannot publish.
-- **Branch protection** on `main`, with the CI checks required.
-
-The GitHub release uses the workflow's own token.
+- Give the `npm` GitHub environment a granular `NPM_TOKEN` that can publish `pdigger-factory-sdk`. Required
+  environment reviewers can review each publish.
+- Protect `main` with the CI checks required for release.
+- The GitHub release uses the workflow’s own token.

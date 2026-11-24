@@ -1,7 +1,8 @@
 # Testing your code
 
-`pdigger-factory-sdk/testing` is the fake unit this SDK's own tests run on. Give its `fetch` to a client (or take
-`fake.client()`) and your code talks to it as to a unit: deterministic, in process, no network, no real waiting.
+Import `FakeFactory` from `pdigger-factory-sdk/testing` and pass its `fetch` implementation to the client. You can
+control time and inject faults in your tests. See [the SDK test suite](../TESTING.md) for coverage and integration
+checks.
 
 <!-- snippet: examples/testing.ts#testing -->
 ```ts

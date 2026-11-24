@@ -1,7 +1,7 @@
 # Visualisation helpers
 
-`pdigger-factory-sdk/viz` draws what the unit sees with three.js, an optional peer dependency (`npm install three`,
-r150 or newer; with TypeScript also `npm install @types/three`, which its declarations import). Five pieces:
+Use `pdigger-factory-sdk/viz` to draw a tray report, a 3D scene or camera overlays. Install its peer dependency with
+`npm install three` (r150 or newer). In a TypeScript project, install `@types/three` as well.
 
 | | |
 |---|---|

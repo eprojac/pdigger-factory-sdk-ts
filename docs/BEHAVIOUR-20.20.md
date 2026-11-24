@@ -1,49 +1,38 @@
 # How the 20.20 unit behaves, and its live cameras
 
-Sections 1 to 6 were measured on the 20.20 unit (a Jetson Orin NX on the factory LAN) running build
-`claude-20261114-int17` (API 2.0.0), over complete recordings of its four videos made on 17 and 18 November 2026, with
-the maintainers' analysis tools (not published). Every number there comes from those recordings, except where a passage
-names the published recordings: these were made again on 22 November with build `claude-20261122-hr4x1`, dry1 on the
-unit and dry2, aug28 and jul30 in a replay on a Mac (section 2).
+These measurements come from a Jetson Orin NX on the factory network. Sections 1–6 cover four recordings made on
+17–18 November 2026 with build `claude-20261114-int17` (API 2.0.0). The maintainers used their own recorder and
+analysis tools. Measurements from later builds are identified separately.
+
+The four recordings were captured again on 22 November with build `claude-20261122-hr4x1`. Only dry1 ran on the unit
+in that set. The other three ran in a Mac replay. [Measurement method](#2-how-it-was-measured).
 
 ## In short
 
-Measured on build `claude-20261114-int17`, 17 and 18 November:
+The following results are from the 17–18 November run unless a different build is named.
 
-- **One shared session.** Everyone who connects sees the same session: one video, one playhead, one interpretation.
-  A select or seek starts a new session for everybody.
-- **The unit plays at 0.8×.** The rate stayed at 0.8 on every video and the clock never slipped: 1:01:51.8 of aug28
-  took 1:17:20 of wall time (0.800×). Build `claude-20261122-hr4x1` sets its own rate: dry1 played at 0.75×
-  (section 2).
-- **The worker keeps up at 0.8×; on the full frame it could not keep up at 1.0×.** On the full-frame dry videos
-  (1920 px) a frame takes 208 ms, 164 ms of it the encoder: at most 4.8 frames a second, against the 4.0 that 0.8× needs
-  and the 5.0 a camera would. On the 1088 crop of aug28 and jul30 a frame takes 116 ms: up to 8.6 a second.
-- **Some frames come without a world.** A frame is released at most 300 ms after its packet; on the full-frame videos
-  the world missed that deadline for 3 to 4 % of frames, on aug28 and jul30 for none. Every missing world was there when
-  read again 1.5 s later. On build `claude-20261122-hr4x1` it missed it for 5.6 % of dry1's frames (section 2).
-- **Frames arrive ahead of the shared playhead**, 0.23 s (full frame) to 0.34 s (1088 crop) of media, never more than
-  0.6 s; one every 0.24 s.
-- **Streams lose little, and it can be read back.** Of 60,198 frames the unit dropped 8, in three gaps, for a consumer
-  that had fallen behind; 4 of them were read back while the unit still held them. Reconnects with `Last-Event-ID` lost
-  nothing, but a stream that reaches its `limit` or `max_s` is closed only 10 s later.
-- **At the end of a video the session moves on by itself** to the next recording in the catalog (the cameras are
-  skipped; after the last recording, the first), at that recording's default start.
+| Observation | Measurement |
+| --- | --- |
+| Shared playback | All viewers share one source and playhead. Selecting or seeking starts a session for everyone. At the end of a recording the unit advances to the next recording at its default start, skips cameras and wraps back to the first recording. |
+| Playback rate | All four recordings played at 0.8×. The 1:01:51.8 aug28 video took 1:17:20 of wall time. The later hr4x1 build automatically chose 0.75× for most of dry1. |
+| Frame processing | The 1920 px videos took 208 ms per frame, including 164 ms in the encoder. That supports up to 4.8 frames/s. Playback at 0.8× needs 4.0 frames/s and full speed needs 5.0. The 1088 px crops took 116 ms per frame (up to 8.6 frames/s). |
+| Late world layers | The unit releases frames within 300 ms of their packets. On the full-frame videos, 3–4% missed the deadline for the world layer. On aug28 and jul30 every world arrived on time. All missing worlds were available 1.5 s later. On hr4x1, 5.6% of dry1 worlds were late. |
+| Frame timing | Frames arrived about every 0.24 s, ahead of the playhead by 0.23 s on full frames or 0.34 s on the smaller crop. The lead stayed below 0.6 s. |
+| Stream recovery | A slow consumer missed 8 of 60,198 frames across three gaps. The unit still held 4 of the 8 when the client read them back. Reconnecting with `Last-Event-ID` lost no frames. The server waited 10 s to close connections that reached `limit` or `max_s`. |
 
-Since build `claude-20261120-live2` (API 2.1.0) the unit also lists six plant cameras
-([section 7](#7-the-live-cameras)). What they change, in order of importance:
+### Live cameras
 
-1. A camera session connects, warms the interpreter up on its first 3 s of frames, and then shows frames as they are
-   interpreted, about 0.27 s behind the camera on build `claude-20261120-looks1` and about 0.5 s on build
-   `claude-20261122-hr4x1`, at the camera's own rate as far as the worker keeps up (1.6 to 3.9 frames a second on
-   looks1; on hr4x1 the worker managed about 3.6 a second, section 7).
-2. The unit does not interpret a camera nobody watches: with no viewer the worker lets the camera go and that time is
-   lost, so an integration has to keep a stream open.
-3. Pausing a camera loses the paused time for everybody, and play warms up again.
-4. Any client on the LAN can switch the shared session to or away from a camera: the API has no authentication.
-5. Wall time becomes the timestamp of every event, and the unit's clock wanders by tens of milliseconds.
+Build `claude-20261120-live2` (API 2.1.0) added six plant cameras. The interpreter warms up on the first three
+seconds of frames. On looks1, the live view ran 0.27 s behind the camera at 1.6–3.9 frames/s. On hr4x1 the delay was
+about 0.5 s and the worker processed about 3.6 frames/s.
 
-Since build `claude-20261123-speckle3` the unit also compares each tray's stones between its arrival and a later
-moment by their speckle, on its GPU, and sends the answer in the world ([section 8](#8-the-speckle-answers)).
+Keep a viewer stream open to capture events continuously. The worker releases a camera when its last viewer leaves.
+Pausing also loses the intervening footage for every viewer, and playback starts with another warm-up. On the tested
+LAN any client could switch the shared source without authentication. Each event has a wall-clock time, with drift
+of tens of milliseconds. [Live camera measurements](#7-the-live-cameras).
+
+Build `claude-20261123-speckle3` added a GPU comparison of each stone’s surface pattern between arrival and a later
+frame. The unit sends the result in the world layer. [Speckle measurements](#8-the-speckle-answers).
 
 ## 1. The unit
 
@@ -324,14 +313,17 @@ What the cameras change:
 
 ## 8. The speckle answers
 
-Since build `claude-20261123-speckle3` the unit also compares the stones of each tray between two moments by their
-speckle, the fine grain of a stone's face, on its GPU, and sends each answer once, as `world.speckle` (`WorldSpeckle`;
-how the SDK reads it: `SDK-DESIGN.md` 4.6.12). Builds speckle3 and speckle4 searched the whole tray (about a second of
-GPU per tray); build `claude-20261123-speckle6` checks each stone where the stones of the other moment are: tens of
-milliseconds per tray. Build `claude-20261123-speckle7` also checks the stones too large for the GPU's kernels, by the
-central part of their box (the last point below); every other stone it finds as speckle6 does. Measured with build
-speckle6 (but for the last point) in test runs on the unit (dry1's first 150 s), on 37 trays of the four recordings
-run offline on the unit, on a plant camera and over the four recordings:
+The unit identifies stones by comparing the fine grain on their surfaces in two images. It sends each GPU comparison
+once in `world.speckle` (`WorldSpeckle`).
+[How the SDK reads these results](../spec/SDK-DESIGN.md#4612-the-units-speckle-answers-worldspeckle).
+
+Builds speckle3 and speckle4 searched the whole tray, at about a second of GPU time per tray. Build
+`claude-20261123-speckle6` searched known stone locations in tens of milliseconds. Build `claude-20261123-speckle7`
+also handles stones too large for the GPU kernels by comparing the centre of their box. It finds the other stones as
+speckle6 did.
+
+The measurements below use speckle6 except for the final item. They cover the first 150 seconds of dry1 on the unit,
+37 trays replayed offline on the unit, a plant camera and all four recordings.
 
 - **What it compares.** The unit reads the trays as the SDK does (4.6.1, without its pauses for the inventory and for
   stones not seen): offline over all of dry1 its arrivals are the SDK's for 64 of 66 trays (one a frame early, one tray

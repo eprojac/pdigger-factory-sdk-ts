@@ -1,9 +1,8 @@
 # The Interpreter
 
-`factory.interpreter()` follows the shared session and turns its frames into state, typed events, activities, trays with
-stone ids never reused and facts never revised, and plain sentences. The rules are the same in every pDigger Factory SDK
-([spec/SDK-DESIGN.md](../spec/SDK-DESIGN.md), section 4) and golden-tested: a replay of each fixture recording prints
-exactly the text of `fixtures/golden/`.
+Use the interpreter to follow a hand movement, trace a stone or explain a tray report. Events describe what the unit
+saw in a frame. Activities group events into moves and pushes. A recording produces the same results as the live
+frame sequence. [Interpreter rules](../spec/SDK-DESIGN.md#4-interpreter-rules-golden-tested).
 
 <!-- snippet: examples/interpreter.ts#updates -->
 ```ts
@@ -158,47 +157,38 @@ signal's reason.
 
 ## Trays and tray stones
 
-The world's stone ids are the engine tracker's. It renames a stone it lost and found again, and it can keep an id on
-another stone: a stone set down where a removed one lay, a neighbour pushed into its place, a row of equal stones pushed
-one place along while the ids stay on the places. For anything that must hold over time ("stone X was removed"), use the
-**tray stones**: the interpreter follows each tray from the moment it has arrived and settled to the moment it is about
-to move out, and gives every stone on it an id that is never reused, no other tray stone is ever given it:
-`{first seen}-{tray}-{world id}`, for example `20261122T023847.0Z-1-117` (the server's wall time in UTC when the stone
-was first seen on tray 1, under world id 117; without a clock `s{session}t{media time}-{tray}-{world id}`; a second
-stone first seen on the tray in the same tenth of a second under the same world id takes `-2` at the end, a third
-`-3`).
+The tracker assigns a **world ID** to a detection. When a hand pushes a row of similar stones, the tracker can
+assign a new ID to a familiar stone or keep an ID at a position now occupied by a different stone. Use the **tray
+stone ID** to follow one physical stone across frames. The SDK never reuses it.
 
-A tray stone says whether its identity is still **sure**, and a fact about it is **certain** or **unclear**. Tray facts
-are final: a fact, once given, is never revised or withdrawn, and a stone that is not sure (fact `unsure`) is sure again
-only through the unit's speckle check as its tray leaves, once, with an `identified` fact
-([below](#the-units-speckle-check)). On a worked tray the world stone a tray stone stands for can turn out to be another
-stone; the rules mark a stone not sure whenever what the world shows leaves another reading, but they do not tell which
-of the not-sure links are wrong. The rules prefer saying "unclear" to guessing:
+For example, `20261122T023847.0Z-1-117` identifies a stone first seen at 02:38:47 UTC on tray 1 under world ID 117.
+Without a wall clock the prefix is `s{session}t{media time}`. If two stones receive the same world ID on the same
+tray within the same tenth of a second, the later IDs end in `-2`, `-3` and so on.
 
-- A **tray** is a stop of at least 2 s. It has **arrived** at the first calm frame with every stone confirmed and no new
-  stone for five frames (a calm frame: both hands free for three frames in a row, no hand event, no stone new, deleted
-  or split). It is **leaving** just before it moves out: at its last calm frame, when no hand worked after it (else at
-  its last frame).
-- A stone stays **sure** while nothing could have swapped it: it stops being sure when it was pushed, when a stone of
-  its size next to it was pushed, when its box overlaps another stone, when it is not seen at two calm moments, or when
-  a stone of its size appeared next to it while a hand held it. A stone without a look chain that is not seen at two
-  calm moments while nothing could have changed it since it was last seen is first held in question (not sure,
-  `question` set, no fact yet): it is sure again once the world sees it again on its place, with no hand at work, no
-  held stone, no stone a hand took away, no push on the tray and no frame the SDK could not read (a frame without a
-  world, a jump in `g`, a `gap` or `reset` of the stream, a revision, the moving frames of a tray that goes on) from its
-  last sight until then, no hand on it or near it, no other stone of its size within 0.12 of its place, and no look of
-  its world stone that matches another stone in question or lost; otherwise it stops being sure. When the question is
-  settled on a calm moment that does not show the stone (at once at its doubt, or by a sight before that calm moment),
-  the next calm moment that shows it, or the tray's last frame when the tray leaves first and that frame shows it, must
-  find nothing at work since either. A stone with a look chain is never held in question: its doubt is a question only
-  its looks settle. When the world renames a stone, the tray stone follows only if exactly one new world stone fits,
-  close by and within 3 s.
-- A **removal** is certain when the stone's place is empty at a calm moment, as far as the world shows, and no world
-  stone could be it. An **addition** is certain when a new stone stays at one place over two calm moments while no stone
-  of its size is lost or not sure. When the tray leaves, a lost stone is matched to a new world stone near it only
-  with evidence that they are the same stone (the unit's speckle check pairs them, their looks agree, or no hand worked
-  near either since the stone was last seen); everything else is reported as unclear, so a stone's id never passes to
-  a stone that may be another.
+The SDK tracks two kinds of uncertainty. **Sure** describes a stone’s identity. **Certain** describes a fact, such
+as a removal. The SDK keeps every fact it has emitted. When the departure speckle check resolves an earlier `unsure`
+fact, it adds an `identified` fact to the history.
+
+### When the SDK records a change
+
+- **Arrival and departure.** A tray must stop for at least two seconds. Arrival is the first calm frame with all
+  stones confirmed and no new stone for five frames. A calm frame requires both hands to be free for three
+  consecutive frames, with no hand event or stone creation, deletion or split. Departure uses the last calm frame
+  unless a hand worked after it, in which case it uses the last frame.
+- **Identity.** A push, an overlap, a missing detection or a similar stone near a held stone can put an identity in
+  doubt. A stone missing at two calm moments may regain its identity if it reappears in place and nothing could have
+  swapped it. The SDK also checks tracking gaps, hand activity, nearby stones and appearance. A stone with an
+  appearance history follows the separate matching rules.
+- **Removal and addition.** A certain removal requires recent hand contact. For a stone that disappears on the tray,
+  the SDK also checks that a calm frame shows its position empty and that no tracked stone could be the missing
+  stone. An addition is certain when a new stone stays in place across two calm moments and no similar-sized stone
+  is missing or uncertain.
+- **Matching at departure.** The SDK links a missing stone to a nearby detection when the two match by speckle or
+  appearance, or when no hand could have swapped them. Otherwise it records the possible removal and addition as
+  unclear.
+
+The [tray rules](../spec/SDK-DESIGN.md#461-the-tray-rules) give the exact conditions, distance limits and
+exceptions.
 
 Some of the facts of `dry1-0018-0153`, a busy tray of dry1, at 0:38.7 and 0:45.5 (`interpreter.trayFacts()`,
 `fact.describe()`):
@@ -242,15 +232,21 @@ its `facts`, `window()` (`[arrived.t, leaving.t]`, null until it has left) and `
 to jump between: on the shared session, `factory.session.seek(point.t, { video: tray.video })` shows one
 ([replay](replay.md#trays)).
 
-A tray's report is the SDK's simple mode (SDK-DESIGN 4.7): `tray.report()` once the tray has left (null before),
-`interpreter.trayReports()` from a unit as each tray leaves, and `replay.trayReports()` (or `trayReportsSync()`) for
-every tray of a recording. A `TrayReport` has the tray's `session`, `video` and number (`tray`), its points `arrived`
-and `left`, the number of `stones` it arrived with, its changes `removed`, `added` and `moved` (`TrayChange`: `kind`,
-`stone`, `at`, `certain`, `code`, `place`, `size`, `distance`, `confidence`), the counts `unclear` and `unsure` (the
-stones still on that are not sure), and `complete`: no unclear change and no stone that is not sure. `describe()` writes
-it as text and `toJSON()` as data. A stone is reported moved only when the SDK is sure it is the same stone, saw it at
-the leaving point and something touched it on the tray, and it moved more than `MOVED` (0.75) times its short side once
-the tray's own shift is taken out.
+### Report fields
+
+Call `tray.report()` after a tray leaves. Use `interpreter.trayReports()` for a live stream of reports or
+`replay.trayReports()` for a recording. For an in-memory replay, `trayReportsSync()` is also available.
+
+| Fields | Meaning |
+| --- | --- |
+| `session`, `video`, `tray` | Source session, video and tray number. |
+| `arrived`, `left`, `stones` | Arrival and departure points, and the number of stones at arrival. |
+| `removed`, `added`, `moved` | Changes in each category. Each carries a stone ID, time, certainty, reason code, position, size, distance and confidence as applicable. |
+| `unclear`, `unsure`, `complete` | Counts of unclear changes and other retained stones with uncertain identities. A report is complete when both counts are zero. |
+
+A move requires a known stone identity, evidence that the stone was touched, and a detection at departure. After
+compensating for the motion of the tray itself, the displacement must exceed 0.75 times the stone’s shorter side.
+Use `JSON.stringify(report)` for the report data.
 
 `tray.open` is the open account of the tray's leaving (`TrayOpen`, SDK-DESIGN 4.6.8: for each stone left open, the
 readings the evidence still allows; null until the tray has left), and `TrayFact.code` gives each fact's reason as a
@@ -261,12 +257,12 @@ which the report reads, and `question` while it is held in question; with the st
 
 ### Confidence
 
-Every change of a report has a `confidence`, the probability that it is right: the share of changes of its kind that
-were right on 150 trays of the four complete recordings checked against their video (the maintainers' offline checks,
-not published: each stone followed by its look both ways, and a camera check of the certain removals), as
-`(right + 1) / (checked + 2)` (SDK-DESIGN 4.6.13). Its kind is the change, whether it is certain, and what the unit's
-speckle check found of the stone at the other moment (`TrayStone.evidence`): for a removal, whether the stone is on the
-tray as it left; for an addition, whether it was on the tray as it arrived.
+Confidence estimates how often a reported change of this kind is correct. The maintainers checked 150 trays across
+four recordings against the video. Each table entry uses `(right + 1) / (checked + 2)` for that group of changes.
+[Calibration method](../spec/SDK-DESIGN.md#4613-the-leavings-speckle-answer-and-the-confidence-of-a-change).
+
+For a removal, the evidence says whether the surface pattern of the stone was found at **departure**. For an
+addition, it says whether that stone was already visible at **arrival**.
 
 | Change | Certain | not found | undecided | found |
 |---|---|---|---|---|
@@ -281,14 +277,13 @@ right by the camera check.
 
 ### The unit's speckle check
 
-Every report uses it; nothing needs to be called. Since build `claude-20261123-speckle3` the unit compares each tray's
-stones between its arrival and a later moment by their speckle (the grain of each stone's face), on its GPU, and sends
-each answer once, in the world (`world.speckle`; [how the unit does it](BEHAVIOUR-20.20.md#8-the-speckle-answers)); the
-four published recordings carry answers made afterwards. The answer for the tray's last calm frame is the leaving's
-(SDK-DESIGN 4.6.13): as the tray leaves, the stones it pairs are sure, confirmed on their world stone or linked again
-where the world had lost them or put them on other world stones, and each change takes its confidence from what it
-found. A tray whose hands worked after its last calm frame has no leaving answer: its report is made without one, its
-changes `undecided`.
+The unit compares the grain on each stone’s surface at arrival with its appearance in a later image. Since build
+`claude-20261123-speckle3` it sends each GPU comparison once in `world.speckle`. The published recordings include
+comparisons computed after capture. [Camera measurements](BEHAVIOUR-20.20.md#8-the-speckle-answers).
+
+The SDK uses the last calm frame to reconcile identities at departure. Clean matches can confirm a stone in place or
+recover it under a new world ID. If a hand worked after the last calm frame, the departure comparison is unavailable
+and the report uses undecided evidence.
 
 Reading the answers yourself is advanced mode: to look into an unclear change, to check a tray by hand, or for rules of
 your own. The interpreter reads each answer (SDK-DESIGN 4.6.12) as a tray's (`TraySpeckle`): `update.speckle` holds the
@@ -326,14 +321,36 @@ itself). A `TraySpeckle` has `tray`, `session`, `video`, `g`, `t` and `wall` (th
 answer's own tray number, the unit's count), `ref` and `at` (the two moments: `g` and `t`), `device`, `gpuMs`, `wallMs`,
 `stones`, `stone(id)`, `describe()` and `toJSON()`.
 
-What the SDK can not see, since it sees only the world: a box the model sees on an empty slot when the tray arrives
-becomes a tray stone, and a stone later set into that slot keeps its id; and a stone the model stops seeing for good
-while it stays on the tray looks removed: unclear when the tray leaves, or for certain when a hand touched it before it
-was lost and no world stone could be it (3 of the 52 certain removals in a camera check of the four complete recordings
-were such stones, each one a stone a hand had moved). On busy trays, where hands push rows of equal stones, the
-speckle check as the tray leaves settles most pushed stones; where hands worked after the tray's last calm frame there
-is no leaving answer, and most pushed stones end up not sure. Stones set down are mostly unclear: their confidence says
-how far to rely on each.
+### Reading the dry1 report
+
+The fixture `dry1-0018-0153` contains tray 2 of the full dry1 recording. The excerpt numbers it tray 1. A worker
+straightened the rows and several stones briefly lost their tracker IDs. The SDK counted 42 stones at arrival and 44
+at departure, matching the video count at departure.
+
+| Change | What the report recorded | What the maintainers found in the video |
+| --- | --- | --- |
+| Removed | Six certain and five unclear | All six certain removals were correct. Of the five unclear removals, 87 and 129 left. Stones 121, 128 and 130 stayed. |
+| Added | Thirteen unclear | Ten were set down and three (151, 246 and 249) arrived on the tray. At a 0.90 threshold, nine additions and six removals remain. All fifteen were correct. The filter also drops a genuine addition (278). |
+| Moved | Eight | The SDK measured displacements of 0.33 to 0.43 scene units after accounting for the tray’s own movement. Each move has a confidence of 0.87. |
+
+The unit’s departure comparison confirmed eight uncertain identities, found four missing stones and matched two to
+different world IDs. Stone 98 remained uncertain. In the report, `18 unclear` counts changes. The separate
+`1 not sure` counts that remaining identity.
+
+A removal gives the last observed position. An addition or move gives the departure position when observed. For a
+stone the world model retained without a detection at departure, the report can use its position in that model.
+Stone 281 is an example. The worker set it down about six seconds before departure.
+
+### Limits of the camera evidence
+
+A complete report accounts for the stones visible to the model. If the model detects a stone in an empty slot at
+arrival, a later occupant can inherit that ID. If the model loses sight of a stone permanently, the SDK can report a
+removal even though the stone stayed. In a separate video check, three of 52 certain removals across the four
+recordings were stones a hand had moved on the tray.
+
+At departure the SDK excludes an unseen stone that is held, or whose box overlaps a free stone’s box by at least 30%
+of its own area. On a busy tray, similar stones can also remain unresolved if hands worked after the final calm
+frame. For the evidence behind any individual change, inspect its tray facts and the departure comparison.
 
 ## Summary
 
