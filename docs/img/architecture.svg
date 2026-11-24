@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-labelledby="t d">
+  <title id="t">pDigger Factory: from the camera to your application</title>
+  <desc id="d">A camera feeds the factory unit, where a TensorRT cascade, the Stable sim and the gateway turn frames into one shared session served as API v2. The SDK reads it in two modes: simple mode, one report per tray, and advanced mode, the details underneath (the interpreter's events, activities and tray facts, the streams and draw lists, one method per operation). Published recordings replay into the same interpreter.</desc>
+  <style>
+    .bg { fill: #f6f4f0; }
+    .card { fill: #ffffff; stroke: #16181b; stroke-opacity: .14; stroke-width: 1.2; }
+    .unit { fill: #16191d; }
+    .unit-card { fill: #1f2328; stroke: #e9e6e1; stroke-opacity: .1; }
+    .sdk { fill: #ffffff; stroke: #e4502a; stroke-width: 2; }
+    .lvl-h { fill: #fde7de; } .lvl-m { fill: #e1efee; } .lvl-l { fill: #ecebe8; }
+    .h { font: 700 17px system-ui, -apple-system, 'Segoe UI', sans-serif; fill: #16181b; }
+    .hw { font: 700 17px system-ui, -apple-system, 'Segoe UI', sans-serif; fill: #e9e6e1; }
+    .s { font: 400 13.5px system-ui, -apple-system, 'Segoe UI', sans-serif; fill: #33373c; }
+    .sw { font: 400 13.5px system-ui, -apple-system, 'Segoe UI', sans-serif; fill: #b9bec4; }
+    .k { font: 600 11px ui-monospace, 'SF Mono', Menlo, monospace; letter-spacing: .1em; fill: #595e65; }
+    .kw { font: 600 11px ui-monospace, 'SF Mono', Menlo, monospace; letter-spacing: .1em; fill: #9da3aa; }
+    .m { font: 500 12.5px ui-monospace, 'SF Mono', Menlo, monospace; fill: #33373c; }
+    .accent { fill: #e4502a; } .teal { fill: #0e6f73; }
+    .arrow { stroke: #16181b; stroke-width: 2; fill: none; marker-end: url(#a); }
+    .arrow-soft { stroke: #0e6f73; stroke-width: 2; fill: none; stroke-dasharray: 6 5; marker-end: url(#b); }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0d0e10; } .card { fill: #181b1f; stroke: #ece9e4; stroke-opacity: .16; } .sdk { fill: #181b1f; stroke: #ff6b3d; }
+      .lvl-h { fill: #3a1d13; } .lvl-m { fill: #10302f; } .lvl-l { fill: #22262b; }
+      .h { fill: #ece9e4; } .s, .m { fill: #cbc7c0; } .k { fill: #a2a7ad; } .unit { fill: #1f2327; }
+      .arrow { stroke: #ece9e4; } .accent { fill: #ff6b3d; } .teal { fill: #3fbfc2; } .arrow-soft { stroke: #3fbfc2; }
+      #a path { fill: #ece9e4; } #b path { fill: #3fbfc2; }
+    }
+  </style>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#16181b"/></marker>
+    <marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#0e6f73"/></marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1200" height="560" rx="28"/>
+
+  <!-- camera -->
+  <rect class="card" x="32" y="150" width="150" height="150" rx="18"/>
+  <text class="k" x="50" y="178">SOURCE</text>
+  <text class="h" x="50" y="206">Camera</text>
+  <text class="s" x="50" y="230">a plant camera</text>
+  <text class="s" x="50" y="252">streaming live, or</text>
+  <text class="s" x="50" y="270">a recorded video</text>
+  <path class="arrow" d="M184 225 H232"/>
+
+  <!-- unit -->
+  <rect class="unit" x="236" y="48" width="400" height="420" rx="22"/>
+  <text class="kw" x="260" y="80">FACTORY UNIT · JETSON ORIN NX · LAN</text>
+  <rect class="unit-card" x="258" y="96" width="356" height="92" rx="14"/>
+  <text class="hw" x="278" y="126">Worker</text>
+  <text class="sw" x="278" y="150">TensorRT cascade: regions, hands and</text>
+  <text class="sw" x="278" y="170">bodies, stones and temporal tracking</text>
+  <rect class="unit-card" x="258" y="200" width="356" height="92" rx="14"/>
+  <text class="hw" x="278" y="230">Stable sim</text>
+  <text class="sw" x="278" y="254">the world of stones and hands, with its</text>
+  <text class="sw" x="278" y="274">events: lift, carry, place, push, drop…</text>
+  <rect class="unit-card" x="258" y="304" width="356" height="144" rx="14"/>
+  <text class="hw" x="278" y="334">Gateway · API v2</text>
+  <text class="sw" x="278" y="358">one shared session · 512 frames retained</text>
+  <text class="sw" x="278" y="378">REST · server-sent events · NDJSON</text>
+  <text class="sw" x="278" y="398">long-poll · draw lists · rasters</text>
+  <text class="sw" x="278" y="424">http://&lt;unit&gt;:8120/api/v2</text>
+  <path class="arrow" d="M638 376 H690"/>
+
+  <!-- sdk -->
+  <rect class="sdk" x="694" y="48" width="330" height="420" rx="22"/>
+  <text class="k" x="716" y="80">PDIGGER FACTORY SDK</text>
+  <text class="h" x="716" y="106">Go · Python · Rust · TypeScript</text>
+  <rect class="lvl-h" x="714" y="122" width="290" height="102" rx="12"/>
+  <text class="k" x="730" y="146"><tspan class="accent">■</tspan> SIMPLE MODE · REPORTS</text>
+  <text class="s" x="730" y="170">one per tray: the stones removed,</text>
+  <text class="s" x="730" y="190">added and moved, when, and</text>
+  <text class="s" x="730" y="210">whether that is all of it</text>
+  <rect class="lvl-m" x="714" y="234" width="290" height="102" rx="12"/>
+  <text class="k" x="730" y="258"><tspan class="teal">■</tspan> ADVANCED MODE · THE DETAILS</text>
+  <text class="s" x="730" y="282">Interpreter: events, activities,</text>
+  <text class="s" x="730" y="302">tray facts, text, summary;</text>
+  <text class="s" x="730" y="322">Replay of recordings</text>
+  <rect class="lvl-l" x="714" y="346" width="290" height="102" rx="12"/>
+  <text class="k" x="730" y="370">■ ADVANCED MODE · STREAMS, API</text>
+  <text class="s" x="730" y="394">streams that resume, draw lists;</text>
+  <text class="s" x="730" y="414">one method per operation, typed</text>
+  <text class="s" x="730" y="434">errors, codec for maps and joints</text>
+  <path class="arrow" d="M1026 258 H1066"/>
+
+  <!-- app -->
+  <rect class="card" x="1070" y="150" width="104" height="216" rx="18"/>
+  <text class="k" x="1086" y="178">YOURS</text>
+  <text class="h" x="1086" y="206">App</text>
+  <text class="s" x="1086" y="232">dashboards</text>
+  <text class="s" x="1086" y="254">MES, ERP</text>
+  <text class="s" x="1086" y="276">alerts</text>
+  <text class="s" x="1086" y="298">3-D views</text>
+  <text class="s" x="1086" y="320">reports</text>
+
+  <!-- recordings -->
+  <rect class="card" x="236" y="486" width="400" height="56" rx="14"/>
+  <text class="h" x="256" y="512">Published recordings</text>
+  <text class="m" x="256" y="532">factory.pdigger.com/developers/data/</text>
+  <path class="arrow-soft" d="M638 514 H770 V470"/>
+  <text class="s" x="784" y="506">replayed into the same interpreter;</text>
+  <text class="s" x="784" y="526">the API demo plays them in the browser</text>
+</svg>

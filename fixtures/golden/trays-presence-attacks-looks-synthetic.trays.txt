@@ -1,0 +1,27 @@
+0:00.8 tray 1 arrived: 3 stones
+0:07.4 tray 1: stone 20261118T000000.8Z-1-101 is not sure any more (not seen at two calm moments; open since 0:04.4)
+0:07.4 tray 1 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+0:09.0 tray 2 arrived: 3 stones
+0:15.2 tray 2: stone 20261118T000009.0Z-2-201 is not sure any more (not seen at two calm moments; open since 0:12.4)
+0:15.2 tray 2 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+0:16.8 tray 3 arrived: 3 stones
+0:26.4 tray 3: stone 20261118T000016.8Z-3-301 is not sure any more (not seen at two calm moments; open since 0:23.2)
+0:26.4 tray 3 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+0:28.0 tray 4 arrived: 4 stones
+0:35.4 tray 4: stone 20261118T000028.0Z-4-404 found again by its look on world stone 401 (0.991)
+0:38.2 tray 4: stone 20261118T000028.0Z-4-401 is not sure any more (not seen at two calm moments; open since 0:34.4)
+0:38.2 tray 4: stone 20261118T000028.0Z-4-401 not found (unclear)
+0:38.2 tray 4 leaving: 3 stones (3 sure), 0 added, 0 removed, 1 unclear
+0:39.8 tray 5 arrived: 4 stones
+0:46.8 tray 5: stone 20261118T000039.8Z-5-504 found again by its look on world stone 501 (0.992)
+0:49.6 tray 5: stone 20261118T000039.8Z-5-501 is not sure any more (not seen at two calm moments; open since 0:45.8)
+0:49.6 tray 5: stone 20261118T000039.8Z-5-501 not found (unclear)
+0:49.6 tray 5 leaving: 3 stones (3 sure), 0 added, 0 removed, 1 unclear
+0:51.2 tray 6 arrived: 3 stones
+0:59.0 tray 6: stone 20261118T000051.2Z-6-601 is not sure any more (not seen at two calm moments; open since 0:54.8)
+0:59.0 tray 6 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+1:00.6 tray 7 arrived: 4 stones
+1:07.6 tray 7: stone 20261118T000100.6Z-7-704 found again by its look on world stone 701 (0.992)
+1:10.4 tray 7: stone 20261118T000100.6Z-7-701 is not sure any more (not seen at two calm moments; open since 1:06.6)
+1:10.4 tray 7: stone 20261118T000100.6Z-7-701 not found (unclear)
+1:10.4 tray 7 leaving: 3 stones (3 sure), 0 added, 0 removed, 1 unclear

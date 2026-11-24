@@ -1,0 +1,3 @@
+9:57.1 tray 1 leaving: 42 stones (40 sure), 0 added, 0 removed, 2 unclear
+  stone 20261117T232354.8Z-1-43: added seen_once, look none: new
+  stone 20261117T232355.3Z-1-44: added seen_once, look none: new

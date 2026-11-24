@@ -1,0 +1,4 @@
+9:43.2 tray 1 arrived: 40 stones
+9:57.1 tray 1: stone 20261117T232354.8Z-1-43 not recognised (unclear)
+9:57.1 tray 1: stone 20261117T232355.3Z-1-44 not recognised (unclear)
+9:57.1 tray 1 leaving: 42 stones (40 sure), 0 added, 0 removed, 2 unclear

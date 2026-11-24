@@ -1,0 +1,7 @@
+0:02.4 Right hand takes stone 2 away (0.4 s)
+0:03.8 Left hand lifts stone 7 and sets it down (0.0 s) (joined mid-move)
+0:08.0 Left hand pushes stone 11 (2 pushes in 0.8 s)
+0:12.4 Right hand lifts stone 13; it is removed after 0.2 s
+0:12.8 Right hand lifts stone 18 and sets it down (0.0 s) (joined mid-move)
+0:18.6 Right hand lifts stone 22 and sets it down (0.4 s)
+0:25.8 Left hand lifts stone 47 and sets it down (0.0 s) (joined mid-move)

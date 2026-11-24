@@ -1,0 +1,6 @@
+21:40.0 tray 2 leaving: 33 stones (28 sure), 0 added, 0 removed, 0 unclear (bar 0.750)
+  stone 20261122T020601.7Z-2-2693: unsure neighbour_pushed, look stale: world 2693 or world 2708 or world 2702 or world 2709 or world 2710 or gone
+  stone 20261122T020601.7Z-2-2702: unsure neighbour_pushed, look stale: world 2702 or world 2693 or world 2710 or world 2709 or world 2708 or gone
+  stone 20261122T020601.7Z-2-2708: unsure pushed, look stale: world 2708 or world 2693 or world 2709 or world 2702 or world 2710 or gone
+  stone 20261122T020601.7Z-2-2709: unsure pushed, look stale: world 2709 or world 2708 or world 2702 or world 2710 or world 2693 or gone
+  stone 20261122T020601.7Z-2-2710: unsure neighbour_pushed, look stale: world 2710 or world 2702 or world 2709 or world 2708 or world 2693 or gone

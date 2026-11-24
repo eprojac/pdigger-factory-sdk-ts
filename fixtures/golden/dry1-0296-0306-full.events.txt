@@ -1,0 +1,51 @@
+4:55.6 stone 663 gets its final shape
+4:55.8 stone 683 appears
+4:56.0 stone 683 is confirmed
+4:56.0 stone 664 gets its final shape
+4:56.2 stone 669 gets its final shape
+4:56.6 stone 670 gets its final shape
+4:56.8 Right hand pushes stone 637
+4:56.8 Right hand pushes stone 644
+4:56.8 stone 675 gets its final shape
+4:57.0 Right hand pushes stone 637
+4:57.0 Right hand pushes stone 644
+4:57.0 stone 653 gets its final shape
+4:57.4 stone 643 gets its final shape
+4:57.6 stone 676 gets its final shape
+4:58.0 stone 648 gets its final shape
+4:58.4 stone 651 gets its final shape
+4:58.6 stone 657 gets its final shape
+4:58.6 stone 632 gets its final shape
+4:59.0 Left hand pushes stone 637
+4:59.2 Left hand pushes stone 637
+4:59.4 Left hand pushes stone 637
+4:59.4 stone 665 gets its final shape
+4:59.6 Left hand pushes stone 637
+4:59.8 Right hand pushes stone 629
+4:59.8 Right hand pushes stone 630
+4:59.8 Right hand pushes stone 632
+5:00.4 Right hand pushes stone 632
+5:00.4 Left hand pushes stone 644
+5:00.8 Both hands push stone 636
+5:01.0 Both hands push stone 636
+5:01.2 Left hand pushes stone 630
+5:01.2 Left hand pushes stone 643
+5:01.4 Left hand pushes stone 643
+5:01.6 Right hand lifts stone 643
+5:01.6 Right hand carries stone 643
+5:02.2 Left hand pushes stone 642
+5:02.4 Left hand pushes stone 636
+5:02.8 Right hand pushes stone 629
+5:02.8 stone 684 appears
+5:02.8 Right hand places stone 643
+5:03.0 Right hand pushes stone 628
+5:03.0 Right hand pushes stone 629
+5:03.0 Left hand pushes stone 636
+5:03.0 Left hand pushes stone 637
+5:03.0 Right hand pushes stone 680
+5:03.2 Left hand pushes stone 636
+5:03.6 Left hand pushes stone 630
+5:03.6 stone 643 is removed (a hand emptied its place)
+5:03.8 Right hand pushes stone 637
+5:03.8 Right hand pushes stone 644
+5:04.0 Right hand pushes stone 637

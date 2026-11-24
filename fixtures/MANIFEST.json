@@ -1,0 +1,1282 @@
+{
+ "made_by": "the maintainers' fixture generator (not published)",
+ "made_at": "2026-11-24T03:22:07Z",
+ "files": {
+  "recordings/aug28-1270-1300.ndjson.gz": {
+   "bytes": 243715,
+   "sha256": "e2d21cb14ec325a7f93e562563334dfa36efc4fb9b8bde7391812b46502447ac",
+   "header": {
+    "name": "aug28-1270-1300",
+    "video": "aug28",
+    "build": "claude-20261122-hr4x1",
+    "frames": 151,
+    "g_first": 6350,
+    "g_last": 6500,
+    "layers": [
+     "world",
+     "cards"
+    ],
+    "notes": "aug28 from 21:10 to 21:40 (the 1088 crop, dogbone pavers): push bursts of both hands, and the lift, carry and place of stone 2660 (21:17.8 to 21:21.8). world.speckle (SDK-DESIGN.md 4.6.12) was added afterwards, not sent by the unit while recording: the unit's own tray reading (build claude-20261123-speckle6) over these worlds asked for each answer, the maintainers' reference matcher (not published) answered by its region check on the original video's luma (on a CPU, device 'reference matcher, CPU, offline'), and each answer is in the world of the first frame 0.6 media seconds after the frame that asked (the unit answers a calm moment 0.4-0.8 s later)."
+   }
+  },
+  "recordings/aug28-1276-1284-full.ndjson.gz": {
+   "bytes": 1641628,
+   "sha256": "59cd59f1c2e6bd7e9335cd2969d7568b94acbd6b8c026c364823d916679a7852",
+   "header": {
+    "name": "aug28-1276-1284-full",
+    "video": "aug28",
+    "build": "claude-20261122-hr4x1",
+    "frames": 41,
+    "g_first": 6380,
+    "g_last": 6420,
+    "layers": [
+     "raw",
+     "overlay",
+     "scene",
+     "cards",
+     "world"
+    ],
+    "notes": "all five layers (redacted) of the 1088 crop around the move of stone 2660: lifted at 21:17.8, carried, placed at 21:21.8"
+   }
+  },
+  "recordings/dry1-0000-0130.ndjson.gz": {
+   "bytes": 408512,
+   "sha256": "e2f6a366e1875751fc89b0396efedd5a44441361682afae3ed66aa0df061ba3e",
+   "header": {
+    "name": "dry1-0000-0130",
+    "video": "dry1",
+    "build": "claude-20261122-hr4x1",
+    "frames": 632,
+    "g_first": 0,
+    "g_last": 650,
+    "layers": [
+     "world",
+     "cards"
+    ],
+    "notes": "dry1 from its first frame to 130 s: pushes, deletes, two carry-aways, drops, three tip-and-set-down moves and two moves. world.speckle (SDK-DESIGN.md 4.6.12) was added afterwards, not sent by the unit while recording: the unit's own tray reading (build claude-20261123-speckle6) over these worlds asked for each answer, the maintainers' reference matcher (not published) answered by its region check on the original video's luma (on a CPU, device 'reference matcher, CPU, offline'), and each answer is in the world of the first frame 0.6 media seconds after the frame that asked (the unit answers a calm moment 0.4-0.8 s later)."
+   }
+  },
+  "recordings/dry1-0018-0153.ndjson.gz": {
+   "bytes": 428718,
+   "sha256": "f91a5dde350bd017d51e4661ef06386a8a40f6c79cebfe0fc78901a60432e2b8",
+   "header": {
+    "name": "dry1-0018-0153",
+    "video": "dry1",
+    "build": "claude-20261122-hr4x1",
+    "frames": 676,
+    "g_first": 90,
+    "g_last": 765,
+    "layers": [
+     "world",
+     "cards"
+    ],
+    "notes": "dry1 from 0:18 to 2:33. Tray 2 of the complete recording is tray 1 in this excerpt. The SDK counts 42 stones at arrival (0:22.5) and 44 at departure (2:24.0). The camera check found 8 removals and 10 set-downs. The SDK reports 6 certain removals, 5 unclear removals and 13 unclear additions. world.speckle (SDK-DESIGN.md 4.6.12) was added afterwards, not sent by the unit while recording: the unit's own tray reading (build claude-20261123-speckle6) over these worlds asked for each answer, the maintainers' reference matcher (not published) answered by its region check on the original video's luma (on a CPU, device 'reference matcher, CPU, offline'), and each answer is in the world of the first frame 0.6 media seconds after the frame that asked (the unit answers a calm moment 0.4-0.8 s later)."
+   }
+  },
+  "recordings/dry1-0296-0306-full.ndjson.gz": {
+   "bytes": 1321585,
+   "sha256": "486f240ed239fcd81c37161b6b288861805c115434cf78218ded00a7e1b70628",
+   "header": {
+    "name": "dry1-0296-0306-full",
+    "video": "dry1",
+    "build": "claude-20261122-hr4x1",
+    "frames": 51,
+    "g_first": 1480,
+    "g_last": 1530,
+    "layers": [
+     "raw",
+     "overlay",
+     "scene",
+     "cards",
+     "world"
+    ],
+    "notes": "all five layers (redacted) around the move of stone 643: lifted at 5:01.6, carried, placed at 5:02.8. world.speckle (SDK-DESIGN.md 4.6.12) was added afterwards, not sent by the unit while recording: the unit's own tray reading (build claude-20261123-speckle6) over these worlds asked for each answer, the maintainers' reference matcher (not published) answered by its region check on the original video's luma (on a CPU, device 'reference matcher, CPU, offline'), and each answer is in the world of the first frame 0.6 media seconds after the frame that asked (the unit answers a calm moment 0.4-0.8 s later)."
+   }
+  },
+  "recordings/dry2-0582-0600.ndjson.gz": {
+   "bytes": 74982,
+   "sha256": "ec873c7eb94d4449c4588ab1775e4f6cb7f0356f8295b023eb4f1ca78d31e08a",
+   "header": {
+    "name": "dry2-0582-0600",
+    "video": "dry2",
+    "build": "claude-20261114-int17",
+    "frames": 92,
+    "g_first": 2918,
+    "g_last": 3009,
+    "layers": [
+     "world",
+     "cards"
+    ],
+    "notes": "dry2 after a seek to 580 s: a split, freezes, deletes; 13 frames without a world (recorded before backfill existed)"
+   }
+  },
+  "recordings/dry2-pause-seek.ndjson.gz": {
+   "bytes": 116145,
+   "sha256": "06c1ecb67ea115f8e9a64a3140ec2a2e0eb891c1a15d190a6bd1560cca92fb5e",
+   "header": {
+    "name": "dry2-pause-seek",
+    "video": "dry2",
+    "build": "claude-20261122-hr4x1",
+    "frames": 129,
+    "g_first": 2925,
+    "g_last": 2999,
+    "layers": [
+     "world",
+     "cards"
+    ],
+    "notes": "dry2 from 9:44, real revisions: paused at 9:49.2 for 15 s; while paused the worker steps the paused frame g 2954 and the frames it had read ahead again: g 2954 and g 2955 come revised three times each (rev 1 to 3), g 2956 three times (rev 2, then an older rev 1, then rev 2 again) and g 2957 twice (rev 1, a duplicate). Played on to g 2979, then seeked to 9:46.0: a new session, from g 2935."
+   }
+  },
+  "recordings/joined-mid-move.ndjson.gz": {
+   "bytes": 15404,
+   "sha256": "f7a3757a9d0b3a4d6fda276de398eb225d4fa463455a8d5efb432aabcceb4b7d",
+   "header": {
+    "name": "joined-mid-move",
+    "video": "dry1",
+    "build": "claude-20261122-hr4x1",
+    "frames": 22,
+    "g_first": 399,
+    "g_last": 420,
+    "layers": [
+     "world",
+     "cards"
+    ],
+    "notes": "dry1 g 399-420: starts after stones 95 and 155 were lifted; the set-down of 95 and the carry-away of 155 are partial moves"
+   }
+  },
+  "recordings/revisions-synthetic.ndjson.gz": {
+   "bytes": 10302,
+   "sha256": "4c0208dc4bb3c4e848972d8ca6c4c276c8d287e132f60b20f1c8827864cc2f94",
+   "header": {
+    "name": "revisions-synthetic",
+    "video": "dry1",
+    "build": "claude-20261122-hr4x1",
+    "frames": 11,
+    "g_first": 546,
+    "g_last": 556,
+    "layers": [
+     "world",
+     "cards"
+    ],
+    "notes": "SYNTHETIC: real dry1 frames g 546-556, plus a revised copy of g 548 (world.rev 1, one added confirm event; its other events repeat and must not be emitted twice) and a duplicate of g 549, both after g 550. Real revisions happen only while the shared session is paused."
+   }
+  },
+  "recordings/session-change-mid-move.ndjson.gz": {
+   "bytes": 87719,
+   "sha256": "515517098c9c45c3316acfcc0f1aee48b21ef93d20c973450bcb7d6748aeec4c",
+   "header": {
+    "name": "session-change-mid-move",
+    "video": null,
+    "build": "claude-20261122-hr4x1",
+    "frames": 113,
+    "g_first": null,
+    "g_last": null,
+    "layers": [
+     "world",
+     "cards"
+    ],
+    "notes": "composed from two real excerpts: dry1 g 380-400 (stone 155 lifted at g 397, still held) then dry2-0582-0600, a new session: the open move ends interrupted"
+   }
+  },
+  "recordings/trays-looks-synthetic-nolooks.ndjson.gz": {
+   "bytes": 62762,
+   "sha256": "7e8473e8be09982192c6642193d3241aa73a074afff655bfd8995b0834f65bfb",
+   "header": {
+    "name": "trays-looks-synthetic-nolooks",
+    "video": "dry1",
+    "build": "claude-20261122-hr4x1",
+    "frames": 1408,
+    "g_first": 0,
+    "g_last": 1407,
+    "layers": [
+     "world"
+    ],
+    "notes": "SYNTHETIC: 32 trays made up to show the tray rules by look (SDK-DESIGN.md 4.6.3-4.6.10), with made-up looks (no camera picture): a question settled once the gauge has 20 pairs, one left open, a refresh, looks read by value; a swap caught by look and the moved stone carried away; a stone found again by its look; a look that changed; twins; look-alike bricks under a lifted bar; v1 additions kept and an addition beside a settled stone left unclear; a late look; a tray whose looks no rule can read; a stone found again and carried away, a plain face, an unchecked removal; a rename settled by its look, two pushes, a covered loss; a ghost freed by a look and a decision at the leaving; a duplicate id, a tie of three look-alikes, a new face re-fitted; and sixteen more trays (freed and late pushes, stale looks, ghost anchors, unscored look-alikes, looks before the arrival, duplicate ids, a short pos, a dropped stone, a carried-away stone set down again), and three trays on where certain facts with looks stop: a look that keeps a stone from a certain removal (twins) or doubts a stone v1 keeps sure, and one that doubts a stone v1 does not trust (they go on). Made by the maintainers' fixture generator (not published). This copy carries no look at all: the v1 rules, for comparison."
+   }
+  },
+  "recordings/trays-looks-synthetic.ndjson.gz": {
+   "bytes": 154591,
+   "sha256": "ff8ab40d70b55ad1440db2a9b8ed88f49e04eecc062f219ba355547e220c17d8",
+   "header": {
+    "name": "trays-looks-synthetic",
+    "video": "dry1",
+    "build": "claude-20261122-hr4x1",
+    "frames": 1408,
+    "g_first": 0,
+    "g_last": 1407,
+    "layers": [
+     "world"
+    ],
+    "notes": "SYNTHETIC: 32 trays made up to show the tray rules by look (SDK-DESIGN.md 4.6.3-4.6.10), with made-up looks (no camera picture): a question settled once the gauge has 20 pairs, one left open, a refresh, looks read by value; a swap caught by look and the moved stone carried away; a stone found again by its look; a look that changed; twins; look-alike bricks under a lifted bar; v1 additions kept and an addition beside a settled stone left unclear; a late look; a tray whose looks no rule can read; a stone found again and carried away, a plain face, an unchecked removal; a rename settled by its look, two pushes, a covered loss; a ghost freed by a look and a decision at the leaving; a duplicate id, a tie of three look-alikes, a new face re-fitted; and sixteen more trays (freed and late pushes, stale looks, ghost anchors, unscored look-alikes, looks before the arrival, duplicate ids, a short pos, a dropped stone, a carried-away stone set down again), and three trays on where certain facts with looks stop: a look that keeps a stone from a certain removal (twins) or doubts a stone v1 keeps sure, and one that doubts a stone v1 does not trust (they go on). Made by the maintainers' fixture generator (not published)."
+   }
+  },
+  "recordings/trays-presence-attacks-looks-synthetic.ndjson.gz": {
+   "bytes": 21171,
+   "sha256": "6b65136b92ec4d3883919f22116b7d857e4659be6034f0de8fce5b6c992e6696",
+   "header": {
+    "name": "trays-presence-attacks-looks-synthetic",
+    "video": "dry1",
+    "build": "claude-20261122-hr4x1",
+    "frames": 356,
+    "g_first": 0,
+    "g_last": 355,
+    "layers": [
+     "world"
+    ],
+    "notes": "SYNTHETIC: 7 trays with made-up looks (no camera picture) that attack presence questions of stones with a chain (SDK-DESIGN.md 4.6.1, 4.6.4, 4.6.5): another face at the settle frame or between two calm moments, a lifted stone, the face of a lost stone on its world stone, a look-alike face. Which stones end sure and which not sure: this recording's golden trays.txt and open.txt."
+   }
+  },
+  "recordings/trays-presence-attacks-synthetic.ndjson.gz": {
+   "bytes": 34244,
+   "sha256": "0a4d54dc76fe7d9399c415c6ef36391e318dcee4c50ced5349a4924b654c450a",
+   "header": {
+    "name": "trays-presence-attacks-synthetic",
+    "video": "dry1",
+    "build": "claude-20261122-hr4x1",
+    "frames": 1194,
+    "g_first": 0,
+    "g_last": 1206,
+    "layers": [
+     "world"
+    ],
+    "notes": "SYNTHETIC: 28 trays made up to attack presence questions (SDK-DESIGN.md 4.6.1): held stones and hand deletes while a stone is out of sight, revisions that change hands or stones, a settle at once followed by a motion, hands at work or dropped frames, renamed and swapped ids, small stones closer than NEAR, pushes, a new stone next to it, and the leaving's same-frame repair after hands at work, a hole, an untrusted hand or a push. Which stones end sure and which not sure: this recording's golden trays.txt and open.txt."
+   }
+  },
+  "recordings/trays-presence-looks-synthetic.ndjson.gz": {
+   "bytes": 21127,
+   "sha256": "ecb30a4e31272ee8d7b7a6fbfe86b7569775ce9dfe5d19d2f6d633b6e12dbbf7",
+   "header": {
+    "name": "trays-presence-looks-synthetic",
+    "video": "dry1",
+    "build": "claude-20261122-hr4x1",
+    "frames": 370,
+    "g_first": 0,
+    "g_last": 369,
+    "layers": [
+     "world"
+    ],
+    "notes": "SYNTHETIC: 8 trays with made-up looks (no camera picture) for presence questions and looks (SDK-DESIGN.md 4.6.1, 4.6.4): the unseen doubt of a stone with a chain is a question only a look settles, settled by the stone's own face or left open when the tray leaves; a stone without a chain seen again with the face of another stone in question is not settled by the sight, one seen with a face of no open stone is. Which stones end sure and which not sure: this recording's golden trays.txt and open.txt."
+   }
+  },
+  "recordings/trays-presence-synthetic.ndjson.gz": {
+   "bytes": 41644,
+   "sha256": "9884e5f4c574b04742835014aea514d805ff5cb8fe15a4140cfea16bb1b2bf1e",
+   "header": {
+    "name": "trays-presence-synthetic",
+    "video": "dry1",
+    "build": "claude-20261122-hr4x1",
+    "frames": 1470,
+    "g_first": 0,
+    "g_last": 1472,
+    "layers": [
+     "world"
+    ],
+    "notes": "SYNTHETIC: 35 trays made up to show presence questions (SDK-DESIGN.md 4.6.1): a stone without a look chain that is not seen at two calm moments while nothing could have changed it is held in question, and is sure again once it is seen on its place (later, or at the doubt itself, its next calm moment then showing it) or not sure when its tray leaves; the question is refused at the doubt, or ends, after a busy or push frame while it is not detected, a hand that handled or held it or worked next to it, a pushed neighbour of its size, a stone of its size that appeared next to it or stands within NEAR of its place, a lost stone, the moving frames of a tray that goes on, a frame without a world, dropped frames (a jump in g, a gap line) and any revision; the settle goes stone by stone in tray order and still tests a stone's later reasons; the leaving's same-frame repair; a stone added for certain. Which stones end sure and which not sure: this recording's golden trays.txt and open.txt."
+   }
+  },
+  "recordings/trays-speckle-synthetic.ndjson.gz": {
+   "bytes": 7334,
+   "sha256": "12ec6cdf36ad64b60fd82edb2bc837c737120e972a04caa6ebdf22cbdf7e6ee6",
+   "header": {
+    "name": "trays-speckle-synthetic",
+    "video": "dry1",
+    "build": "claude-20261122-hr4x1",
+    "frames": 126,
+    "g_first": 0,
+    "g_last": 124,
+    "layers": [
+     "world"
+    ],
+    "notes": "SYNTHETIC: the unit's speckle answers (SDK-DESIGN.md 4.6.12) the real excerpts never show. Two trays of bricks (the world renames one stone of the first); answers before any tray arrived, for the open tray at its arrival and at a later reference, with a later moment not read yet, with one that came without a world (frame 49), for the first tray after it left, and two whose reference lies before the first tray's arrival or after its leaving; frame 24, which carried one, comes again as a revision (world.rev 1); and one answer that does not fit WorldSpeckle by value for each way of not fitting. A third tray has a leaving answer (4.6.13): it confirms, finds again and swaps stones, is refused a pair that would move an undisturbed stone, and contradicts a certain removal and two additions. Made by the maintainers' fixture generator (not published)."
+   }
+  },
+  "recordings/trays-synthetic.ndjson.gz": {
+   "bytes": 8030,
+   "sha256": "bf7e88b6ce2a77087a43c9fc5ada97e917c568775308757dbcfe0b9d33779daa",
+   "header": {
+    "name": "trays-synthetic",
+    "video": "dry1",
+    "build": "claude-20261122-hr4x1",
+    "frames": 185,
+    "g_first": 0,
+    "g_last": 181,
+    "layers": [
+     "world"
+    ],
+    "notes": "SYNTHETIC: seven trays made up to show tray rules the real excerpts never reach (SDK-DESIGN.md 4.6): a stone outside the board and one with a short quaternion, a carry-away removed for certain, a slab set down for certain; two boxes overlapping, a rename followed past old hand marks, a rename next to a hand; a tray that goes on after a jolt, a brick appearing next to a held one, a stone and a brick left unclear when the tray leaves; a stop that never settles; a slab set down for certain and gone unclear when the tray leaves; a jolt after which nine tenths of the stones were seen (the same tray), then the next board with six tenths of the last board's world ids (a new tray). Three frames come again as revisions (world.rev 1, one added confirm event each): frame 13, before a frame that changed the tray links, and frames 26 and 58, which changed them, 26 while it is still the newest. Made by the maintainers' fixture generator (not published)."
+   }
+  },
+  "golden/aug28-1270-1300.activities.txt": {
+   "bytes": 440,
+   "sha256": "19518016aa3afd302b05666b82e0a6f207163d4cb85465ec97a832ded5162d09"
+  },
+  "golden/aug28-1270-1300.events.txt": {
+   "bytes": 10074,
+   "sha256": "aed604a89f2b03f52b18c73819f60dd67e5a6eb8402d5d889020fe64a1453ac6"
+  },
+  "golden/aug28-1270-1300.open.txt": {
+   "bytes": 802,
+   "sha256": "89af1d5e2f9e3eb5aa911afe2f38e4b23d47155be163989a3a8b433fa0ea3891"
+  },
+  "golden/aug28-1270-1300.reports.txt": {
+   "bytes": 107,
+   "sha256": "4b89fa253a45a738d6775c4f96cd88ba4b332d08e523eab0d5dd921ccff02be6"
+  },
+  "golden/aug28-1270-1300.speckle.txt": {
+   "bytes": 3100,
+   "sha256": "741e99e50b227dcd434eeb7ab23bd909cc0e97c82a770daf55c248b112feb6df"
+  },
+  "golden/aug28-1270-1300.summary.json": {
+   "bytes": 1277,
+   "sha256": "422dc4307fcb6ba3f4814675fa2d8db4e48c2a399d82048ec841ed8f79721031"
+  },
+  "golden/aug28-1270-1300.summary.txt": {
+   "bytes": 683,
+   "sha256": "cf0548879d9d28f619e926cb8406ce7cd38fbe77e103166ff6f6712827843095"
+  },
+  "golden/aug28-1270-1300.tray-stones.txt": {
+   "bytes": 1448,
+   "sha256": "44d0bd2a55184d9cce49aaa781915e688f760ce159264b966a0e31981f9542c8"
+  },
+  "golden/aug28-1270-1300.trays.txt": {
+   "bytes": 682,
+   "sha256": "53456abfb8c3c30a346338baa3d26abc8ee885a9c7d579f0903c3d37570d961b"
+  },
+  "golden/aug28-1276-1284-full.activities.txt": {
+   "bytes": 273,
+   "sha256": "0e4e1944928d6822bc3abeceeecdde9d7f58eba6a10ea6e00fb6e0c580edd0a1"
+  },
+  "golden/aug28-1276-1284-full.events.txt": {
+   "bytes": 4727,
+   "sha256": "624b443f9e1cd7c5ac7578bd8cb0bf03225d407fde66a22209c188ff3dd8a919"
+  },
+  "golden/aug28-1276-1284-full.open.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/aug28-1276-1284-full.reports.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/aug28-1276-1284-full.speckle.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/aug28-1276-1284-full.summary.json": {
+   "bytes": 1270,
+   "sha256": "7d8cd39d334a81b3d9e2e6b49ca7ae3bbe2e450f15ac34cda5a792ea942f1ac1"
+  },
+  "golden/aug28-1276-1284-full.summary.txt": {
+   "bytes": 679,
+   "sha256": "9c71669a4d99b4cd19a4280176f83e7076ddd3bacf75298d0eec9f23209909d4"
+  },
+  "golden/aug28-1276-1284-full.tray-stones.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/aug28-1276-1284-full.trays.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/dry1-0000-0130.activities.txt": {
+   "bytes": 3798,
+   "sha256": "c6f1ded41233dc454b72265dd061ed5c106bbd100657e7cd414021a088ba0ed7"
+  },
+  "golden/dry1-0000-0130.events.txt": {
+   "bytes": 37308,
+   "sha256": "aeaa64f826307ae9d1243262fa53fd780e7b035e887e22216b1643c8000cae8c"
+  },
+  "golden/dry1-0000-0130.open.txt": {
+   "bytes": 13610,
+   "sha256": "d1528b62e7b37487ce7172521a17cd60d76f0db3ad1d8ace2f9f15df661e75e9"
+  },
+  "golden/dry1-0000-0130.reports.txt": {
+   "bytes": 2348,
+   "sha256": "3d31a7eadc495d514c59a659ecc63553801d80559e42b9aafa03dcf42de97471"
+  },
+  "golden/dry1-0000-0130.speckle.txt": {
+   "bytes": 18252,
+   "sha256": "139314b8810326992b38308310286cb80bb7a623772b567b91bf0398a561bd29"
+  },
+  "golden/dry1-0000-0130.summary.json": {
+   "bytes": 1288,
+   "sha256": "aed69adac7c139406c7e29890416f26bf3402d7815e05be91e1d2d0a6399cf46"
+  },
+  "golden/dry1-0000-0130.summary.txt": {
+   "bytes": 693,
+   "sha256": "fe841f31d33c1c4fd14410a9ee3690f7eb853d75418ec9537799728bde70cc54"
+  },
+  "golden/dry1-0000-0130.tray-stones.txt": {
+   "bytes": 21542,
+   "sha256": "3730bb89149d62a8da6e535c8a995ec46ca537c1882b77def91d22469808ac36"
+  },
+  "golden/dry1-0000-0130.trays.txt": {
+   "bytes": 5933,
+   "sha256": "901f14dce3df0443fe5be7d88ea9e935e03695359993f2565bcd8eed2a53363b"
+  },
+  "golden/dry1-0018-0153.activities.txt": {
+   "bytes": 4188,
+   "sha256": "592936b94604aa0736f4bc3cb8a434c6104db7efbf816992feae46046cfef7e6"
+  },
+  "golden/dry1-0018-0153.events.txt": {
+   "bytes": 36667,
+   "sha256": "43475fda4a8fc84a7434a8e7cf96923d9f52adab085aea8514153791fa6a2be0"
+  },
+  "golden/dry1-0018-0153.open.txt": {
+   "bytes": 2614,
+   "sha256": "f5d869e6d94b63ac7177fdd3e4fb4e9a45bf6aceb72e7b712d20e3e9ef0e40df"
+  },
+  "golden/dry1-0018-0153.reports.txt": {
+   "bytes": 2357,
+   "sha256": "307147314ea34c6037335048793816bcb39ca82148991c3812a581c97c1c3ff0"
+  },
+  "golden/dry1-0018-0153.speckle.txt": {
+   "bytes": 12964,
+   "sha256": "55830a88cada2e067be977fe6be88f9bba43489a8335d9ab25b09a4ad5c74e99"
+  },
+  "golden/dry1-0018-0153.summary.json": {
+   "bytes": 1291,
+   "sha256": "6b6babf22370d1217edb44a10bfde56d54b225a4171a49b5b2a52f30335a0a75"
+  },
+  "golden/dry1-0018-0153.summary.txt": {
+   "bytes": 692,
+   "sha256": "b541768a0f2aad56ae3d36dd4685d19cf2cff0a355790f39c7b9bcc529d27f12"
+  },
+  "golden/dry1-0018-0153.tray-stones.txt": {
+   "bytes": 20734,
+   "sha256": "a8b69556b8015331cfb9c191e82003673e57b01333273bca82e4bb977a10a853"
+  },
+  "golden/dry1-0018-0153.trays.txt": {
+   "bytes": 5162,
+   "sha256": "b80ee99b77ee8bb849dfb7f734d547782de684b8d4187c74d83685e5f0d6d7cf"
+  },
+  "golden/dry1-0296-0306-full.activities.txt": {
+   "bytes": 403,
+   "sha256": "32e6d9b4e094b917fa78a2c9c1d713adbd6e8b2840e94219d2a72c5ca36b4ebd"
+  },
+  "golden/dry1-0296-0306-full.events.txt": {
+   "bytes": 1801,
+   "sha256": "6e9c76a61d0240fbfd94678dfa6270e98dcf286027986c5351e806c470acf596"
+  },
+  "golden/dry1-0296-0306-full.open.txt": {
+   "bytes": 3090,
+   "sha256": "f4ba316bbcb4f8f93cb6aab13c612ce9298193fe9e76789fff4ce4698b446ca0"
+  },
+  "golden/dry1-0296-0306-full.reports.txt": {
+   "bytes": 194,
+   "sha256": "f7aa754ccc6078cff6e138296600b5c68cd6e2071fe903b6a8cb88d257b85fd1"
+  },
+  "golden/dry1-0296-0306-full.speckle.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/dry1-0296-0306-full.summary.json": {
+   "bytes": 1276,
+   "sha256": "cd4ce962165023eef33721e781a163f0c9dcdc20dcc24c1d40fa7ff21f9ef199"
+  },
+  "golden/dry1-0296-0306-full.summary.txt": {
+   "bytes": 679,
+   "sha256": "81e8a640b243e3d82a3862b7b506ed3d525bb7cf55f8e4c103352f58a642365b"
+  },
+  "golden/dry1-0296-0306-full.tray-stones.txt": {
+   "bytes": 1418,
+   "sha256": "58652f88096e44954b5e063cf086d42d9f8da7e1099680ad7bc82d4f517896d1"
+  },
+  "golden/dry1-0296-0306-full.trays.txt": {
+   "bytes": 1829,
+   "sha256": "e90ca96cd7a5035f5de3a8fcd4a271b83914a3e982e7f9ca84a573e8f1c1bb98"
+  },
+  "golden/dry2-0582-0600.activities.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/dry2-0582-0600.events.txt": {
+   "bytes": 5925,
+   "sha256": "1655ba22f8e26454a50b40a9f25ac918e1f9af825f8ed249f0522688e79fbde8"
+  },
+  "golden/dry2-0582-0600.open.txt": {
+   "bytes": 204,
+   "sha256": "b997d5a3e8a22fa5b1dbbf5e2976b0b3da2e75f9bf58b758991cb2d961cfa90b"
+  },
+  "golden/dry2-0582-0600.reports.txt": {
+   "bytes": 248,
+   "sha256": "fe3905dd55738122e8fa8c41af6431fe2fe9587128e3c878e9bf54b6f233e9df"
+  },
+  "golden/dry2-0582-0600.speckle.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/dry2-0582-0600.summary.json": {
+   "bytes": 1278,
+   "sha256": "8b266a010b66c448832fc2e103218c40f997e6376c17bb044f44cfc086e69605"
+  },
+  "golden/dry2-0582-0600.summary.txt": {
+   "bytes": 675,
+   "sha256": "4323a44ae450afb19d270006131619924e43f89e38329098f6a821317d74fd9f"
+  },
+  "golden/dry2-0582-0600.tray-stones.txt": {
+   "bytes": 2187,
+   "sha256": "5a59c13a014ccbe8917467482de241c2b31faec0f9c09588e7b730debb5007ba"
+  },
+  "golden/dry2-0582-0600.trays.txt": {
+   "bytes": 247,
+   "sha256": "b9db992dd2b02821a2400b0a6964b6b22d7774fd709c311848c7c3f7b0677296"
+  },
+  "golden/dry2-pause-seek.activities.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/dry2-pause-seek.events.txt": {
+   "bytes": 7395,
+   "sha256": "dce69f11471118f3caa096eca701ef4a023702fe20dac295ef71ed1a64c5965c"
+  },
+  "golden/dry2-pause-seek.open.txt": {
+   "bytes": 172,
+   "sha256": "295d5481feb2309d351988366cdb6bc6787dba3928f803e846ace590718b98ea"
+  },
+  "golden/dry2-pause-seek.reports.txt": {
+   "bytes": 158,
+   "sha256": "22f748e1f4c7c5a04583c41ac047beda0bd9b0a894a8d5f3430acf2b2ee45861"
+  },
+  "golden/dry2-pause-seek.speckle.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/dry2-pause-seek.summary.json": {
+   "bytes": 1278,
+   "sha256": "d5a0edd70a3621c02b356b96b21d3e102508902318e59eda4f5fa3b53c917a19"
+  },
+  "golden/dry2-pause-seek.summary.txt": {
+   "bytes": 675,
+   "sha256": "83efa63a527bc585e2f373ee8e74a9dd53b732b4081bf9a75567a055f2f765b5"
+  },
+  "golden/dry2-pause-seek.tray-stones.txt": {
+   "bytes": 3123,
+   "sha256": "d0d749ac94fca040beb78944efaa5c6365567739817ff70db7942b70742fbcf9"
+  },
+  "golden/dry2-pause-seek.trays.txt": {
+   "bytes": 214,
+   "sha256": "598269420b152b6d1455510acc075bea4259b263a6d5e1a3d1a9407772985e87"
+  },
+  "golden/joined-mid-move.activities.txt": {
+   "bytes": 322,
+   "sha256": "766a2e8e3306100523f5f4216a29d7600842c3035859aaf49849c9d34242fee9"
+  },
+  "golden/joined-mid-move.events.txt": {
+   "bytes": 1042,
+   "sha256": "c5d8444d25195f35af586c6b902b92ea110fab38b038544d9bbd66af6d351d71"
+  },
+  "golden/joined-mid-move.open.txt": {
+   "bytes": 74,
+   "sha256": "395049a11119d0856dbb04a1a12e6859d3f780642f234691b86b41c1c7898601"
+  },
+  "golden/joined-mid-move.reports.txt": {
+   "bytes": 79,
+   "sha256": "27ab111066141d6a01f241d3fa905468d47540cc09021d61a3d82cbf0bdff4bb"
+  },
+  "golden/joined-mid-move.speckle.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/joined-mid-move.summary.json": {
+   "bytes": 1268,
+   "sha256": "084111765fd1fd831844e8ef607cbacb960f34daa9786b6ff8421e1224a4ca08"
+  },
+  "golden/joined-mid-move.summary.txt": {
+   "bytes": 672,
+   "sha256": "91e4e300f9da84b1a3f5d7841573a2b7c96bb170f68a169f333b048751f1bcc7"
+  },
+  "golden/joined-mid-move.tray-stones.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/joined-mid-move.trays.txt": {
+   "bytes": 107,
+   "sha256": "513736f01c70e0504cca1fc0960a046ecca9e0abdb6fbb039a7c6aca898e9377"
+  },
+  "golden/revisions-synthetic.activities.txt": {
+   "bytes": 63,
+   "sha256": "22bdfe33907057c1ee58d20e37685904dfa6be530cf01ad594e33837ed9a167f"
+  },
+  "golden/revisions-synthetic.events.txt": {
+   "bytes": 811,
+   "sha256": "0faa6b1d8d6e8053bdeaee989889cf2b4a96b228ca471c2fe676cb203b6fa715"
+  },
+  "golden/revisions-synthetic.open.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/revisions-synthetic.reports.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/revisions-synthetic.speckle.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/revisions-synthetic.summary.json": {
+   "bytes": 1268,
+   "sha256": "8adfa69fc094adf05949f4505f2b88fbbfc2ee6ee1154d833e5cded5f9d21681"
+  },
+  "golden/revisions-synthetic.summary.txt": {
+   "bytes": 670,
+   "sha256": "1cff6ff0d22078cf40e4fd69ae171d4c4753179a372573b9d58577c79801507a"
+  },
+  "golden/revisions-synthetic.tray-stones.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/revisions-synthetic.trays.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/session-change-mid-move.activities.txt": {
+   "bytes": 180,
+   "sha256": "3b660c2cce08763ff4cbabc733612fc1254cd0e787054fce97150b0f5b6ac696"
+  },
+  "golden/session-change-mid-move.events.txt": {
+   "bytes": 6819,
+   "sha256": "ab58bd3252a15f070e4af22de077082e085d6fda6ef3bf107c9016a9a8596a16"
+  },
+  "golden/session-change-mid-move.open.txt": {
+   "bytes": 204,
+   "sha256": "b997d5a3e8a22fa5b1dbbf5e2976b0b3da2e75f9bf58b758991cb2d961cfa90b"
+  },
+  "golden/session-change-mid-move.reports.txt": {
+   "bytes": 248,
+   "sha256": "fe3905dd55738122e8fa8c41af6431fe2fe9587128e3c878e9bf54b6f233e9df"
+  },
+  "golden/session-change-mid-move.speckle.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/session-change-mid-move.summary.json": {
+   "bytes": 1280,
+   "sha256": "e98b032c08dc87f2314075c06321a6f0dd23ccbbb8827488a83c03ce227050f7"
+  },
+  "golden/session-change-mid-move.summary.txt": {
+   "bytes": 682,
+   "sha256": "c5ce542e3757bce8a066cb46c22914db9027e17869842b628a670f7a2d9adb51"
+  },
+  "golden/session-change-mid-move.tray-stones.txt": {
+   "bytes": 2187,
+   "sha256": "5a59c13a014ccbe8917467482de241c2b31faec0f9c09588e7b730debb5007ba"
+  },
+  "golden/session-change-mid-move.trays.txt": {
+   "bytes": 247,
+   "sha256": "b9db992dd2b02821a2400b0a6964b6b22d7774fd709c311848c7c3f7b0677296"
+  },
+  "golden/trays-looks-synthetic-nolooks.activities.txt": {
+   "bytes": 2259,
+   "sha256": "30bebcbc3c3efe5d82377d4a5844803e2ffdc3a340453e702c16598e8c22444b"
+  },
+  "golden/trays-looks-synthetic-nolooks.events.txt": {
+   "bytes": 4605,
+   "sha256": "ff1436c8d23e10b9a6223ced48c37e005b6f80fc81cdf98f63c0d525b35ebc44"
+  },
+  "golden/trays-looks-synthetic-nolooks.open.txt": {
+   "bytes": 10150,
+   "sha256": "3366c62395d230a5df5b56bc9eae219e41e7854de15618358d031fce5bad048d"
+  },
+  "golden/trays-looks-synthetic-nolooks.reports.txt": {
+   "bytes": 6467,
+   "sha256": "d947243f2c5f29147d1a72186542fcb0efcf3984e761edf01e4d5a4c56fb3589"
+  },
+  "golden/trays-looks-synthetic-nolooks.speckle.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/trays-looks-synthetic-nolooks.summary.json": {
+   "bytes": 1285,
+   "sha256": "e8d188228d7717c3da68e464d8d781333e01a29259105ddcc894cba130c22b58"
+  },
+  "golden/trays-looks-synthetic-nolooks.summary.txt": {
+   "bytes": 696,
+   "sha256": "d2989ef0b46ec27cd2e0e42e471ccdc57bc2e14d7ee1e6c231debf6a2c248dc3"
+  },
+  "golden/trays-looks-synthetic-nolooks.tray-stones.txt": {
+   "bytes": 3604,
+   "sha256": "84f762180e1d005c745d5d9d27043f61d6d4f4b884278c582891efce28dea5d7"
+  },
+  "golden/trays-looks-synthetic-nolooks.trays.txt": {
+   "bytes": 11030,
+   "sha256": "118418223b7e0b5d10d13d624091272da53197f7814f2a7172d73864201ad4ae"
+  },
+  "golden/trays-looks-synthetic.activities.txt": {
+   "bytes": 2259,
+   "sha256": "30bebcbc3c3efe5d82377d4a5844803e2ffdc3a340453e702c16598e8c22444b"
+  },
+  "golden/trays-looks-synthetic.events.txt": {
+   "bytes": 4605,
+   "sha256": "ff1436c8d23e10b9a6223ced48c37e005b6f80fc81cdf98f63c0d525b35ebc44"
+  },
+  "golden/trays-looks-synthetic.open.txt": {
+   "bytes": 8869,
+   "sha256": "ca8221ec3f6fd36ba2bb1c8c52ccfa5d5ac08af2d1ae6b90c750c0322bec5a82"
+  },
+  "golden/trays-looks-synthetic.reports.txt": {
+   "bytes": 6819,
+   "sha256": "32b9619e7e0bc9de3f87442342580d5f0d3a31e0e3b0b1ad04c8964d3c062c30"
+  },
+  "golden/trays-looks-synthetic.speckle.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/trays-looks-synthetic.summary.json": {
+   "bytes": 1284,
+   "sha256": "b76b12d11dd1ff38ec5057c72209a5549723f69adf4f1b27d407f4b80606e93c"
+  },
+  "golden/trays-looks-synthetic.summary.txt": {
+   "bytes": 695,
+   "sha256": "ad79cdb6b78189fe694b5d44d74073a0af2a3610db2aeb35ecd80d4d0135f3cf"
+  },
+  "golden/trays-looks-synthetic.tray-stones.txt": {
+   "bytes": 3683,
+   "sha256": "e40cf2f7b46ffc1b73b3e0b3552293c2031ca4eece7c18b5d14706669695641f"
+  },
+  "golden/trays-looks-synthetic.trays.txt": {
+   "bytes": 10856,
+   "sha256": "30a71e7854ea8cb9255e41b3d33adf626c3a25f465f223276657ff7a559c3d7e"
+  },
+  "golden/trays-presence-attacks-looks-synthetic.activities.txt": {
+   "bytes": 116,
+   "sha256": "6b7014785f0b2330c26a90adbe6f46588a3acc725e2c156181e48faaa31b1d80"
+  },
+  "golden/trays-presence-attacks-looks-synthetic.events.txt": {
+   "bytes": 2645,
+   "sha256": "8ca2977fa6f360510b62f06cec6f537d5fa19971e962f96b72ff537b6c00321d"
+  },
+  "golden/trays-presence-attacks-looks-synthetic.open.txt": {
+   "bytes": 1174,
+   "sha256": "fb8458a117c2a4752c9649cb66082e080d577c09920fbae2b8e8a33f7a0d4594"
+  },
+  "golden/trays-presence-attacks-looks-synthetic.reports.txt": {
+   "bytes": 1149,
+   "sha256": "c27492f6727f9ebf8fc6a5bda1a98abb96dff3f6faa4cd4f2fbed519688131d8"
+  },
+  "golden/trays-presence-attacks-looks-synthetic.speckle.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/trays-presence-attacks-looks-synthetic.summary.json": {
+   "bytes": 1259,
+   "sha256": "28530717dde5c47ac76a3d24d427bed91c4e86251ff4a471c342ac020070c350"
+  },
+  "golden/trays-presence-attacks-looks-synthetic.summary.txt": {
+   "bytes": 676,
+   "sha256": "f89252e4812a3b41be8a0671580de3f79e055b74337e81a5832002b6f94f869a"
+  },
+  "golden/trays-presence-attacks-looks-synthetic.tray-stones.txt": {
+   "bytes": 272,
+   "sha256": "ba75a8782920e7822e0e161830d5aecd549a972b4dfd0e1e11028cf91e49a224"
+  },
+  "golden/trays-presence-attacks-looks-synthetic.trays.txt": {
+   "bytes": 2036,
+   "sha256": "77a904c21ab3300ecd74193ecf57301f20ade28ac1688bcb1105bb77455c1885"
+  },
+  "golden/trays-presence-attacks-synthetic.activities.txt": {
+   "bytes": 286,
+   "sha256": "51b7ae631c6ed4b02af8db250595f61d66e9c9b0c72393d6602e0ef4ab0e661f"
+  },
+  "golden/trays-presence-attacks-synthetic.events.txt": {
+   "bytes": 7918,
+   "sha256": "73db0fed84deb5a14811a3fdc4c6e1426a44e401d31b2704be55e82d1b22c31e"
+  },
+  "golden/trays-presence-attacks-synthetic.open.txt": {
+   "bytes": 4437,
+   "sha256": "e0dc80d7532d9689cb9a5091e0e989506796af804ffba533110aaa81b67b1a34"
+  },
+  "golden/trays-presence-attacks-synthetic.reports.txt": {
+   "bytes": 3158,
+   "sha256": "4f1ed6e899fd1e0816f94dea85d9f49a9dc88fdce598e43906625706de0abc80"
+  },
+  "golden/trays-presence-attacks-synthetic.speckle.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/trays-presence-attacks-synthetic.summary.json": {
+   "bytes": 1271,
+   "sha256": "6a627fc8b3e1c400889340bc2b7bd8588f7f54867a963d2277fa5031033ab590"
+  },
+  "golden/trays-presence-attacks-synthetic.summary.txt": {
+   "bytes": 683,
+   "sha256": "dbc5bdcfefa66a047d8fd6c674ce72ff8f64bd972071365376d3e53a532c3ab4"
+  },
+  "golden/trays-presence-attacks-synthetic.tray-stones.txt": {
+   "bytes": 702,
+   "sha256": "efe7a692969d19dfa1b01231055c021fedd9f0a513fef8c466dca8d760ba5b8d"
+  },
+  "golden/trays-presence-attacks-synthetic.trays.txt": {
+   "bytes": 6390,
+   "sha256": "d77f3f914d8db9727d8063bedaa22bf28c23e2fa447590b4fb16b3ef94889490"
+  },
+  "golden/trays-presence-looks-synthetic.activities.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/trays-presence-looks-synthetic.events.txt": {
+   "bytes": 2736,
+   "sha256": "eb3ea7512a45b2f7039518a436825b729b4c9d288918c2c9ce6bab2253e426ca"
+  },
+  "golden/trays-presence-looks-synthetic.open.txt": {
+   "bytes": 1369,
+   "sha256": "5c8b0396c386c4fc6b8f5379856073f77770c52a39deaf19e1bb7035940544e4"
+  },
+  "golden/trays-presence-looks-synthetic.reports.txt": {
+   "bytes": 814,
+   "sha256": "646f1552bab75e06605dbda293f9a512ed182928bdce125b3f256b1824098b96"
+  },
+  "golden/trays-presence-looks-synthetic.speckle.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/trays-presence-looks-synthetic.summary.json": {
+   "bytes": 1261,
+   "sha256": "4f4103105164c867a4a03c2c1eda53de4ff40991e16a230f14ccd7f0f071c934"
+  },
+  "golden/trays-presence-looks-synthetic.summary.txt": {
+   "bytes": 671,
+   "sha256": "fa2ba843e8c760e166e973de1df13fc4b4173e981c96d441ee0b68c22244eabd"
+  },
+  "golden/trays-presence-looks-synthetic.tray-stones.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/trays-presence-looks-synthetic.trays.txt": {
+   "bytes": 1768,
+   "sha256": "1cf6efa15ec14c17283ca10ed56fb36413cdf33803e5f45f4472fc734097eb17"
+  },
+  "golden/trays-presence-synthetic.activities.txt": {
+   "bytes": 524,
+   "sha256": "a17a9d4292e545a079121bd9dc2e5570ed7ffcbb2cbfef15e654b63d85609afa"
+  },
+  "golden/trays-presence-synthetic.events.txt": {
+   "bytes": 9973,
+   "sha256": "b637f53da5f3881db89fe4a2c69b4ad1d51cadcbd5867ff511a0a1e5c8541d23"
+  },
+  "golden/trays-presence-synthetic.open.txt": {
+   "bytes": 6005,
+   "sha256": "dd4221992a41f6b3422c013ff9b007bfb69e638d61e0461d34d1d4b59ced499e"
+  },
+  "golden/trays-presence-synthetic.reports.txt": {
+   "bytes": 3809,
+   "sha256": "1d358c6af8ff3a66dc9c73d4a950613317d8cbe54691ca7b78b8c5ae658e15b5"
+  },
+  "golden/trays-presence-synthetic.speckle.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/trays-presence-synthetic.summary.json": {
+   "bytes": 1274,
+   "sha256": "58b60ae7cbeb0b7cbce47188ca4b73c845170a3a3ce19b2a721a30352eaebb2d"
+  },
+  "golden/trays-presence-synthetic.summary.txt": {
+   "bytes": 684,
+   "sha256": "211c761fd794dc1114b5775f1234c221144785f23c5f93845e167e8f484f21fc"
+  },
+  "golden/trays-presence-synthetic.tray-stones.txt": {
+   "bytes": 888,
+   "sha256": "4fa65aa791ce7b8c8fcc96503db7d75c6043076a7be1a3f909821d26f85c2864"
+  },
+  "golden/trays-presence-synthetic.trays.txt": {
+   "bytes": 7973,
+   "sha256": "51d0af46fb4b9a866ffb8c8afa3959f857ff945ef33093872465609255fb3b1f"
+  },
+  "golden/trays-speckle-synthetic.activities.txt": {
+   "bytes": 300,
+   "sha256": "942dd6621c324192b27742f67949f3658b0454fd8c9ec8c062b10f3a4fd1449a"
+  },
+  "golden/trays-speckle-synthetic.events.txt": {
+   "bytes": 554,
+   "sha256": "7ebc0dbccf85a40fb70580e55aa9b2dbae17f1ec7a2b8054cb9bfdfb8d2cac21"
+  },
+  "golden/trays-speckle-synthetic.open.txt": {
+   "bytes": 660,
+   "sha256": "22955298a71f9485400f767bd0717739328fee97fabf755bbf0d6c8c3648c12c"
+  },
+  "golden/trays-speckle-synthetic.reports.txt": {
+   "bytes": 938,
+   "sha256": "96a9083483a3e077ecb654267fe86f9d77e86f586de12509056b5e8b0a2811cc"
+  },
+  "golden/trays-speckle-synthetic.speckle.txt": {
+   "bytes": 2715,
+   "sha256": "e0a1650894a80300bd21e46d8412a4362e06c3e6d046f6bc595e7120d63c03c5"
+  },
+  "golden/trays-speckle-synthetic.summary.json": {
+   "bytes": 1261,
+   "sha256": "b349404b3fd1ed4503e5b18a944aa454a153831b1b4029d40d585e5fcfd41988"
+  },
+  "golden/trays-speckle-synthetic.summary.txt": {
+   "bytes": 674,
+   "sha256": "019b588895b3db280008d4e770992ffae68b0800028fba71502137cff7bbfcca"
+  },
+  "golden/trays-speckle-synthetic.tray-stones.txt": {
+   "bytes": 320,
+   "sha256": "0f15fb80ba392342805a3a04c001f733ff38167b2e123e55ea03647dba14a6c6"
+  },
+  "golden/trays-speckle-synthetic.trays.txt": {
+   "bytes": 1752,
+   "sha256": "e263579641c4f59c95966ffdbca452df6fddca2f2943a4cb427a971c1e18e67b"
+  },
+  "golden/trays-synthetic.activities.txt": {
+   "bytes": 441,
+   "sha256": "a3e1d3890272ef6dd2e5370e5f9a4689e0364dfda489e94463aa64f164315ceb"
+  },
+  "golden/trays-synthetic.events.txt": {
+   "bytes": 919,
+   "sha256": "88298ebdf9be5181a98f2743138644c69925a9d28d6205a94ac2afc71a9af4d1"
+  },
+  "golden/trays-synthetic.open.txt": {
+   "bytes": 1199,
+   "sha256": "fd23f7237d7c98e6e7db70e827f33fafedb780ca6dd0bc9395afb94f9d0c9cab"
+  },
+  "golden/trays-synthetic.reports.txt": {
+   "bytes": 975,
+   "sha256": "133144f64226c00cd0e2e014f696b2c40b03e5f56ef5ea5aa5b2b30302a9fffd"
+  },
+  "golden/trays-synthetic.speckle.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/trays-synthetic.summary.json": {
+   "bytes": 1263,
+   "sha256": "1d2e3929ad2145d47f0ee8d134954b682d70c5ac1b17626d804ef129a05b34d7"
+  },
+  "golden/trays-synthetic.summary.txt": {
+   "bytes": 678,
+   "sha256": "ee2bd24e5f2c24a0eece0cd765aace2c26e9184b566283ccddf285030fdaab77"
+  },
+  "golden/trays-synthetic.tray-stones.txt": {
+   "bytes": 535,
+   "sha256": "cc2b27f7d572ea1528f1e614221595143ff15443a3a3f5f0b43d3f7cf3cac061"
+  },
+  "golden/trays-synthetic.trays.txt": {
+   "bytes": 1507,
+   "sha256": "99c10a235d0c2b730f3aabdb019b404b7156ecfbc0fb1de04ee16b164bf88090"
+  },
+  "golden/complete/aug28.summary.json": {
+   "bytes": 1324,
+   "sha256": "aeec3023d0c70f064e7253346d4f7dcc3a639b139ba96dccb72913e50138d51b"
+  },
+  "golden/complete/aug28.summary.txt": {
+   "bytes": 727,
+   "sha256": "e70a0a5804214c704edb7b36dcc3601a0f9a07be1d846ef79726b21698c537b7"
+  },
+  "golden/complete/dry1.summary.json": {
+   "bytes": 1322,
+   "sha256": "6550d0aac769b3213590b108693e32649c53d334518eaa43995bab364e6bcb15"
+  },
+  "golden/complete/dry1.summary.txt": {
+   "bytes": 718,
+   "sha256": "b36bf963b8d2a55fd188c579dcabb4e155f1686f28bf1e5456cc2fff5d8032e4"
+  },
+  "golden/complete/dry2.summary.json": {
+   "bytes": 1321,
+   "sha256": "c3e8e3f6da4a62378aba700618d31668457a8246ca5e197677e1d19369c45856"
+  },
+  "golden/complete/dry2.summary.txt": {
+   "bytes": 720,
+   "sha256": "1d2c3bce635a421db3a18f89fd9625b0a494a9d4670d95957c85494303853eb2"
+  },
+  "golden/complete/jul30.summary.json": {
+   "bytes": 1345,
+   "sha256": "99374cae45357a1090fb8ebf52fceaa3a401b691cd5051b182f7a4fc4522ed30"
+  },
+  "golden/complete/jul30.summary.txt": {
+   "bytes": 744,
+   "sha256": "b3bf1458c573d9928836cba8b448957cac236550841719ec20a0376532587fc4"
+  },
+  "frames/dry1-carry-full.json": {
+   "bytes": 65326,
+   "sha256": "80bc4c28a5a0ba2b639f6cf43f8c0f2a7de05635a0db8adb185651ea12c29261"
+  },
+  "frames/dry1-plain-full.json": {
+   "bytes": 63957,
+   "sha256": "1c7a87351853cc7c18a12d1a105e23c4f3887fcae3a4784ad0ffbd0a9bc533c6"
+  },
+  "damaged/header-a-member-it-cannot-hold.json": {
+   "bytes": 95,
+   "sha256": "786b97f324e9f06fd2f0b06318cde026b8369aff49fef5cf5461e62c6cdbdb47"
+  },
+  "damaged/header-a-member-it-cannot-hold.ndjson": {
+   "bytes": 1293,
+   "sha256": "48abe9d91872a6afdc5013b037049ff699de94f5cfce994cabd8ed0ef08a75a3"
+  },
+  "damaged/header-after-a-frame.json": {
+   "bytes": 62,
+   "sha256": "d235bff3fb95b21dedbb541ba6e7338ca99e08ed95b374467c2fa8d7800c776b"
+  },
+  "damaged/header-after-a-frame.ndjson": {
+   "bytes": 1190,
+   "sha256": "42ec6b33e81260daa3616cc20ed84f730d3bc49688fdd8828669b1fc9a456d72"
+  },
+  "damaged/header-after-a-line-not-json.json": {
+   "bytes": 62,
+   "sha256": "cc03112d2318fda81a6813ac511711afb593e721b4bc76f5a21d79421d4c30e0"
+  },
+  "damaged/header-after-a-line-not-json.ndjson": {
+   "bytes": 1200,
+   "sha256": "b1789c745256b345444ba843b32283f2b30db853f90c390dbfd84c70d3864678"
+  },
+  "damaged/header-after-an-object.json": {
+   "bytes": 62,
+   "sha256": "d235bff3fb95b21dedbb541ba6e7338ca99e08ed95b374467c2fa8d7800c776b"
+  },
+  "damaged/header-after-an-object.ndjson": {
+   "bytes": 1198,
+   "sha256": "0e594b24ac552a8748cf2629e403f28f78859057f8e775b0f501754ee7fda9d2"
+  },
+  "damaged/header-after-blank-lines.json": {
+   "bytes": 95,
+   "sha256": "786b97f324e9f06fd2f0b06318cde026b8369aff49fef5cf5461e62c6cdbdb47"
+  },
+  "damaged/header-after-blank-lines.ndjson": {
+   "bytes": 1194,
+   "sha256": "654d7193a2a895ef6185de7e31bc3106c059724cef97327afdc3f04bbf674004"
+  },
+  "damaged/header-frames-a-string.json": {
+   "bytes": 62,
+   "sha256": "cc03112d2318fda81a6813ac511711afb593e721b4bc76f5a21d79421d4c30e0"
+  },
+  "damaged/header-frames-a-string.ndjson": {
+   "bytes": 1192,
+   "sha256": "de930a83a03d1c650eff0795374fb7035eb54ccf32068bd22bb94b1c5516a016"
+  },
+  "damaged/header-recording-a-number-with-frame-keys.json": {
+   "bytes": 62,
+   "sha256": "cc03112d2318fda81a6813ac511711afb593e721b4bc76f5a21d79421d4c30e0"
+  },
+  "damaged/header-recording-a-number-with-frame-keys.ndjson": {
+   "bytes": 1804,
+   "sha256": "e5608274477adfc9cd0d0e62a3990c71b8a463be5394fb3623939f7087ce45f7"
+  },
+  "damaged/header-recording-a-number.json": {
+   "bytes": 62,
+   "sha256": "cc03112d2318fda81a6813ac511711afb593e721b4bc76f5a21d79421d4c30e0"
+  },
+  "damaged/header-recording-a-number.ndjson": {
+   "bytes": 1136,
+   "sha256": "dbb59cca1b0f9455f7821c9d3776cd362ce8de94520ddc09bbdb804e7636ecd4"
+  },
+  "damaged/header-source-a-catalog-entry.json": {
+   "bytes": 94,
+   "sha256": "cf247a99a88adfe57f3f37e5231d0fa38361ea7831463588a9ad940e7be1bcc3"
+  },
+  "damaged/header-source-a-catalog-entry.ndjson": {
+   "bytes": 1386,
+   "sha256": "1434af0910287ba54292488dce9b507db45efb6c20217ee54dd3bedd143aa2e4"
+  },
+  "damaged/header-source-does-not-decode.json": {
+   "bytes": 95,
+   "sha256": "786b97f324e9f06fd2f0b06318cde026b8369aff49fef5cf5461e62c6cdbdb47"
+  },
+  "damaged/header-source-does-not-decode.ndjson": {
+   "bytes": 1201,
+   "sha256": "08fee127507d21300a646ec31f8303ed585e2ff6a11110eaabb580afac8ba4b2"
+  },
+  "damaged/header-source-no-catalog-entry.json": {
+   "bytes": 95,
+   "sha256": "786b97f324e9f06fd2f0b06318cde026b8369aff49fef5cf5461e62c6cdbdb47"
+  },
+  "damaged/header-source-no-catalog-entry.ndjson": {
+   "bytes": 1224,
+   "sha256": "9aded01d7648baa70b7946f5184aa1198f3a4e0ed5900d168b06f4bc4a12227f"
+  },
+  "damaged/lines.json": {
+   "bytes": 296038,
+   "sha256": "1dc5c2cde71b2c53b4e04d529bbc05c08c57dbd52e3f47dc5e825f4b9e51e6c7"
+  },
+  "damaged/lines.ndjson": {
+   "bytes": 104842,
+   "sha256": "c556ae8b90c0efaf61c94daca73f0bca91ef1e2b8a16951a54cbc65b192ea5b6"
+  },
+  "looks/looks-synthetic.json": {
+   "bytes": 75352,
+   "sha256": "78fd06184e41325b9b8f71d6e0d5793d122dd87413a00ffb45ce4b7d1dc99450"
+  },
+  "api/INDEX.json": {
+   "bytes": 9904,
+   "sha256": "bcce91e5a6e69b531a1e5b543ad9653df8db33a054d1d2cd97aef55a1213d73c"
+  },
+  "api/deleteFocus-dry.json": {
+   "bytes": 342,
+   "sha256": "5162b88c97388597baa2a21a95392cd96242d8409623a4a83b7fee53abf80d0b"
+  },
+  "api/getApiRoot.json": {
+   "bytes": 495,
+   "sha256": "5365d986c9359c82f227c0ed7587ab6b56a45224110fb8f41003db915a9dcd5a"
+  },
+  "api/getFocus.json": {
+   "bytes": 30,
+   "sha256": "87da15852f02615eabde39d4bbbbe3b53a1402b68752d2416dc63fdc1c1af6fc"
+  },
+  "api/getFrame-400.json": {
+   "bytes": 71,
+   "sha256": "1621a9e98de16ec872ab2d2074a5b6bb6b53ce0669ea427d403ba1521567a3a8"
+  },
+  "api/getFrame-404.json": {
+   "bytes": 163,
+   "sha256": "23215267d036fa71d6a766d2a29c1a53d4ef8e01e9c4567c85e3a3931e4ed902"
+  },
+  "api/getFrame-410.json": {
+   "bytes": 80,
+   "sha256": "9356f9557b01354e3522f96a4554d6e44c01b0c887bd81742fcdaf8d5a219d07"
+  },
+  "api/getFrame-latest.json": {
+   "bytes": 15393,
+   "sha256": "27a9e9e4faf7143f318b930fa684c130bcfbc90827d364d3759518dab57922bd"
+  },
+  "api/getFrameRaster-400.json": {
+   "bytes": 76,
+   "sha256": "3a906c7afcaf8f1ebab971b580fad90fdf4eee6790161c075c7c6bdcdc89d660"
+  },
+  "api/getFrameRaster-regions.png": {
+   "bytes": 1106,
+   "sha256": "0147ac567b10c872574794b78ab08c0e8130c9a0e3a84991350224f0e6f12b93"
+  },
+  "api/getHealth.json": {
+   "bytes": 39,
+   "sha256": "3d8c405fe02913c9a895b1531c7c03d79329a769b75f6fd55c0a7822ab267fbe"
+  },
+  "api/getMetrics.txt": {
+   "bytes": 45234,
+   "sha256": "e8272eaf91a104687cdd4341b8606f2e53967d2bfe5383b606b0b23bde01db62"
+  },
+  "api/getModel.json": {
+   "bytes": 1647,
+   "sha256": "3913ef43bd0a63259c3a97cba6253f686ee30b00d02f197d030b2ec74ae896d1"
+  },
+  "api/getOpenApi.yaml": {
+   "bytes": 274013,
+   "sha256": "c1a1663fb0309b00843bcea21b1d803fc1f62976cec6014886376410157a35d7"
+  },
+  "api/getReady.json": {
+   "bytes": 27,
+   "sha256": "15d2e8b6c438985ca0376509635a6fe0c465bcf284f8385f9383b0a8ce28c1cf"
+  },
+  "api/getSession.json": {
+   "bytes": 874,
+   "sha256": "942c3d90ce3b9dac5cd0afa762f7bea1adca98545922467858c3fb1abc1c173e"
+  },
+  "api/getStatus.json": {
+   "bytes": 932,
+   "sha256": "ae85a514294fd79cedd61571437f5cedf7814f9974af59a4b5b7e2b5b9886391"
+  },
+  "api/getStone-404.json": {
+   "bytes": 76,
+   "sha256": "746ed55e1ade2d099f973c38cf7d804bb339689b3b34e42a905e57853b771f00"
+  },
+  "api/getStone.json": {
+   "bytes": 1234,
+   "sha256": "8922a10b5613b8a612191eda42bea3aebb9518f3366c264b126c0aa69012cb1a"
+  },
+  "api/getTopology.json": {
+   "bytes": 1020,
+   "sha256": "77c433afc30f66ecceb419368bed7b9715b830d1da69135d4e51f236a8b5b501"
+  },
+  "api/getVideo-404.json": {
+   "bytes": 68,
+   "sha256": "bb793032d40f4e0525bb2e8da82c7bfc19903b7abba7ac0221e2160af9a1d5d5"
+  },
+  "api/getVideo.json": {
+   "bytes": 798,
+   "sha256": "927cc3c2d7223c500f0deb9c4121cd8f77cb4425a6658558204bac51c2b91012"
+  },
+  "api/getVideoMedia-range.bin": {
+   "bytes": 1024,
+   "sha256": "d6351a2061dcd75f22cd57fc0b0321ca0a48bcbc9fe2ac2f0e7e44fe4c82cc59"
+  },
+  "api/getWorld.json": {
+   "bytes": 13343,
+   "sha256": "402fc4e64e55daf56164958032d6f157e0fd4a456b948da26415f44a437a463c"
+  },
+  "api/getWorldEvents-400.json": {
+   "bytes": 79,
+   "sha256": "5a6a3c1ef093bd7372aae86acb720c78baebd36decd4e45be58ec4ca4cc236ed"
+  },
+  "api/getWorldEvents.json": {
+   "bytes": 2200,
+   "sha256": "d39af504429a4cd2c534b3ebb1bc7204e07211e2896c0a04bf38a40b5e0d5d82"
+  },
+  "api/listVideos.json": {
+   "bytes": 7993,
+   "sha256": "7d37cddb5a2e983ee006cb155b2760c1d2a8eec71ade6a4b78f8301a8ccba3e1"
+  },
+  "api/pollFrames-400.json": {
+   "bytes": 77,
+   "sha256": "35532a3874700c8a03857bfdfd59e42f4fdb01e29d703c394403d91c95764793"
+  },
+  "api/pollFrames-world.json": {
+   "bytes": 13324,
+   "sha256": "10aabe1ca7903a0f265fd19e3e14a74c45bb90a56fe77baae6681fc142d8506c"
+  },
+  "api/putFocus-dry.json": {
+   "bytes": 479,
+   "sha256": "24ac4dd483da8854c6c851ede49cf3e40b34a248e86dc0a30c74c3c3557f5598"
+  },
+  "api/rawPacket-latest.json": {
+   "bytes": 20315,
+   "sha256": "eab87f05090ad0e629124c23417cb0c4eabd32490b6c01afa149aa4241881d8c"
+  },
+  "api/rawStream-ndjson.ndjson": {
+   "bytes": 39460,
+   "sha256": "b57ad35f73b6927804ab5e5bd4e3b8dca29380160ea750ad5e1d6e9db75b4498"
+  },
+  "api/rawStream-sse.sse": {
+   "bytes": 41163,
+   "sha256": "871aa1cf5a64d92293f59cbbf15db19d7de88e8d169a6abea2cfe763ae2f0be1"
+  },
+  "api/rawTensors-404.json": {
+   "bytes": 65,
+   "sha256": "54f80328b3d993e157e2e1f5102bf232600adfcb082c023833ac225e40fb1da6"
+  },
+  "api/renderOverlay2d-400.json": {
+   "bytes": 74,
+   "sha256": "770615900e35bf648139b3d513cc0fa8127e3fd7b603ece12a58b6bc43a0761c"
+  },
+  "api/renderOverlay2d-primitives.json": {
+   "bytes": 9286,
+   "sha256": "b840ba7f80a780c01c443a55c4cbae24096db981a5bc2ad5a49dd95c3ed24c53"
+  },
+  "api/renderOverlay2d.json": {
+   "bytes": 10096,
+   "sha256": "cbc609462a6497072efc39c6a91d29675fb1bee74d47963fbf407097071a49dc"
+  },
+  "api/renderScene3d-400.json": {
+   "bytes": 94,
+   "sha256": "e64bfe61c5b135073289327760f1a4be0a984df4d2753bb06f65c92b430d6e4f"
+  },
+  "api/renderScene3d-compact.json": {
+   "bytes": 12589,
+   "sha256": "da52467883dfa31435c6222beb4552d52ee9faeadb143fab24733daaadebf18b"
+  },
+  "api/renderScene3d-none.json": {
+   "bytes": 7766,
+   "sha256": "e8ea7b9ffacaa333571b00d88ef4a12f443ca20dd6e02721b06d95a81549195d"
+  },
+  "api/renderScene3d.json": {
+   "bytes": 88115,
+   "sha256": "fc6040bb270892636da70f454be773c3a36d878fe09fe25a9f5ddc379c7eb080"
+  },
+  "api/sessionPause-dry.json": {
+   "bytes": 356,
+   "sha256": "ce92d0ec4d074836b472f31c18f9a6afefd6c495215467c0979403c76574a769"
+  },
+  "api/sessionSeek-400.json": {
+   "bytes": 87,
+   "sha256": "510c49e1f919e47432f8aeb1ee50cdf564ed6fc17046b425e0b24bec707a0077"
+  },
+  "api/sessionSelect-400.json": {
+   "bytes": 71,
+   "sha256": "cdedb693b92a7aa738957f9ec36b07c7f6aab097c80412c01fb3946245852849"
+  },
+  "api/streamFrames-ndjson.ndjson": {
+   "bytes": 6126,
+   "sha256": "956584f24807c7d0f3cf661aef4b82da47aca86f18c6d9aea9b481106afea7f7"
+  },
+  "api/streamFrames-sse.sse": {
+   "bytes": 42643,
+   "sha256": "3fbd08bd52d49f146803303a36211c226b1ed161d635c8843273184331d46c2a"
+  }
+ }
+}

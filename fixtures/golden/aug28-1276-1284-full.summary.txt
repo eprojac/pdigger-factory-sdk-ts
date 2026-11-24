@@ -1,0 +1,9 @@
+frames: 41 (with world 41, without 0, revisions 0)
+media: 0:08.0, sessions 1, gaps 0
+stones: last 33, max 49, confirmed 33
+moves: 1 (placed 1, dropped 0, carried away 0, removed 0, interrupted 0, partial 0, carried 1), mean 4.0 s, 0.84 units
+push bursts: 3 (left 1, right 1, both 1), pushes 14
+events: new 44, confirm 33, freeze 4, push 14, lift 1, hinge 1, carry 1, place 1, drop 0, gone 0, delete 33, split 0, other 0
+trays: 1 (arrived 0), stones at arrival 0, added 0 (+0 unclear), removed 0 (+0 unclear), not sure 0
+left hand: free 0:02.4, touch 0:04.4, grasp 0:00.0, hinge 0:00.0, carry 0:01.4
+right hand: free 0:01.8, touch 0:02.0, grasp 0:00.4, hinge 0:00.2, carry 0:03.8

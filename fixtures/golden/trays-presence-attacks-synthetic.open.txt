@@ -1,0 +1,57 @@
+0:07.4 tray 1 leaving: 3 stones (3 sure), 0 added, 0 removed, 0 unclear
+0:16.6 tray 2 leaving: 4 stones (3 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000009.0Z-2-201: unsure unseen, look none: world 201 or gone
+0:25.8 tray 3 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000018.2Z-3-301: unsure unseen, look none: world 301 or gone
+0:34.8 tray 4 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000027.4Z-4-401: unsure unseen, look none: world 401 or gone
+0:43.8 tray 5 leaving: 2 stones (1 sure), 0 added, 1 removed, 0 unclear
+  stone 20261118T000036.4Z-5-501: unsure unseen, look none: world 501 or gone
+0:52.8 tray 6 leaving: 3 stones (2 sure), 0 added, 1 removed, 0 unclear
+  stone 20261118T000045.4Z-6-601: unsure unseen, look none: world 601 or gone
+1:01.8 tray 7 leaving: 3 stones (2 sure), 0 added, 1 removed, 0 unclear
+  stone 20261118T000054.4Z-7-701: unsure unseen, look none: world 701 or gone (hand)
+1:10.4 tray 8 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000103.4Z-8-801: unsure unseen, look none: world 801 or gone
+1:19.0 tray 9 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000112.0Z-9-901: unsure unseen, look none: world 901 or gone
+1:27.6 tray 10 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000120.6Z-10-1001: unsure unseen, look none: world 1001 or gone
+1:36.2 tray 11 leaving: 3 stones (3 sure), 0 added, 0 removed, 0 unclear
+1:44.6 tray 12 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000137.8Z-12-1201: unsure unseen, look none: world 1201 or gone
+1:56.2 tray 13 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000146.2Z-13-1301: unsure unseen, look none: world 1301 or gone
+2:08.0 tray 14 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000157.8Z-14-1401: unsure unseen, look none: world 1401 or gone
+2:18.0 tray 15 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000209.6Z-15-1501: unsure unseen, look none: world 1501 or gone
+2:26.8 tray 16 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000219.6Z-16-1601: unsure unseen, look none: world 1601 or gone
+2:36.2 tray 17 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000228.4Z-17-1701: unsure unseen, look none: world 1701 or gone
+2:45.4 tray 18 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000237.8Z-18-1801: unsure unseen, look none: world 1801 or gone
+2:54.6 tray 19 leaving: 4 stones (2 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000247.0Z-19-1901: unsure unseen, look none: world 1904 or world 1901 or gone
+  stone 20261118T000247.0Z-19-1904: unsure unseen, look none: world 1901 or world 1904 or gone
+3:03.2 tray 20 leaving: 4 stones (2 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000256.2Z-20-2001: unsure unseen, look none: world 2001 or world 2004 or gone
+  stone 20261118T000256.2Z-20-2004: unsure unseen, look none: world 2004 or world 2001 or gone
+3:10.6 tray 21 leaving: 4 stones (4 sure), 0 added, 0 removed, 0 unclear
+3:18.6 tray 22 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000312.2Z-22-2201: unsure unseen, look none: world 2201 or gone
+3:27.4 tray 23 leaving: 4 stones (2 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000320.2Z-23-2301: unsure unseen, look none: world 2301 or world 2304 or gone
+  stone 20261118T000320.2Z-23-2304: unsure pushed, look none: world 2304 or world 2301 or gone
+3:36.6 tray 24 leaving: 4 stones (3 sure), 0 added, 0 removed, 1 unclear
+  stone 20261118T000333.0Z-24-2409: added doubtful, look none: new
+3:42.4 tray 25 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000338.2Z-25-2501: unsure unseen, look none: world 2501 or gone
+3:49.0 tray 26 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000344.0Z-26-2601: unsure unseen, look none: world 2601 or gone
+3:54.8 tray 27 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000350.6Z-27-2701: unsure unseen, look none: world 2701 or gone
+4:00.6 tray 28 leaving: 3 stones (1 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000356.4Z-28-2801: unsure unseen, look none: world 2801 or gone
+  stone 20261118T000356.4Z-28-2803: unsure pushed, look none: world 2803 or gone

@@ -1,0 +1,16 @@
+0:08.6 tray 1 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear (bar 0.900)
+  stone 20261118T000000.8Z-1-101: unsure unseen, look low 0.231: world 101 0.231 or gone
+0:18.0 tray 2 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear (bar 0.900)
+  stone 20261118T000010.2Z-2-201: unsure unseen, look low 0.400: world 201 0.400 or gone
+0:27.4 tray 3 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear (bar 0.900)
+  stone 20261118T000019.6Z-3-301: unsure unseen, look low 0.794: world 301 0.794 or gone
+0:36.8 tray 4 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear (bar 0.900)
+  stone 20261118T000029.0Z-4-401: unsure unseen, look stale: world 401 or gone
+0:46.6 tray 5 leaving: 3 stones (3 sure), 0 added, 0 removed, 0 unclear (bar 0.900)
+0:56.4 tray 6 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear (bar 0.900)
+  stone 20261118T000048.2Z-6-601: unsure unseen, look low 0.409: world 601 0.409 or gone
+1:04.8 tray 7 leaving: 4 stones (2 sure), 0 added, 0 removed, 0 unclear (bar 0.900)
+  stone 20261118T000058.0Z-7-701: unsure unseen, look late: world 701 or world 704 or gone
+  stone 20261118T000058.0Z-7-704: unsure unseen, look stale: world 704 or world 701 or gone
+1:13.2 tray 8 leaving: 4 stones (3 sure), 0 added, 0 removed, 0 unclear (bar 0.900)
+  stone 20261118T000106.4Z-8-804: unsure unseen, look stale: world 804 or gone

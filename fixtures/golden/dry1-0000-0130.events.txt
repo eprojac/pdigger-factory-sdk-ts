@@ -1,0 +1,1134 @@
+0:00.0 stone 1 appears
+0:00.0 stone 2 appears
+0:00.0 stone 3 appears
+0:00.0 stone 4 appears
+0:00.0 stone 5 appears
+0:00.0 stone 6 appears
+0:00.0 stone 7 appears
+0:00.0 stone 8 appears
+0:00.0 stone 9 appears
+0:00.0 stone 10 appears
+0:00.0 stone 11 appears
+0:00.0 stone 12 appears
+0:00.0 stone 13 appears
+0:00.0 stone 14 appears
+0:00.0 stone 15 appears
+0:00.0 stone 16 appears
+0:00.0 stone 17 appears
+0:00.0 stone 18 appears
+0:00.0 stone 19 appears
+0:00.0 stone 20 appears
+0:00.0 stone 21 appears
+0:00.0 stone 22 appears
+0:00.0 stone 23 appears
+0:00.0 stone 24 appears
+0:00.0 stone 25 appears
+0:00.0 stone 26 appears
+0:00.0 stone 27 appears
+0:00.0 stone 28 appears
+0:00.0 stone 29 appears
+0:00.0 stone 30 appears
+0:00.0 stone 31 appears
+0:00.0 stone 32 appears
+0:00.0 stone 33 appears
+0:00.0 stone 34 appears
+0:00.0 stone 35 appears
+0:00.0 stone 36 appears
+0:00.0 stone 37 appears
+0:00.0 stone 38 appears
+0:00.0 stone 39 appears
+0:00.0 stone 40 appears
+0:00.0 stone 41 appears
+0:00.0 stone 1 is confirmed
+0:00.0 stone 2 is confirmed
+0:00.0 stone 3 is confirmed
+0:00.0 stone 4 is confirmed
+0:04.0 stone 42 appears
+0:04.0 stone 43 appears
+0:04.0 stone 44 appears
+0:04.0 stone 45 appears
+0:04.0 stone 46 appears
+0:04.0 stone 47 appears
+0:04.0 stone 48 appears
+0:04.0 stone 49 appears
+0:04.0 stone 50 appears
+0:04.0 stone 51 appears
+0:04.0 stone 52 appears
+0:04.0 stone 53 appears
+0:04.0 stone 54 appears
+0:04.0 stone 55 appears
+0:04.0 stone 56 appears
+0:04.0 stone 57 appears
+0:04.0 stone 58 appears
+0:04.0 stone 59 appears
+0:04.0 stone 60 appears
+0:04.0 stone 61 appears
+0:04.0 stone 62 appears
+0:04.0 stone 63 appears
+0:04.0 stone 64 appears
+0:04.0 stone 65 appears
+0:04.0 stone 66 appears
+0:04.0 stone 67 appears
+0:04.0 stone 68 appears
+0:04.0 stone 69 appears
+0:04.0 stone 70 appears
+0:04.0 stone 71 appears
+0:04.0 stone 72 appears
+0:04.0 stone 73 appears
+0:04.0 stone 74 appears
+0:04.0 stone 75 appears
+0:04.0 stone 76 appears
+0:04.0 stone 77 appears
+0:04.0 stone 78 appears
+0:04.0 stone 79 appears
+0:04.0 stone 80 appears
+0:04.0 stone 81 appears
+0:04.0 stone 82 appears
+0:04.0 stone 42 is confirmed
+0:04.0 stone 43 is confirmed
+0:04.0 stone 44 is confirmed
+0:04.0 stone 45 is confirmed
+0:04.2 stone 46 is confirmed
+0:04.2 stone 47 is confirmed
+0:04.2 stone 48 is confirmed
+0:04.2 stone 49 is confirmed
+0:04.2 stone 50 is confirmed
+0:04.2 stone 51 is confirmed
+0:04.2 stone 52 is confirmed
+0:04.2 stone 53 is confirmed
+0:04.2 stone 54 is confirmed
+0:04.2 stone 55 is confirmed
+0:04.2 stone 56 is confirmed
+0:04.2 stone 57 is confirmed
+0:04.2 stone 58 is confirmed
+0:04.2 stone 59 is confirmed
+0:04.2 stone 60 is confirmed
+0:04.2 stone 61 is confirmed
+0:04.2 stone 62 is confirmed
+0:04.2 stone 63 is confirmed
+0:04.2 stone 64 is confirmed
+0:04.2 stone 65 is confirmed
+0:04.2 stone 66 is confirmed
+0:04.2 stone 67 is confirmed
+0:04.2 stone 68 is confirmed
+0:04.2 stone 69 is confirmed
+0:04.2 stone 70 is confirmed
+0:04.2 stone 71 is confirmed
+0:04.2 stone 72 is confirmed
+0:04.2 stone 73 is confirmed
+0:04.2 stone 74 is confirmed
+0:04.2 stone 75 is confirmed
+0:04.2 stone 76 is confirmed
+0:04.2 stone 77 is confirmed
+0:04.2 stone 78 is confirmed
+0:04.2 stone 79 is confirmed
+0:04.2 stone 80 is confirmed
+0:04.2 stone 81 is confirmed
+0:04.2 stone 82 is confirmed
+0:06.4 stone 83 appears (found in the image)
+0:06.4 stone 83 is confirmed
+0:06.4 stone 42 gets its final shape
+0:06.6 stone 43 gets its final shape
+0:06.6 stone 44 gets its final shape
+0:07.0 stone 83 gets its final shape
+0:07.4 stone 46 gets its final shape
+0:07.4 stone 47 gets its final shape
+0:07.8 stone 48 gets its final shape
+0:08.0 stone 49 gets its final shape
+0:08.2 stone 50 gets its final shape
+0:08.2 stone 51 gets its final shape
+0:08.6 stone 52 gets its final shape
+0:08.8 stone 53 gets its final shape
+0:09.0 stone 54 gets its final shape
+0:09.0 stone 55 gets its final shape
+0:09.4 stone 56 gets its final shape
+0:09.6 stone 57 gets its final shape
+0:09.8 stone 58 gets its final shape
+0:09.8 stone 59 gets its final shape
+0:10.2 stone 60 gets its final shape
+0:10.4 stone 61 gets its final shape
+0:10.6 stone 62 gets its final shape
+0:10.6 stone 63 gets its final shape
+0:11.0 stone 64 gets its final shape
+0:11.2 stone 65 gets its final shape
+0:11.4 stone 66 gets its final shape
+0:11.4 stone 67 gets its final shape
+0:11.8 stone 68 gets its final shape
+0:12.0 stone 69 gets its final shape
+0:12.2 stone 70 gets its final shape
+0:12.2 stone 71 gets its final shape
+0:13.2 stone 73 gets its final shape
+0:16.2 stone 84 appears
+0:16.2 stone 85 appears
+0:16.2 stone 86 appears
+0:16.2 stone 84 is confirmed
+0:16.2 stone 85 is confirmed
+0:16.4 stone 86 is confirmed
+0:16.4 stone 87 appears
+0:16.4 stone 88 appears
+0:16.4 stone 89 appears
+0:16.4 stone 90 appears
+0:16.4 stone 87 is confirmed
+0:16.4 stone 88 is confirmed
+0:16.4 stone 89 is confirmed
+0:16.4 stone 90 is confirmed
+0:16.4 stone 42 is removed (outside the board)
+0:16.4 stone 43 is removed (outside the board)
+0:16.4 stone 44 is removed (outside the board)
+0:16.4 stone 45 is removed (outside the board)
+0:16.4 stone 46 is removed (outside the board)
+0:16.4 stone 47 is removed (outside the board)
+0:16.4 stone 48 is removed (outside the board)
+0:16.6 stone 91 appears
+0:16.6 stone 92 appears
+0:16.6 stone 93 appears
+0:16.6 stone 94 appears
+0:16.6 stone 95 appears
+0:16.6 stone 96 appears
+0:16.6 stone 91 is confirmed
+0:16.6 stone 92 is confirmed
+0:16.6 stone 93 is confirmed
+0:16.6 stone 94 is confirmed
+0:16.6 stone 53 is removed (outside the board)
+0:16.6 stone 54 is removed (outside the board)
+0:16.6 stone 55 is removed (outside the board)
+0:16.8 stone 95 is confirmed
+0:16.8 stone 97 appears
+0:16.8 stone 98 appears
+0:16.8 stone 49 is removed (outside the board)
+0:16.8 stone 50 is removed (outside the board)
+0:16.8 stone 51 is removed (outside the board)
+0:16.8 stone 52 is removed (outside the board)
+0:17.0 stone 97 is confirmed
+0:17.0 stone 98 is confirmed
+0:17.0 stone 99 appears
+0:17.0 stone 100 appears
+0:17.0 stone 101 appears
+0:17.0 stone 102 appears
+0:17.0 stone 103 appears
+0:17.0 stone 99 is confirmed
+0:17.0 stone 100 is confirmed
+0:17.0 stone 102 is confirmed
+0:17.0 stone 103 is confirmed
+0:17.0 stone 56 is removed (outside the board)
+0:17.0 stone 57 is removed (outside the board)
+0:17.0 stone 58 is removed (outside the board)
+0:17.0 stone 59 is removed (outside the board)
+0:17.0 stone 60 is removed (outside the board)
+0:17.0 stone 61 is removed (outside the board)
+0:17.0 stone 62 is removed (outside the board)
+0:17.2 stone 104 appears
+0:17.2 stone 105 appears
+0:17.2 stone 106 appears
+0:17.2 stone 107 appears
+0:17.2 stone 108 appears
+0:17.2 stone 109 appears
+0:17.2 stone 104 is confirmed
+0:17.2 stone 105 is confirmed
+0:17.2 stone 109 is confirmed
+0:17.4 stone 106 is confirmed
+0:17.4 stone 107 is confirmed
+0:17.4 stone 108 is confirmed
+0:17.4 stone 110 appears
+0:17.4 stone 111 appears
+0:17.4 stone 112 appears
+0:17.4 stone 110 is confirmed
+0:17.4 stone 111 is confirmed
+0:17.4 stone 112 is confirmed
+0:17.4 stone 65 is removed (outside the board)
+0:17.4 stone 66 is removed (outside the board)
+0:17.4 stone 67 is removed (outside the board)
+0:17.4 stone 68 is removed (outside the board)
+0:17.6 stone 113 appears
+0:17.6 stone 114 appears
+0:17.6 stone 63 is removed (outside the board)
+0:17.6 stone 64 is removed (outside the board)
+0:17.8 stone 113 is confirmed
+0:17.8 stone 115 appears
+0:17.8 stone 116 appears
+0:17.8 stone 117 appears
+0:17.8 stone 118 appears
+0:17.8 stone 119 appears
+0:17.8 stone 120 appears
+0:17.8 stone 115 is confirmed
+0:17.8 stone 116 is confirmed
+0:17.8 stone 117 is confirmed
+0:17.8 stone 118 is confirmed
+0:17.9 stone 114 is confirmed
+0:17.9 stone 119 is confirmed
+0:17.9 stone 120 is confirmed
+0:17.9 stone 69 is removed (outside the board)
+0:17.9 stone 70 is removed (outside the board)
+0:17.9 stone 71 is removed (outside the board)
+0:17.9 stone 72 is removed (outside the board)
+0:17.9 stone 73 is removed (outside the board)
+0:17.9 stone 74 is removed (outside the board)
+0:17.9 stone 75 is removed (outside the board)
+0:17.9 stone 76 is removed (outside the board)
+0:18.1 stone 121 appears
+0:18.1 stone 122 appears
+0:18.1 stone 123 appears
+0:18.1 stone 124 appears
+0:18.3 stone 125 appears
+0:18.3 stone 126 appears
+0:18.5 stone 121 is confirmed
+0:18.5 stone 125 is confirmed
+0:18.5 stone 126 is confirmed
+0:18.5 stone 127 appears
+0:18.7 stone 127 is confirmed
+0:18.7 stone 128 appears
+0:18.7 stone 129 appears
+0:18.7 stone 130 appears
+0:18.9 stone 128 is confirmed
+0:18.9 stone 129 is confirmed
+0:18.9 stone 130 is confirmed
+0:19.3 stone 77 is removed (outside the board)
+0:19.3 stone 78 is removed (outside the board)
+0:19.3 stone 79 is removed (outside the board)
+0:19.3 stone 80 is removed (outside the board)
+0:19.3 stone 81 is removed (outside the board)
+0:19.3 stone 82 is removed (outside the board)
+0:19.3 stone 83 is removed (outside the board)
+0:20.3 Right hand pushes stone 109
+0:20.5 Right hand pushes stone 89
+0:20.5 Both hands push stone 90
+0:20.5 Both hands push stone 94
+0:20.7 Both hands push stone 86
+0:20.7 Right hand pushes stone 89
+0:20.7 Both hands push stone 90
+0:20.9 Right hand pushes stone 89
+0:20.9 Both hands push stone 90
+0:21.1 Right hand pushes stone 89
+0:21.1 Both hands push stone 90
+0:21.3 Right hand pushes stone 89
+0:21.3 Right hand pushes stone 90
+0:21.5 Right hand pushes stone 89
+0:21.5 Right hand pushes stone 90
+0:21.7 Right hand pushes stone 90
+0:21.9 Left hand pushes stone 86
+0:21.9 Right hand pushes stone 90
+0:21.9 Right hand pushes stone 94
+0:21.9 Right hand pushes stone 95
+0:23.9 stone 84 gets its final shape
+0:23.9 stone 85 gets its final shape
+0:24.1 stone 87 gets its final shape
+0:24.3 stone 88 gets its final shape
+0:24.9 stone 89 gets its final shape
+0:24.9 stone 90 gets its final shape
+0:25.1 Left hand pushes stone 103
+0:25.3 stone 91 gets its final shape
+0:25.3 stone 92 gets its final shape
+0:25.7 Left hand pushes stone 94
+0:25.9 stone 93 gets its final shape
+0:26.3 stone 97 gets its final shape
+0:26.3 stone 99 gets its final shape
+0:26.7 Left hand pushes stone 95
+0:26.7 stone 100 gets its final shape
+0:26.9 Both hands push stone 94
+0:26.9 Both hands push stone 95
+0:27.1 Right hand pushes stone 95
+0:27.3 stone 98 gets its final shape
+0:27.5 Left hand pushes stone 119
+0:27.5 stone 106 gets its final shape
+0:27.9 stone 110 gets its final shape
+0:28.1 Left hand pushes stone 118
+0:28.1 Left hand pushes stone 127
+0:28.5 stone 111 gets its final shape
+0:28.7 Both hands push stone 103
+0:28.7 stone 112 gets its final shape
+0:28.7 stone 115 gets its final shape
+0:29.3 Left hand pushes stone 118
+0:29.7 stone 113 gets its final shape
+0:29.7 stone 116 gets its final shape
+0:29.7 stone 117 gets its final shape
+0:30.1 stone 86 gets its final shape
+0:30.7 stone 94 gets its final shape
+0:30.7 stone 95 gets its final shape
+0:30.7 stone 102 gets its final shape
+0:31.1 stone 109 gets its final shape
+0:31.7 stone 103 gets its final shape
+0:31.7 stone 107 gets its final shape
+0:31.7 stone 118 gets its final shape
+0:32.3 stone 108 gets its final shape
+0:32.7 stone 114 gets its final shape
+0:32.7 stone 119 gets its final shape
+0:32.9 stone 120 gets its final shape
+0:33.5 Left hand pushes stone 127
+0:33.5 stone 104 gets its final shape
+0:33.7 stone 105 gets its final shape
+0:33.9 stone 121 gets its final shape
+0:33.9 stone 125 gets its final shape
+0:34.1 Right hand pushes stone 108
+0:34.3 Right hand pushes stone 108
+0:34.3 Left hand pushes stone 130
+0:34.5 stone 126 gets its final shape
+0:34.7 Right hand pushes stone 108
+0:34.7 Right hand pushes stone 117
+0:34.7 Right hand pushes stone 129
+0:34.9 Right hand pushes stone 108
+0:34.9 Right hand pushes stone 130
+0:35.1 Right hand pushes stone 108
+0:35.5 Right hand pushes stone 130
+0:35.7 Right hand pushes stone 129
+0:36.1 Right hand pushes stone 108
+0:36.1 Right hand pushes stone 127
+0:36.3 Right hand lifts stone 117
+0:36.3 Right hand tips stone 117 up on its edge
+0:36.5 Right hand places stone 117
+0:36.9 Right hand pushes stone 127
+0:37.5 Right hand pushes stone 130
+0:37.7 stone 117 is removed (a hand emptied its place)
+0:37.9 stone 131 appears
+0:37.9 stone 128 gets its final shape
+0:38.1 stone 127 is removed (a hand emptied its place)
+0:40.1 stone 129 gets its final shape
+0:41.9 Left hand pushes stone 108
+0:41.9 stone 118 is reseated
+0:42.1 Left hand pushes stone 103
+0:42.5 Left hand pushes stone 97
+0:42.5 Left hand pushes stone 108
+0:42.7 Right hand pushes stone 85
+0:42.7 Right hand pushes stone 87
+0:42.7 Left hand pushes stone 97
+0:42.7 stone 118 gets its final shape
+0:42.9 Right hand pushes stone 85
+0:42.9 Left hand pushes stone 93
+0:42.9 Left hand pushes stone 97
+0:43.1 Left hand pushes stone 97
+0:43.1 Left hand pushes stone 108
+0:43.3 Right hand pushes stone 84
+0:43.3 Left hand pushes stone 97
+0:43.3 Left hand pushes stone 108
+0:43.5 Right hand pushes stone 84
+0:43.5 Right hand pushes stone 86
+0:43.5 Left hand pushes stone 108
+0:43.5 stone 130 gets its final shape
+0:43.7 Left hand pushes stone 108
+0:43.9 Right hand pushes stone 88
+0:43.9 Left hand pushes stone 97
+0:43.9 stone 132 appears
+0:44.1 Right hand pushes stone 84
+0:44.1 Right hand pushes stone 86
+0:44.1 Left hand pushes stone 97
+0:44.3 Right hand pushes stone 87
+0:44.3 Right hand pushes stone 88
+0:44.3 Left hand pushes stone 97
+0:44.3 Left hand pushes stone 102
+0:44.5 Right hand pushes stone 89
+0:44.5 Left hand pushes stone 97
+0:44.7 Right hand pushes stone 85
+0:44.7 Right hand pushes stone 88
+0:44.7 Left hand pushes stone 102
+0:44.7 stone 133 appears
+0:44.9 Right hand pushes stone 88
+0:44.9 Right hand pushes stone 89
+0:44.9 Left hand pushes stone 102
+0:46.7 stone 87 is removed (no longer seen)
+0:46.9 stone 134 appears
+0:48.3 Right hand pushes stone 103
+0:48.3 stone 84 is reseated
+0:48.7 Left hand pushes stone 118
+0:48.9 stone 85 is reseated
+0:49.1 Left hand pushes stone 118
+0:49.1 stone 135 appears
+0:49.1 stone 84 gets its final shape
+0:49.3 Left hand pushes stone 118
+0:49.3 Left hand pushes stone 130
+0:49.5 Left hand pushes stone 118
+0:49.5 Left hand pushes stone 130
+0:49.5 stone 129 is removed (a hand emptied its place)
+0:49.7 Left hand pushes stone 106
+0:49.7 Left hand pushes stone 118
+0:49.7 Left hand pushes stone 130
+0:49.9 Right hand pushes stone 103
+0:49.9 Both hands push stone 118
+0:50.1 Right hand pushes stone 103
+0:50.1 Right hand pushes stone 106
+0:50.1 Both hands push stone 118
+0:50.1 stone 136 appears
+0:50.3 Right hand pushes stone 103
+0:50.3 stone 137 appears
+0:50.3 stone 85 gets its final shape
+0:50.5 Left hand lifts stone 128
+0:50.5 Left hand carries stone 128
+0:50.5 Right hand pushes stone 107
+0:50.5 stone 138 appears
+0:50.5 stone 139 appears
+0:50.7 Right hand pushes stone 102
+0:50.7 Left hand drops stone 128
+0:50.9 Right hand pushes stone 108
+0:50.9 stone 140 appears
+0:51.1 Right hand pushes stone 108
+0:51.3 Right hand pushes stone 102
+0:51.9 Left hand pushes stone 130
+0:52.3 Right hand pushes stone 108
+0:52.5 Left hand pushes stone 126
+0:52.5 Left hand pushes stone 130
+0:52.5 stone 141 appears
+0:52.7 Left hand pushes stone 116
+0:52.7 Left hand pushes stone 130
+0:52.7 stone 140 is confirmed
+0:52.9 Left hand pushes stone 108
+0:52.9 Left hand pushes stone 116
+0:52.9 Left hand pushes stone 130
+0:52.9 stone 128 is removed (overlapped another stone)
+0:52.9 stone 126 is removed (no longer seen)
+0:53.1 stone 142 appears
+0:54.4 stone 140 gets its final shape
+0:56.4 Left hand pushes stone 108
+0:57.0 Left hand pushes stone 105
+0:57.0 Left hand pushes stone 108
+0:57.2 Left hand pushes stone 108
+0:57.4 Left hand pushes stone 108
+0:58.2 Left hand pushes stone 118
+0:58.4 Left hand pushes stone 118
+0:58.4 stone 105 is removed (a hand emptied its place)
+0:58.6 Right hand pushes stone 106
+0:58.6 Right hand pushes stone 107
+0:58.6 stone 143 appears
+0:58.6 stone 144 appears
+0:58.8 Right hand pushes stone 106
+0:58.8 Left hand pushes stone 118
+1:01.2 Left hand pushes stone 120
+1:01.4 Right hand pushes stone 103
+1:01.4 Right hand pushes stone 106
+1:01.8 Both hands push stone 106
+1:02.2 Right hand pushes stone 97
+1:02.2 Right hand pushes stone 98
+1:02.2 Left hand pushes stone 121
+1:02.2 stone 145 appears
+1:02.4 Left hand pushes stone 108
+1:02.4 Left hand pushes stone 125
+1:02.6 Right hand pushes stone 102
+1:02.6 Left hand pushes stone 108
+1:02.8 Right hand pushes stone 102
+1:02.8 Left hand pushes stone 121
+1:02.8 Left hand pushes stone 125
+1:03.0 Right hand pushes stone 102
+1:03.2 Right hand pushes stone 102
+1:03.2 Right hand pushes stone 103
+1:03.4 Right hand pushes stone 102
+1:03.4 Right hand pushes stone 103
+1:03.6 Right hand pushes stone 102
+1:03.8 Right hand pushes stone 102
+1:03.8 Left hand pushes stone 121
+1:04.0 Right hand pushes stone 106
+1:04.0 stone 146 appears
+1:04.0 stone 147 appears
+1:04.2 Left hand pushes stone 118
+1:04.2 stone 148 appears
+1:04.2 stone 125 is removed (a hand emptied its place)
+1:04.4 Left hand pushes stone 118
+1:04.4 Left hand pushes stone 121
+1:04.4 stone 149 appears
+1:04.6 Right hand pushes stone 106
+1:04.6 Left hand pushes stone 116
+1:04.6 Left hand pushes stone 121
+1:04.6 stone 150 appears
+1:04.6 stone 151 appears
+1:04.8 Right hand pushes stone 98
+1:04.8 Left hand pushes stone 116
+1:04.8 stone 151 is confirmed
+1:04.8 stone 152 appears
+1:05.6 stone 108 is reseated
+1:06.2 stone 153 appears
+1:06.4 Right hand pushes stone 103
+1:06.4 Left hand pushes stone 120
+1:06.6 Right hand pushes stone 108
+1:06.6 Left hand pushes stone 118
+1:06.6 stone 154 appears
+1:06.8 Right hand pushes stone 102
+1:06.8 Left hand pushes stone 121
+1:07.0 Right hand pushes stone 107
+1:07.0 Left hand pushes stone 116
+1:07.0 Left hand pushes stone 121
+1:07.2 Right hand pushes stone 103
+1:07.2 Left hand pushes stone 116
+1:07.2 stone 155 appears
+1:07.2 stone 156 appears
+1:07.4 Right hand pushes stone 102
+1:07.4 Right hand pushes stone 103
+1:07.4 Right hand pushes stone 108
+1:07.4 Left hand pushes stone 116
+1:07.4 Left hand pushes stone 118
+1:07.4 stone 107 is removed (overlapped another stone)
+1:07.6 Right hand pushes stone 108
+1:07.6 Left hand pushes stone 116
+1:07.6 Left hand pushes stone 118
+1:07.8 Right hand pushes stone 108
+1:07.8 Left hand pushes stone 116
+1:07.8 Left hand pushes stone 118
+1:07.8 Left hand pushes stone 140
+1:07.8 Left hand pushes stone 151
+1:08.0 Right hand pushes stone 103
+1:08.0 Left hand pushes stone 116
+1:08.0 Left hand pushes stone 151
+1:08.2 Right hand pushes stone 102
+1:08.2 Right hand pushes stone 103
+1:08.2 Left hand pushes stone 121
+1:08.2 Left hand pushes stone 140
+1:08.2 stone 157 appears
+1:08.4 Left hand pushes stone 98
+1:08.4 Both hands push stone 102
+1:08.4 Right hand pushes stone 109
+1:08.4 Left hand pushes stone 121
+1:08.8 Left hand pushes stone 118
+1:09.0 Right hand pushes stone 89
+1:09.0 Right hand pushes stone 94
+1:09.0 Left hand pushes stone 102
+1:09.0 Left hand pushes stone 106
+1:09.0 Left hand pushes stone 118
+1:09.0 Left hand pushes stone 151
+1:09.2 Right hand lifts stone 102
+1:09.2 Right hand carries stone 102
+1:09.2 Left hand pushes stone 118
+1:09.2 Left hand pushes stone 151
+1:09.2 stone 158 appears
+1:09.4 stone 159 appears
+1:09.6 Left hand pushes stone 140
+1:09.8 Left hand pushes stone 115
+1:09.8 stone 160 appears
+1:10.0 Left hand pushes stone 108
+1:10.2 Left hand pushes stone 116
+1:10.4 Left hand pushes stone 116
+1:10.6 Left hand pushes stone 121
+1:10.6 stone 161 appears
+1:11.2 Left hand pushes stone 108
+1:11.2 Both hands push stone 115
+1:11.6 Left hand pushes stone 151
+1:11.8 Both hands push stone 115
+1:11.8 Left hand pushes stone 151
+1:12.2 Left hand pushes stone 115
+1:13.4 Left hand pushes stone 116
+1:13.6 Both hands push stone 115
+1:13.6 stone 162 appears
+1:13.6 stone 163 appears
+1:13.8 Left hand pushes stone 116
+1:13.8 Left hand pushes stone 121
+1:13.8 stone 164 appears
+1:13.8 stone 165 appears
+1:14.2 Both hands push stone 115
+1:14.8 Both hands push stone 104
+1:14.8 Both hands push stone 115
+1:15.0 Left hand pushes stone 115
+1:15.0 stone 166 appears
+1:15.2 Left hand pushes stone 116
+1:15.2 Right hand places stone 102
+1:15.2 stone 112 is removed (a hand emptied its place)
+1:15.4 Right hand pushes stone 97
+1:15.4 Right hand pushes stone 98
+1:15.4 Right hand pushes stone 106
+1:15.4 Left hand pushes stone 140
+1:15.4 stone 167 appears
+1:15.4 stone 168 appears
+1:15.4 stone 169 appears
+1:15.4 stone 170 appears
+1:15.6 Left hand pushes stone 121
+1:15.6 Left hand pushes stone 140
+1:15.6 stone 155 is confirmed
+1:15.6 stone 167 is confirmed
+1:15.6 stone 169 is confirmed
+1:15.6 stone 170 is confirmed
+1:15.6 stone 171 appears
+1:15.6 stone 169 is removed (merged with a neighbour)
+1:15.6 stone 167 is removed (overlapped another stone)
+1:15.8 stone 172 appears
+1:16.0 stone 172 is confirmed
+1:16.0 stone 172 is removed (overlapped another stone)
+1:16.2 stone 173 appears
+1:16.8 stone 173 is confirmed
+1:16.8 stone 173 is removed (merged with a neighbour)
+1:17.0 stone 108 is reseated
+1:17.2 stone 174 appears
+1:17.2 stone 116 is removed (overlapped another stone)
+1:17.4 stone 174 is confirmed
+1:17.4 stone 121 is removed (no longer seen)
+1:17.6 stone 175 appears
+1:18.4 stone 176 appears
+1:18.6 Left hand pushes stone 106
+1:18.8 Right hand lifts stone 95
+1:18.8 Right hand carries stone 95
+1:18.8 Left hand pushes stone 174
+1:18.8 stone 104 is removed (a hand emptied its place)
+1:19.0 Left hand pushes stone 106
+1:19.0 Left hand pushes stone 170
+1:19.0 stone 177 appears
+1:19.2 Left hand lifts stone 155
+1:19.2 Left hand carries stone 155
+1:19.8 stone 177 is confirmed
+1:19.8 stone 178 appears
+1:19.8 Right hand places stone 95
+1:20.0 Right hand pushes stone 95
+1:20.0 stone 179 appears
+1:20.2 Right hand pushes stone 95
+1:20.2 stone 155 is removed (carried away)
+1:20.2 Left hand takes stone 155 out of view
+1:20.4 Right hand pushes stone 95
+1:20.4 Right hand pushes stone 109
+1:20.6 Right hand pushes stone 95
+1:20.8 Right hand pushes stone 95
+1:20.8 stone 106 is reseated
+1:21.0 Right hand pushes stone 95
+1:21.0 stone 180 appears
+1:21.0 stone 177 gets its final shape
+1:21.2 Right hand pushes stone 95
+1:21.4 Right hand pushes stone 95
+1:21.4 Left hand pushes stone 174
+1:21.6 Right hand pushes stone 95
+1:21.6 Left hand pushes stone 103
+1:21.6 Left hand pushes stone 174
+1:21.8 Both hands push stone 94
+1:21.8 Right hand pushes stone 95
+1:21.8 Left hand pushes stone 174
+1:21.8 Left hand pushes stone 118
+1:22.0 Left hand pushes stone 174
+1:22.2 Left hand pushes stone 174
+1:22.4 Left hand pushes stone 174
+1:22.6 Right hand pushes stone 94
+1:22.6 Right hand pushes stone 103
+1:24.0 stone 170 gets its final shape
+1:24.8 Right hand pushes stone 103
+1:24.8 Left hand pushes stone 119
+1:25.0 Right hand pushes stone 103
+1:25.0 Right hand pushes stone 108
+1:25.0 stone 181 appears
+1:25.4 Right hand pushes stone 98
+1:25.6 Right hand lifts stone 106
+1:25.6 Right hand carries stone 106
+1:25.6 stone 182 appears
+1:25.8 Left hand pushes stone 130
+1:25.8 stone 183 appears
+1:26.0 Left hand pushes stone 170
+1:26.2 Left hand pushes stone 174
+1:26.2 Left hand pushes stone 170
+1:26.4 stone 184 appears
+1:26.6 stone 185 appears
+1:26.6 stone 186 appears
+1:26.6 stone 187 appears
+1:26.8 Left hand pushes stone 130
+1:26.8 stone 188 appears
+1:27.0 Left hand pushes stone 130
+1:27.2 stone 189 appears
+1:27.2 stone 190 appears
+1:27.4 Left hand pushes stone 170
+1:27.4 stone 188 is confirmed
+1:27.4 stone 188 is removed (merged with a neighbour)
+1:28.2 stone 106 is removed (carried away)
+1:28.2 Right hand takes stone 106 out of view
+1:28.4 stone 191 appears
+1:28.6 stone 191 is confirmed
+1:28.6 stone 168 is confirmed
+1:29.6 Right hand pushes stone 89
+1:29.6 Right hand pushes stone 94
+1:29.6 stone 192 appears
+1:29.7 Right hand pushes stone 90
+1:29.7 Right hand pushes stone 94
+1:29.9 Left hand pushes stone 108
+1:29.9 stone 193 appears
+1:30.1 Left hand pushes stone 191
+1:30.1 stone 194 appears
+1:30.3 Right hand lifts stone 94
+1:30.3 Right hand tips stone 94 up on its edge
+1:30.3 Left hand pushes stone 108
+1:30.3 Left hand pushes stone 191
+1:30.5 Left hand pushes stone 191
+1:30.5 stone 168 gets its final shape
+1:30.5 Right hand places stone 94
+1:30.7 Right hand pushes stone 103
+1:30.7 Left hand pushes stone 191
+1:31.1 Right hand pushes stone 94
+1:31.1 Left hand pushes stone 170
+1:31.3 Left hand pushes stone 174
+1:31.3 stone 193 is confirmed
+1:31.3 stone 195 appears
+1:31.5 Left hand pushes stone 118
+1:31.5 Left hand pushes stone 191
+1:31.7 Left hand pushes stone 102
+1:31.7 stone 196 appears
+1:31.9 Left hand pushes stone 102
+1:31.9 Left hand pushes stone 191
+1:32.1 Left hand pushes stone 94
+1:32.1 Left hand pushes stone 95
+1:32.1 Left hand pushes stone 102
+1:32.1 stone 85 is pushed along its row
+1:32.1 stone 88 is pushed along its row
+1:32.1 stone 89 is pushed along its row
+1:32.1 stone 90 is pushed along its row
+1:32.3 Left hand pushes stone 94
+1:32.3 Left hand pushes stone 95
+1:32.3 Left hand pushes stone 118
+1:32.3 stone 197 appears
+1:32.3 stone 85 is pushed along its row
+1:32.3 stone 88 is pushed along its row
+1:32.3 stone 89 is pushed along its row
+1:32.3 stone 90 is pushed along its row
+1:32.3 stone 86 is pushed along its row
+1:32.5 Left hand pushes stone 94
+1:32.5 Left hand pushes stone 118
+1:32.5 stone 85 is pushed along its row
+1:32.5 stone 88 is pushed along its row
+1:32.5 stone 89 is pushed along its row
+1:32.5 stone 90 is pushed along its row
+1:32.5 stone 86 is pushed along its row
+1:32.7 Right hand pushes stone 89
+1:32.7 stone 134 is confirmed
+1:32.7 stone 134 is removed (overlapped another stone)
+1:32.7 stone 85 is pushed along its row
+1:32.7 stone 88 is pushed along its row
+1:32.7 stone 89 is pushed along its row
+1:32.7 stone 90 is pushed along its row
+1:32.7 stone 86 is pushed along its row
+1:32.9 stone 84 is pushed along its row
+1:32.9 stone 85 is pushed along its row
+1:32.9 stone 88 is pushed along its row
+1:32.9 stone 89 is pushed along its row
+1:32.9 stone 90 is pushed along its row
+1:32.9 stone 86 is pushed along its row
+1:33.1 Left hand pushes stone 98
+1:33.1 Left hand pushes stone 103
+1:33.1 stone 198 appears
+1:33.1 stone 199 appears
+1:33.3 Left hand pushes stone 103
+1:33.5 Left hand pushes stone 103
+1:34.7 stone 177 is reseated
+1:35.3 stone 199 is confirmed
+1:35.7 stone 193 gets its final shape
+1:35.9 stone 97 is reseated
+1:36.1 stone 174 gets its final shape
+1:36.7 stone 97 gets its final shape
+1:36.7 stone 191 gets its final shape
+1:37.7 stone 200 appears
+1:38.1 Left hand pushes stone 199
+1:38.5 Left hand pushes stone 95
+1:38.7 Left hand pushes stone 95
+1:39.1 stone 201 appears
+1:39.3 Left hand pushes stone 95
+1:39.5 stone 201 is confirmed
+1:39.5 stone 202 appears
+1:39.7 stone 203 appears
+1:40.5 stone 203 is confirmed
+1:41.1 Left hand pushes stone 93
+1:41.1 Left hand pushes stone 94
+1:41.1 Left hand pushes stone 103
+1:41.1 stone 91 is pushed along its row
+1:41.1 stone 92 is pushed along its row
+1:41.1 stone 93 is pushed along its row
+1:41.3 Left hand pushes stone 93
+1:41.3 stone 204 appears
+1:41.3 stone 91 is pushed along its row
+1:41.3 stone 92 is pushed along its row
+1:41.3 stone 93 is pushed along its row
+1:41.3 stone 94 is pushed along its row
+1:41.3 stone 95 is pushed along its row
+1:41.3 stone 109 is pushed along its row
+1:41.5 Left hand pushes stone 109
+1:41.7 Left hand pushes stone 103
+1:41.7 Left hand pushes stone 203
+1:42.1 Left hand pushes stone 109
+1:42.9 Left hand pushes stone 109
+1:42.9 Left hand pushes stone 203
+1:43.1 Left hand pushes stone 109
+1:43.1 Left hand pushes stone 203
+1:43.1 stone 199 is removed (no longer seen)
+1:43.3 Left hand pushes stone 203
+1:43.5 Left hand pushes stone 203
+1:43.5 stone 109 is removed (no longer seen)
+1:43.7 stone 205 appears
+1:43.9 stone 205 is confirmed
+1:44.3 stone 206 appears
+1:44.3 stone 103 is removed (a hand emptied its place)
+1:44.5 stone 207 appears
+1:44.5 stone 208 appears
+1:44.7 Left hand pushes stone 98
+1:44.7 Left hand pushes stone 102
+1:44.7 stone 209 appears
+1:44.9 Left hand pushes stone 98
+1:44.9 Left hand pushes stone 102
+1:44.9 Left hand pushes stone 108
+1:44.9 stone 210 appears
+1:44.9 stone 211 appears
+1:44.9 stone 168 is pushed along its row
+1:44.9 stone 177 is pushed along its row
+1:44.9 stone 193 is pushed along its row
+1:44.9 stone 91 is reseated
+1:45.1 Left hand pushes stone 108
+1:45.1 Left hand pushes stone 193
+1:45.1 stone 210 is confirmed
+1:45.1 stone 97 is removed (overlapped another stone)
+1:45.1 stone 168 is pushed along its row
+1:45.1 stone 177 is pushed along its row
+1:45.1 stone 193 is pushed along its row
+1:45.1 stone 191 is pushed along its row
+1:45.1 stone 174 is pushed along its row
+1:45.1 stone 108 is pushed along its row
+1:45.3 Left hand pushes stone 98
+1:45.3 Left hand pushes stone 102
+1:45.3 stone 212 appears
+1:45.7 stone 213 appears
+1:45.7 stone 214 appears
+1:45.9 Left hand pushes stone 98
+1:45.9 stone 215 appears
+1:45.9 stone 216 appears
+1:45.9 stone 217 appears
+1:46.3 stone 92 is reseated
+1:46.3 stone 99 is reseated
+1:46.5 stone 100 is reseated
+1:46.7 stone 218 appears
+1:46.7 stone 218 is confirmed
+1:46.9 stone 174 is removed (no longer seen)
+1:47.1 Left hand pushes stone 120
+1:47.1 stone 95 is reseated
+1:47.3 Left hand pushes stone 120
+1:47.7 stone 219 appears
+1:47.7 stone 220 appears
+1:47.7 stone 111 is reseated
+1:47.9 stone 221 appears
+1:47.9 stone 201 gets its final shape
+1:48.1 stone 222 appears
+1:48.1 stone 168 is pushed along its row
+1:48.1 stone 177 is pushed along its row
+1:48.1 stone 193 is pushed along its row
+1:48.5 Left hand pushes stone 130
+1:48.5 stone 223 appears
+1:48.5 stone 224 appears
+1:48.5 stone 225 appears
+1:48.5 stone 114 is pushed along its row
+1:48.5 stone 115 is pushed along its row
+1:48.5 stone 170 is pushed along its row
+1:48.5 stone 98 is reseated
+1:49.3 Left hand pushes stone 130
+1:49.3 stone 226 appears
+1:49.5 Left hand pushes stone 108
+1:49.5 Left hand pushes stone 130
+1:49.5 stone 226 is confirmed
+1:49.5 stone 227 appears
+1:49.5 stone 228 appears
+1:49.5 stone 226 is removed (overlapped another stone)
+1:49.5 stone 100 is reseated
+1:49.5 stone 221 is confirmed
+1:49.5 stone 118 is removed (a hand emptied its place)
+1:49.7 stone 229 appears
+1:49.7 stone 221 splits into 221, 230 and 231
+1:49.7 stone 119 is removed (a hand emptied its place)
+1:49.7 stone 120 is removed (a hand emptied its place)
+1:49.9 stone 232 appears
+1:49.9 stone 233 appears
+1:50.1 stone 234 appears
+1:50.1 stone 235 appears
+1:50.3 stone 236 appears
+1:50.3 stone 170 is removed (no longer seen)
+1:50.7 stone 237 appears
+1:50.7 stone 108 is reseated
+1:51.1 stone 113 is reseated
+1:51.5 stone 115 is reseated
+1:51.5 stone 238 appears (found in the image)
+1:51.5 stone 238 is confirmed
+1:51.7 stone 114 is reseated
+1:51.9 stone 239 appears
+1:51.9 stone 91 gets its final shape
+1:52.1 stone 210 gets its final shape
+1:52.1 stone 238 gets its final shape
+1:52.5 stone 240 appears
+1:52.5 stone 241 appears
+1:52.7 stone 92 gets its final shape
+1:52.9 Right hand pushes stone 102
+1:53.1 Right hand pushes stone 102
+1:53.1 stone 95 gets its final shape
+1:53.3 stone 111 gets its final shape
+1:53.5 Right hand pushes stone 210
+1:53.5 stone 242 appears
+1:53.5 stone 218 gets its final shape
+1:53.7 Left hand pushes stone 130
+1:53.7 Right hand pushes stone 193
+1:53.9 Left hand pushes stone 130
+1:53.9 Right hand pushes stone 221
+1:53.9 stone 240 is confirmed
+1:53.9 stone 93 is reseated
+1:54.1 Right hand pushes stone 102
+1:54.1 Right hand pushes stone 221
+1:54.3 Right hand pushes stone 221
+1:54.3 stone 151 is trimmed
+1:54.3 stone 98 gets its final shape
+1:54.5 Right hand pushes stone 221
+1:54.5 stone 243 appears
+1:54.5 stone 244 appears
+1:54.5 stone 245 appears
+1:54.7 Right hand pushes stone 221
+1:54.9 Right hand pushes stone 221
+1:54.9 stone 246 appears
+1:54.9 stone 247 appears
+1:55.1 Right hand pushes stone 102
+1:55.1 Right hand pushes stone 221
+1:55.1 stone 248 appears
+1:55.3 Right hand pushes stone 102
+1:55.3 Right hand pushes stone 210
+1:55.3 Right hand pushes stone 221
+1:55.3 stone 249 appears
+1:55.3 stone 100 gets its final shape
+1:55.5 Left hand pushes stone 151
+1:55.5 Right hand pushes stone 221
+1:55.5 stone 246 is confirmed
+1:55.7 Right hand pushes stone 193
+1:55.7 Right hand pushes stone 221
+1:55.7 stone 230 gets its final shape
+1:55.9 Right hand pushes stone 193
+1:55.9 Right hand pushes stone 221
+1:56.1 Right hand pushes stone 221
+1:56.3 Left hand pushes stone 115
+1:56.3 Left hand pushes stone 151
+1:56.3 Right hand pushes stone 240
+1:56.5 Left hand pushes stone 231
+1:56.7 Right hand pushes stone 102
+1:56.7 Left hand pushes stone 231
+1:56.9 Right hand pushes stone 102
+1:56.9 Left hand pushes stone 231
+1:56.9 Left hand pushes stone 238
+1:56.9 stone 250 appears
+1:57.1 Left hand pushes stone 231
+1:57.1 Left hand pushes stone 238
+1:57.1 Right hand pushes stone 240
+1:57.3 Left hand pushes stone 231
+1:57.3 stone 250 is confirmed
+1:57.5 Left hand pushes stone 151
+1:57.5 Left hand pushes stone 231
+1:57.7 Left hand pushes stone 115
+1:57.7 Left hand pushes stone 151
+1:57.7 Left hand pushes stone 231
+1:57.7 Left hand pushes stone 238
+1:57.9 Left hand pushes stone 151
+1:57.9 Left hand pushes stone 238
+1:58.1 Left hand pushes stone 151
+1:58.1 Right hand pushes stone 193
+1:58.1 Left hand pushes stone 240
+1:58.3 Left hand pushes stone 151
+1:58.3 Right hand pushes stone 193
+1:58.3 Left hand pushes stone 230
+1:58.3 Left hand pushes stone 240
+1:58.3 stone 251 appears
+1:58.3 stone 221 is removed (overlapped another stone)
+1:58.5 Right hand pushes stone 102
+1:58.5 Left hand pushes stone 151
+1:58.5 Left hand pushes stone 230
+1:58.5 stone 252 appears
+1:58.7 Right hand pushes stone 102
+1:58.7 Left hand pushes stone 230
+1:58.7 stone 249 is confirmed
+1:58.7 stone 253 appears
+1:58.7 stone 254 appears
+1:58.9 Right hand pushes stone 193
+1:58.9 Left hand pushes stone 230
+1:58.9 Left hand pushes stone 238
+1:58.9 Left hand pushes stone 246
+1:58.9 stone 255 appears
+1:59.1 Left hand pushes stone 230
+1:59.1 stone 256 appears
+1:59.1 stone 257 appears
+1:59.3 Right hand pushes stone 102
+1:59.3 Left hand pushes stone 249
+1:59.5 Right hand pushes stone 102
+1:59.5 Left hand pushes stone 230
+1:59.5 Left hand pushes stone 246
+1:59.5 Left hand pushes stone 249
+1:59.5 stone 258 appears
+1:59.7 Left hand pushes stone 238
+1:59.7 Left hand pushes stone 246
+1:59.7 Left hand pushes stone 249
+1:59.7 stone 259 appears
+1:59.9 Left hand pushes stone 230
+1:59.9 Left hand pushes stone 238
+1:59.9 stone 260 appears
+1:59.9 stone 261 appears
+1:59.9 stone 262 appears
+2:00.1 Right hand pushes stone 102
+2:00.1 Left hand pushes stone 230
+2:00.1 stone 263 appears
+2:00.3 Left hand pushes stone 230
+2:00.3 Left hand pushes stone 246
+2:00.3 Left hand pushes stone 249
+2:00.3 stone 264 appears
+2:00.5 Left hand pushes stone 115
+2:00.5 Left hand pushes stone 193
+2:00.5 Left hand pushes stone 230
+2:00.5 Left hand pushes stone 238
+2:00.5 Right hand pushes stone 240
+2:00.5 Left hand pushes stone 246
+2:00.7 Left hand pushes stone 230
+2:00.7 stone 265 appears
+2:00.9 Left hand pushes stone 151
+2:00.9 Left hand pushes stone 230
+2:00.9 Right hand pushes stone 240
+2:00.9 stone 266 appears
+2:00.9 stone 267 appears
+2:01.1 Left hand pushes stone 230
+2:01.1 Left hand pushes stone 238
+2:01.1 Right hand pushes stone 240
+2:01.1 stone 268 appears
+2:01.3 Left hand lifts stone 250
+2:01.3 Left hand tips stone 250 up on its edge
+2:01.5 Right hand pushes stone 191
+2:01.5 Right hand pushes stone 240
+2:01.5 stone 114 is reseated
+2:01.5 stone 93 gets its final shape
+2:01.7 Left hand carries stone 250
+2:01.7 Right hand pushes stone 102
+2:01.9 Both hands push stone 240
+2:02.1 Right hand pushes stone 102
+2:02.1 stone 269 appears
+2:02.3 stone 270 appears
+2:02.3 stone 130 is removed (a hand emptied its place)
+2:02.5 stone 271 appears
+2:02.5 stone 205 gets its final shape
+2:02.7 stone 272 appears
+2:02.9 Left hand drops stone 250
+2:02.9 stone 231 is pushed along its row
+2:02.9 stone 230 is pushed along its row
+2:02.9 stone 240 is pushed along its row
+2:03.1 Right hand pushes stone 102
+2:03.1 Left hand pushes stone 230
+2:03.1 Left hand pushes stone 231
+2:03.3 Left hand pushes stone 230
+2:03.3 Left hand pushes stone 231
+2:03.5 Right hand pushes stone 102
+2:03.5 Left hand pushes stone 230
+2:03.5 Left hand pushes stone 231
+2:03.5 stone 193 is trimmed
+2:03.7 Right hand pushes stone 102
+2:03.7 Right hand pushes stone 191
+2:03.7 Left hand pushes stone 230
+2:03.7 Left hand pushes stone 231
+2:03.7 Left hand pushes stone 250
+2:04.7 stone 273 appears
+2:04.7 stone 274 appears
+2:05.1 stone 266 is confirmed
+2:05.6 stone 168 is reseated
+2:05.8 stone 177 is reseated
+2:06.0 stone 275 appears
+2:06.2 stone 240 is reseated
+2:06.6 Right hand pushes stone 102
+2:06.6 Right hand pushes stone 210
+2:06.8 stone 276 appears
+2:07.0 stone 277 appears
+2:07.0 stone 193 gets its final shape
+2:07.2 Right hand pushes stone 210
+2:07.2 stone 277 is confirmed
+2:07.4 Right hand pushes stone 210
+2:07.4 stone 168 gets its final shape
+2:07.6 stone 278 appears
+2:07.8 Right hand lifts stone 102
+2:07.8 Right hand tips stone 102 up on its edge
+2:07.8 Left hand pushes stone 240
+2:07.8 stone 177 gets its final shape
+2:08.0 Right hand pushes stone 191
+2:08.0 Right hand pushes stone 210
+2:08.0 Left hand pushes stone 240
+2:08.0 Right hand places stone 102
+2:08.4 Right hand pushes stone 102
+2:08.4 Right hand pushes stone 210
+2:08.6 Right hand pushes stone 210
+2:08.6 stone 278 is confirmed
+2:08.6 stone 140 is removed (a hand emptied its place)
+2:08.8 Right hand pushes stone 102
+2:08.8 Right hand pushes stone 210
+2:09.0 Right hand pushes stone 102
+2:09.0 Right hand pushes stone 191
+2:09.0 Right hand pushes stone 210

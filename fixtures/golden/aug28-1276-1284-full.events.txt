@@ -1,0 +1,132 @@
+21:16.2 Right hand pushes stone 2643
+21:16.4 Right hand pushes stone 2641
+21:16.6 Right hand pushes stone 2641
+21:16.8 Right hand pushes stone 2640
+21:16.8 Right hand pushes stone 2643
+21:17.0 Right hand pushes stone 2640
+21:17.0 Right hand pushes stone 2643
+21:17.2 Right hand pushes stone 2640
+21:17.2 Right hand pushes stone 2653
+21:17.4 stone 2675 appears
+21:17.6 Right hand pushes stone 2649
+21:17.6 Left hand pushes stone 2664
+21:17.8 Right hand lifts stone 2660
+21:17.8 Right hand tips stone 2660 up on its edge
+21:18.0 Right hand carries stone 2660
+21:18.0 Left hand pushes stone 2640
+21:18.2 Both hands push stone 2640
+21:18.2 stone 2676 appears
+21:19.0 Both hands push stone 2638
+21:19.2 stone 2647 gets its final shape
+21:19.2 stone 2657 gets its final shape
+21:19.6 stone 2662 gets its final shape
+21:19.8 stone 2650 gets its final shape
+21:20.6 stone 2677 appears
+21:20.6 stone 2678 appears
+21:20.6 stone 2679 appears
+21:20.6 stone 2680 appears
+21:20.6 stone 2681 appears
+21:20.6 stone 2682 appears
+21:20.6 stone 2683 appears
+21:20.6 stone 2684 appears
+21:20.6 stone 2685 appears
+21:20.8 stone 2677 is confirmed
+21:20.8 stone 2678 is confirmed
+21:20.8 stone 2679 is confirmed
+21:20.8 stone 2680 is confirmed
+21:20.8 stone 2681 is confirmed
+21:20.8 stone 2682 is confirmed
+21:20.8 stone 2683 is confirmed
+21:20.8 stone 2684 is confirmed
+21:20.8 stone 2685 is confirmed
+21:20.8 stone 2686 appears
+21:20.8 stone 2687 appears
+21:20.8 stone 2688 appears
+21:20.8 stone 2689 appears
+21:21.0 stone 2686 is confirmed
+21:21.0 stone 2687 is confirmed
+21:21.0 stone 2690 appears
+21:21.0 stone 2691 appears
+21:21.0 stone 2692 appears
+21:21.2 stone 2688 is confirmed
+21:21.2 stone 2689 is confirmed
+21:21.2 stone 2691 is confirmed
+21:21.2 stone 2693 appears
+21:21.2 stone 2694 appears
+21:21.2 stone 2695 appears
+21:21.2 stone 2696 appears
+21:21.2 stone 2697 appears
+21:21.4 stone 2693 is confirmed
+21:21.4 stone 2694 is confirmed
+21:21.4 stone 2698 appears
+21:21.4 stone 2699 appears
+21:21.6 stone 2698 is confirmed
+21:21.6 stone 2700 appears
+21:21.6 stone 2701 appears
+21:21.6 stone 2637 is removed (outside the board)
+21:21.6 stone 2639 is removed (outside the board)
+21:21.6 stone 2642 is removed (outside the board)
+21:21.6 stone 2644 is removed (outside the board)
+21:21.6 stone 2645 is removed (outside the board)
+21:21.6 stone 2671 is removed (outside the board)
+21:21.8 stone 2702 appears
+21:21.8 stone 2703 appears
+21:21.8 stone 2704 appears
+21:21.8 stone 2705 appears
+21:21.8 stone 2706 appears
+21:21.8 stone 2707 appears
+21:21.8 stone 2638 is removed (outside the board)
+21:21.8 Right hand places stone 2660
+21:22.0 stone 2701 is confirmed
+21:22.0 stone 2702 is confirmed
+21:22.0 stone 2703 is confirmed
+21:22.0 stone 2704 is confirmed
+21:22.0 stone 2705 is confirmed
+21:22.0 stone 2707 is confirmed
+21:22.0 stone 2708 appears
+21:22.0 stone 2709 appears
+21:22.0 stone 2710 appears
+21:22.0 stone 2711 appears
+21:22.0 stone 2712 appears
+21:22.0 stone 2641 is removed (outside the board)
+21:22.0 stone 2649 is removed (outside the board)
+21:22.0 stone 2650 is removed (outside the board)
+21:22.0 stone 2659 is removed (outside the board)
+21:22.2 stone 2708 is confirmed
+21:22.2 stone 2709 is confirmed
+21:22.2 stone 2711 is confirmed
+21:22.2 stone 2713 appears
+21:22.2 stone 2714 appears
+21:22.4 stone 2710 is confirmed
+21:22.4 stone 2713 is confirmed
+21:22.4 stone 2714 is confirmed
+21:22.4 stone 2643 is removed (outside the board)
+21:22.4 stone 2647 is removed (outside the board)
+21:22.4 stone 2655 is removed (outside the board)
+21:22.4 stone 2672 is removed (outside the board)
+21:22.6 stone 2715 appears
+21:22.6 stone 2716 appears
+21:22.6 stone 2717 appears
+21:22.6 stone 2718 appears
+21:22.6 stone 2640 is removed (outside the board)
+21:22.6 stone 2654 is removed (outside the board)
+21:22.8 stone 2715 is confirmed
+21:22.8 stone 2716 is confirmed
+21:22.8 stone 2717 is confirmed
+21:22.8 stone 2718 is confirmed
+21:22.8 stone 2652 is removed (outside the board)
+21:22.8 stone 2653 is removed (outside the board)
+21:22.8 stone 2660 is removed (outside the board)
+21:22.8 stone 2661 is removed (outside the board)
+21:22.8 stone 2666 is removed (outside the board)
+21:23.0 stone 2657 is removed (outside the board)
+21:23.0 stone 2662 is removed (outside the board)
+21:23.0 stone 2668 is removed (outside the board)
+21:23.0 stone 2673 is removed (outside the board)
+21:23.2 stone 2656 is removed (outside the board)
+21:23.2 stone 2663 is removed (outside the board)
+21:23.4 stone 2669 is removed (outside the board)
+21:23.6 stone 2664 is removed (outside the board)
+21:23.6 stone 2667 is removed (outside the board)
+21:23.6 stone 2670 is removed (outside the board)
+21:23.6 stone 2674 is removed (outside the board)

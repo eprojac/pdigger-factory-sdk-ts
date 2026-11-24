@@ -1,0 +1,110 @@
+0:08.2 tray 1 leaving: 8 stones (4 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000000.8Z-1-1: unsure pushed, look none: world 1 or world 8 or gone
+  stone 20261118T000000.8Z-1-2: unsure pushed, look none: world 2 or world 7 or gone
+  stone 20261118T000000.8Z-1-7: unsure pushed, look none: world 7 or world 2 or gone
+  stone 20261118T000000.8Z-1-8: unsure pushed, look none: world 8 or world 1 or gone
+0:14.8 tray 2 leaving: 11 stones (8 sure), 0 added, 1 removed, 0 unclear
+  stone 20261118T000009.4Z-2-22: unsure neighbour_pushed, look none: world 22 or world 24 or gone (hand)
+  stone 20261118T000009.4Z-2-24: unsure pushed, look none: world 24 or world 25 or world 22 or gone (hand)
+  stone 20261118T000009.4Z-2-25: unsure neighbour_pushed, look none: world 25 or world 24 or gone
+0:24.2 tray 3 leaving: 12 stones (11 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000016.0Z-3-41: unsure matched_at_leaving, look none: world 45 or gone
+0:29.2 tray 4 leaving: 4 stones (2 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000025.4Z-4-62: unsure overlap, look none: world 62 or world 64 or gone
+  stone 20261118T000025.4Z-4-64: unsure overlap, look none: world 64 or world 62 or gone
+0:38.6 tray 5 leaving: 11 stones (10 sure), 0 added, 0 removed, 1 unclear
+  stone 20261118T000030.4Z-5-71: unsure matched_at_leaving, look none: world 83 or gone
+  stone 20261118T000030.4Z-5-74: removed rivals, look none: world 83 or gone or unseen
+0:43.0 tray 6 leaving: 12 stones (10 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000039.8Z-6-91: unsure pushed, look none: world 91 or world 92 or gone
+  stone 20261118T000039.8Z-6-92: unsure neighbour_pushed, look none: world 92 or world 91 or gone
+0:51.8 tray 7 leaving: 13 stones (9 sure), 1 added, 0 removed, 1 unclear
+  stone 20261118T000044.2Z-7-112: unsure neighbour_pushed, look none: world 112 or world 113 or world 126 or world 114 or gone
+  stone 20261118T000044.2Z-7-113: unsure pushed, look none: world 113 or world 126 or world 114 or world 112 or gone (hand)
+  stone 20261118T000044.2Z-7-114: unsure neighbour_pushed, look none: world 114 or world 113 or world 126 or world 112 or gone
+  stone 20261118T000050.0Z-7-126: added doubtful, look none, hand near: stone 20261118T000044.2Z-7-113 or stone 20261118T000044.2Z-7-112 or stone 20261118T000044.2Z-7-114 or new
+0:58.6 tray 8 leaving: 5 stones (3 sure), 0 added, 0 removed, 1 unclear
+  stone 20261118T000053.0Z-8-131: unsure pushed, look none: world 131 or gone
+  stone 20261118T000057.8Z-8-135: added doubtful, look none, hand near, seen at arrival: new
+1:03.6 tray 9 leaving: 6 stones (4 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000059.8Z-9-141: unsure pushed, look none: world 141 or gone
+  stone 20261118T000059.8Z-9-142: unsure pushed, look none: world 142 or gone
+1:16.6 tray 10 leaving: 13 stones (13 sure), 0 added, 1 removed, 1 unclear
+  stone 20261118T000104.8Z-10-204: removed unchecked, look none: gone (carried_away) or unseen
+1:27.8 tray 11 leaving: 11 stones (8 sure), 0 added, 0 removed, 1 unclear
+  stone 20261118T000117.8Z-11-231: unsure found_again, look none: world 251 or world 238 or gone (hand)
+  stone 20261118T000117.8Z-11-238: unsure pushed, look none: world 238 or world 252 or world 251 or gone (hand)
+  stone 20261118T000117.8Z-11-240: unsure found_again, look none: world 252 or world 238 or gone
+  stone 20261118T000117.8Z-11-242: removed covered, look none: world 238 or world 251 or gone or unseen
+1:35.2 tray 12 leaving: 15 stones (11 sure), 0 added, 0 removed, 1 unclear
+  stone 20261118T000129.0Z-12-261: unsure pushed, look none: world 261 or world 281 or gone
+  stone 20261118T000129.0Z-12-274: unsure pushed, look none: world 274 or world 275 or gone (hand)
+  stone 20261118T000129.0Z-12-275: unsure pushed, look none: world 275 or gone
+  stone 20261118T000130.6Z-12-281: added doubtful, look none, hand near: stone 20261118T000129.0Z-12-261 or new
+1:44.8 tray 13 leaving: 16 stones (12 sure), 0 added, 0 removed, 2 unclear
+  stone 20261118T000136.4Z-13-293: unsure overlap, look none: world 293 or world 311 or gone
+  stone 20261118T000136.4Z-13-301: unsure pushed, look none: world 301 or world 311 or gone
+  stone 20261118T000141.2Z-13-311: added doubtful, look none, hand near: stone 20261118T000136.4Z-13-301 or stone 20261118T000136.4Z-13-293 or new
+  stone 20261118T000142.4Z-13-312: added unchecked, look none, hand near: new
+2:00.0 tray 14 leaving: 14 stones (11 sure), 0 added, 0 removed, 2 unclear
+  stone 20261118T000146.0Z-14-410: unsure pushed, look none: world 410 or world 431 or world 430 or gone
+  stone 20261118T000146.0Z-14-432: unsure neighbour_pushed, look none: world 431 or world 410 or world 430 or gone
+  stone 20261118T000146.0Z-14-409: removed rivals, look none: world 430 or world 410 or world 431 or gone or unseen
+  stone 20261118T000151.6Z-14-430: added doubtful, look none: stone 20261118T000146.0Z-14-409 or stone 20261118T000146.0Z-14-410 or stone 20261118T000146.0Z-14-432 or new
+2:10.8 tray 15 leaving: 13 stones (11 sure), 0 added, 0 removed, 1 unclear
+  stone 20261118T000201.2Z-15-510: removed no_hand, look none: world 520 or gone or unseen
+  stone 20261118T000201.2Z-15-520: unsure pushed, look none: world 520 or world 540 or gone
+  stone 20261118T000201.2Z-15-540: unsure pushed, look none: world 540 or world 520 or gone
+2:20.0 tray 16 leaving: 13 stones (12 sure), 0 added, 1 removed, 0 unclear
+  stone 20261118T000212.0Z-16-620: unsure pushed, look none: world 620 or gone
+2:30.2 tray 17 leaving: 12 stones (12 sure), 0 added, 1 removed, 0 unclear
+2:39.6 tray 18 leaving: 14 stones (10 sure), 0 added, 0 removed, 2 unclear
+  stone 20261118T000231.4Z-18-801: removed rivals, look none: world 802 or world 803 or world 804 or gone (hand) or unseen
+  stone 20261118T000231.4Z-18-802: unsure neighbour_pushed, look none: world 802 or world 803 or world 804 or world 805 or gone (hand)
+  stone 20261118T000231.4Z-18-803: unsure pushed, look none: world 803 or world 804 or world 802 or world 805 or gone
+  stone 20261118T000231.4Z-18-804: unsure neighbour_pushed, look none: world 804 or world 803 or world 805 or world 802 or gone
+  stone 20261118T000237.6Z-18-805: added doubtful, look none: stone 20261118T000231.4Z-18-804 or stone 20261118T000231.4Z-18-803 or stone 20261118T000231.4Z-18-802 or new
+2:46.4 tray 19 leaving: 6 stones (4 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000240.8Z-19-901: unsure neighbour_pushed, look none: world 901 or world 902 or gone
+  stone 20261118T000240.8Z-19-902: unsure pushed, look none: world 902 or world 901 or gone
+2:51.6 tray 20 leaving: 6 stones (5 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000247.6Z-20-1001: unsure unseen, look none: world 1001 or gone
+2:58.4 tray 21 leaving: 6 stones (4 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000252.8Z-21-1101: unsure pushed, look none: world 1101 or world 1102 or gone
+  stone 20261118T000252.8Z-21-1102: unsure neighbour_pushed, look none: world 1102 or world 1101 or gone
+3:07.0 tray 22 leaving: 3 stones (2 sure), 0 added, 0 removed, 2 unclear
+  stone 20261118T000259.6Z-22-1201: removed rivals, look none: gone or unseen
+  stone 20261118T000306.2Z-22-1209: added doubtful, look none: new
+3:12.2 tray 23 leaving: 4 stones (2 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000308.2Z-23-1301: unsure pushed, look none: world 1301 or world 1302 or gone
+  stone 20261118T000308.2Z-23-1302: unsure neighbour_pushed, look none: world 1302 or world 1301 or gone
+3:23.0 tray 24 leaving: 5 stones (3 sure), 0 added, 0 removed, 1 unclear
+  stone 20261118T000313.6Z-24-1401: unsure pushed, look none: world 1401 or world 1403 or gone
+  stone 20261118T000313.6Z-24-1403: unsure pushed, look none: world 1403 or gone
+  stone 20261118T000313.6Z-24-1402: removed rivals, look none: world 1403 or gone (hand) or unseen
+3:29.0 tray 25 leaving: 6 stones (2 sure), 0 added, 0 removed, 3 unclear
+  stone 20261118T000324.4Z-25-1503: unsure size_changed, look none: world 1511 or gone
+  stone 20261118T000326.0Z-25-1503: added size_changed, look none, seen at arrival: new
+  stone 20261118T000326.2Z-25-1509: added doubtful, look none: new
+  stone 20261118T000327.2Z-25-1510: added doubtful, look none: new
+3:38.0 tray 26 leaving: 10 stones (9 sure), 0 added, 0 removed, 3 unclear
+  stone 20261118T000330.2Z-26-1605: removed rivals, look none: world 1640 or gone or unseen
+  stone 20261118T000330.2Z-26-1613: removed rivals, look none: gone (hand) or unseen
+  stone 20261118T000335.8Z-26-1640: added doubtful, look none: stone 20261118T000330.2Z-26-1605 or new
+3:48.4 tray 27 leaving: 15 stones (13 sure), 0 added, 0 removed, 2 unclear
+  stone 20261118T000339.2Z-27-1701: removed rivals, look none: world 1721 or gone or unseen
+  stone 20261118T000339.2Z-27-1708: unsure pushed, look none: world 1708 or world 1721 or gone
+  stone 20261118T000346.6Z-27-1721: added doubtful, look none: stone 20261118T000339.2Z-27-1701 or stone 20261118T000339.2Z-27-1708 or new
+3:58.6 tray 28 leaving: 13 stones (10 sure), 0 added, 0 removed, 2 unclear
+  stone 20261118T000349.6Z-28-1801: unsure matched_at_leaving, look none: world 1831 or gone
+  stone 20261118T000349.6Z-28-1808: removed rivals, look none: world 1831 or world 1832 or gone (dropped) or unseen
+  stone 20261118T000349.6Z-28-1815: unsure matched_at_leaving, look none: world 1832 or world 1830 or gone
+  stone 20261118T000352.6Z-28-1830: added doubtful, look none: stone 20261118T000349.6Z-28-1815 or new
+4:09.2 tray 29 leaving: 15 stones (13 sure), 0 added, 0 removed, 3 unclear
+  stone 20261118T000359.8Z-29-1908: removed rivals, look none: world 1921 or gone (carried_away) or unseen
+  stone 20261118T000406.4Z-29-1921: added doubtful, look none: stone 20261118T000359.8Z-29-1908 or new
+  stone 20261118T000407.4Z-29-1922: added doubtful, look none: new
+4:24.4 tray 30 leaving: 8 stones (8 sure), 0 added, 4 removed, 0 unclear
+4:33.0 tray 31 leaving: 12 stones (12 sure), 1 added, 1 removed, 0 unclear
+4:40.6 tray 32 leaving: 11 stones (10 sure), 0 added, 1 removed, 0 unclear
+  stone 20261118T000434.2Z-32-2207: unsure pushed, look none: world 2207 or gone

@@ -1,0 +1,9 @@
+node_modules
+dist
+coverage
+docs/api
+fixtures
+spec
+docs/img
+package-lock.json
+*.md

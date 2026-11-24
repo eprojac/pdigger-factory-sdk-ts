@@ -1,0 +1,20 @@
+2:24.0 tray 1 leaving: 44 stones (30 sure), 0 added, 6 removed, 18 unclear (bar 0.750)
+  stone 20261122T023847.0Z-1-87: removed relinked, look stale: world 177 or world 193 or gone (hand) or unseen
+  stone 20261122T023847.0Z-1-98: unsure neighbour_pushed, look low 0.229: world 98 or world 281 or world 279 or world 280 or world 289 or world 203 or world 151 or gone (hand)
+  stone 20261122T023847.0Z-1-121: removed relinked, look stale: world 278 or world 249 or world 246 or world 290 or gone (hand) or unseen
+  stone 20261122T023847.0Z-1-128: removed relinked, look stale: world 278 or world 249 or world 290 or world 246 or gone (dropped) or unseen
+  stone 20261122T023847.0Z-1-129: removed relinked, look late: world 280 or world 281 or world 279 or world 151 or world 98 or world 289 or gone (emptied) or unseen
+  stone 20261122T023847.0Z-1-130: removed relinked, look late: world 280 or world 281 or world 279 or world 151 or world 98 or gone (emptied) or unseen
+  stone 20261122T023943.4Z-1-151: added relinked, look none, hand near: stone 20261122T023847.0Z-1-129 or stone 20261122T023847.0Z-1-130 or stone 20261122T023847.0Z-1-98 or new
+  stone 20261122T024104.0Z-1-177: added freed, look new: stone 20261122T023847.0Z-1-87 or new
+  stone 20261122T024018.8Z-1-193: added relinked, look none, hand near: stone 20261122T023847.0Z-1-87 or new
+  stone 20261122T024029.7Z-1-201: added relinked, look new, hand near: new
+  stone 20261122T024031.0Z-1-203: added relinked, look none, hand near: stone 20261122T023847.0Z-1-98 or new
+  stone 20261122T024051.0Z-1-246: added relinked, look none: stone 20261122T023847.0Z-1-121 or stone 20261122T023847.0Z-1-128 or new
+  stone 20261122T024055.2Z-1-249: added relinked, look none, hand near: stone 20261122T023847.0Z-1-121 or stone 20261122T023847.0Z-1-128 or new
+  stone 20261122T024108.5Z-1-278: added relinked, look none: stone 20261122T023847.0Z-1-121 or stone 20261122T023847.0Z-1-128 or new
+  stone 20261122T024118.1Z-1-279: added relinked, look none, hand near: stone 20261122T023847.0Z-1-129 or stone 20261122T023847.0Z-1-130 or stone 20261122T023847.0Z-1-98 or new
+  stone 20261122T024121.3Z-1-280: added relinked, look new, hand near: stone 20261122T023847.0Z-1-129 or stone 20261122T023847.0Z-1-130 or stone 20261122T023847.0Z-1-98 or new
+  stone 20261122T024121.3Z-1-281: added relinked, look new, hand near: stone 20261122T023847.0Z-1-129 or stone 20261122T023847.0Z-1-130 or stone 20261122T023847.0Z-1-98 or new
+  stone 20261122T024124.2Z-1-282: added relinked, look none, hand near: new
+  stone 20261122T024126.9Z-1-284: added relinked, look none: new

@@ -1,0 +1,32 @@
+tray 1 (2026-11-18T00:00:00.8Z), 0:00.8 to 0:07.4: 0 removed, 0 added, 0 moved
+tray 2 (2026-11-18T00:00:09.0Z), 0:09.0 to 0:16.6: 0 removed, 0 added, 0 moved, not complete: 1 not sure
+tray 3 (2026-11-18T00:00:18.2Z), 0:18.2 to 0:25.8: 0 removed, 0 added, 0 moved, not complete: 1 not sure
+tray 4 (2026-11-18T00:00:27.4Z), 0:27.4 to 0:34.8: 0 removed, 0 added, 0 moved, not complete: 1 not sure
+tray 5 (2026-11-18T00:00:36.4Z), 0:36.4 to 0:43.8: 1 removed, 0 added, 0 moved, not complete: 1 not sure
+  0:42.4 removed 20261118T000036.4Z-5-502 from (0.30, 0.00) (0.50)
+tray 6 (2026-11-18T00:00:45.4Z), 0:45.4 to 0:52.8: 1 removed, 0 added, 0 moved, not complete: 1 not sure
+  0:51.4 removed 20261118T000045.4Z-6-604 from (-0.30, 0.30) (0.50)
+tray 7 (2026-11-18T00:00:54.4Z), 0:54.4 to 1:01.8: 1 removed, 0 added, 0 moved, not complete: 1 not sure
+  1:00.4 removed 20261118T000054.4Z-7-704 from (-0.30, 0.30) (0.50)
+tray 8 (2026-11-18T00:01:03.4Z), 1:03.4 to 1:10.4: 0 removed, 0 added, 0 moved, not complete: 1 not sure
+tray 9 (2026-11-18T00:01:12.0Z), 1:12.0 to 1:19.0: 0 removed, 0 added, 0 moved, not complete: 1 not sure
+tray 10 (2026-11-18T00:01:20.6Z), 1:20.6 to 1:27.6: 0 removed, 0 added, 0 moved, not complete: 1 not sure
+tray 11 (2026-11-18T00:01:29.2Z), 1:29.2 to 1:36.2: 0 removed, 0 added, 0 moved
+tray 12 (2026-11-18T00:01:37.8Z), 1:37.8 to 1:44.6: 0 removed, 0 added, 0 moved, not complete: 1 not sure
+tray 13 (2026-11-18T00:01:46.2Z), 1:46.2 to 1:56.2: 0 removed, 0 added, 0 moved, not complete: 1 not sure
+tray 14 (2026-11-18T00:01:57.8Z), 1:57.8 to 2:08.0: 0 removed, 0 added, 0 moved, not complete: 1 not sure
+tray 15 (2026-11-18T00:02:09.6Z), 2:09.6 to 2:18.0: 0 removed, 0 added, 0 moved, not complete: 1 not sure
+tray 16 (2026-11-18T00:02:19.6Z), 2:19.6 to 2:26.8: 0 removed, 0 added, 0 moved, not complete: 1 not sure
+tray 17 (2026-11-18T00:02:28.4Z), 2:28.4 to 2:36.2: 0 removed, 0 added, 0 moved, not complete: 1 not sure
+tray 18 (2026-11-18T00:02:37.8Z), 2:37.8 to 2:45.4: 0 removed, 0 added, 0 moved, not complete: 1 not sure
+tray 19 (2026-11-18T00:02:47.0Z), 2:47.0 to 2:54.6: 0 removed, 0 added, 0 moved, not complete: 2 not sure
+tray 20 (2026-11-18T00:02:56.2Z), 2:56.2 to 3:03.2: 0 removed, 0 added, 0 moved, not complete: 2 not sure
+tray 21 (2026-11-18T00:03:04.8Z), 3:04.8 to 3:10.6: 0 removed, 0 added, 0 moved
+tray 22 (2026-11-18T00:03:12.2Z), 3:12.2 to 3:18.6: 0 removed, 0 added, 0 moved, not complete: 1 not sure
+tray 23 (2026-11-18T00:03:20.2Z), 3:20.2 to 3:27.4: 0 removed, 0 added, 0 moved, not complete: 2 not sure
+tray 24 (2026-11-18T00:03:29.0Z), 3:29.0 to 3:36.6: 0 removed, 1 added, 0 moved, not complete: 1 unclear
+  3:36.6 added 20261118T000333.0Z-24-2409 at (-0.30, 0.22) (unclear, 0.52)
+tray 25 (2026-11-18T00:03:38.2Z), 3:38.2 to 3:42.4: 0 removed, 0 added, 0 moved, not complete: 1 not sure
+tray 26 (2026-11-18T00:03:44.0Z), 3:44.0 to 3:49.0: 0 removed, 0 added, 0 moved, not complete: 1 not sure
+tray 27 (2026-11-18T00:03:50.6Z), 3:50.6 to 3:54.8: 0 removed, 0 added, 0 moved, not complete: 1 not sure
+tray 28 (2026-11-18T00:03:56.4Z), 3:56.4 to 4:00.6: 0 removed, 0 added, 0 moved, not complete: 2 not sure

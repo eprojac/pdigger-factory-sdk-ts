@@ -1,0 +1,2 @@
+tray 1 (2026-11-22T02:44:54.0Z), 4:57.8 to 5:05.1: 1 removed, 0 added, 0 moved, not complete: 1 unclear, 18 not sure
+  5:05.1 removed 20261122T024454.0Z-1-643 from (0.87, -0.57) (unclear, 0.58)

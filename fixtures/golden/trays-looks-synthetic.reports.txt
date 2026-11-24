@@ -1,0 +1,79 @@
+tray 1 (2026-11-18T00:00:00.8Z), 0:00.8 to 0:08.2: 0 removed, 0 added, 0 moved, not complete: 2 not sure
+tray 2 (2026-11-18T00:00:09.4Z), 0:09.4 to 0:14.8: 1 removed, 0 added, 1 moved, not complete: 1 unclear
+  0:14.8 removed 20261118T000009.4Z-2-24 from (-0.20, 0.30) (unclear, 0.58)
+  moved 20261118T000009.4Z-2-23 0.35 to (0.15, 0.30) (0.87)
+tray 3 (2026-11-18T00:00:16.0Z), 0:16.0 to 0:24.2: 0 removed, 0 added, 1 moved
+  moved 20261118T000016.0Z-3-41 0.30 to (-0.60, -0.30) (0.87)
+tray 4 (2026-11-18T00:00:25.4Z), 0:25.4 to 0:29.2: 0 removed, 0 added, 0 moved, not complete: 2 not sure
+tray 5 (2026-11-18T00:00:30.4Z), 0:30.4 to 0:38.6: 1 removed, 0 added, 0 moved, not complete: 1 unclear, 1 not sure
+  0:38.6 removed 20261118T000030.4Z-5-74 from (0.80, 0.00) (unclear, 0.58)
+tray 6 (2026-11-18T00:00:39.8Z), 0:39.8 to 0:43.0: 0 removed, 0 added, 0 moved, not complete: 2 not sure
+tray 7 (2026-11-18T00:00:44.2Z), 0:44.2 to 0:51.8: 0 removed, 2 added, 0 moved, not complete: 1 unclear
+  0:47.6 added 20261118T000046.0Z-7-125 at (0.80, 0.00) (0.52)
+  0:51.8 added 20261118T000050.0Z-7-126 at (-0.10, 0.00) (unclear, 0.52)
+tray 8 (2026-11-18T00:00:53.0Z), 0:53.0 to 0:58.6: 0 removed, 1 added, 0 moved, not complete: 1 unclear, 1 not sure
+  0:58.6 added 20261118T000057.8Z-8-135 at (0.90, 0.30) (unclear, 0.52)
+tray 9 (2026-11-18T00:00:59.8Z), 0:59.8 to 1:03.6: 0 removed, 0 added, 0 moved, not complete: 2 not sure
+tray 10 (2026-11-18T00:01:04.8Z), 1:04.8 to 1:16.6: 2 removed, 0 added, 0 moved, not complete: 2 unclear
+  1:16.6 removed 20261118T000104.8Z-10-201 from (-0.70, 0.27) (unclear, 0.58)
+  1:16.6 removed 20261118T000104.8Z-10-204 from (0.46, 0.48) (unclear, 0.58)
+tray 11 (2026-11-18T00:01:17.8Z), 1:17.8 to 1:27.8: 1 removed, 0 added, 0 moved, not complete: 1 unclear
+  1:27.8 removed 20261118T000117.8Z-11-242 from (-0.46, -0.42) (unclear, 0.58)
+tray 12 (2026-11-18T00:01:29.0Z), 1:29.0 to 1:35.2: 1 removed, 1 added, 2 moved, not complete: 2 unclear
+  1:35.2 removed 20261118T000129.0Z-12-275 from (0.92, -0.42) (unclear, 0.58)
+  1:35.2 added 20261118T000131.6Z-12-261 at (-0.92, 0.48) (unclear, 0.52)
+  moved 20261118T000129.0Z-12-261 0.35 to (-0.57, 0.48) (0.87)
+  moved 20261118T000129.0Z-12-274 0.46 to (0.92, -0.42) (0.87)
+tray 13 (2026-11-18T00:01:36.4Z), 1:36.4 to 1:44.8: 0 removed, 2 added, 0 moved, not complete: 2 unclear, 2 not sure
+  1:44.8 added 20261118T000141.2Z-13-311 at (-0.70, 0.25) (unclear, 0.52)
+  1:44.8 added 20261118T000142.4Z-13-312 at (0.92, -0.42) (unclear, 0.52)
+tray 14 (2026-11-18T00:01:46.0Z), 1:46.0 to 2:00.0: 1 removed, 1 added, 1 moved, not complete: 2 unclear, 1 not sure
+  2:00.0 removed 20261118T000146.0Z-14-409 from (-0.40, 0.00) (unclear, 0.58)
+  2:00.0 added 20261118T000152.6Z-14-410 at (0.22, 0.00) (unclear, 0.52)
+  moved 20261118T000146.0Z-14-410 0.45 to (-0.20, -0.20) (0.87)
+tray 15 (2026-11-18T00:02:01.2Z), 2:01.2 to 2:10.8: 1 removed, 0 added, 0 moved, not complete: 1 unclear, 2 not sure
+  2:10.8 removed 20261118T000201.2Z-15-520 from (0.20, 0.00) (unclear, 0.58)
+tray 16 (2026-11-18T00:02:12.0Z), 2:12.0 to 2:20.0: 1 removed, 0 added, 0 moved, not complete: 1 not sure
+  2:19.6 removed 20261118T000212.0Z-16-610 from (-0.60, 0.00) (0.50)
+tray 17 (2026-11-18T00:02:21.8Z), 2:21.8 to 2:30.2: 1 removed, 0 added, 0 moved
+  2:29.4 removed 20261118T000221.8Z-17-702 from (0.02, 0.00) (0.50)
+tray 18 (2026-11-18T00:02:31.4Z), 2:31.4 to 2:39.6: 1 removed, 1 added, 0 moved, not complete: 2 unclear, 3 not sure
+  2:39.6 removed 20261118T000231.4Z-18-801 from (-0.30, 0.00) (unclear, 0.58)
+  2:39.6 added 20261118T000237.6Z-18-805 at (0.98, 0.00) (unclear, 0.52)
+tray 19 (2026-11-18T00:02:40.8Z), 2:40.8 to 2:46.4: 0 removed, 0 added, 0 moved, not complete: 2 not sure
+tray 20 (2026-11-18T00:02:47.6Z), 2:47.6 to 2:51.6: 0 removed, 0 added, 0 moved, not complete: 1 not sure
+tray 21 (2026-11-18T00:02:52.8Z), 2:52.8 to 2:58.4: 0 removed, 0 added, 2 moved
+  moved 20261118T000252.8Z-21-1101 0.30 to (-0.50, 0.30) (0.87)
+  moved 20261118T000252.8Z-21-1102 0.30 to (-0.80, 0.30) (0.87)
+tray 22 (2026-11-18T00:02:59.6Z), 2:59.6 to 3:07.0: 1 removed, 1 added, 0 moved, not complete: 2 unclear
+  3:07.0 removed 20261118T000259.6Z-22-1201 from (-0.80, 0.00) (unclear, 0.58)
+  3:07.0 added 20261118T000306.2Z-22-1209 at (0.90, 0.45) (unclear, 0.52)
+tray 23 (2026-11-18T00:03:08.2Z), 3:08.2 to 3:12.2: 0 removed, 0 added, 0 moved, not complete: 2 not sure
+tray 24 (2026-11-18T00:03:13.6Z), 3:13.6 to 3:23.0: 1 removed, 0 added, 0 moved, not complete: 1 unclear, 2 not sure
+  3:23.0 removed 20261118T000313.6Z-24-1402 from (1.04, 0.22) (unclear, 0.58)
+tray 25 (2026-11-18T00:03:24.4Z), 3:24.4 to 3:29.0: 0 removed, 3 added, 0 moved, not complete: 3 unclear, 1 not sure
+  3:29.0 added 20261118T000326.0Z-25-1503 at (0.60, 0.00) (unclear, 0.52)
+  3:29.0 added 20261118T000326.2Z-25-1509 at (-0.90, 0.50) (unclear, 0.52)
+  3:29.0 added 20261118T000327.2Z-25-1510 at (-0.90, -0.50) (unclear, 0.52)
+tray 26 (2026-11-18T00:03:30.2Z), 3:30.2 to 3:38.0: 2 removed, 1 added, 0 moved, not complete: 3 unclear
+  3:38.0 removed 20261118T000330.2Z-26-1605 from (-0.30, 0.00) (unclear, 0.58)
+  3:38.0 removed 20261118T000330.2Z-26-1613 from (-0.10, 0.45) (unclear, 0.58)
+  3:38.0 added 20261118T000335.8Z-26-1640 at (-1.05, -0.30) (unclear, 0.52)
+tray 27 (2026-11-18T00:03:39.2Z), 3:39.2 to 3:48.4: 0 removed, 0 added, 1 moved, not complete: 1 not sure
+  moved 20261118T000339.2Z-27-1701 0.29 to (-0.75, 0.25) (0.87)
+tray 28 (2026-11-18T00:03:49.6Z), 3:49.6 to 3:58.6: 1 removed, 1 added, 0 moved, not complete: 2 unclear, 2 not sure
+  3:58.6 removed 20261118T000349.6Z-28-1808 from (0.00, 0.03) (unclear, 0.58)
+  3:58.6 added 20261118T000352.6Z-28-1830 at (0.95, 0.50) (unclear, 0.52)
+tray 29 (2026-11-18T00:03:59.8Z), 3:59.8 to 4:09.2: 0 removed, 1 added, 1 moved, not complete: 1 unclear
+  4:09.2 added 20261118T000407.4Z-29-1922 at (0.92, -0.42) (unclear, 0.52)
+  moved 20261118T000359.8Z-29-1908 0.20 to (0.12, 0.19) (0.87)
+tray 30 (2026-11-18T00:04:10.4Z), 4:10.4 to 4:24.4: 4 removed, 0 added, 0 moved, not complete: 3 unclear
+  4:14.8 removed 20261118T000410.4Z-30-2009 from (-0.90, 0.45) (0.50)
+  4:24.4 removed 20261118T000410.4Z-30-2001 from (-0.80, 0.00) (unclear, 0.58)
+  4:24.4 removed 20261118T000410.4Z-30-2004 from (0.80, 0.00) (unclear, 0.58)
+  4:24.4 removed 20261118T000410.4Z-30-2012 from (0.90, -0.45) (unclear, 0.58)
+tray 31 (2026-11-18T00:04:25.6Z), 4:25.6 to 4:33.0: 1 removed, 1 added, 0 moved, not complete: 1 unclear, 1 not sure
+  4:30.0 removed 20261118T000425.6Z-31-2109 from (-0.90, 0.45) (0.50)
+  4:33.0 added 20261118T000431.2Z-31-2130 at (0.00, 0.00) (unclear, 0.52)
+tray 32 (2026-11-18T00:04:34.2Z), 4:34.2 to 4:40.6: 1 removed, 0 added, 0 moved, not complete: 1 not sure
+  4:40.4 removed 20261118T000434.2Z-32-2209 from (-0.90, 0.45) (0.50)

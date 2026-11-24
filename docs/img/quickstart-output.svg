@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="380" viewBox="0 0 760 380" role="img" aria-label="Output of the quickstart on the dry1 recording excerpt">
+  <title>Quickstart output: the first events of joined-mid-move (dry1, frames 399-420), a 20.20 recording served by FakeFactory</title>
+  <rect width="760" height="380" rx="8" fill="#0f1317"/>
+  <circle cx="20" cy="16" r="5" fill="#3a434d"/><circle cx="38" cy="16" r="5" fill="#3a434d"/><circle cx="56" cy="16" r="5" fill="#3a434d"/>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13">
+    <text x="20" y="44" fill="#8b97a3">$ node quickstart.mjs</text>
+    <text x="20" y="64" fill="#8b97a3">following dry1, session 1795314878</text>
+    <text x="20" y="84"><tspan fill="#7fb4ff">1:19.8</tspan> <tspan fill="#e6edf3">stone 177 is confirmed</tspan></text>
+    <text x="20" y="104"><tspan fill="#7fb4ff">1:19.8</tspan> <tspan fill="#e6edf3">stone 178 appears</tspan></text>
+    <text x="20" y="124"><tspan fill="#7fb4ff">1:19.8</tspan> <tspan fill="#e6edf3">Right hand places stone 95</tspan></text>
+    <text x="20" y="144"><tspan fill="#7fb4ff">1:20.0</tspan> <tspan fill="#e6edf3">Right hand pushes stone 95</tspan></text>
+    <text x="20" y="164"><tspan fill="#7fb4ff">1:20.0</tspan> <tspan fill="#e6edf3">stone 179 appears</tspan></text>
+    <text x="20" y="184"><tspan fill="#7fb4ff">1:20.2</tspan> <tspan fill="#e6edf3">Right hand pushes stone 95</tspan></text>
+    <text x="20" y="204"><tspan fill="#7fb4ff">1:20.2</tspan> <tspan fill="#e6edf3">stone 155 is removed (carried away)</tspan></text>
+    <text x="20" y="224"><tspan fill="#7fb4ff">1:20.2</tspan> <tspan fill="#e6edf3">Left hand takes stone 155 out of view</tspan></text>
+    <text x="20" y="244"><tspan fill="#7fb4ff">1:20.4</tspan> <tspan fill="#e6edf3">Right hand pushes stone 95</tspan></text>
+    <text x="20" y="264"><tspan fill="#7fb4ff">1:20.4</tspan> <tspan fill="#e6edf3">Right hand pushes stone 109</tspan></text>
+    <text x="20" y="284"><tspan fill="#7fb4ff">1:20.6</tspan> <tspan fill="#e6edf3">Right hand pushes stone 95</tspan></text>
+    <text x="20" y="304"><tspan fill="#7fb4ff">1:20.8</tspan> <tspan fill="#e6edf3">Right hand pushes stone 95</tspan></text>
+    <text x="20" y="324"><tspan fill="#7fb4ff">1:20.8</tspan> <tspan fill="#e6edf3">stone 106 is reseated</tspan></text>
+    <text x="20" y="344"><tspan fill="#7fb4ff">1:21.0</tspan> <tspan fill="#e6edf3">Right hand pushes stone 95</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,24 @@
+1:49.3 Left hand pushes stone 130
+1:49.3 stone 226 appears
+1:49.5 Left hand pushes stone 108
+1:49.5 Left hand pushes stone 130
+1:49.5 stone 226 is confirmed
+1:49.5 stone 227 appears
+1:49.5 stone 228 appears
+1:49.5 stone 226 is removed (overlapped another stone)
+1:49.5 stone 100 is reseated
+1:49.5 stone 221 is confirmed
+1:49.5 stone 118 is removed (a hand emptied its place)
+1:49.7 stone 229 appears
+1:49.7 stone 221 splits into 221, 230 and 231
+1:49.7 stone 119 is removed (a hand emptied its place)
+1:49.7 stone 120 is removed (a hand emptied its place)
+1:49.3 stone 130 is confirmed
+1:49.9 stone 232 appears
+1:49.9 stone 233 appears
+1:50.1 stone 234 appears
+1:50.1 stone 235 appears
+1:50.3 stone 236 appears
+1:50.3 stone 170 is removed (no longer seen)
+1:50.7 stone 237 appears
+1:50.7 stone 108 is reseated

@@ -1,0 +1,5 @@
+1:50.6 Left hand moves stone 1301 0.00 units in 0.4 s
+1:59.6 Left hand moves stone 1401 0.00 units in 0.4 s
+2:13.6 Left hand moves stone 1501 0.00 units in 0.4 s
+1:33.2 Left hand is still holding stone 1101 (148.0 s so far)
+1:41.8 Left hand is still holding stone 1201 (139.4 s so far)

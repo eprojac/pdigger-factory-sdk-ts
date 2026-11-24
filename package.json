@@ -1,0 +1,97 @@
+{
+  "name": "pdigger-factory-sdk",
+  "version": "0.1.0",
+  "description": "TypeScript SDK for the pDigger Factory interpreter API: follow the shared session, typed events and activities, replays of recordings, streams, codecs and three.js visualisation helpers.",
+  "keywords": [
+    "pdigger",
+    "factory",
+    "interpreter",
+    "computer-vision",
+    "sse",
+    "three.js",
+    "sdk"
+  ],
+  "license": "Apache-2.0",
+  "author": "eprojac",
+  "homepage": "https://factory.pdigger.com/developers/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eprojac/pdigger-factory-sdk-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eprojac/pdigger-factory-sdk-ts/issues"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./viz": {
+      "types": "./dist/viz/index.d.ts",
+      "import": "./dist/viz/index.js"
+    },
+    "./testing": {
+      "types": "./dist/testing/index.d.ts",
+      "import": "./dist/testing/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE",
+    "NOTICE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "node scripts/clean.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "typecheck:consumer": "tsc -p test/consumer/tsconfig.json && tsc -p test/consumer/tsconfig.node.json && tsc -p test/consumer/tsconfig.esnext.json",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run --coverage",
+    "test:watch": "vitest",
+    "test:integration": "vitest run --config vitest.integration.config.ts",
+    "docs": "typedoc",
+    "check": "npm run typecheck && npm run lint && npm run format:check && npm run test && npm run build && npm run typecheck:consumer && npm run docs",
+    "pictures": "npm run build && node scripts/quickstart-svg.mjs && node scripts/screenshots.mjs",
+    "viz": "npm run build && node examples/browser/serve.mjs",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "peerDependencies": {
+    "@types/three": ">=0.150.0",
+    "three": ">=0.150.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/three": {
+      "optional": true
+    },
+    "three": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.1",
+    "@types/node": "22.19.1",
+    "@types/three": "0.180.0",
+    "@vitest/coverage-v8": "3.2.4",
+    "eslint": "9.39.1",
+    "happy-dom": "20.0.10",
+    "prettier": "3.6.2",
+    "three": "0.180.0",
+    "typedoc": "0.28.14",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.46.4",
+    "vitest": "3.2.4"
+  }
+}

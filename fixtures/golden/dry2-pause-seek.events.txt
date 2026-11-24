@@ -1,0 +1,249 @@
+9:43.4 stone 1 appears
+9:43.4 stone 2 appears
+9:43.4 stone 3 appears
+9:43.4 stone 4 appears
+9:43.4 stone 5 appears
+9:43.4 stone 6 appears
+9:43.4 stone 7 appears
+9:43.4 stone 8 appears
+9:43.4 stone 9 appears
+9:43.4 stone 10 appears
+9:43.4 stone 11 appears
+9:43.4 stone 12 appears
+9:43.4 stone 13 appears
+9:43.4 stone 14 appears
+9:43.4 stone 15 appears
+9:43.4 stone 16 appears
+9:43.4 stone 17 appears
+9:43.4 stone 18 appears
+9:43.4 stone 19 appears
+9:43.4 stone 20 appears
+9:43.4 stone 21 appears
+9:43.4 stone 22 appears
+9:43.4 stone 23 appears
+9:43.4 stone 24 appears
+9:43.4 stone 25 appears
+9:43.4 stone 26 appears
+9:43.4 stone 27 appears
+9:43.4 stone 28 appears
+9:43.4 stone 29 appears
+9:43.4 stone 30 appears
+9:43.4 stone 31 appears
+9:43.4 stone 32 appears
+9:43.4 stone 33 appears
+9:43.4 stone 34 appears
+9:43.4 stone 35 appears
+9:43.4 stone 36 appears
+9:43.4 stone 37 appears
+9:43.4 stone 38 appears
+9:43.4 stone 39 appears
+9:43.4 stone 40 appears
+9:43.4 stone 41 appears
+9:43.4 stone 1 is confirmed
+9:43.4 stone 2 is confirmed
+9:43.4 stone 3 is confirmed
+9:43.4 stone 4 is confirmed
+9:43.6 stone 5 is confirmed
+9:43.6 stone 6 is confirmed
+9:43.6 stone 7 is confirmed
+9:43.6 stone 8 is confirmed
+9:43.6 stone 9 is confirmed
+9:43.6 stone 10 is confirmed
+9:43.6 stone 11 is confirmed
+9:43.6 stone 12 is confirmed
+9:43.6 stone 13 is confirmed
+9:43.6 stone 14 is confirmed
+9:43.6 stone 15 is confirmed
+9:43.6 stone 16 is confirmed
+9:43.6 stone 17 is confirmed
+9:43.6 stone 18 is confirmed
+9:43.6 stone 19 is confirmed
+9:43.6 stone 20 is confirmed
+9:43.6 stone 21 is confirmed
+9:43.6 stone 22 is confirmed
+9:43.6 stone 23 is confirmed
+9:43.6 stone 24 is confirmed
+9:43.6 stone 25 is confirmed
+9:43.6 stone 26 is confirmed
+9:43.6 stone 27 is confirmed
+9:43.6 stone 28 is confirmed
+9:43.6 stone 29 is confirmed
+9:43.6 stone 30 is confirmed
+9:43.6 stone 31 is confirmed
+9:43.6 stone 32 is confirmed
+9:43.6 stone 33 is confirmed
+9:43.6 stone 34 is confirmed
+9:43.6 stone 35 is confirmed
+9:43.6 stone 36 is confirmed
+9:43.6 stone 37 is confirmed
+9:43.6 stone 38 is confirmed
+9:43.6 stone 39 is confirmed
+9:43.6 stone 40 is confirmed
+9:43.6 stone 41 is confirmed
+9:44.2 stone 42 appears
+9:44.2 stone 42 is confirmed
+9:46.0 stone 1 gets its final shape
+9:46.0 stone 2 gets its final shape
+9:46.2 stone 3 gets its final shape
+9:46.2 stone 4 gets its final shape
+9:46.8 stone 5 gets its final shape
+9:46.8 stone 6 gets its final shape
+9:47.0 stone 7 gets its final shape
+9:47.0 stone 8 gets its final shape
+9:47.6 stone 9 gets its final shape
+9:47.6 stone 10 gets its final shape
+9:47.8 stone 11 gets its final shape
+9:47.8 stone 12 gets its final shape
+9:48.4 stone 13 gets its final shape
+9:48.4 stone 14 gets its final shape
+9:48.6 stone 15 gets its final shape
+9:48.6 stone 16 gets its final shape
+9:49.2 stone 17 gets its final shape
+9:49.2 stone 18 gets its final shape
+9:49.4 stone 19 gets its final shape
+9:49.4 stone 42 gets its final shape
+9:49.8 stone 20 gets its final shape
+9:49.8 stone 21 gets its final shape
+9:50.0 stone 22 gets its final shape
+9:50.0 stone 23 gets its final shape
+9:50.4 stone 24 gets its final shape
+9:50.4 stone 25 gets its final shape
+9:50.6 stone 26 gets its final shape
+9:50.6 stone 27 gets its final shape
+9:51.0 stone 28 gets its final shape
+9:51.0 stone 29 gets its final shape
+9:51.2 stone 30 gets its final shape
+9:51.2 stone 31 gets its final shape
+9:51.5 stone 32 gets its final shape
+9:51.5 stone 33 gets its final shape
+9:51.7 stone 34 gets its final shape
+9:51.7 stone 35 gets its final shape
+9:52.1 stone 36 gets its final shape
+9:52.1 stone 37 gets its final shape
+9:52.3 stone 38 gets its final shape
+9:52.3 stone 39 gets its final shape
+9:52.7 stone 40 gets its final shape
+9:45.4 stone 1 appears
+9:45.4 stone 2 appears
+9:45.4 stone 3 appears
+9:45.4 stone 4 appears
+9:45.4 stone 5 appears
+9:45.4 stone 6 appears
+9:45.4 stone 7 appears
+9:45.4 stone 8 appears
+9:45.4 stone 9 appears
+9:45.4 stone 10 appears
+9:45.4 stone 11 appears
+9:45.4 stone 12 appears
+9:45.4 stone 13 appears
+9:45.4 stone 14 appears
+9:45.4 stone 15 appears
+9:45.4 stone 16 appears
+9:45.4 stone 17 appears
+9:45.4 stone 18 appears
+9:45.4 stone 19 appears
+9:45.4 stone 20 appears
+9:45.4 stone 21 appears
+9:45.4 stone 22 appears
+9:45.4 stone 23 appears
+9:45.4 stone 24 appears
+9:45.4 stone 25 appears
+9:45.4 stone 26 appears
+9:45.4 stone 27 appears
+9:45.4 stone 28 appears
+9:45.4 stone 29 appears
+9:45.4 stone 30 appears
+9:45.4 stone 31 appears
+9:45.4 stone 32 appears
+9:45.4 stone 33 appears
+9:45.4 stone 34 appears
+9:45.4 stone 35 appears
+9:45.4 stone 36 appears
+9:45.4 stone 37 appears
+9:45.4 stone 38 appears
+9:45.4 stone 39 appears
+9:45.4 stone 40 appears
+9:45.4 stone 41 appears
+9:45.4 stone 1 is confirmed
+9:45.4 stone 2 is confirmed
+9:45.4 stone 3 is confirmed
+9:45.4 stone 4 is confirmed
+9:45.6 stone 5 is confirmed
+9:45.6 stone 6 is confirmed
+9:45.6 stone 7 is confirmed
+9:45.6 stone 8 is confirmed
+9:45.6 stone 9 is confirmed
+9:45.6 stone 10 is confirmed
+9:45.6 stone 11 is confirmed
+9:45.6 stone 12 is confirmed
+9:45.6 stone 13 is confirmed
+9:45.6 stone 14 is confirmed
+9:45.6 stone 15 is confirmed
+9:45.6 stone 16 is confirmed
+9:45.6 stone 17 is confirmed
+9:45.6 stone 18 is confirmed
+9:45.6 stone 19 is confirmed
+9:45.6 stone 20 is confirmed
+9:45.6 stone 21 is confirmed
+9:45.6 stone 22 is confirmed
+9:45.6 stone 23 is confirmed
+9:45.6 stone 24 is confirmed
+9:45.6 stone 25 is confirmed
+9:45.6 stone 26 is confirmed
+9:45.6 stone 27 is confirmed
+9:45.6 stone 28 is confirmed
+9:45.6 stone 29 is confirmed
+9:45.6 stone 30 is confirmed
+9:45.6 stone 31 is confirmed
+9:45.6 stone 32 is confirmed
+9:45.6 stone 33 is confirmed
+9:45.6 stone 34 is confirmed
+9:45.6 stone 35 is confirmed
+9:45.6 stone 36 is confirmed
+9:45.6 stone 37 is confirmed
+9:45.6 stone 38 is confirmed
+9:45.6 stone 39 is confirmed
+9:45.6 stone 40 is confirmed
+9:45.6 stone 41 is confirmed
+9:46.0 stone 42 appears
+9:46.0 stone 42 is confirmed
+9:48.0 stone 1 gets its final shape
+9:48.0 stone 2 gets its final shape
+9:48.0 stone 3 gets its final shape
+9:48.2 stone 4 gets its final shape
+9:48.8 stone 5 gets its final shape
+9:48.8 stone 6 gets its final shape
+9:48.8 stone 7 gets its final shape
+9:49.0 stone 8 gets its final shape
+9:49.6 stone 9 gets its final shape
+9:49.6 stone 10 gets its final shape
+9:49.6 stone 11 gets its final shape
+9:49.8 stone 12 gets its final shape
+9:50.4 stone 25 gets its final shape
+9:50.4 stone 34 gets its final shape
+9:50.4 stone 40 gets its final shape
+9:50.6 stone 42 gets its final shape
+9:51.2 stone 13 gets its final shape
+9:51.2 stone 14 gets its final shape
+9:51.2 stone 15 gets its final shape
+9:51.3 stone 16 gets its final shape
+9:51.9 stone 17 gets its final shape
+9:51.9 stone 18 gets its final shape
+9:51.9 stone 19 gets its final shape
+9:52.1 stone 20 gets its final shape
+9:52.7 stone 21 gets its final shape
+9:52.7 stone 22 gets its final shape
+9:52.7 stone 23 gets its final shape
+9:52.9 stone 24 gets its final shape
+9:53.5 stone 26 gets its final shape
+9:53.5 stone 27 gets its final shape
+9:53.5 stone 28 gets its final shape
+9:53.7 stone 29 gets its final shape
+9:54.3 stone 30 gets its final shape
+9:54.3 stone 31 gets its final shape
+9:54.3 stone 32 gets its final shape
+9:55.1 stone 36 gets its final shape
+9:55.1 stone 37 gets its final shape
+9:55.3 stone 33 gets its final shape
+9:55.3 stone 35 gets its final shape
+9:55.5 stone 38 gets its final shape

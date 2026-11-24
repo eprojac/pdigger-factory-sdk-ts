@@ -1,0 +1,96 @@
+0:08.2 tray 1 leaving: 8 stones (6 sure), 0 added, 0 removed, 0 unclear (bar 0.750)
+  stone 20261118T000000.8Z-1-2: unsure pushed, look stale: world 2 or gone
+  stone 20261118T000000.8Z-1-8: unsure pushed, look none: world 8 or gone
+0:14.8 tray 2 leaving: 11 stones (11 sure), 0 added, 0 removed, 1 unclear (bar 0.750)
+  stone 20261118T000009.4Z-2-24: removed look_lost, look stale: gone (carried_away) or unseen
+0:24.2 tray 3 leaving: 12 stones (12 sure), 0 added, 0 removed, 0 unclear (bar 0.750)
+0:29.2 tray 4 leaving: 4 stones (2 sure), 0 added, 0 removed, 0 unclear (bar 0.900)
+  stone 20261118T000025.4Z-4-62: unsure look_changed, look box: world 62 or world 64 or gone
+  stone 20261118T000025.4Z-4-64: unsure overlap, look box: world 64 or world 62 or gone
+0:38.6 tray 5 leaving: 11 stones (10 sure), 0 added, 0 removed, 1 unclear (bar 0.750)
+  stone 20261118T000030.4Z-5-71: unsure matched_at_leaving, look tie 0.833: world 83 0.833 or gone
+  stone 20261118T000030.4Z-5-74: removed twins, look tie 0.853: world 83 0.853 or gone or unseen
+0:43.0 tray 6 leaving: 12 stones (10 sure), 0 added, 0 removed, 0 unclear (bar 0.929)
+  stone 20261118T000039.8Z-6-91: unsure pushed, look low 0.781: world 91 0.781 or world 92 or gone
+  stone 20261118T000039.8Z-6-92: unsure neighbour_pushed, look low 0.779: world 92 or world 91 0.779 or gone
+0:51.8 tray 7 leaving: 13 stones (12 sure), 1 added, 0 removed, 1 unclear (bar 0.750)
+  stone 20261118T000050.0Z-7-126: added doubtful, look none, hand near: new
+0:58.6 tray 8 leaving: 5 stones (3 sure), 0 added, 0 removed, 1 unclear (bar 0.900)
+  stone 20261118T000053.0Z-8-131: unsure pushed, look late: world 131 or gone
+  stone 20261118T000057.8Z-8-135: added doubtful, look none, hand near, seen at arrival: new
+1:03.6 tray 9 leaving: 6 stones (4 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000059.8Z-9-141: unsure pushed, look none: world 141 or gone
+  stone 20261118T000059.8Z-9-142: unsure pushed, look none: world 142 or gone
+1:16.6 tray 10 leaving: 13 stones (13 sure), 0 added, 0 removed, 2 unclear (bar 0.750)
+  stone 20261118T000104.8Z-10-201: removed by_look, look stale: gone (carried_away) or unseen
+  stone 20261118T000104.8Z-10-204: removed relinked, look stale: gone (carried_away) or unseen
+1:27.8 tray 11 leaving: 11 stones (11 sure), 0 added, 0 removed, 1 unclear (bar 0.750)
+  stone 20261118T000117.8Z-11-242: removed covered, look stale: gone or unseen
+1:35.2 tray 12 leaving: 14 stones (13 sure), 0 added, 0 removed, 2 unclear (bar 0.750)
+  stone 20261118T000129.0Z-12-275: removed look_lost, look stale: gone or unseen
+  stone 20261118T000131.6Z-12-261: added freed, look none, hand near, seen at arrival: new
+1:44.8 tray 13 leaving: 16 stones (12 sure), 0 added, 0 removed, 2 unclear (bar 0.750)
+  stone 20261118T000136.4Z-13-293: unsure overlap, look box: world 293 or world 311 or gone
+  stone 20261118T000136.4Z-13-301: unsure pushed, look tie 0.862: world 301 or world 311 0.862 or gone
+  stone 20261118T000141.2Z-13-311: added doubtful, look tie 0.862, hand near: stone 20261118T000136.4Z-13-301 0.862 or stone 20261118T000136.4Z-13-293 or new
+  stone 20261118T000142.4Z-13-312: added unchecked, look new, hand near: new
+2:00.0 tray 14 leaving: 14 stones (12 sure), 0 added, 0 removed, 2 unclear (bar 0.750)
+  stone 20261118T000146.0Z-14-432: unsure neighbour_pushed, look stale: world 431 or world 410 or gone
+  stone 20261118T000146.0Z-14-409: removed relinked, look stale: world 410 or world 431 or gone or unseen
+  stone 20261118T000152.6Z-14-410: added freed, look none, seen at arrival: stone 20261118T000146.0Z-14-432 or stone 20261118T000146.0Z-14-409 or new
+2:10.8 tray 15 leaving: 13 stones (11 sure), 0 added, 0 removed, 1 unclear (bar 0.750)
+  stone 20261118T000201.2Z-15-510: unsure pushed, look stale: world 520 or world 540 or gone
+  stone 20261118T000201.2Z-15-520: removed look_lost, look stale: world 520 or world 540 or gone (hand) or unseen
+  stone 20261118T000201.2Z-15-540: unsure pushed, look stale: world 540 or world 520 or gone
+2:20.0 tray 16 leaving: 13 stones (12 sure), 0 added, 1 removed, 0 unclear (bar 0.750)
+  stone 20261118T000212.0Z-16-620: unsure pushed, look late: world 620 or gone
+2:30.2 tray 17 leaving: 12 stones (12 sure), 0 added, 1 removed, 0 unclear (bar 0.900)
+2:39.6 tray 18 leaving: 14 stones (10 sure), 0 added, 0 removed, 2 unclear (bar 0.750)
+  stone 20261118T000231.4Z-18-801: removed rivals, look stale: world 802 or world 803 or world 804 or gone (hand) or unseen
+  stone 20261118T000231.4Z-18-802: unsure neighbour_pushed, look stale: world 802 or world 803 or world 804 or world 805 or gone (hand)
+  stone 20261118T000231.4Z-18-803: unsure pushed, look stale: world 803 or world 804 or world 802 or world 805 or gone
+  stone 20261118T000231.4Z-18-804: unsure neighbour_pushed, look stale: world 804 or world 803 or world 805 or world 802 or gone
+  stone 20261118T000237.6Z-18-805: added doubtful, look none: stone 20261118T000231.4Z-18-804 or stone 20261118T000231.4Z-18-803 or stone 20261118T000231.4Z-18-802 or new
+2:46.4 tray 19 leaving: 6 stones (4 sure), 0 added, 0 removed, 0 unclear (bar 0.900)
+  stone 20261118T000240.8Z-19-901: unsure neighbour_pushed, look late: world 901 or world 902 or gone
+  stone 20261118T000240.8Z-19-902: unsure pushed, look late: world 902 or world 901 or gone
+2:51.6 tray 20 leaving: 6 stones (5 sure), 0 added, 0 removed, 0 unclear (bar 0.900)
+  stone 20261118T000247.6Z-20-1001: unsure unseen, look late: world 1001 or gone
+2:58.4 tray 21 leaving: 6 stones (6 sure), 0 added, 0 removed, 0 unclear (bar 0.900)
+3:07.0 tray 22 leaving: 3 stones (2 sure), 0 added, 0 removed, 2 unclear
+  stone 20261118T000259.6Z-22-1201: removed rivals, look none: gone or unseen
+  stone 20261118T000306.2Z-22-1209: added doubtful, look none: new
+3:12.2 tray 23 leaving: 4 stones (2 sure), 0 added, 0 removed, 0 unclear (bar 0.900)
+  stone 20261118T000308.2Z-23-1301: unsure pushed, look tie 0.958: world 1301 0.958 or world 1302 or gone
+  stone 20261118T000308.2Z-23-1302: unsure neighbour_pushed, look tie 0.964: world 1302 or world 1301 0.964 or gone
+3:23.0 tray 24 leaving: 5 stones (3 sure), 0 added, 0 removed, 1 unclear (bar 0.900)
+  stone 20261118T000313.6Z-24-1401: unsure pushed, look tie 0.990: world 1401 or world 1403 0.990 or gone
+  stone 20261118T000313.6Z-24-1403: unsure pushed, look late: world 1403 or gone
+  stone 20261118T000313.6Z-24-1402: removed rivals, look none: world 1403 or gone (hand) or unseen
+3:29.0 tray 25 leaving: 6 stones (2 sure), 0 added, 0 removed, 3 unclear (bar 0.900)
+  stone 20261118T000324.4Z-25-1503: unsure size_changed, look stale: world 1511 or gone
+  stone 20261118T000326.0Z-25-1503: added size_changed, look new, seen at arrival: new
+  stone 20261118T000326.2Z-25-1509: added doubtful, look none: new
+  stone 20261118T000327.2Z-25-1510: added doubtful, look none: new
+3:38.0 tray 26 leaving: 10 stones (9 sure), 0 added, 0 removed, 3 unclear (bar 0.900)
+  stone 20261118T000330.2Z-26-1605: removed rivals, look none: world 1640 or gone or unseen
+  stone 20261118T000330.2Z-26-1613: removed rivals, look stale: gone (hand) or unseen
+  stone 20261118T000335.8Z-26-1640: added doubtful, look new: stone 20261118T000330.2Z-26-1605 or new
+3:48.4 tray 27 leaving: 15 stones (14 sure), 0 added, 0 removed, 0 unclear (bar 0.750)
+  stone 20261118T000339.2Z-27-1708: unsure pushed, look low -0.054: world 1708 -0.054 or gone
+3:58.6 tray 28 leaving: 13 stones (10 sure), 0 added, 0 removed, 2 unclear (bar 0.750)
+  stone 20261118T000349.6Z-28-1801: unsure matched_at_leaving, look stale: world 1831 or gone
+  stone 20261118T000349.6Z-28-1808: removed rivals, look stale: world 1831 or world 1832 or gone (dropped) or unseen
+  stone 20261118T000349.6Z-28-1815: unsure matched_at_leaving, look stale: world 1832 or world 1830 or gone
+  stone 20261118T000352.6Z-28-1830: added doubtful, look none: stone 20261118T000349.6Z-28-1815 or new
+4:09.2 tray 29 leaving: 15 stones (14 sure), 0 added, 0 removed, 1 unclear (bar 0.750)
+  stone 20261118T000407.4Z-29-1922: added relinked, look none: new
+4:24.4 tray 30 leaving: 8 stones (8 sure), 0 added, 1 removed, 3 unclear (bar 0.750)
+  stone 20261118T000410.4Z-30-2001: removed twins, look stale: gone (emptied) or unseen
+  stone 20261118T000410.4Z-30-2004: removed twins, look stale: gone (emptied) or unseen
+  stone 20261118T000410.4Z-30-2012: removed relinked, look stale: gone (carried_away) or unseen
+4:33.0 tray 31 leaving: 12 stones (10 sure), 0 added, 1 removed, 1 unclear (bar 0.750)
+  stone 20261118T000425.6Z-31-2107: unsure look_changed, look low 0.254: world 2107 0.254 or gone
+  stone 20261118T000431.2Z-31-2130: added relinked, look none: new
+4:40.6 tray 32 leaving: 11 stones (10 sure), 0 added, 1 removed, 0 unclear (bar 0.750)
+  stone 20261118T000434.2Z-32-2207: unsure look_changed, look stale: world 2207 or gone

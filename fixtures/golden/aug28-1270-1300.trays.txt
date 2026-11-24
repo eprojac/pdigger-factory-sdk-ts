@@ -1,0 +1,7 @@
+21:25.8 tray 2 arrived: 33 stones
+21:40.0 tray 2: stone 20261122T020601.7Z-2-2693 is not sure any more (a stone next to it was pushed; open since 21:40.0)
+21:40.0 tray 2: stone 20261122T020601.7Z-2-2702 is not sure any more (a stone next to it was pushed; open since 21:40.0)
+21:40.0 tray 2: stone 20261122T020601.7Z-2-2708 is not sure any more (it was pushed; open since 21:40.0)
+21:40.0 tray 2: stone 20261122T020601.7Z-2-2709 is not sure any more (it was pushed; open since 21:40.0)
+21:40.0 tray 2: stone 20261122T020601.7Z-2-2710 is not sure any more (a stone next to it was pushed; open since 21:40.0)
+21:40.0 tray 2 leaving: 33 stones (28 sure), 0 added, 0 removed, 0 unclear

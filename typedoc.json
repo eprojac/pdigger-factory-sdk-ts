@@ -1,0 +1,20 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "name": "pdigger-factory-sdk",
+  "entryPoints": ["src/index.ts", "src/viz/index.ts", "src/testing/index.ts"],
+  "tsconfig": "tsconfig.build.json",
+  "out": "docs/api",
+  "readme": "none",
+  "excludePrivate": true,
+  "excludeInternal": true,
+  "excludeExternals": true,
+  "sort": ["source-order"],
+  "validation": {
+    "notExported": false,
+    "invalidLink": true,
+    "notDocumented": false
+  },
+  "disableGit": true,
+  "sourceLinkTemplate": "https://github.com/eprojac/pdigger-factory-sdk-ts/blob/main/{path}#L{line}",
+  "suppressCommentWarningsInDeclarationFiles": true
+}

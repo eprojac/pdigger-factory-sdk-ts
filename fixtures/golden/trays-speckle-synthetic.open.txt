@@ -1,0 +1,8 @@
+0:06.6 tray 1 leaving: 5 stones (5 sure), 0 added, 0 removed, 0 unclear
+0:10.4 tray 2 leaving: 3 stones (3 sure), 0 added, 0 removed, 0 unclear
+0:24.4 tray 3 leaving: 11 stones (7 sure), 0 added, 1 removed, 5 unclear
+  stone 20261118T000011.6Z-3-69: removed rivals, look none: world 78 or world 73 or gone or unseen
+  stone 20261118T000022.4Z-3-71: added doubtful, look none, hand near: new
+  stone 20261118T000022.0Z-3-72: added doubtful, look none: new
+  stone 20261118T000022.8Z-3-73: added doubtful, look none, hand near: stone 20261118T000011.6Z-3-69 or new
+  stone 20261118T000022.0Z-3-78: added doubtful, look none: stone 20261118T000011.6Z-3-69 or new

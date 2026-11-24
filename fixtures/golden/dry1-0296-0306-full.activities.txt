@@ -1,0 +1,6 @@
+4:56.8 Right hand pushes stones 637 and 644 (4 pushes in 0.2 s)
+4:59.8 Right hand pushes stones 629, 630 and 632 (4 pushes in 0.6 s)
+5:00.8 Both hands push stone 636 (2 pushes in 0.2 s)
+5:01.6 Right hand moves stone 643 1.09 units in 1.2 s
+4:59.0 Left hand pushes stones 630, 636, 637, 642, 643 and 644 (14 pushes in 4.6 s)
+5:02.8 Right hand pushes stones 628, 629, 637, 644 and 680 (7 pushes in 1.2 s)

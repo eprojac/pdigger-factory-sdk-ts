@@ -1,0 +1,58 @@
+name: Integration
+
+# Opt-in suites: the four complete published recordings (weekly and on demand), and read-only checks of a unit (on
+# demand, with its URL; a GitHub-hosted runner reaches only units with a public address).
+on:
+  schedule:
+    - cron: "23 5 * * 1"
+  workflow_dispatch:
+    inputs:
+      factory_url:
+        description: "A unit to check read-only (PDIGGER_FACTORY_URL), e.g. http://factory-orin.local:8120; empty: none"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  recordings:
+    name: Replays of the published recordings
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Download the recordings
+        run: |
+          mkdir -p recordings
+          base=https://factory.pdigger.com/developers/data
+          curl -fsSL --retry 3 "$base/recordings.json" -o recordings/recordings.json
+          for v in dry1 dry2 aug28 jul30; do
+            for f in "$v.world.ndjson.gz" "$v.summary.json" "$v.summary.txt"; do
+              curl -fsSL --retry 3 "$base/$f" -o "recordings/$f"
+            done
+          done
+      - name: Replay and compare with the golden summaries
+        run: npm run test:integration -- test/integration/recordings.test.ts
+        env:
+          PDIGGER_FACTORY_RECORDINGS: ${{ github.workspace }}/recordings
+
+  unit:
+    name: Read-only checks of a unit
+    if: github.event_name == 'workflow_dispatch' && inputs.factory_url != ''
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: observe=1 streams and dry_run=1 controls only
+        run: npm run test:integration -- test/integration/unit.test.ts
+        env:
+          PDIGGER_FACTORY_URL: ${{ inputs.factory_url }}

@@ -1,0 +1,3 @@
+# The trees are LF-only and the tests compare files byte for byte (goldens, fixtures, pictures, MANIFEST.json's
+# sha256): no line-ending conversion on any platform.
+* -text

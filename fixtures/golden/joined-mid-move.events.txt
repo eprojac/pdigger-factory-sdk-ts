@@ -1,0 +1,31 @@
+1:19.8 stone 177 is confirmed
+1:19.8 stone 178 appears
+1:19.8 Right hand places stone 95
+1:20.0 Right hand pushes stone 95
+1:20.0 stone 179 appears
+1:20.2 Right hand pushes stone 95
+1:20.2 stone 155 is removed (carried away)
+1:20.2 Left hand takes stone 155 out of view
+1:20.4 Right hand pushes stone 95
+1:20.4 Right hand pushes stone 109
+1:20.6 Right hand pushes stone 95
+1:20.8 Right hand pushes stone 95
+1:20.8 stone 106 is reseated
+1:21.0 Right hand pushes stone 95
+1:21.0 stone 180 appears
+1:21.0 stone 177 gets its final shape
+1:21.2 Right hand pushes stone 95
+1:21.4 Right hand pushes stone 95
+1:21.4 Left hand pushes stone 174
+1:21.6 Right hand pushes stone 95
+1:21.6 Left hand pushes stone 103
+1:21.6 Left hand pushes stone 174
+1:21.8 Both hands push stone 94
+1:21.8 Right hand pushes stone 95
+1:21.8 Left hand pushes stone 174
+1:21.8 Left hand pushes stone 118
+1:22.0 Left hand pushes stone 174
+1:22.2 Left hand pushes stone 174
+1:22.4 Left hand pushes stone 174
+1:22.6 Right hand pushes stone 94
+1:22.6 Right hand pushes stone 103

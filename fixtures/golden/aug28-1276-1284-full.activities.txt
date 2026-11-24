@@ -1,0 +1,4 @@
+21:16.2 Right hand pushes stones 2640, 2641, 2643, 2649 and 2653 (10 pushes in 1.4 s)
+21:17.6 Left hand pushes stones 2640 and 2664 (2 pushes in 0.4 s)
+21:18.2 Both hands push stones 2638 and 2640 (2 pushes in 0.8 s)
+21:17.8 Right hand moves stone 2660 0.84 units in 4.0 s

@@ -1,0 +1,409 @@
+{
+ "getSession": {
+  "file": "getSession.json",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "874",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "getApiRoot": {
+  "file": "getApiRoot.json",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "495",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "getModel": {
+  "file": "getModel.json",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "1647",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "getTopology": {
+  "file": "getTopology.json",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "1020",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "listVideos": {
+  "file": "listVideos.json",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "7993",
+   "ETag": "\"7eb52ce3e6be3615\"",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "getVideo": {
+  "file": "getVideo.json",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "798",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "getVideo-404": {
+  "file": "getVideo-404.json",
+  "status": 404,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "68",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "getHealth": {
+  "file": "getHealth.json",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "39",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "getReady": {
+  "file": "getReady.json",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "27",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "getStatus": {
+  "file": "getStatus.json",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "932",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "getMetrics": {
+  "file": "getMetrics.txt",
+  "status": 200,
+  "content_type": "text/plain; version=0.0.4; charset=utf-8",
+  "headers": {
+   "Content-Length": "45234",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "getOpenApi": {
+  "file": "getOpenApi.yaml",
+  "status": 200,
+  "content_type": "application/yaml; charset=utf-8",
+  "headers": {
+   "Content-Length": "274013",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "getFocus": {
+  "file": "getFocus.json",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "30",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "getWorld": {
+  "file": "getWorld.json",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "13343",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "getWorldEvents": {
+  "file": "getWorldEvents.json",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "2200",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "getWorldEvents-400": {
+  "file": "getWorldEvents-400.json",
+  "status": 400,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "79",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "getFrame-latest": {
+  "file": "getFrame-latest.json",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "15393",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "getFrame-404": {
+  "file": "getFrame-404.json",
+  "status": 404,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "163",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "getFrame-410": {
+  "file": "getFrame-410.json",
+  "status": 410,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "80",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "getFrame-400": {
+  "file": "getFrame-400.json",
+  "status": 400,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "71",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "rawPacket-latest": {
+  "file": "rawPacket-latest.json",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "20315",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "rawTensors-404": {
+  "file": "rawTensors-404.json",
+  "status": 404,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "65",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "pollFrames-world": {
+  "file": "pollFrames-world.json",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "13324",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "pollFrames-400": {
+  "file": "pollFrames-400.json",
+  "status": 400,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "77",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "streamFrames-sse": {
+  "file": "streamFrames-sse.sse",
+  "status": 200,
+  "content_type": "text/event-stream",
+  "headers": {
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "streamFrames-ndjson": {
+  "file": "streamFrames-ndjson.ndjson",
+  "status": 200,
+  "content_type": "application/x-ndjson",
+  "headers": {
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "rawStream-ndjson": {
+  "file": "rawStream-ndjson.ndjson",
+  "status": 200,
+  "content_type": "application/x-ndjson",
+  "headers": {
+   "X-Interp-Build": "claude-20261122-hr4x1",
+   "Content-Length": "39460"
+  }
+ },
+ "rawStream-sse": {
+  "file": "rawStream-sse.sse",
+  "status": 200,
+  "content_type": "text/event-stream",
+  "headers": {
+   "X-Interp-Build": "claude-20261122-hr4x1",
+   "Content-Length": "41163"
+  }
+ },
+ "renderOverlay2d-400": {
+  "file": "renderOverlay2d-400.json",
+  "status": 400,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "74",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "renderScene3d-400": {
+  "file": "renderScene3d-400.json",
+  "status": 400,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "94",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "renderOverlay2d": {
+  "file": "renderOverlay2d.json",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "10096",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "renderOverlay2d-primitives": {
+  "file": "renderOverlay2d-primitives.json",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "9286",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "renderScene3d": {
+  "file": "renderScene3d.json",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "88115",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "renderScene3d-compact": {
+  "file": "renderScene3d-compact.json",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "12589",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "renderScene3d-none": {
+  "file": "renderScene3d-none.json",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "7766",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "getFrameRaster-regions": {
+  "file": "getFrameRaster-regions.png",
+  "status": 200,
+  "content_type": "image/png",
+  "headers": {
+   "Content-Length": "1106",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "getFrameRaster-400": {
+  "file": "getFrameRaster-400.json",
+  "status": 400,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "76",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "getVideoMedia-range": {
+  "file": "getVideoMedia-range.bin",
+  "status": 206,
+  "content_type": "video/mp4",
+  "headers": {
+   "Content-Length": "1024",
+   "Accept-Ranges": "bytes",
+   "ETag": "\"b04d70d-6af0f48f\"",
+   "Content-Range": "bytes 0-1023/184866573",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "getStone": {
+  "file": "getStone.json",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "1234",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "putFocus-dry": {
+  "file": "putFocus-dry.json",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "479",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "getStone-404": {
+  "file": "getStone-404.json",
+  "status": 404,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "76",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "sessionSeek-400": {
+  "file": "sessionSeek-400.json",
+  "status": 400,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "87",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "sessionSelect-400": {
+  "file": "sessionSelect-400.json",
+  "status": 400,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "71",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "sessionPause-dry": {
+  "file": "sessionPause-dry.json",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "356",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ },
+ "deleteFocus-dry": {
+  "file": "deleteFocus-dry.json",
+  "status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "headers": {
+   "Content-Length": "342",
+   "X-Interp-Build": "claude-20261122-hr4x1"
+  }
+ }
+}

@@ -1,0 +1,78 @@
+{
+  "frames": 151,
+  "frames_with_world": 151,
+  "missing_world": 0,
+  "revisions": 0,
+  "sessions": 1,
+  "first_g": 6350,
+  "last_g": 6500,
+  "first_t": 1270.0,
+  "last_t": 1300.0,
+  "media_seconds": 30.0,
+  "gaps": 0,
+  "events": {
+    "new": 82,
+    "confirm": 66,
+    "freeze": 37,
+    "push": 22,
+    "lift": 1,
+    "hinge": 1,
+    "carry": 1,
+    "place": 1,
+    "drop": 0,
+    "gone": 0,
+    "delete": 66,
+    "split": 0,
+    "other": 0
+  },
+  "moves": {
+    "total": 1,
+    "placed": 1,
+    "dropped": 0,
+    "carried_away": 0,
+    "removed": 0,
+    "interrupted": 0,
+    "partial": 0,
+    "carried": 1,
+    "mean_duration": 4.0,
+    "mean_distance": 0.835
+  },
+  "push_bursts": {
+    "total": 6,
+    "pushes": 22,
+    "left": 4,
+    "right": 1,
+    "both": 1
+  },
+  "stones": {
+    "last": 33,
+    "max": 49,
+    "confirmed_last": 33
+  },
+  "trays": {
+    "total": 2,
+    "arrived": 1,
+    "stones": 33,
+    "added": 0,
+    "added_unclear": 0,
+    "removed": 0,
+    "removed_unclear": 0,
+    "unsure": 5
+  },
+  "hands": {
+    "left": {
+      "free": 20.0,
+      "touch": 8.8,
+      "grasp": 0.0,
+      "hinge": 0.0,
+      "carry": 1.4
+    },
+    "right": {
+      "free": 22.6,
+      "touch": 3.2,
+      "grasp": 0.4,
+      "hinge": 0.2,
+      "carry": 3.8
+    }
+  }
+}

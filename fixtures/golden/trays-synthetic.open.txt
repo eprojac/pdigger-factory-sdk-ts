@@ -1,0 +1,14 @@
+0:05.2 tray 1 leaving: 3 stones (3 sure), 1 added, 1 removed, 0 unclear
+0:13.4 tray 2 leaving: 5 stones (1 sure), 0 added, 0 removed, 0 unclear
+  stone 20261118T000006.4Z-2-11: unsure pushed, look none: world 11 or world 15 or world 16 or gone (hand)
+  stone 20261118T000006.4Z-2-13: unsure found_again, look none: world 18 or gone (hand)
+  stone 20261118T000006.4Z-2-15: unsure overlap, look none: world 15 or world 16 or world 11 or gone
+  stone 20261118T000006.4Z-2-16: unsure overlap, look none: world 16 or world 15 or world 11 or gone
+0:19.6 tray 3 leaving: 3 stones (1 sure), 0 added, 0 removed, 2 unclear
+  stone 20261118T000014.6Z-3-21: removed lost_late, look none: world 22 or gone or unseen
+  stone 20261118T000014.6Z-3-22: unsure appeared, look none: world 22 or world 24 or gone
+  stone 20261118T000018.8Z-3-24: added doubtful, look none, hand near: stone 20261118T000014.6Z-3-22 or new
+0:27.2 tray 5 leaving: 2 stones (2 sure), 1 added, 0 removed, 1 unclear
+  stone 20261118T000025.8Z-5-47: removed lost_late, look none: gone or unseen
+0:33.2 tray 6 leaving: 10 stones (10 sure), 0 added, 0 removed, 0 unclear
+0:36.2 tray 7 leaving: 10 stones (10 sure), 0 added, 0 removed, 0 unclear

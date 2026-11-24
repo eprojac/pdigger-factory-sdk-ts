@@ -1,0 +1,111 @@
+0:00.8 tray 1 arrived: 3 stones
+0:07.4 tray 1 leaving: 3 stones (3 sure), 0 added, 0 removed, 0 unclear
+0:09.0 tray 2 arrived: 3 stones
+0:14.6 tray 2: stone 20261118T000009.0Z-2-201 is not sure any more (not seen at two calm moments; open since 0:12.6)
+0:19.0 tray 2 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+0:20.6 tray 3 arrived: 3 stones
+0:26.2 tray 3: stone 20261118T000020.6Z-3-301 is not sure any more (not seen at two calm moments; open since 0:24.2)
+0:30.6 tray 3 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+0:32.2 tray 4 arrived: 3 stones
+0:36.6 tray 4: stone 20261118T000032.2Z-4-401 is not sure any more (not seen at two calm moments)
+0:41.2 tray 4 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+0:42.8 tray 5 arrived: 3 stones
+0:49.2 tray 5: stone 20261118T000042.8Z-5-501 is not sure any more (not seen at two calm moments; open since 0:46.4)
+0:50.6 tray 5 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+0:52.2 tray 6 arrived: 3 stones
+0:58.6 tray 6: stone 20261118T000052.2Z-6-601 is not sure any more (not seen at two calm moments; open since 0:55.8)
+1:00.0 tray 6 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+1:01.6 tray 7 arrived: 3 stones
+1:07.2 tray 7: stone 20261118T000101.6Z-7-701 is not sure any more (not seen at two calm moments; open since 1:05.2)
+1:08.6 tray 7 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+1:10.2 tray 8 arrived: 4 stones
+1:14.4 tray 8: stone 20261118T000110.2Z-8-804 is not sure any more (not seen at two calm moments)
+1:14.4 tray 8: stone 20261118T000110.2Z-8-801 is not sure any more (not seen at two calm moments)
+1:17.2 tray 8 leaving: 4 stones (2 sure), 0 added, 0 removed, 0 unclear
+1:18.8 tray 9 arrived: 3 stones
+1:24.0 tray 9: stone 20261118T000118.8Z-9-903 is not sure any more (it was pushed)
+1:25.4 tray 9: stone 20261118T000118.8Z-9-901 is not sure any more (not seen at two calm moments; open since 1:22.4)
+1:25.4 tray 9 leaving: 3 stones (1 sure), 0 added, 0 removed, 0 unclear
+1:27.0 tray 10 arrived: 4 stones
+1:32.0 tray 10: stone 20261118T000127.0Z-10-1004 is not sure any more (not seen at two calm moments)
+1:32.0 tray 10: stone 20261118T000127.0Z-10-1001 is not sure any more (not seen at two calm moments)
+1:34.4 tray 10 leaving: 4 stones (2 sure), 0 added, 0 removed, 0 unclear
+1:36.0 tray 11 arrived: 3 stones
+1:41.4 tray 11: stone 20261118T000136.0Z-11-1101 is not sure any more (not seen at two calm moments; open since 1:39.6)
+1:42.8 tray 11 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+1:44.4 tray 12 arrived: 3 stones
+1:50.0 tray 12: stone 20261118T000144.4Z-12-1121 is not sure any more (not seen at two calm moments; open since 1:48.0)
+1:51.4 tray 12 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+1:53.0 tray 13 arrived: 2 stones
+1:58.0 tray 13: stone 20261118T000153.0Z-13-1131 is not sure any more (not seen at two calm moments; open since 1:56.6)
+1:58.0 tray 13 leaving: 2 stones (1 sure), 0 added, 0 removed, 0 unclear
+1:59.6 tray 14 arrived: 3 stones
+2:04.6 tray 14: stone 20261118T000159.6Z-14-1141 is not sure any more (not seen at two calm moments; open since 2:03.2)
+2:04.6 tray 14: stone 20261118T000159.6Z-14-1142 is not sure any more (not seen at two calm moments)
+2:04.6 tray 14 leaving: 3 stones (1 sure), 0 added, 0 removed, 0 unclear
+2:06.4 tray 15 arrived: 3 stones
+2:13.0 tray 15 leaving: 3 stones (3 sure), 0 added, 0 removed, 0 unclear
+2:14.6 tray 16 arrived: 3 stones
+2:18.8 tray 16: stone 20261118T000214.6Z-16-1601 is not sure any more (not seen at two calm moments)
+2:21.8 tray 16 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+2:23.4 tray 17 arrived: 4 stones
+2:27.6 tray 17: stone 20261118T000223.4Z-17-1701 is not sure any more (not seen at two calm moments)
+2:30.6 tray 17 leaving: 4 stones (3 sure), 0 added, 0 removed, 0 unclear
+2:32.2 tray 18 arrived: 4 stones
+2:36.2 tray 18: stone 20261118T000232.2Z-18-1804 is not sure any more (not seen at two calm moments)
+2:36.2 tray 18: stone 20261118T000232.2Z-18-1801 is not sure any more (not seen at two calm moments)
+2:38.6 tray 18 leaving: 4 stones (2 sure), 0 added, 0 removed, 0 unclear
+2:40.2 tray 19 arrived: 3 stones
+2:44.0 tray 19: stone 20261118T000240.2Z-19-1901 is not sure any more (not seen at two calm moments)
+2:44.0 tray 19: stone 20261118T000240.2Z-19-1902 is not sure any more (it was pushed)
+2:44.2 tray 19 leaving: 3 stones (1 sure), 0 added, 0 removed, 0 unclear
+2:45.8 tray 20 arrived: 2 stones
+2:49.6 tray 20: stone 20261118T000245.8Z-20-2001 is not sure any more (not seen at two calm moments)
+2:49.8 tray 20: stone 20261118T000249.0Z-20-2008 not recognised (unclear)
+2:49.8 tray 20 leaving: 3 stones (1 sure), 0 added, 0 removed, 1 unclear
+2:51.4 tray 21 arrived: 3 stones
+2:55.2 tray 21: stone 20261118T000251.4Z-21-2101 is not sure any more (not seen at two calm moments)
+2:58.2 tray 21 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+2:59.8 tray 22 arrived: 3 stones
+3:04.8 tray 22: stone 20261118T000259.8Z-22-2201 is not sure any more (not seen at two calm moments; open since 3:03.4)
+3:04.8 tray 22: stone 20261118T000259.8Z-22-2202 is not sure any more (it was pushed)
+3:07.8 tray 22 leaving: 3 stones (1 sure), 0 added, 0 removed, 0 unclear
+3:09.4 tray 23 arrived: 3 stones
+3:13.0 tray 23 leaving: 3 stones (3 sure), 0 added, 0 removed, 0 unclear
+3:17.2 tray 24 arrived: 3 stones
+3:23.8 tray 24 leaving: 3 stones (3 sure), 0 added, 0 removed, 0 unclear
+3:25.4 tray 25 arrived: 3 stones
+3:30.6 tray 25: stone 20261118T000325.4Z-25-2501 is not sure any more (not seen at two calm moments; open since 3:29.0)
+3:32.0 tray 25 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+3:33.6 tray 26 arrived: 3 stones
+3:38.6 tray 26: stone 20261118T000333.6Z-26-2601 is not sure any more (it was pushed)
+3:38.6 tray 26: stone 20261118T000333.6Z-26-2602 is not sure any more (not seen at two calm moments; open since 3:37.2)
+3:38.8 tray 26 leaving: 3 stones (1 sure), 0 added, 0 removed, 0 unclear
+3:40.4 tray 27 arrived: 2 stones
+3:43.8 tray 27: stone 20261118T000342.2Z-27-2707 was set down
+3:46.2 tray 27: stone 20261118T000342.2Z-27-2707 is not sure any more (not seen at two calm moments)
+3:47.4 tray 27 leaving: 3 stones (2 sure), 1 added, 0 removed, 0 unclear
+3:49.0 tray 28 arrived: 3 stones
+3:54.6 tray 28: stone 20261118T000349.0Z-28-2801 is not sure any more (not seen at two calm moments; open since 3:52.6)
+3:56.0 tray 28 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+3:57.6 tray 29 arrived: 3 stones
+4:03.2 tray 29: stone 20261118T000357.6Z-29-2901 is not sure any more (not seen at two calm moments; open since 4:01.2)
+4:04.6 tray 29 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+4:06.2 tray 30 arrived: 3 stones
+4:13.0 tray 30: stone 20261118T000406.2Z-30-3001 is not sure any more (not seen at two calm moments; open since 4:09.8)
+4:13.0 tray 30: stone 20261118T000410.4Z-30-3004 not recognised (unclear)
+4:13.0 tray 30 leaving: 4 stones (2 sure), 0 added, 0 removed, 1 unclear
+4:14.6 tray 31 arrived: 3 stones
+4:20.4 tray 31: stone 20261118T000414.6Z-31-3101 is not sure any more (not seen at two calm moments)
+4:21.8 tray 31 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+4:23.4 tray 32 arrived: 3 stones
+4:28.6 tray 32: stone 20261118T000423.4Z-32-3201 is not sure any more (not seen at two calm moments)
+4:30.0 tray 32 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+4:31.6 tray 33 arrived: 3 stones
+4:38.6 tray 33: stone 20261118T000431.6Z-33-3301 is not sure any more (not seen at two calm moments; open since 4:35.2)
+4:38.6 tray 33 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+4:40.2 tray 34 arrived: 3 stones
+4:44.4 tray 34: stone 20261118T000440.2Z-34-3401 is not sure any more (not seen at two calm moments)
+4:44.4 tray 34 leaving: 3 stones (2 sure), 0 added, 0 removed, 0 unclear
+4:46.0 tray 35 arrived: 3 stones
+4:53.8 tray 35 leaving: 3 stones (3 sure), 0 added, 0 removed, 0 unclear

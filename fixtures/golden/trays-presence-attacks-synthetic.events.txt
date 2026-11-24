@@ -1,0 +1,220 @@
+0:02.4 stone 9001 appears
+0:02.6 stone 9001 is removed (no longer seen)
+0:03.6 stone 9002 appears
+0:03.8 stone 9002 is removed (no longer seen)
+0:05.2 stone 9003 appears
+0:05.4 stone 9003 is removed (no longer seen)
+0:06.4 stone 9004 appears
+0:06.6 stone 9004 is removed (no longer seen)
+0:10.6 stone 9005 appears
+0:10.8 stone 9005 is removed (no longer seen)
+0:11.8 stone 9006 appears
+0:12.0 stone 9006 is removed (no longer seen)
+0:14.4 stone 9007 appears
+0:14.6 stone 9007 is removed (no longer seen)
+0:15.6 stone 9008 appears
+0:15.8 stone 9008 is removed (no longer seen)
+0:19.8 stone 9009 appears
+0:20.0 stone 9009 is removed (no longer seen)
+0:21.0 stone 9010 appears
+0:21.2 stone 9010 is removed (no longer seen)
+0:23.6 stone 9011 appears
+0:23.8 stone 9011 is removed (no longer seen)
+0:24.8 stone 9012 appears
+0:25.0 stone 9012 is removed (no longer seen)
+0:29.0 stone 9013 appears
+0:29.2 stone 9013 is removed (no longer seen)
+0:30.2 stone 9014 appears
+0:30.4 stone 9014 is removed (no longer seen)
+0:32.6 stone 9015 appears
+0:32.8 stone 9015 is removed (no longer seen)
+0:33.8 stone 9016 appears
+0:34.0 stone 9016 is removed (no longer seen)
+0:38.0 stone 9017 appears
+0:38.2 stone 9017 is removed (no longer seen)
+0:39.2 stone 9018 appears
+0:39.4 stone 9018 is removed (no longer seen)
+0:40.6 stone 502 is removed (a hand emptied its place)
+0:41.6 stone 9019 appears
+0:41.8 stone 9019 is removed (no longer seen)
+0:42.8 stone 9020 appears
+0:43.0 stone 9020 is removed (no longer seen)
+0:47.0 stone 9021 appears
+0:47.2 stone 9021 is removed (no longer seen)
+0:48.2 stone 9022 appears
+0:48.4 stone 9022 is removed (no longer seen)
+0:49.6 stone 604 is removed (carried away)
+0:50.6 stone 9023 appears
+0:50.8 stone 9023 is removed (no longer seen)
+0:51.8 stone 9024 appears
+0:52.0 stone 9024 is removed (no longer seen)
+0:56.0 stone 9025 appears
+0:56.2 stone 9025 is removed (no longer seen)
+0:57.2 stone 9026 appears
+0:57.4 stone 9026 is removed (no longer seen)
+0:58.6 stone 704 is removed (a hand emptied its place)
+0:59.6 stone 9027 appears
+0:59.8 stone 9027 is removed (no longer seen)
+1:00.8 stone 9028 appears
+1:01.0 stone 9028 is removed (no longer seen)
+1:05.0 stone 9029 appears
+1:05.2 stone 9029 is removed (no longer seen)
+1:06.2 stone 9030 appears
+1:06.4 stone 9030 is removed (no longer seen)
+1:08.2 stone 9031 appears
+1:08.4 stone 9031 is removed (no longer seen)
+1:09.4 stone 9032 appears
+1:09.6 stone 9032 is removed (no longer seen)
+1:13.6 stone 9033 appears
+1:13.8 stone 9033 is removed (no longer seen)
+1:14.8 stone 9034 appears
+1:15.0 stone 9034 is removed (no longer seen)
+1:16.8 stone 9035 appears
+1:17.0 stone 9035 is removed (no longer seen)
+1:18.0 stone 9036 appears
+1:18.2 stone 9036 is removed (no longer seen)
+1:22.2 stone 9037 appears
+1:22.4 stone 9037 is removed (no longer seen)
+1:23.4 stone 9038 appears
+1:23.6 stone 9038 is removed (no longer seen)
+1:25.4 stone 9039 appears
+1:25.6 stone 9039 is removed (no longer seen)
+1:26.6 stone 9040 appears
+1:26.8 stone 9040 is removed (no longer seen)
+1:30.8 stone 9041 appears
+1:31.0 stone 9041 is removed (no longer seen)
+1:32.0 stone 9042 appears
+1:32.2 stone 9042 is removed (no longer seen)
+1:33.8 stone 9043 appears
+1:34.0 stone 9043 is removed (no longer seen)
+1:33.2 Left hand lifts stone 1101
+1:35.2 stone 9044 appears
+1:35.4 stone 9044 is removed (no longer seen)
+1:39.4 stone 9045 appears
+1:39.6 stone 9045 is removed (no longer seen)
+1:40.6 stone 9046 appears
+1:40.8 stone 9046 is removed (no longer seen)
+1:41.8 Left hand lifts stone 1201
+1:42.4 stone 9047 appears
+1:42.6 stone 9047 is removed (no longer seen)
+1:43.6 stone 9048 appears
+1:43.8 stone 9048 is removed (no longer seen)
+1:47.8 stone 9049 appears
+1:48.0 stone 9049 is removed (no longer seen)
+1:49.0 stone 9050 appears
+1:49.2 stone 9050 is removed (no longer seen)
+1:50.6 Left hand lifts stone 1301
+1:50.8 Left hand carries stone 1301
+1:51.0 Left hand places stone 1301
+1:54.0 stone 9051 appears
+1:54.2 stone 9051 is removed (no longer seen)
+1:55.2 stone 9052 appears
+1:55.4 stone 9052 is removed (no longer seen)
+1:59.6 Left hand lifts stone 1401
+1:59.8 Left hand carries stone 1401
+2:00.0 Left hand places stone 1401
+2:03.0 stone 9053 appears
+2:03.2 stone 9053 is removed (no longer seen)
+2:04.2 stone 9054 appears
+2:04.4 stone 9054 is removed (no longer seen)
+2:05.8 stone 9055 appears
+2:06.0 stone 9055 is removed (no longer seen)
+2:07.0 stone 9056 appears
+2:07.2 stone 9056 is removed (no longer seen)
+2:11.2 stone 9057 appears
+2:11.4 stone 9057 is removed (no longer seen)
+2:12.4 stone 9058 appears
+2:12.6 stone 9058 is removed (no longer seen)
+2:13.6 Left hand lifts stone 1501
+2:13.8 Left hand carries stone 1501
+2:14.0 Left hand places stone 1501
+2:17.0 stone 9059 appears
+2:17.2 stone 9059 is removed (no longer seen)
+2:21.2 stone 9060 appears
+2:21.4 stone 9060 is removed (no longer seen)
+2:22.4 stone 9061 appears
+2:22.6 stone 9061 is removed (no longer seen)
+2:24.6 stone 9062 appears
+2:24.8 stone 9062 is removed (no longer seen)
+2:25.8 stone 9063 appears
+2:26.0 stone 9063 is removed (no longer seen)
+2:30.0 stone 9064 appears
+2:30.2 stone 9064 is removed (no longer seen)
+2:31.2 stone 9065 appears
+2:31.4 stone 9065 is removed (no longer seen)
+2:34.0 stone 9066 appears
+2:34.2 stone 9066 is removed (no longer seen)
+2:35.2 stone 9067 appears
+2:35.4 stone 9067 is removed (no longer seen)
+2:39.4 stone 9068 appears
+2:39.6 stone 9068 is removed (no longer seen)
+2:40.6 stone 9069 appears
+2:40.8 stone 9069 is removed (no longer seen)
+2:43.2 stone 9070 appears
+2:43.4 stone 9070 is removed (no longer seen)
+2:44.4 stone 9071 appears
+2:44.6 stone 9071 is removed (no longer seen)
+2:48.6 stone 9072 appears
+2:48.8 stone 9072 is removed (no longer seen)
+2:49.8 stone 9073 appears
+2:50.0 stone 9073 is removed (no longer seen)
+2:52.4 stone 9074 appears
+2:52.6 stone 9074 is removed (no longer seen)
+2:53.6 stone 9075 appears
+2:53.8 stone 9075 is removed (no longer seen)
+2:57.8 stone 9076 appears
+2:58.0 stone 9076 is removed (no longer seen)
+2:59.0 stone 9077 appears
+2:59.2 stone 9077 is removed (no longer seen)
+3:01.0 stone 9078 appears
+3:01.2 stone 9078 is removed (no longer seen)
+3:02.2 stone 9079 appears
+3:02.4 stone 9079 is removed (no longer seen)
+3:08.4 stone 9080 appears
+3:08.6 stone 9080 is removed (no longer seen)
+3:09.6 stone 9081 appears
+3:09.8 stone 9081 is removed (no longer seen)
+3:13.8 stone 9082 appears
+3:14.0 stone 9082 is removed (no longer seen)
+3:15.0 stone 9083 appears
+3:15.2 stone 9083 is removed (no longer seen)
+3:16.2 stone 2201 is pushed
+3:16.4 stone 9084 appears
+3:16.6 stone 9084 is removed (no longer seen)
+3:17.6 stone 9085 appears
+3:17.8 stone 9085 is removed (no longer seen)
+3:21.8 stone 9086 appears
+3:22.0 stone 9086 is removed (no longer seen)
+3:23.0 stone 9087 appears
+3:23.2 stone 9087 is removed (no longer seen)
+3:24.4 stone 2304 is pushed
+3:25.2 stone 9088 appears
+3:25.4 stone 9088 is removed (no longer seen)
+3:26.4 stone 9089 appears
+3:26.6 stone 9089 is removed (no longer seen)
+3:30.6 stone 9090 appears
+3:30.8 stone 9090 is removed (no longer seen)
+3:31.8 stone 9091 appears
+3:32.0 stone 9091 is removed (no longer seen)
+3:33.0 stone 2409 appears
+3:34.4 stone 9092 appears
+3:34.6 stone 9092 is removed (no longer seen)
+3:35.6 stone 9093 appears
+3:35.8 stone 9093 is removed (no longer seen)
+3:39.8 stone 9094 appears
+3:40.0 stone 9094 is removed (no longer seen)
+3:41.6 stone 9095 appears
+3:41.8 stone 9095 is removed (no longer seen)
+3:45.6 stone 9096 appears
+3:45.8 stone 9096 is removed (no longer seen)
+3:48.2 stone 9097 appears
+3:48.4 stone 9097 is removed (no longer seen)
+3:52.2 stone 9098 appears
+3:52.4 stone 9098 is removed (no longer seen)
+3:54.0 stone 9099 appears
+3:54.2 stone 9099 is removed (no longer seen)
+3:58.0 stone 9100 appears
+3:58.2 stone 9100 is removed (no longer seen)
+3:59.2 stone 2803 is pushed
+3:59.8 stone 9101 appears
+4:00.0 stone 9101 is removed (no longer seen)

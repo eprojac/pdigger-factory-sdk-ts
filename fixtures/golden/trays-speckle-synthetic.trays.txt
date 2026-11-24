@@ -1,0 +1,23 @@
+0:00.8 tray 1 arrived: 5 stones
+0:06.6 tray 1 leaving: 5 stones (5 sure), 0 added, 0 removed, 0 unclear
+0:07.8 tray 2 arrived: 3 stones
+0:10.4 tray 2 leaving: 3 stones (3 sure), 0 added, 0 removed, 0 unclear
+0:11.6 tray 3 arrived: 9 stones
+0:15.6 tray 3: stone 20261118T000011.6Z-3-64 was removed (carried away)
+0:16.6 tray 3: stone 20261118T000011.6Z-3-61 is not sure any more (a stone next to it was pushed)
+0:16.6 tray 3: stone 20261118T000011.6Z-3-62 is not sure any more (it was pushed)
+0:16.6 tray 3: stone 20261118T000011.6Z-3-63 is not sure any more (a stone next to it was pushed)
+0:17.6 tray 3: stone 20261118T000011.6Z-3-66 is not sure any more (it was pushed)
+0:17.6 tray 3: stone 20261118T000011.6Z-3-67 is not sure any more (it was pushed)
+0:24.4 tray 3: stone 20261118T000011.6Z-3-61 confirmed by its speckle on world stone 61 (0.600)
+0:24.4 tray 3: stone 20261118T000011.6Z-3-62 confirmed by its speckle on world stone 62 (0.620)
+0:24.4 tray 3: stone 20261118T000011.6Z-3-63 confirmed by its speckle on world stone 63 (0.600)
+0:24.4 tray 3: stone 20261118T000011.6Z-3-65 found again by its speckle on world stone 75 (0.660)
+0:24.4 tray 3: stone 20261118T000011.6Z-3-66 recognised by its speckle on world stone 67 (0.640)
+0:24.4 tray 3: stone 20261118T000011.6Z-3-67 recognised by its speckle on world stone 66 (0.630)
+0:24.4 tray 3: stone 20261118T000011.6Z-3-69 not found (unclear)
+0:24.4 tray 3: stone 20261118T000022.4Z-3-71 not recognised (unclear)
+0:24.4 tray 3: stone 20261118T000022.0Z-3-72 not recognised (unclear)
+0:24.4 tray 3: stone 20261118T000022.8Z-3-73 not recognised (unclear)
+0:24.4 tray 3: stone 20261118T000022.0Z-3-78 not recognised (unclear)
+0:24.4 tray 3 leaving: 11 stones (7 sure), 0 added, 1 removed, 5 unclear

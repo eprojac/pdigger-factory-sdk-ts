@@ -1,0 +1,9 @@
+0:13.0 Left hand moves stone 201 0.00 units in 0.4 s
+0:35.0 Left hand moves stone 401 0.00 units in 0.4 s
+1:22.8 Right hand pushes stone 903 (1 push)
+2:16.2 Left hand lifts stone 1601 and sets it down (0.2 s)
+2:25.0 Left hand lifts stone 1704 and sets it down (0.2 s)
+2:48.6 Left hand lifts stone 2001 and sets it down (0.2 s)
+3:42.2 Left hand lifts stone 2707 and sets it down (0.0 s) (joined mid-move)
+4:43.0 Left hand lifts stone 3401 and sets it down (0.2 s)
+1:05.6 Left hand is still holding stone 701 (228.8 s so far)

@@ -1,0 +1,4 @@
+9:45.2 tray 1 arrived: 42 stones
+9:54.1 tray 1 leaving: 42 stones (42 sure), 0 added, 0 removed, 0 unclear
+9:47.0 tray 1 arrived: 42 stones
+9:56.9 tray 1 leaving: 42 stones (42 sure), 0 added, 0 removed, 0 unclear

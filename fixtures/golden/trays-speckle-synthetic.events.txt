@@ -1,0 +1,17 @@
+0:02.8 stone 3 is removed (no longer seen)
+0:02.8 stone 9 appears
+0:13.6 Right hand lifts stone 64
+0:13.8 Right hand carries stone 64
+0:14.0 Right hand takes stone 64 out of view
+0:16.0 Left hand pushes stone 62
+0:17.0 Right hand pushes stone 66
+0:17.0 Right hand pushes stone 67
+0:18.0 stone 65 is removed (no longer seen)
+0:18.0 stone 69 is removed (no longer seen)
+0:22.0 stone 75 appears
+0:22.0 stone 72 appears
+0:22.0 stone 78 appears
+0:22.2 stone 71 appears
+0:22.4 Left hand places stone 71
+0:22.6 stone 73 appears
+0:22.8 Left hand places stone 73

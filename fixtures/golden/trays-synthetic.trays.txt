@@ -1,0 +1,23 @@
+0:00.8 tray 1 arrived: 3 stones
+0:04.4 tray 1: stone 20261118T000000.8Z-1-2 was removed (carried away)
+0:05.2 tray 1: stone 20261118T000003.8Z-1-7 was set down
+0:05.2 tray 1 leaving: 3 stones (3 sure), 1 added, 1 removed, 0 unclear
+0:06.4 tray 2 arrived: 5 stones
+0:08.6 tray 2: stone 20261118T000006.4Z-2-11 is not sure any more (it was pushed)
+0:08.6 tray 2: stone 20261118T000006.4Z-2-15 is not sure any more (its box overlaps another stone)
+0:08.6 tray 2: stone 20261118T000006.4Z-2-16 is not sure any more (its box overlaps another stone)
+0:12.6 tray 2: stone 20261118T000006.4Z-2-13 is not sure any more (found again, not for sure)
+0:13.4 tray 2 leaving: 5 stones (1 sure), 0 added, 0 removed, 0 unclear
+0:14.6 tray 3 arrived: 3 stones
+0:19.6 tray 3: stone 20261118T000014.6Z-3-22 is not sure any more (a stone appeared next to it while a hand held it)
+0:19.6 tray 3: stone 20261118T000014.6Z-3-21 not found (unclear)
+0:19.6 tray 3: stone 20261118T000018.8Z-3-24 not recognised (unclear)
+0:19.6 tray 3 leaving: 3 stones (1 sure), 0 added, 0 removed, 2 unclear
+0:24.0 tray 5 arrived: 2 stones
+0:27.2 tray 5: stone 20261118T000025.8Z-5-47 was set down
+0:27.2 tray 5: stone 20261118T000025.8Z-5-47 not found (unclear)
+0:27.2 tray 5 leaving: 2 stones (2 sure), 1 added, 0 removed, 1 unclear
+0:29.0 tray 6 arrived: 10 stones
+0:33.2 tray 6 leaving: 10 stones (10 sure), 0 added, 0 removed, 0 unclear
+0:35.0 tray 7 arrived: 10 stones
+0:36.2 tray 7 leaving: 10 stones (10 sure), 0 added, 0 removed, 0 unclear

@@ -1,0 +1,73 @@
+0:02.4 stone 9001 appears
+0:02.6 stone 9001 is removed (no longer seen)
+0:03.6 stone 9002 appears
+0:03.8 stone 9002 is removed (no longer seen)
+0:05.2 stone 9003 appears
+0:05.4 stone 9003 is removed (no longer seen)
+0:06.4 stone 9004 appears
+0:06.6 stone 9004 is removed (no longer seen)
+0:10.6 stone 9005 appears
+0:10.8 stone 9005 is removed (no longer seen)
+0:11.6 stone 9006 appears
+0:11.8 stone 9006 is removed (no longer seen)
+0:13.0 stone 9007 appears
+0:13.2 stone 9007 is removed (no longer seen)
+0:14.2 stone 9008 appears
+0:14.4 stone 9008 is removed (no longer seen)
+0:18.4 Left hand lifts stone 301
+0:18.6 Left hand places stone 301
+0:20.0 stone 9009 appears
+0:20.2 stone 9009 is removed (no longer seen)
+0:21.2 stone 9010 appears
+0:21.4 stone 9010 is removed (no longer seen)
+0:22.4 stone 9011 appears
+0:22.6 stone 9011 is removed (no longer seen)
+0:24.2 stone 9012 appears
+0:24.4 stone 9012 is removed (no longer seen)
+0:25.4 stone 9013 appears
+0:25.6 stone 9013 is removed (no longer seen)
+0:29.6 Left hand lifts stone 401
+0:29.8 Left hand places stone 401
+0:31.2 stone 9014 appears
+0:31.4 stone 9014 is removed (no longer seen)
+0:32.4 stone 9015 appears
+0:32.6 stone 9015 is removed (no longer seen)
+0:33.6 stone 9016 appears
+0:33.8 stone 9016 is removed (no longer seen)
+0:34.8 stone 404 is removed (no longer seen)
+0:36.0 stone 9017 appears
+0:36.2 stone 9017 is removed (no longer seen)
+0:37.2 stone 9018 appears
+0:37.4 stone 9018 is removed (no longer seen)
+0:42.6 stone 9019 appears
+0:42.8 stone 9019 is removed (no longer seen)
+0:43.8 stone 9020 appears
+0:44.0 stone 9020 is removed (no longer seen)
+0:45.0 stone 9021 appears
+0:45.2 stone 9021 is removed (no longer seen)
+0:46.2 stone 504 is removed (no longer seen)
+0:47.4 stone 9022 appears
+0:47.6 stone 9022 is removed (no longer seen)
+0:48.6 stone 9023 appears
+0:48.8 stone 9023 is removed (no longer seen)
+0:52.8 stone 9024 appears
+0:53.0 stone 9024 is removed (no longer seen)
+0:54.0 stone 9025 appears
+0:54.2 stone 9025 is removed (no longer seen)
+0:55.6 stone 9026 appears
+0:55.8 stone 9026 is removed (no longer seen)
+0:56.8 stone 9027 appears
+0:57.0 stone 9027 is removed (no longer seen)
+0:58.0 stone 9028 appears
+0:58.2 stone 9028 is removed (no longer seen)
+1:03.4 stone 9029 appears
+1:03.6 stone 9029 is removed (no longer seen)
+1:04.6 stone 9030 appears
+1:04.8 stone 9030 is removed (no longer seen)
+1:05.8 stone 9031 appears
+1:06.0 stone 9031 is removed (no longer seen)
+1:07.0 stone 704 is removed (no longer seen)
+1:08.2 stone 9032 appears
+1:08.4 stone 9032 is removed (no longer seen)
+1:09.4 stone 9033 appears
+1:09.6 stone 9033 is removed (no longer seen)
