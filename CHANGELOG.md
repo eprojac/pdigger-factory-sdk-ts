@@ -3,7 +3,7 @@
 All notable changes to this package. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 the version follows [Semantic Versioning](https://semver.org/).
 
-## [0.1.0] - Unreleased
+## [1.0.0] - 2026-11-25
 
 Initial SDK for API v2.2. The reference unit ran build `claude-20261123-speckle7` with four recordings and six plant
 cameras. It supplies stone appearance data and surface-pattern comparisons.

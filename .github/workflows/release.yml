@@ -17,10 +17,10 @@ jobs:
         run: make test
 
   publish:
-    name: Publish to npm
+    name: Build the release package
     needs: test
     runs-on: ubuntu-latest
-    environment: npm
+    environment: ${{ vars.SDK_GITHUB_ONLY_TAG == github.ref_name && 'github-release' || 'npm' }}
     permissions:
       contents: write # the GitHub release
       id-token: write # npm provenance
@@ -40,13 +40,21 @@ jobs:
             exit 1
           fi
       - run: npm run build
+      - run: npm pack
+      - name: Save the tarball for a GitHub-only release
+        if: vars.SDK_GITHUB_ONLY_TAG == github.ref_name
+        uses: actions/upload-artifact@v4
+        with:
+          name: package
+          path: pdigger-factory-sdk-*.tgz
+          if-no-files-found: error
       - name: npm publish
+        if: vars.SDK_GITHUB_ONLY_TAG != github.ref_name
         run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: GitHub release with the package
+        if: vars.SDK_GITHUB_ONLY_TAG != github.ref_name
         env:
           GH_TOKEN: ${{ github.token }}
-        run: |
-          npm pack
-          gh release create "$GITHUB_REF_NAME" pdigger-factory-sdk-*.tgz --title "$GITHUB_REF_NAME" --generate-notes --verify-tag
+        run: gh release create "$GITHUB_REF_NAME" pdigger-factory-sdk-*.tgz --title "$GITHUB_REF_NAME" --generate-notes --verify-tag
