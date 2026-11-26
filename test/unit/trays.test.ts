@@ -44,7 +44,7 @@ function clocked(options: ConstructorParameters<typeof InterpreterCore>[0] = {})
 describe("trays", () => {
   it("a tray as values", async () => {
     const trays = await (await Replay.open(recordingPath(SYNTH))).trays();
-    expect(numbers(trays)).toEqual([1, 2, 3, 4, 5, 6, 7]);
+    expect(numbers(trays)).toEqual([1, 2, 3, 4, 5, 6, 7, 8]);
     const first = trays[0] as Tray;
     expect(first.window()).toEqual([0.8, 5.2]);
     const never = trays[3] as Tray; // a stop that never settled
@@ -190,7 +190,7 @@ describe("trays", () => {
     const trays = replay.trays(); // its pass starts
     const other = replay.updates();
     await other.next(); // another pass starts, and pauses after its first frame
-    expect(numbers(await trays)).toEqual([1, 2, 3, 4, 5, 6, 7]);
+    expect(numbers(await trays)).toEqual([1, 2, 3, 4, 5, 6, 7, 8]);
     await other.return(undefined);
   });
 
@@ -237,7 +237,7 @@ describe("trays", () => {
     expect(seen.get("confirm 2")).toBe("20261118T000000.8Z-1-2"); // frame 13, when 2 still stood for its tray stone
     expect(seen.get("confirm 7")).toBeNull(); // frame 26, still the newest, which set 7 down: none before it
     expect(seen.get("confirm 17")).toBeNull(); // frame 58, whose rename linked 17
-    expect([...trays]).toEqual([1, 2, 3, 4, 5, 6, 7]);
+    expect([...trays]).toEqual([1, 2, 3, 4, 5, 6, 7, 8]);
     const end = core.end();
     expect([end.isFinal, end.frame, end.state.tray]).toEqual([true, null, null]);
     expect(core.state.tray).toBeNull();
@@ -251,17 +251,17 @@ describe("trays", () => {
       if (f.g === 80) expect(numbers(core.trays())).toEqual([1, 2, 3]); // tray 3 is on
       last = numbers(core.trays());
     }
-    expect(last).toEqual([5, 6, 7]); // tray 7 is on, after the 2 newest that have left
+    expect(last).toEqual([6, 7, 8]); // tray 8 is on, after the 2 newest that have left
     core.end();
-    expect(numbers(core.trays())).toEqual([6, 7]);
+    expect(numbers(core.trays())).toEqual([7, 8]);
     const one = clocked({ traysKept: 1 });
     for (const f of frames()) one.feed(f);
     one.end();
-    expect(numbers(one.trays())).toEqual([7]);
+    expect(numbers(one.trays())).toEqual([8]);
     const every = clocked({ traysKept: 0 });
     for (const f of frames()) every.feed(f);
-    expect(numbers(every.trays())).toEqual([1, 2, 3, 4, 5, 6, 7]);
-    expect(every.state.tray?.n).toBe(7); // tray 7 is still on
+    expect(numbers(every.trays())).toEqual([1, 2, 3, 4, 5, 6, 7, 8]);
+    expect(every.state.tray?.n).toBe(8); // tray 8 is still on
   });
 
   it("finish() leaves the facts of the open tray leaving in trays()", () => {
@@ -275,7 +275,7 @@ describe("trays", () => {
     const fake = await fixtureFake(SYNTH, { endOfData: "close" });
     const interpreter = clientOf(fake).interpreter({ resume: false });
     expect(text(await all(interpreter.trayFacts()))).toBe(golden());
-    expect(numbers(interpreter.trays())).toEqual([1, 2, 3, 4, 5, 6, 7]); // the stream's end made tray 7 leave
+    expect(numbers(interpreter.trays())).toEqual([1, 2, 3, 4, 5, 6, 7, 8]); // the stream's end made tray 8 leave
     const last = interpreter.end();
     expect([last.isFinal, last.trayFacts.length]).toEqual([true, 0]); // so nothing is left to leave
     fake.close();
@@ -304,8 +304,8 @@ describe("trays", () => {
     const summary = await (await Replay.open(readBytes(`recordings/${SYNTH}.ndjson.gz`))).summary();
     const json = summary.toJSON();
     expect(json.trays).toEqual({
-      total: 7,
-      arrived: 6,
+      total: 8,
+      arrived: 7,
       stones: 33,
       added: 2,
       added_unclear: 1,

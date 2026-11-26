@@ -61,16 +61,16 @@
   },
   "hands": {
     "left": {
-      "free": 2.0,
-      "touch": 1.8,
+      "free": 1.99,
+      "touch": 1.791,
       "grasp": 0.0,
       "hinge": 0.0,
-      "carry": 0.6
+      "carry": 0.598
     },
     "right": {
-      "free": 1.2,
-      "touch": 0.6,
-      "grasp": 2.4,
+      "free": 1.194,
+      "touch": 0.597,
+      "grasp": 2.388,
       "hinge": 0.0,
       "carry": 0.2
     }

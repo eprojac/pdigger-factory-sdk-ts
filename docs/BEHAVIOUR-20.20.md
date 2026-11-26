@@ -245,8 +245,11 @@ The SDK's interpretation of the published recordings (build `claude-20261122-hr4
 
 Since build `claude-20261120-live2` (API 2.1.0) the unit lists six cameras after the recordings: the two cameras of
 each of three plant stone rigs, by serial. This section describes build `claude-20261120-looks1` (it also sends a
-`look` of each stone at rest) and, where it says so, build `claude-20261122-hr4x1` (section 2). The frame rates,
-measured at the rig (its MJPEG stream read directly), through the interpreter on a Mac test rig, and at the unit:
+`look` of each stone at rest) and, where it says so, later builds (`claude-20261122-hr4x1`, section 2; points 6 and 7
+below). Since build `claude-20261125-dspad3` the unit lists five pallet cameras of plants instead of the rig cameras,
+and from worker `claude-20261125-dspad1` on, a camera picture of another shape is letterboxed into `native_wh`. The rig
+cameras' frame rates, measured at the rig (its MJPEG stream read directly), through the interpreter on a Mac test rig,
+and at the unit:
 
 | Station (`station`) | Cameras | Frames a second |
 |---|---|---|
@@ -310,6 +313,19 @@ What the cameras change:
    time of an event is its wall time. The unit's clock wandered between 21 and 83 ms ahead of NTP (on build
    `claude-20261114-int17`); the SDK gives every event and activity a `wall` time from the clock events, and
    `SessionClock` measures the offset.
+6. **A frame is longer than a grid frame.** One `g` is one frame the worker released, so on a camera a frame covers
+   about 0.3 s of media (3.0 to 3.4 frames a second on the pallet cameras, gateway `claude-20261126-handgate1` with
+   worker `claude-20261125-dspad1`; one camera ran at 2.1 to 2.4 in a later run), not a recorded video's 0.2 s. The
+   summary's hand times add up each frame's own step (`SDK-DESIGN.md` 4.5); version 1.0.0 counted 0.2 s a frame, and its
+   hand times came out about a third short (more than half on the slower camera). On dry1 and dry2, whose model the unit
+   runs as they play, the worker skips the frames it cannot keep up with in real time (146 of 750 grid frames in 150 s
+   of dry1 on build `claude-20261126-handgate1`, in 144 `gaps`); a frame after a gap adds the session's previous step,
+   so the hand times leave the skipped frames out (about 120 s of each hand's time in those 150 s).
+7. **A busy hand away from the board is `free`.** From build `claude-20261126-handgate1`, a hand the temporal model
+   reads in contact that holds no stone and whose wrist is off the board (a worker busy beside it, or a false hand on
+   a heater or a roller) is sent as `free`, with `away: true`. Such hands had blocked a tray's calm moments, so on
+   the pallet cameras few trays arrived (4 of 15 boards in five minutes on one camera; 14 in an offline replay with an
+   approximation of the rule).
 
 ## 8. The speckle answers
 

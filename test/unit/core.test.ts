@@ -10,7 +10,7 @@ import {
   type WorldEvent,
   type WorldLayer,
 } from "pdigger-factory-sdk";
-import { eventKey, sortActivities } from "../../src/interpreter/core.js";
+import { eventKey, handStep, sortActivities } from "../../src/interpreter/core.js";
 import { card, mkFrame, stone, type FrameSpec } from "../helpers/frames.js";
 
 const texts = (acts: readonly Activity[]): string[] => acts.map((a) => a.describe());
@@ -69,6 +69,45 @@ describe("InterpreterCore", () => {
     expect(s.moves.meanDistance).toBe(0.5);
     expect(s.moves.meanDuration).toBe(0.8);
     expect(s.hands.left.grasp).toBe(0.2);
+  });
+
+  it("counts each frame's hands by its step: the media time since the session's previous frame", () => {
+    const core = new InterpreterCore();
+    const grasp = { left: { state: "grasp" as const, stone: null }, right: { state: "free" as const, stone: null } };
+    // a plant camera: g counts the frames its worker released, 0.3 s apart (then 0.31 s, a frame without a world, 0.24 s)
+    core.feed(mkFrame(100, { t: 30, hands: grasp }));
+    core.feed(mkFrame(101, { t: 30.3, hands: grasp }));
+    core.feed(mkFrame(102, { t: 30.61 }));
+    core.feed(mkFrame(103, { t: 30.95, world: false }));
+    core.feed(mkFrame(104, { t: 31.19, hands: grasp }));
+    core.feed(mkFrame(104, { t: 31.19 })); // the same frame again: dropped, it adds nothing
+    // after a gap (two frames the unit skipped, 8.81 s) a frame adds the session's previous step, 0.24 s
+    core.feed(mkFrame(107, { t: 40, hands: grasp }));
+    // a new session's first frame adds one grid frame, 0.2 s; after a gap, the previous step again
+    core.feed(mkFrame(7, { session: 2, t: 1.4, hands: grasp }));
+    core.feed(mkFrame(9, { session: 2, t: 1.8, hands: grasp }));
+    const s = core.summary();
+    expect(s.hands.left.grasp).toBe(1.38); // 200 + 300 + 240 + 240 + 200 + 200 ms
+    expect(s.hands.left.free).toBe(0.31);
+    expect(s.hands.right.free).toBe(1.69);
+    expect(s.mediaSeconds).toBe(10.4);
+  });
+
+  it("steps a frame by its media time after the grid frame before it, else by the previous step", () => {
+    expect(handStep(null, 5, 1)).toBe(200); // a session's first frame
+    expect(handStep({ g: 4, t: 0.8, step: 200 }, 5, 1.1)).toBe(300);
+    expect(handStep({ g: 4, t: 0.8, step: 250 }, 6, 1.1)).toBe(250); // after a gap
+    expect(handStep({ g: 4, t: 0.8, step: 250 }, 5, Number.NaN)).toBe(250);
+    expect(handStep({ g: 4, t: Number.NaN, step: 250 }, 5, 1)).toBe(250);
+    expect(handStep({ g: 4, t: 0.8, step: 250 }, 5, Number.POSITIVE_INFINITY)).toBe(250);
+    expect(handStep({ g: 4, t: Number.NEGATIVE_INFINITY, step: 250 }, 5, 1)).toBe(250);
+    expect(handStep({ g: 4, t: 1, step: 250 }, 5, 1)).toBe(250); // a t not after the previous one
+    expect(handStep({ g: 4, t: 1, step: 250 }, 5, 0.5)).toBe(250);
+    expect(handStep({ g: 4, t: 1, step: 250 }, 5, 1.0004)).toBe(250); // below 1 ms
+    expect(handStep({ g: 4, t: 1, step: 250 }, 5, 1.0006)).toBe(1);
+    expect(handStep({ g: 4, t: 0, step: 250 }, 5, 2147483.6)).toBe(2147483600);
+    expect(handStep({ g: 4, t: 0, step: 250 }, 5, 2147483.7)).toBe(250); // 2^31 ms or more
+    expect(handStep({ g: 4, t: -1e308, step: 250 }, 5, 1e308)).toBe(250); // the difference overflows
   });
 
   it("gives no wall time without a matching clock", () => {

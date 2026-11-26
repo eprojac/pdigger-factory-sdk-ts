@@ -27,3 +27,10 @@
 0:34.0 stone 63 appears
 0:34.0 stone 64 appears
 0:34.0 stone 65 appears
+0:37.4 stone 54 is removed (no longer seen)
+0:37.6 stone 55 is removed (no longer seen)
+0:37.8 stone 56 is removed (no longer seen)
+0:38.0 stone 62 is removed (no longer seen)
+0:38.2 stone 63 is removed (no longer seen)
+0:38.4 stone 64 is removed (no longer seen)
+0:38.6 stone 65 is removed (no longer seen)

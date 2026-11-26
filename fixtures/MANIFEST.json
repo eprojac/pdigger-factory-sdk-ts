@@ -1,6 +1,6 @@
 {
  "made_by": "the maintainers' fixture generator (not published)",
- "made_at": "2026-11-24T03:22:07Z",
+ "made_at": "2026-11-26T11:23:57Z",
  "files": {
   "recordings/aug28-1270-1300.ndjson.gz": {
    "bytes": 243715,
@@ -291,19 +291,19 @@
    }
   },
   "recordings/trays-synthetic.ndjson.gz": {
-   "bytes": 8030,
-   "sha256": "bf7e88b6ce2a77087a43c9fc5ada97e917c568775308757dbcfe0b9d33779daa",
+   "bytes": 8873,
+   "sha256": "8eb1dee2d82a3933425dfc583e9d104395c017315ce601f77a699e92f4d7b935",
    "header": {
     "name": "trays-synthetic",
     "video": "dry1",
     "build": "claude-20261122-hr4x1",
-    "frames": 185,
+    "frames": 207,
     "g_first": 0,
-    "g_last": 181,
+    "g_last": 203,
     "layers": [
      "world"
     ],
-    "notes": "SYNTHETIC: seven trays made up to show tray rules the real excerpts never reach (SDK-DESIGN.md 4.6): a stone outside the board and one with a short quaternion, a carry-away removed for certain, a slab set down for certain; two boxes overlapping, a rename followed past old hand marks, a rename next to a hand; a tray that goes on after a jolt, a brick appearing next to a held one, a stone and a brick left unclear when the tray leaves; a stop that never settles; a slab set down for certain and gone unclear when the tray leaves; a jolt after which nine tenths of the stones were seen (the same tray), then the next board with six tenths of the last board's world ids (a new tray). Three frames come again as revisions (world.rev 1, one added confirm event each): frame 13, before a frame that changed the tray links, and frames 26 and 58, which changed them, 26 while it is still the newest. Made by the maintainers' fixture generator (not published)."
+    "notes": "SYNTHETIC: eight trays made up to show tray rules the real excerpts never reach (SDK-DESIGN.md 4.6): a stone outside the board and one with a short quaternion, a carry-away removed for certain, a slab set down for certain; two boxes overlapping, a rename followed past old hand marks, a rename next to a hand; a tray that goes on after a jolt, a brick appearing next to a held one, a stone and a brick left unclear when the tray leaves; a stop that never settles; a slab set down for certain and gone unclear when the tray leaves; a jolt after which nine tenths of the stones were seen (the same tray), then the next board with six tenths of the last board's world ids (a new tray), which drives off and leaves seven of its stones remembered, not detected, where it stood (a new tray again: it leaves with all ten). Three frames come again as revisions (world.rev 1, one added confirm event each): frame 13, before a frame that changed the tray links, and frames 26 and 58, which changed them, 26 while it is still the newest. Made by the maintainers' fixture generator (not published)."
    }
   },
   "golden/aug28-1270-1300.activities.txt": {
@@ -399,12 +399,12 @@
    "sha256": "139314b8810326992b38308310286cb80bb7a623772b567b91bf0398a561bd29"
   },
   "golden/dry1-0000-0130.summary.json": {
-   "bytes": 1288,
-   "sha256": "aed69adac7c139406c7e29890416f26bf3402d7815e05be91e1d2d0a6399cf46"
+   "bytes": 1308,
+   "sha256": "74fe9a92cc2c8becb00ae05ea8ea50e1e0cc4b903954b058d3187f24dc4cae93"
   },
   "golden/dry1-0000-0130.summary.txt": {
    "bytes": 693,
-   "sha256": "fe841f31d33c1c4fd14410a9ee3690f7eb853d75418ec9537799728bde70cc54"
+   "sha256": "7e7273743ff9f1b2f8a4a186c40ddd0aa8c232eab338b4c681ce922728e2e66d"
   },
   "golden/dry1-0000-0130.tray-stones.txt": {
    "bytes": 21542,
@@ -435,12 +435,12 @@
    "sha256": "55830a88cada2e067be977fe6be88f9bba43489a8335d9ab25b09a4ad5c74e99"
   },
   "golden/dry1-0018-0153.summary.json": {
-   "bytes": 1291,
-   "sha256": "6b6babf22370d1217edb44a10bfde56d54b225a4171a49b5b2a52f30335a0a75"
+   "bytes": 1311,
+   "sha256": "78c8c26e86df80a90597125f1938f7fb601e09297f675fabeb5f5954d90f5b28"
   },
   "golden/dry1-0018-0153.summary.txt": {
    "bytes": 692,
-   "sha256": "b541768a0f2aad56ae3d36dd4685d19cf2cff0a355790f39c7b9bcc529d27f12"
+   "sha256": "2533ab82f54afe0ac10a0c826f2141603df7148b240e276d0e6eb6c76bf34978"
   },
   "golden/dry1-0018-0153.tray-stones.txt": {
    "bytes": 20734,
@@ -471,8 +471,8 @@
    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   },
   "golden/dry1-0296-0306-full.summary.json": {
-   "bytes": 1276,
-   "sha256": "cd4ce962165023eef33721e781a163f0c9dcdc20dcc24c1d40fa7ff21f9ef199"
+   "bytes": 1289,
+   "sha256": "34d7f0f5aa6a9e85eafbe48ef998c2f2dc25723a8f47d1c4e7a01bb0762f3561"
   },
   "golden/dry1-0296-0306-full.summary.txt": {
    "bytes": 679,
@@ -507,12 +507,12 @@
    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   },
   "golden/dry2-0582-0600.summary.json": {
-   "bytes": 1278,
-   "sha256": "8b266a010b66c448832fc2e103218c40f997e6376c17bb044f44cfc086e69605"
+   "bytes": 1282,
+   "sha256": "71b41cbe802f52831a118094b2efc8b699e26f8eff1af2af2584dc322f631223"
   },
   "golden/dry2-0582-0600.summary.txt": {
    "bytes": 675,
-   "sha256": "4323a44ae450afb19d270006131619924e43f89e38329098f6a821317d74fd9f"
+   "sha256": "fd5d74d9fee7c804f982181d1e96ec24e268ba0a78b0dc4bb1ac16b3996d3d4d"
   },
   "golden/dry2-0582-0600.tray-stones.txt": {
    "bytes": 2187,
@@ -543,12 +543,12 @@
    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   },
   "golden/dry2-pause-seek.summary.json": {
-   "bytes": 1278,
-   "sha256": "d5a0edd70a3621c02b356b96b21d3e102508902318e59eda4f5fa3b53c917a19"
+   "bytes": 1282,
+   "sha256": "6b3021ad62e346ed61d15ab04f915b8c2ea4326ae7d91945f96bbbb50bc336c3"
   },
   "golden/dry2-pause-seek.summary.txt": {
    "bytes": 675,
-   "sha256": "83efa63a527bc585e2f373ee8e74a9dd53b732b4081bf9a75567a055f2f765b5"
+   "sha256": "022e4b2086604dbebeb076ed3369d1024283ef5a832fee271d4e3676aa0ebbd1"
   },
   "golden/dry2-pause-seek.tray-stones.txt": {
    "bytes": 3123,
@@ -579,8 +579,8 @@
    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   },
   "golden/joined-mid-move.summary.json": {
-   "bytes": 1268,
-   "sha256": "084111765fd1fd831844e8ef607cbacb960f34daa9786b6ff8421e1224a4ca08"
+   "bytes": 1279,
+   "sha256": "4291828ca0b2df33354f2b8ae00461aea065ce67039ae3ddcf0ce53211382883"
   },
   "golden/joined-mid-move.summary.txt": {
    "bytes": 672,
@@ -615,8 +615,8 @@
    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   },
   "golden/revisions-synthetic.summary.json": {
-   "bytes": 1268,
-   "sha256": "8adfa69fc094adf05949f4505f2b88fbbfc2ee6ee1154d833e5cded5f9d21681"
+   "bytes": 1276,
+   "sha256": "96c906e0f12f3d40968dbf3b1a9c4a618bf98aeed2a5e7d049c939464b2a30c5"
   },
   "golden/revisions-synthetic.summary.txt": {
    "bytes": 670,
@@ -651,12 +651,12 @@
    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   },
   "golden/session-change-mid-move.summary.json": {
-   "bytes": 1280,
-   "sha256": "e98b032c08dc87f2314075c06321a6f0dd23ccbbb8827488a83c03ce227050f7"
+   "bytes": 1295,
+   "sha256": "6811f7feb8c5dc287adbcdfbd0365db67686feffa4957b0dc5b5e674a51c1f4c"
   },
   "golden/session-change-mid-move.summary.txt": {
    "bytes": 682,
-   "sha256": "c5ce542e3757bce8a066cb46c22914db9027e17869842b628a670f7a2d9adb51"
+   "sha256": "8bfcdef16c28e908bba82f03751104fc4c02a0cae2d44263ca6e21764493ee69"
   },
   "golden/session-change-mid-move.tray-stones.txt": {
    "bytes": 2187,
@@ -923,60 +923,60 @@
    "sha256": "a3e1d3890272ef6dd2e5370e5f9a4689e0364dfda489e94463aa64f164315ceb"
   },
   "golden/trays-synthetic.events.txt": {
-   "bytes": 919,
-   "sha256": "88298ebdf9be5181a98f2743138644c69925a9d28d6205a94ac2afc71a9af4d1"
+   "bytes": 1227,
+   "sha256": "a42f2e97231d4b98a22f7e9763fd5654e939f1341bd1e01b729f81678a2211fe"
   },
   "golden/trays-synthetic.open.txt": {
-   "bytes": 1199,
-   "sha256": "fd23f7237d7c98e6e7db70e827f33fafedb780ca6dd0bc9395afb94f9d0c9cab"
+   "bytes": 1271,
+   "sha256": "ee97b350c40bfc0cbbcd25efe5c44ad163045b6cffb21f6f21f2e1b12c781212"
   },
   "golden/trays-synthetic.reports.txt": {
-   "bytes": 975,
-   "sha256": "133144f64226c00cd0e2e014f696b2c40b03e5f56ef5ea5aa5b2b30302a9fffd"
+   "bytes": 1054,
+   "sha256": "7207a2949bc32e004a814435e2fedf761e342483f8439c051158f60ed5811e76"
   },
   "golden/trays-synthetic.speckle.txt": {
    "bytes": 0,
    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   },
   "golden/trays-synthetic.summary.json": {
-   "bytes": 1263,
-   "sha256": "1d2e3929ad2145d47f0ee8d134954b682d70c5ac1b17626d804ef129a05b34d7"
+   "bytes": 1262,
+   "sha256": "78e91519420e293d1cc8d3b0a3427a2b417fcccbda9e2bcb08a137fda1c50e85"
   },
   "golden/trays-synthetic.summary.txt": {
-   "bytes": 678,
-   "sha256": "ee2bd24e5f2c24a0eece0cd765aace2c26e9184b566283ccddf285030fdaab77"
+   "bytes": 677,
+   "sha256": "20a543ee559fbb8de04450bc04547b12da397f04d5ed3c94b38d2ceeb88df71b"
   },
   "golden/trays-synthetic.tray-stones.txt": {
-   "bytes": 535,
-   "sha256": "cc2b27f7d572ea1528f1e614221595143ff15443a3a3f5f0b43d3f7cf3cac061"
+   "bytes": 801,
+   "sha256": "430dd2bd86428a71a0e30880d998b2ae63cd53a8abfec2bb41fc6e7897ed58b7"
   },
   "golden/trays-synthetic.trays.txt": {
-   "bytes": 1507,
-   "sha256": "99c10a235d0c2b730f3aabdb019b404b7156ecfbc0fb1de04ee16b164bf88090"
+   "bytes": 1611,
+   "sha256": "7c95a55a49ff79ab6d6718cf120faaf52b59cc2c962e91bc4ee7e8e9c552d8b8"
   },
   "golden/complete/aug28.summary.json": {
-   "bytes": 1324,
-   "sha256": "aeec3023d0c70f064e7253346d4f7dcc3a639b139ba96dccb72913e50138d51b"
+   "bytes": 1326,
+   "sha256": "a7f4b3c7c0ad51f82b5eed725cd61d11abcbd797f2a15fdaea9ff14d16369cd4"
   },
   "golden/complete/aug28.summary.txt": {
    "bytes": 727,
    "sha256": "e70a0a5804214c704edb7b36dcc3601a0f9a07be1d846ef79726b21698c537b7"
   },
   "golden/complete/dry1.summary.json": {
-   "bytes": 1322,
-   "sha256": "6550d0aac769b3213590b108693e32649c53d334518eaa43995bab364e6bcb15"
+   "bytes": 1342,
+   "sha256": "230dceb04b139508a588fa187a5414854b058f24be1a13f53b7fac0c50590c35"
   },
   "golden/complete/dry1.summary.txt": {
    "bytes": 718,
-   "sha256": "b36bf963b8d2a55fd188c579dcabb4e155f1686f28bf1e5456cc2fff5d8032e4"
+   "sha256": "e38b858e1451a8aebaa24eb7b0eba8b8652951b10d2460be35fd279d755f2f3b"
   },
   "golden/complete/dry2.summary.json": {
-   "bytes": 1321,
-   "sha256": "c3e8e3f6da4a62378aba700618d31668457a8246ca5e197677e1d19369c45856"
+   "bytes": 1339,
+   "sha256": "0d74ed1e4e4196eeec68d138ad4e65233b1c457d45217c8960d54f0334cb7d78"
   },
   "golden/complete/dry2.summary.txt": {
    "bytes": 720,
-   "sha256": "1d2c3bce635a421db3a18f89fd9625b0a494a9d4670d95957c85494303853eb2"
+   "sha256": "42dfa657117d7069bbd4762f0a3270bb23348d594101251c4eb6c02d4bfa094e"
   },
   "golden/complete/jul30.summary.json": {
    "bytes": 1345,
@@ -1096,7 +1096,7 @@
   },
   "api/INDEX.json": {
    "bytes": 9904,
-   "sha256": "bcce91e5a6e69b531a1e5b543ad9653df8db33a054d1d2cd97aef55a1213d73c"
+   "sha256": "fb3e91aeccee97f229bc520faa97a34f43ac3ef785bdb012d97ab11e8f3cccd6"
   },
   "api/deleteFocus-dry.json": {
    "bytes": 342,
@@ -1147,8 +1147,8 @@
    "sha256": "3913ef43bd0a63259c3a97cba6253f686ee30b00d02f197d030b2ec74ae896d1"
   },
   "api/getOpenApi.yaml": {
-   "bytes": 274013,
-   "sha256": "c1a1663fb0309b00843bcea21b1d803fc1f62976cec6014886376410157a35d7"
+   "bytes": 275257,
+   "sha256": "12055cd312c10a338c09b89dc4705b1f2d475c760227a25884a3d773add80d69"
   },
   "api/getReady.json": {
    "bytes": 27,

@@ -10,3 +10,4 @@ tray 5 (2026-11-18T00:00:24.0Z), 0:24.0 to 0:27.2: 1 removed, 1 added, 0 moved, 
   0:27.2 added 20261118T000025.8Z-5-47 at (0.00, -0.50) (0.52)
 tray 6 (2026-11-18T00:00:29.0Z), 0:29.0 to 0:33.2: 0 removed, 0 added, 0 moved
 tray 7 (2026-11-18T00:00:35.0Z), 0:35.0 to 0:36.2: 0 removed, 0 added, 0 moved
+tray 8 (2026-11-18T00:00:39.2Z), 0:39.2 to 0:40.6: 0 removed, 0 added, 0 moved

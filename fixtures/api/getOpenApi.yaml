@@ -36,7 +36,13 @@ info:
 
     use; the recordings of 22 November (build claude-20261122-hr4x1) carry them, and those of 17 November, made before it,
 
-    carry none. The API page
+    carry none. Since build claude-20261125-dspad3 the unit offers five pallet cameras in place of the rig cameras; since
+    worker
+
+    claude-20261125-dspad1 a camera picture of another shape is letterboxed into `native_wh` (earlier workers stretched it),
+    and since
+
+    build claude-20261126-handgate1 a hand in contact away from the board is sent as `free` with `away` true. The API page
 
     https://factory.pdigger.com/developers/api/ has a demo server that answers from real 20.20 recordings, in your browser.
 
@@ -117,6 +123,7 @@ info:
     unit: 20.20 (Jetson Orin NX)
     build: claude-20261123-speckle7
     api: 2.2.0
+    with: HandState.away from build claude-20261126-handgate1, and the letterboxed camera pictures of worker claude-20261125-dspad1
 servers:
 - url: '{scheme}://{host}:{port}'
   description: Your unit on the factory LAN
@@ -4182,11 +4189,14 @@ paths:
       description: 'Only on a live camera session: the camera''s JPEG of a released frame (`latest` for the newest), as it
         arrived
 
-        (640 x 360 on the plant rigs; the overlay''s native pixels are that picture stretched to `native_wh`). The worker
+        (640 x 360 on the plant rigs). The overlay''s native pixels are that picture scaled to fit `native_wh` and
 
-        keeps the pictures of the newest 64 frames only (about 17 s of a camera at 3.8 frames a second), fewer than the
+        centred, the rest black: a picture of another shape is letterboxed (from worker `claude-20261125-dspad1` on; earlier
+        workers stretched it). The worker keeps the
 
-        frames retained: an older frame''s picture is `404 not_retained`. `X-Interp-G` names the frame the picture is of.
+        pictures of the newest 64 frames only (about 17 s of a camera at 3.8 frames a second), fewer than the frames
+
+        retained: an older frame''s picture is `404 not_retained`. `X-Interp-G` names the frame the picture is of.
 
         Warm-up frames are never released. A recording''s picture is its proxy video.
 
@@ -7536,6 +7546,9 @@ components:
           - grasp
           - hinge
           - carry
+          description: '`touch` and `grasp` are the temporal model''s contact readings. With fixer thin-v1 (dry videos and
+            cameras), a hand in contact that holds no stone and whose wrist is off the board (the regions'' tray map) is sent
+            as `free`, with `away` true.'
         stone:
           type:
           - integer
@@ -7544,6 +7557,10 @@ components:
           type: number
         untrusted:
           type: boolean
+        away:
+          type: boolean
+          description: 'Present (true) only on a hand sent as `free` because it is in contact away from the board: a worker''s
+            hand busy beside the board, or a false hand on machinery. It does not hold a stone and does not work on the tray.'
     WorldEvent:
       type: object
       required:

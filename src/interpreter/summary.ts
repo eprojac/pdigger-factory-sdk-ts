@@ -110,7 +110,7 @@ export class Summary {
   readonly stones: { readonly last: number | null; readonly max: number; readonly confirmedLast: number | null };
   /** Trays and tray stones (section 4.6): trays, arrivals, stones at the arrivals, certain and unclear facts. */
   readonly trays: Readonly<TrayCounts>;
-  /** Seconds per hand state (0.2 s per grid frame with a world). */
+  /** Seconds per hand state: each frame with a world adds its step (SDK-DESIGN.md 4.5; 0.2 s on a recorded video). */
   readonly hands: {
     readonly left: Readonly<Record<HandStateName, number>>;
     readonly right: Readonly<Record<HandStateName, number>>;

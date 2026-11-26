@@ -21,3 +21,5 @@
 0:33.2 tray 6 leaving: 10 stones (10 sure), 0 added, 0 removed, 0 unclear
 0:35.0 tray 7 arrived: 10 stones
 0:36.2 tray 7 leaving: 10 stones (10 sure), 0 added, 0 removed, 0 unclear
+0:39.2 tray 8 arrived: 0 stones
+0:40.6 tray 8 leaving: 0 stones (0 sure), 0 added, 0 removed, 0 unclear

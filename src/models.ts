@@ -808,10 +808,20 @@ export interface WorldSpeckle {
 
 /** A hand of the world. */
 export interface HandState {
+  /**
+   * `touch` and `grasp` are the temporal model's contact readings. With fixer thin-v1 (dry videos and cameras), a hand
+   * in contact that holds no stone and whose wrist is off the board (the regions' tray map) is sent as `free`, with
+   * `away` true.
+   */
   state: "free" | "touch" | "grasp" | "hinge" | "carry";
   stone: number | null;
   rayK?: number;
   untrusted?: boolean;
+  /**
+   * Present (true) only on a hand sent as `free` because it is in contact away from the board: a worker's hand busy
+   * beside the board, or a false hand on machinery. It does not hold a stone and does not work on the tray.
+   */
+  away?: boolean;
 }
 
 /** The wire names of world events. */

@@ -5,5 +5,5 @@ moves: 9 (placed 5, dropped 2, carried away 2, removed 0, interrupted 0, partial
 push bursts: 58 (left 28, right 19, both 11), pushes 484
 events: new 216, confirm 91, freeze 82, push 563, lift 9, hinge 4, carry 6, place 5, drop 2, gone 2, delete 98, split 4, other 0
 trays: 1 (arrived 1), stones at arrival 42, added 0 (+13 unclear), removed 6 (+5 unclear), not sure 21
-left hand: free 0:54.4, touch 0:56.6, grasp 0:21.4, hinge 0:00.4, carry 0:02.4
-right hand: free 1:07.2, touch 0:13.6, grasp 0:44.2, hinge 0:00.6, carry 0:09.6
+left hand: free 0:54.1, touch 0:56.3, grasp 0:21.3, hinge 0:00.4, carry 0:02.4
+right hand: free 1:06.9, touch 0:13.5, grasp 0:44.0, hinge 0:00.6, carry 0:09.6

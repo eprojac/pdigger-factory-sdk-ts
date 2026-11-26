@@ -357,8 +357,8 @@ describe("examples", () => {
       push bursts: 47 (left 23, right 14, both 10), pushes 386
       events: new 270, confirm 116, freeze 96, push 506, lift 8, hinge 3, carry 6, place 4, drop 2, gone 2, delete 75, split 2, other 0
       trays: 2 (arrived 2), stones at arrival 83, added 0 (+1 unclear), removed 6 (+0 unclear), not sure 18
-      left hand: free 0:51.0, touch 0:49.4, grasp 0:16.8, hinge 0:00.4, carry 0:02.4
-      right hand: free 1:05.0, touch 0:08.2, grasp 0:36.8, hinge 0:00.4, carry 0:09.6
+      left hand: free 0:50.7, touch 0:49.2, grasp 0:16.7, hinge 0:00.4, carry 0:02.4
+      right hand: free 1:04.7, touch 0:08.2, grasp 0:36.6, hinge 0:00.4, carry 0:09.6
       ",
       ]
     `);

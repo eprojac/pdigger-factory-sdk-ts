@@ -3,7 +3,8 @@ import { InterpreterCore, type StoneView, type Tray, type WorldEvent } from "pdi
 import { mkFrame, stone } from "../helpers/frames.js";
 
 // Version 4 of the tray rules (SDK-DESIGN.md 4.6.1): a certain removal needs a hand on the stone, and a visit continues
-// the open tray only when nine tenths of its first frame's stones were seen on it.
+// the open tray only on the camera's word: of the stones no hand holds at its first frame, the tray saw one the world
+// detects, and nine tenths of the detected ones or of them all.
 
 type Ev = Partial<WorldEvent>;
 const TOUCH = { left: { state: "touch" as const, stone: null }, right: { state: "free" as const, stone: null } };
@@ -122,5 +123,91 @@ describe("a visit continues the open tray only when nine tenths of its stones we
     const trays = board(8);
     expect(trays.map((t) => t.n)).toEqual([1, 2]);
     expect(trays.map((t) => t.stones.filter((s) => s.status === "on").length)).toEqual([10, 10]);
+  });
+});
+
+/**
+ * Ten stones arrive; the conveyor moves; the next stop's first frame shows seven of them where they stood, detected or
+ * only remembered, and the world loses them one after another.
+ */
+function droveOff(detected: boolean): Tray[] {
+  const first = Array.from({ length: 10 }, (_, i) => stone(i, [-0.9 + 0.2 * i, 0, 0.05]));
+  const steps: Step[] = [];
+  for (let g = 0; g < 12; g++) steps.push({ stones: first });
+  for (let g = 0; g < 3; g++) steps.push({ stones: first, moving: true });
+  let left = first.slice(3).map((s) => ({ ...s, detected }));
+  for (let g = 0; g < 2; g++) steps.push({ stones: left });
+  for (let i = 3; i < 10; i++) {
+    left = left.slice(1);
+    steps.push({ stones: left, events: [{ type: "delete", id: i, why: "absent" }] });
+  }
+  for (let g = 0; g < 10; g++) steps.push({ stones: left });
+  return play(steps);
+}
+
+describe("a visit continues the open tray only when the world detects one of its stones", () => {
+  it("opens a new tray when its first frame only remembers the tray's stones (a board that drove off)", () => {
+    const trays = droveOff(false);
+    expect(trays.map((t) => t.n)).toEqual([1, 2]);
+    expect(trays[0]?.stones.map((s) => s.status)).toEqual(Array(10).fill("on"));
+    expect(trays[0]?.facts.filter((f) => f.kind === "removed" || f.kind === "added")).toEqual([]);
+  });
+
+  it("goes on when its first frame detects them", () => {
+    const trays = droveOff(true);
+    expect(trays.map((t) => t.n)).toEqual([1]);
+    expect(trays[0]?.stones.map((s) => s.status)).toEqual(Array(10).fill("removed"));
+    expect(new Set(trays[0]?.facts.filter((f) => f.kind === "removed").map((f) => f.certain))).toEqual(
+      new Set([false]),
+    );
+  });
+});
+
+/**
+ * Ten stones arrive; the conveyor jolts; the next stop's first frame shows `kept` of them only remembered (not detected)
+ * and the next `detected` of them detected where they stood, `fresh` detected stones with ids the tray never saw (a
+ * rename, or another board's), `unknown` remembered ids it never saw and `held` detected stones it never saw in a
+ * hand (mode `carry`, gone after that frame); after it the world detects them all.
+ */
+function jolt(kept: number, detected: number, fresh = 0, unknown = 0, held = 0): Tray[] {
+  const first = Array.from({ length: 10 }, (_, i) => stone(i, [-0.9 + 0.2 * i, 0, 0.05]));
+  const steps: Step[] = [];
+  for (let g = 0; g < 12; g++) steps.push({ stones: first });
+  for (let g = 0; g < 3; g++) steps.push({ stones: first, moving: true });
+  const next = [
+    ...first.slice(0, kept).map((s) => ({ ...s, detected: false })),
+    ...first.slice(kept, kept + detected),
+    ...Array.from({ length: fresh }, (_, k) => stone(100 + k, [-0.9 + 0.2 * (kept + detected + k), 0, 0.05])),
+    ...Array.from({ length: unknown }, (_, k) => ({ ...stone(200 + k, [-0.9 + 0.2 * k, 0.4, 0.05]), detected: false })),
+  ];
+  const hand = Array.from({ length: held }, (_, k) => stone(300 + k, [-0.9 + 0.2 * k, -0.4, 0.05], { mode: "carry" }));
+  steps.push({
+    stones: [...next, ...hand],
+    events: Array.from({ length: fresh }, (_, k): Ev => ({ type: "new", id: 100 + k })),
+  });
+  const all = next.map((s) => ({ ...s, detected: true }));
+  for (let g = 0; g < 11; g++) steps.push({ stones: all });
+  return play(steps);
+}
+
+describe("a visit continues the open tray on its detected stones, or on nine tenths of all with one detected", () => {
+  it("goes on when its detected stones were seen, whatever else it remembers", () => {
+    expect(jolt(0, 9, 0, 2).map((t) => t.n)).toEqual([1]);
+  });
+
+  it("opens a new tray when its only detected stone is new, however many it remembers", () => {
+    expect(jolt(9, 0, 1).map((t) => t.n)).toEqual([1, 2]);
+  });
+
+  it("goes on after a jolt that leaves most stones remembered and renames one it sees", () => {
+    expect(jolt(7, 2, 1).map((t) => t.n)).toEqual([1]);
+  });
+
+  it("opens a new tray when few of its stones were seen, although some were detected", () => {
+    expect(jolt(0, 2, 2, 6).map((t) => t.n)).toEqual([1, 2]);
+  });
+
+  it("leaves out the stones a hand holds", () => {
+    expect(jolt(0, 9, 0, 0, 2).map((t) => t.n)).toEqual([1]);
   });
 });

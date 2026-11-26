@@ -179,16 +179,18 @@ Rules:
    Further inside (a stone, an event, a hand card, the other layers), each SDK reads the data as its models do: Python
    skips an event with a field there missing or of the wrong type; Go one with a field of the wrong type (a missing or
    null one reads as its zero value); Rust one with a field of the wrong type, or null where its model takes none (a
-   missing one reads as its zero value); and TypeScript, which has no types at run time, takes it as it is. The four languages
-   differ in the same way on a whole number written with a fraction or an exponent (`2.0`, `2e0`: that number in Python
-   and TypeScript, no whole number in Go and Rust), a whole number written `-0` (0, but no whole number in Rust), one
-   beyond 2^53, a number beyond a double's range (`1e400`: infinity in Python and TypeScript, not decoded where Go and
-   Rust read it as a number), a key that differs from a field's name only in case (Go's models read it as that field,
-   the others ignore it), an object that repeats a key, a string with a lone surrogate (`"\ud800"`: kept in Python and
-   TypeScript, U+FFFD in Go, not decoded where Rust reads it as a string), and JSON nested deeper than a reader goes
-   (128 levels in Rust, 10 000 in Go, Python's recursion limit; TypeScript any depth). A unit sends none of these. The
-   fixture `fixtures/damaged` holds damaged lines and events of every type the list checks, and each SDK's tests check
-   that it skips them.
+   missing one reads as its zero value); and TypeScript, which has no types at run time, takes it as it is. The four
+   languages differ in the same way on a whole number written with a fraction or an exponent (`2.0`, `2e0`: that number
+   in Python and TypeScript, no whole number in Go and Rust), a whole number written `-0` (0, but no whole number in
+   Rust), one beyond 2^53, a number beyond a double's range (`1e400`: infinity in Python and TypeScript, not decoded
+   where Go and Rust read it as a number; written out in full, as a 1 and 400 zeros, it stays a whole number in Python;
+   Python's reference and SDK may raise OverflowError or ValueError where they compute with either: a time (an event's
+   clock, a tray's stamp), a stone's place, the summary), a key that differs from a field's name only in case (Go's models read it as that
+   field, the others ignore it), an object that repeats a key, a string with a lone surrogate (`"\ud800"`: kept in
+   Python and TypeScript, U+FFFD in Go, not decoded where Rust reads it as a string), and JSON nested deeper than a
+   reader goes (128 levels in Rust, 10 000 in Go, Python's recursion limit; TypeScript any depth). A unit sends none of
+   these. The fixture `fixtures/damaged` holds damaged lines and events of every type the list checks, and each SDK's
+   tests check that it skips them.
 
 ### 2.4 High level: the Interpreter
 
@@ -332,8 +334,9 @@ contract, as in `spec/openapi.yaml` (measured on the unit in `docs/BEHAVIOUR-20.
   (`frames/stream`, `frames`, the render routes). Build `claude-20261122-hr4x1` delivered about 3.6 frames per second
   from cameras of about 3.8 (section 7 of `docs/BEHAVIOUR-20.20.md`).
 - Pictures: `GET /api/v2/session/frames/{g|latest}/image.jpg` is the JPEG the frame was interpreted from (640 x 360 on
-  the rigs; the native pixels of the layers are that picture stretched to `native_wh`), with `X-Interp-G`; the newest
-  64 are kept (an older frame that is still retained answers 404 `not_retained`, without a `retained` window). On a
+  the rigs; the native pixels of the layers are that picture scaled to fit `native_wh` and centred, the rest black: a
+  picture of another shape is letterboxed, from worker `claude-20261125-dspad1` on; earlier workers stretched it), with
+  `X-Interp-G`; the newest 64 are kept (an older frame that is still retained answers 404 `not_retained`, without a `retained` window). On a
   recording: 404 `not_found`. `GET /api/v2/videos/{camera}/media` is 404 `not_found`.
 - A seek whose video is a camera is refused (409 `not_seekable`, field `video`): the one it names, or without a `video`
   the one shown; a seek naming a recording is applied and moves every viewer off the camera. `pause` freezes the shared
@@ -468,8 +471,12 @@ exactly these keys (numbers rounded to 3 decimals; times in seconds):
 - `media_seconds`: sum over sessions of (last t - first t).
 - `stones.last`: number of stones in the last world; `max`: the largest over frames; `confirmed_last`: last
   `stats.confirmed`.
-- `hands.<side>.<state>`: seconds = 0.2 × number of frames with a world where that hand was in that state (one grid
-  frame is 0.2 s of media). Unknown states are ignored.
+- `hands.<side>.<state>`: media seconds that hand was in that state: every new frame with a world adds its *step*
+  (4.5) to the state its world gives the hand. On a recorded video a step is one grid frame (0.2 s; 0.199 s on dry1
+  and dry2); a live camera's `g` counts the frames its worker released (about 0.3 s apart on the plant cameras), and
+  its steps follow them. A frame after a gap adds the session's previous step, so the frames the unit skipped are left
+  out: a hand's times add up to about the media time (and one step) only when the session has no gaps and every frame
+  has a world. Unknown states are ignored.
 - `moves.mean_duration` over closed moves that are not partial or interrupted; `mean_distance` over moves with a
   distance; null when there are none. `moves.carried`: moves with `carried` true.
 - `trays` (section 4.6): `total` trays opened, `arrived` trays that arrived, `stones` tray stones at the arrivals,
@@ -500,6 +507,12 @@ Null values print `-` (`stones: last -, …`, `mean - s, - units`). Integers pri
   then `fmt(-x, d)`. Never use the language's float formatting (`%.1f`, `toFixed`, `format!("{:.1}")`) for text output:
   they round ties differently.
 - `round3(x) = floor(x * 1000 + 0.5) / 1000` for the JSON summary; golden JSON is compared after parsing.
+- A new frame's *step* (4.4, the hand times), in whole milliseconds: when the session's previous new frame (with a
+  world or without) is the grid step before it (`g == g_prev + 1`) and `x = (t - t_prev) * 1000 + 0.5` in IEEE doubles
+  satisfies `1 <= x < 2^31`, the step is `floor(x)`; otherwise (a frame after a gap; a `t` less than 0.5 ms after
+  `t_prev`, or not after it; a step of 2^31 ms or more; a `t` or `t_prev` that is not a finite number) it is the
+  session's previous step, and 200 for a session's first frame. Steps are summed as integers, and
+  `hands.<side>.<state> = round3(sum / 1000)`.
 - The clock: `n = floor(t * 10 + 0.5)` tenths; `h = n / 36000`, `m = (n / 600) % 60`, `s = (n / 10) % 60`,
   `d = n % 10` (integer division); `M:SS.d` when `h == 0` (minutes not padded), else `H:MM:SS.d`.
 - Durations are `end.t - start.t` in doubles; sums are in the order the items were produced.
@@ -565,10 +578,15 @@ gives as numbers; a solid with another value there is outside the schema, and th
 skipped). Frames the rules do not read can hide a hand at work: presence questions (below) count them. A frame whose
 `world.motion` is not `static` ends the current stop. Static frames make a stop; it becomes a *visit* once the newest
 frame's `t` is at least 2.0 s after its first frame's `t` (`newest.t - first.t >= 2.0`): its frames so far are then
-taken in order (rules below), and its later frames as they come. A visit continues the open tray when the world ids of
-its first frame's stones that are not held (at least one) were seen, at least nine tenths of them, in that tray's frames
-(a new board under the camera may carry many of the last board's world ids: with half of them, aug28's trays 28 and
-29 and jul30's trays 272 and 273 were one tray each);
+taken in order (rules below), and its later frames as they come. A visit continues the open tray on the camera's word:
+of the world ids of its first frame's stones that are not held, at least one of a stone the world detects (`detected`
+true) was seen in that tray's frames (listed in one of them, detected or not, held or not), and at least nine tenths
+of the detected ones were, or at least nine tenths of them all (a new board under the camera may carry many of the last board's world ids: with half of them, aug28's trays
+28 and 29 and jul30's trays 272 and 273 were one tray each; a stone the world only remembers says nothing about the
+board under the camera: on a plant camera whose board drove out of view, the world kept ten of its nineteen stones, not
+detected, on the empty conveyor for a few frames, and the tray went on with 19 unclear removals; and after a jolt the
+world can detect few of a board's stones and give some of those few new ids: on a stacking-station camera 13 of 15 and
+4 of 6 detected stones had been seen on the tray, but 37 of 41 and 61 of 64 of them all);
 otherwise the open tray leaves (its account, below) and the next tray opens: trays are numbered 1, 2, ... per session.
 When a visit continues a tray that has arrived, the moving frames before it were not read (presence questions, below). A
 session change and `finish()` make the open tray leave.
@@ -711,7 +729,11 @@ and set down on the tray while the world lost their ids (dry1's tray 10, world 6
 216, 14333): no world event tells them from stones a hand took away. A stone a hand took away with no hand event on its
 own id stays unclear (dry2's tray 55, world 2736). A board that changes while the world's motion stays `static` ends no
 stop, so the tray goes on (aug28's tray 43, 688.6 to 938.4 s). On a bare board the world can show stones that are not
-there (jul30, about 3110 to 3429 s): each board that passes is a tray of its own, and those stones are on it.
+there (jul30, about 3110 to 3429 s): each board that passes is a tray of its own, and those stones are on it. Stones of
+a board that drove off which the world still remembers when the next stop becomes a visit arrive on that visit's tray,
+and leave it as unclear removals when the world drops them (a plant camera, 2026-11-26: a 6.8 s stop of the empty
+conveyor became a tray, on for 0.8 s, with three unclear removals). A jolt after which the stop's first frame detects none of the
+board's stones opens a new tray with the same board.
 
 Known limits of the leaving (the same check, 2026-11-23). In dry1, dry2 and aug28 every stone that left is reported
 removed, certain or unclear (before the leaving's evidence rule, the pairing had passed six of them in dry1 and dry2 to

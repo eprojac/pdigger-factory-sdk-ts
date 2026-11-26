@@ -3,6 +3,39 @@
 All notable changes to this package. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 the version follows [Semantic Versioning](https://semver.org/).
 
+## [1.0.1] - 2026-11-26
+
+This patch release also adds a public field, `HandState.away`; by Semantic Versioning a release that adds API is a minor
+one (1.1.0).
+
+### Added
+
+- `HandState.away`: true on a hand the unit sends as `free` because it is in contact away from the board, a worker's
+  hand busy beside it or a false hand on machinery (build `claude-20261126-handgate1` onwards). Such a hand no longer
+  blocks a tray's calm moments, so most trays on the plant cameras arrive (at a stacking station, stones that come and
+  go still keep many from arriving).
+
+### Changed
+
+- The summary's hand times add up each frame's own step (SDK-DESIGN.md 4.5): the media time since the session's previous
+  frame, when that frame is the grid step before it; otherwise (a frame after a gap, a time step under 0.5 ms or of 2^31
+  ms or more, or a time that is not a finite number) the session's previous step, and 0.2 s for a session's first frame.
+  On a live camera, whose worker releases two to three and a half frames a second, the hand times of 1.0.0 were a third
+  to over a half short; they now add up to about the media time of a session without gaps. On a recorded video a step is
+  its grid frame: 0.199 s on dry1 and dry2, whose hand times are now 0.5 % shorter, and 0.2 s on aug28 and jul30
+  (aug28's free times are 0.03 s longer). On these four recordings, summaries made with 1.0.0 differ in their hand times
+  only.
+- A visit continues the open tray only on the camera's word (SDK-DESIGN.md 4.6.1): of the stones no hand holds on the
+  stop's first frame, at least one the world detects must have been seen on the tray, and nine tenths of the detected
+  ones or of them all. On a plant camera whose boards drive out of view, the world kept some of a board's stones, not
+  detected, on the empty conveyor for a few frames: the tray went on and reported all its stones as unclear removals; it
+  now leaves with them. Where the world still remembers them when the next stop becomes a visit, that tray arrives with
+  them and reports them as unclear removals (4.6.1, known limits). On such cameras the summary's trays line can differ
+  from 1.0.0's in any of its counts (trays opened and arrived, stones at arrival, unclear changes, not sure), and so can
+  tray numbers and tray-stone ids.
+- A live frame's picture: from worker `claude-20261125-dspad1` on, the unit scales a camera picture of another shape to
+  fit `native_wh` and centres it (letterboxed); earlier workers stretched it, as the docs of 1.0.0 said.
+
 ## [1.0.0] - 2026-11-25
 
 Initial SDK for API v2.2. The reference unit ran build `claude-20261123-speckle7` with four recordings and six plant

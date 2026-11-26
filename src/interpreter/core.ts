@@ -106,6 +106,22 @@ function zeroHands(): Record<HandStateName, number> {
   return { free: 0, touch: 0, grasp: 0, hinge: 0, carry: 0 };
 }
 
+/**
+ * The milliseconds a new frame adds to its hands' states (SDK-DESIGN.md 4.5): the media time since the session's
+ * previous new frame `prev` when that frame is the grid step before it (`g === prev.g + 1`), in whole milliseconds, half
+ * up, when that is at least 1 ms and below 2^31 ms; otherwise the session's previous step (`prev.step`: a frame after a
+ * gap, a `t` not after the previous one or not a finite number), and 200 (one grid frame of a recorded video) for a
+ * session's first frame.
+ */
+export function handStep(prev: { g: number; t: number; step: number } | null, g: number, t: number): number {
+  if (prev === null) return 200;
+  if (g === prev.g + 1) {
+    const x = (t - prev.t) * 1000 + 0.5;
+    if (x >= 1 && x < 2 ** 31) return Math.floor(x);
+  }
+  return prev.step;
+}
+
 /** The key that tells one event of a frame from another: (type, id, side, into). */
 export function eventKey(e: WorldEvent): string {
   return JSON.stringify([e.type ?? null, e.id ?? null, e.side ?? null, e.into ?? null]);
@@ -167,7 +183,10 @@ export class InterpreterCore {
   private durN = 0;
   private distSum = 0;
   private distN = 0;
-  private readonly handFrames = { left: zeroHands(), right: zeroHands() };
+  /** Milliseconds per hand and state: each new frame with a world adds its step (handStep). */
+  private readonly handMs = { left: zeroHands(), right: zeroHands() };
+  /** The session's previous new frame and its step, for the steps. */
+  private stepPrev: { g: number; t: number; step: number } | null = null;
   private readonly tracks = new Map<number, TrackPoint[]>();
   private readonly trackPoints: number;
   private readonly trackStones: number;
@@ -284,6 +303,7 @@ export class InterpreterCore {
       this.c.sessions += 1;
       this.sessionFirstT = null;
       this.prevG = null;
+      this.stepPrev = null;
     } else if (this.prevG !== null && g <= this.prevG) {
       // an already seen grid frame: a revision (higher world.rev) or a duplicate (dropped)
       const seen = this.revs.get(g);
@@ -321,6 +341,8 @@ export class InterpreterCore {
       this.ledger.skipped(); // dropped frames: the tray rules could not read them (4.6.1)
     }
     this.prevG = g;
+    const step = handStep(this.stepPrev, g, t);
+    this.stepPrev = { g, t, step };
     if (this.sessionFirstT === null) this.sessionFirstT = t;
     this.sessionLastT = t;
     this.g = g;
@@ -359,7 +381,7 @@ export class InterpreterCore {
     c.confirmedLast = w.stats?.confirmed ?? null;
     for (const side of ["left", "right"] as const) {
       const st = w.hands?.[side]?.state;
-      if (st !== undefined && HAND_STATE_SET.has(st)) this.handFrames[side][st] = this.handFrames[side][st] + 1;
+      if (st !== undefined && HAND_STATE_SET.has(st)) this.handMs[side][st] = this.handMs[side][st] + step;
     }
     this.prune(g);
     facts.push(...this.ledger.feed(w, ref));
@@ -430,7 +452,7 @@ export class InterpreterCore {
       media += (this.sessionLastT as number) - this.sessionFirstT;
     const hands = { left: zeroHands(), right: zeroHands() };
     for (const side of ["left", "right"] as const)
-      for (const k of HAND_STATES) hands[side][k] = round3(0.2 * this.handFrames[side][k]);
+      for (const k of HAND_STATES) hands[side][k] = round3(this.handMs[side][k] / 1000);
     const json: SummaryJson = {
       frames: c.frames,
       frames_with_world: c.framesWithWorld,

@@ -2433,14 +2433,23 @@ export class TrayLedger {
 
   private begin(out: TrayFact[]): void {
     const ids = new Set<number>();
+    const unheld = new Set<number>();
     const first = this.stopStart();
-    for (const s of first.stones) if (!s.held) ids.add(s.id);
+    for (const s of first.stones) {
+      if (s.held) continue;
+      unheld.add(s.id);
+      if (s.detected) ids.add(s.id);
+    }
     const tr = this.tray;
     tr?.missingSince.clear();
     const shared = [...ids].filter((id) => tr?.ids.has(id)).length;
-    // a visit continues the open tray only when nearly all (nine tenths) of its first frame's stones were seen on the
-    // tray: a new board under the camera may carry many of the last board's world ids (4.6.1)
-    if (!(tr !== null && ids.size > 0 && 10 * shared >= 9 * ids.size)) {
+    const sharedAll = [...unheld].filter((id) => tr?.ids.has(id)).length;
+    // a visit continues the open tray only on the camera's word (4.6.1): at least one of its first frame's detected
+    // stones was seen on the tray, and nine tenths of those detected stones were, or nine tenths of all its stones that
+    // no hand holds (a jolt can leave most of a board's stones only remembered and rename one of the few the camera
+    // sees). A new board under the camera may carry many of the last board's world ids, and a board that drove off may
+    // leave its stones remembered (not detected) where it stood.
+    if (!(tr !== null && shared > 0 && (10 * shared >= 9 * ids.size || 10 * sharedAll >= 9 * unheld.size))) {
       this.closeTray(out);
       this.n += 1;
       this.counts.total += 1;

@@ -19,7 +19,7 @@ npm run build
 ```
 
 To use this build in another project, run `npm pack` in the clone. From a sibling project, run
-`npm install ../pdigger-factory-sdk-ts/pdigger-factory-sdk-1.0.0.tgz`. The core package has no runtime dependencies.
+`npm install ../pdigger-factory-sdk-ts/pdigger-factory-sdk-1.0.1.tgz`. The core package has no runtime dependencies.
 
 <a id="simple-mode-one-report-per-tray"></a>
 
