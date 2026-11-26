@@ -6,8 +6,9 @@
 make test
 ```
 
-`make test` builds the test image from a pinned Node 22 base and installs the lockfile dependencies with `npm ci`.
-It then runs `npm run check` in a container with networking disabled. The checks run in this order.
+`make test` builds two test images, from pinned Node 26 and Node 22 bases, and installs the lockfile dependencies with
+`npm ci` in each. It then runs `npm run check` in each, one after the other, in a container with networking disabled
+(`make test-26` or `make test-22` runs one; CI runs both). The checks run in this order.
 
 1. `tsc --noEmit` over the sources, tests and examples (strict, `noUncheckedIndexedAccess`);
 2. `eslint` (typescript-eslint, type-checked rules) and `prettier --check`;

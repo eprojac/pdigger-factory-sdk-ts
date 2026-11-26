@@ -1,4 +1,4 @@
-/** The three.js helpers, for a browser project (see core.ts). three's own types need `@webgpu/types`. */
+/** The three.js helpers, for a browser project (see core.ts). */
 import { FactoryClient, type Frame, type Tray } from "pdigger-factory-sdk";
 import {
   EventFeed,

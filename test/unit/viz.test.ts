@@ -185,7 +185,7 @@ describe("SceneView", () => {
     const dir = new THREE.Vector3();
     cam.getWorldDirection(dir);
     expect(dir.y).toBeLessThan(-0.9);
-    view.applyCamera(cam, "source", scene3d.camera as never);
+    view.applyCamera(cam, "source", scene3d.camera);
     expect(cam.position.y).toBeCloseTo(want[1]);
     view.applyCamera(cam, "source", { R_c2w: video.camera!.R_c2w, t_c2w: [0, 0, 1] });
     expect(cam.position.y).toBeCloseTo(1);

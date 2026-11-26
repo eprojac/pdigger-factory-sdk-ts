@@ -1,9 +1,15 @@
-# The unit tests, as `make test` and CI run them, with no network:
+# The unit tests, as `make test` and CI run them, with no network, on two bases: the newest Node LTS (the default) and
+# Node 22 (CI also tests Node 20 and 24 outside Docker):
 #   docker build -t pdigger-factory-sdk-ts-test -f Dockerfile.test .
+#   docker build --build-arg NODE=22 -t pdigger-factory-sdk-ts-test:node22 -f Dockerfile.test .
 #   docker run --rm --network none pdigger-factory-sdk-ts-test
-# The base is Node 22.23.5 (node:22-bookworm-slim), pinned by its digest; Dependabot proposes updates. The dependencies
-# are the lockfile's (npm ci), installed at build time; the run needs no network.
-FROM node:22-bookworm-slim@sha256:e9f565d32859f0cbfb52125eafe8be39390f24dac302dc3cdf566e8ba3ab21ee
+# The bases are Node 26.13.1 (node:26-bookworm-slim) and 22.23.5 (node:22-bookworm-slim), each pinned by its digest.
+# Dependabot keeps the digests current; a new Node LTS is chosen by hand (.github/dependabot.yml). The dependencies are
+# the lockfile's (npm ci), installed at build time; the run needs no network.
+ARG NODE=26
+FROM node:26-bookworm-slim@sha256:0042e17d232a87a2cd485be1da7900fca4d10a4ad11b29e9285da1d2e54798c9 AS node-26
+FROM node:22-bookworm-slim@sha256:e9f565d32859f0cbfb52125eafe8be39390f24dac302dc3cdf566e8ba3ab21ee AS node-22
+FROM node-${NODE}
 
 ENV CI=true \
     NPM_CONFIG_UPDATE_NOTIFIER=false \

@@ -1516,15 +1516,13 @@ function trayWorld(w: WorldLayer, r: FrameRef): TrayWorld {
     stones.push(ws);
     byId.set(ws.id, ws);
   }
-  const events = (w.events ?? []).map(
-    (e): Ev => ({
-      type: e.type,
-      id: typeof e.id === "number" ? e.id : null,
-      hand: HAND_EVENTS.has(e.type) || (e.type === "push" && Boolean(e.side)),
-      byHand: e.type === "delete" && e.why === "hand",
-      took: e.type === "delete" && (e.why === "hand" || e.why === "carried-away"),
-    }),
-  );
+  const events = (w.events ?? []).map((e): Ev => ({
+    type: e.type,
+    id: typeof e.id === "number" ? e.id : null,
+    hand: HAND_EVENTS.has(e.type) || (e.type === "push" && Boolean(e.side)),
+    byHand: e.type === "delete" && e.why === "hand",
+    took: e.type === "delete" && (e.why === "hand" || e.why === "carried-away"),
+  }));
   return {
     r,
     stones,
@@ -3595,10 +3593,11 @@ export class TrayLedger {
     }
     let w0: number | null = null;
     if (s.status === "on") {
-      w0 = s.world as number; // a stone on the tray stands for a world stone
-      tr.link.delete(w0);
-      const ws0 = tw.byId.get(w0);
-      if (ws0 !== undefined && !ws0.held && insideBoard(tr.board, ws0.pos)) tr.unid.set(w0, unidOf(ws0, r, true));
+      const onWorld = s.world as number; // a stone on the tray stands for a world stone
+      w0 = onWorld;
+      tr.link.delete(onWorld);
+      const ws0 = tw.byId.get(onWorld);
+      if (ws0 !== undefined && !ws0.held && insideBoard(tr.board, ws0.pos)) tr.unid.set(onWorld, unidOf(ws0, r, true));
     }
     // a column is unidentified or linked
     const u = tr.unid.get(wid);

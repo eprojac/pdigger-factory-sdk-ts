@@ -18,8 +18,8 @@ jobs:
     name: Lint, types and formatting
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
@@ -32,12 +32,17 @@ jobs:
         run: npm run format:check
 
   docker:
-    name: Unit tests in Docker (no network, 100 % coverage)
+    name: Unit tests in Docker on Node ${{ matrix.node }} (no network, 100 % coverage)
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # Dockerfile.test's two bases: the newest Node LTS and 22
+        node: [26, 22]
     steps:
-      - uses: actions/checkout@v4
-      - name: make test
-        run: make test
+      - uses: actions/checkout@v7
+      - name: make test-${{ matrix.node }}
+        run: make test-${{ matrix.node }}
 
   node:
     name: Tests on Node ${{ matrix.node }}
@@ -47,8 +52,8 @@ jobs:
       matrix:
         node: [20, 24]
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.node }}
           cache: npm
@@ -59,14 +64,14 @@ jobs:
     name: The built package on Node 18
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
       - run: npm ci
       - run: npm run build
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 18
       - name: Golden replays and the fake on Node 18
@@ -76,8 +81,8 @@ jobs:
     name: The built package on Deno
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
@@ -93,8 +98,8 @@ jobs:
     name: The built package on Bun
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
@@ -110,7 +115,7 @@ jobs:
     name: The try-it image (Dockerfile)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: make image-check (the quickstart against the fake, the viz page's files with three.js; no network)
         run: make image-check
 
@@ -118,15 +123,15 @@ jobs:
     name: API reference
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
       - run: npm ci
       - name: TypeDoc
         run: npm run docs
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: api-reference
           path: docs/api
@@ -136,8 +141,8 @@ jobs:
     name: Package contents
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm

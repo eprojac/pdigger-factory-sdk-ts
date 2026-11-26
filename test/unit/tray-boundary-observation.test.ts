@@ -24,11 +24,7 @@ const rejected = [
   "time before sight",
 ] as const;
 type Case =
-  | (typeof rejected)[number]
-  | "observed"
-  | "stable neighbour"
-  | "latest positive"
-  | "detected at the leaving point";
+  (typeof rejected)[number] | "observed" | "stable neighbour" | "latest positive" | "detected at the leaving point";
 
 function solid(id: number, x: number, detected = true, frozen = true, long = 0.09): StoneView {
   return stone(id, [x, 0, 0.05], {

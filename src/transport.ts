@@ -228,7 +228,7 @@ export class Transport {
         if (v === undefined || v === null) continue;
         if (Array.isArray(v)) u.searchParams.set(k, v.join(","));
         else if (typeof v === "boolean") u.searchParams.set(k, v ? "1" : "0");
-        else u.searchParams.set(k, String(v as string | number));
+        else u.searchParams.set(k, String(v));
       }
     }
     return u.href;

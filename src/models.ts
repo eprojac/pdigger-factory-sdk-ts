@@ -826,18 +826,7 @@ export interface HandState {
 
 /** The wire names of world events. */
 export type WorldEventType =
-  | "new"
-  | "confirm"
-  | "freeze"
-  | "push"
-  | "lift"
-  | "hinge"
-  | "carry"
-  | "place"
-  | "drop"
-  | "gone"
-  | "delete"
-  | "split";
+  "new" | "confirm" | "freeze" | "push" | "lift" | "hinge" | "carry" | "place" | "drop" | "gone" | "delete" | "split";
 
 /** Every world event type, in the order the spec lists them. */
 export const WORLD_EVENT_TYPES: readonly WorldEventType[] = [

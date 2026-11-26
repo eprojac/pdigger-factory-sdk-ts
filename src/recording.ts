@@ -110,12 +110,7 @@ export function parseLine(line: string): unknown {
 
 /** Where a recording can come from. */
 export type RecordingSource =
-  | string
-  | URL
-  | Uint8Array
-  | ArrayBuffer
-  | ReadableStream<Uint8Array>
-  | AsyncIterable<Uint8Array>;
+  string | URL | Uint8Array | ArrayBuffer | ReadableStream<Uint8Array> | AsyncIterable<Uint8Array>;
 
 /** Options to read a recording. */
 export interface ReadOptions {

@@ -222,7 +222,7 @@ function sideItem(ev: StreamEvent): ClockItem | WorkerItem | GapItem | ResetItem
   switch (ev.event) {
     case "clock": {
       const { server_now, ...state } = data as ClockEvent;
-      return { kind: "clock", state: state as State, serverNow: server_now };
+      return { kind: "clock", state, serverNow: server_now };
     }
     case "worker":
       return { kind: "worker", worker: data as WorkerStatus };

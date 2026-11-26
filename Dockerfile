@@ -6,7 +6,7 @@
 #     node --import ./scripts/fake-preload.mjs examples/quickstart.ts                     # no unit: the fake, offline
 #   docker run --rm pdigger-factory-sdk-ts node examples/replay.ts                        # needs internet access
 #   docker run --rm --init -p 8130:8130 -e HOST=0.0.0.0 pdigger-factory-sdk-ts node examples/browser/serve.mjs  # viz page
-FROM node:22-bookworm-slim@sha256:e9f565d32859f0cbfb52125eafe8be39390f24dac302dc3cdf566e8ba3ab21ee AS build
+FROM node:26-bookworm-slim@sha256:0042e17d232a87a2cd485be1da7900fca4d10a4ad11b29e9285da1d2e54798c9 AS build
 WORKDIR /sdk
 COPY package.json package-lock.json ./
 RUN npm ci --no-audit --no-fund
@@ -14,7 +14,7 @@ COPY tsconfig.json tsconfig.build.json ./
 COPY src ./src
 RUN npm run build
 
-FROM node:22-bookworm-slim@sha256:e9f565d32859f0cbfb52125eafe8be39390f24dac302dc3cdf566e8ba3ab21ee
+FROM node:26-bookworm-slim@sha256:0042e17d232a87a2cd485be1da7900fca4d10a4ad11b29e9285da1d2e54798c9
 ENV NODE_ENV=production NPM_CONFIG_UPDATE_NOTIFIER=false
 WORKDIR /app
 # the package as it is published (dist/, no runtime dependencies) plus three.js for the viz page, copied from the build

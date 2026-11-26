@@ -596,8 +596,9 @@ export class InterpreterCore {
     for (const sid of ids) {
       const m = this.moves.get(sid) as Move;
       m.outcome = "interrupted";
-      m.end = this.lastWorldRef as FrameRef; // a move opens only in a frame with a world
-      m.duration = m.end.t - m.start.t;
+      const end = this.lastWorldRef as FrameRef; // a move opens only in a frame with a world
+      m.end = end;
+      m.duration = end.t - m.start.t;
       m.to = null;
       m.distance = null;
       closed.push(m);

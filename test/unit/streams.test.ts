@@ -583,9 +583,7 @@ describe("backfill", () => {
     }
     const race = vi.spyOn(Promise, "race");
     try {
-      const out = await all(
-        holdForBackfill(source(), (() => Promise.resolve(null)) as never, new AbortController().signal),
-      );
+      const out = await all(holdForBackfill(source(), () => Promise.resolve(null), new AbortController().signal));
       expect(out).toHaveLength(50);
       expect(race).not.toHaveBeenCalled(); // no wake-up reaction left behind per frame
     } finally {
