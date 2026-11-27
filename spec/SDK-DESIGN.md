@@ -254,7 +254,8 @@ could not read a frame, 4.6.1):
    `session`, `video`.
 2. A frame of this session whose `g` is not above the newest `g` seen is either a revision (a world with a higher
    `world.rev` than the one seen for that `g`) or a duplicate (dropped, not counted; the iterators skip it). A
-   revision's events are emitted only if their key `(type, id, side, into)` was not already emitted for that `g`, and
+   revision's events are emitted only if their key was not already emitted for that `g`. Sheet events use their action
+   and distinct world ids in ascending order. All other events use `(type, id, side, into)`. Newly emitted events
    are fed to the activities; their `tray_stone` (step 3) is the one that stood for the world id before that `g`, not
    the tray's latest. The state is replaced from the revised world only if its `g` is the newest `g` seen; a revision
    changes neither the cards nor the trays, but tells the trays they could not read a frame (4.6.1): it may hold a hand
@@ -382,6 +383,11 @@ printed bare (`stone 72`); a missing id prints `?`.
 | delete | `stone {id} is removed`, plus ` ({reason})` when there is a `why`: absent → `no longer seen`, overlap → `overlapped another stone`, outside → `outside the board`, merged → `merged with a neighbour`, empty → `its place is empty`, hand → `a hand emptied its place`, carried-away → `carried away`; any other `why` verbatim |
 | split | `into` of 2 or more: `stone {id} splits into {a} and {b}` / `{a}, {b} and {c}` (commas, the last joined by ` and `) ; `into` of 1: `stone {id} is trimmed` ; no `into`: `stone {id} splits` |
 | other | `stone {id}: {type}` (forward compatible) |
+
+A sheet event says `a sheet is laid over stones 1 and 2` or `a sheet is lifted off stones 1 and 2`.
+The list follows the same rule as push bursts. An empty list omits the preposition and stones. An unfamiliar action
+reads `a sheet event ({why})`, and a missing action reads `a sheet event`. A deletion with reason `sheet` reads
+`gone from under a sheet`.
 
 Example: `21:17.8 Right hand lifts stone 2660`, `0:20.5 Both hands push stone 90`.
 
@@ -1551,10 +1557,11 @@ arrived and has not left breaks C1. The list holds each broken code once, in asc
   - `leaving.stones` and `sure` count the stones on the tray at the end and the sure ones among them; `added`,
     `removed` and `unclear` count the tray's facts as 4.6.1 defines them;
   - `open` holds one entry for each open stone (4.6.8), in tray order.
-- **C6** The stones on the tray have distinct world ids that are not null.
+- **C6** All linked stones on the tray have distinct world ids. A stone can leave with a null world id only
+  when its identity is uncertain, its cover is clear and a recorded paper lift names it (4.6.14).
 - **C7** The open entries:
   - each entry has codes from 4.6.8's lists, and a candidate list that is not empty and repeats no entry;
-  - an `unsure` entry starts with its own world stone;
+  - an `unsure` entry starts with its linked world stone, or with `unseen` when a paper lift left it unlinked;
   - every tray stone entry holds `gone`;
   - a `removed` entry ends with `unseen`, and an `added` entry ends with `new`.
 - **C8** No candidate is a sure tray stone, a stone removed for certain, or a world stone linked to a sure stone.
@@ -1747,7 +1754,38 @@ undecided. On dry1's tray 2 (without its leaving answer: 15 removed, 17 added, 2
 stones the rules had lost (107, 118, 119 and 120, found again) or put on other world stones (106 and 116, recognised),
 and confirms the others it pairs: 11 removed, 13 added, 8 moved, 1 not sure.
 
+#### 4.6.14 Paper sheets
+
+Some cameras report `under_sheet` on a stone that stays on its board under paper. A detection through the paper gives
+no evidence about the stone's place or identity. The tray keeps its existing certainty and pauses the unseen count.
+A covered stone joins an arriving board only if this visit previously saw it uncovered. Covered stones are excluded
+from shape, appearance and vacant-slot comparisons. The first calm observation of newly covered tray stones emits a
+`sheet_laid` fact with the frame time and sorted tray ids. The same point is available as `sheet_since`.
+
+When a stone becomes uncovered, its cover flag clears. A `sheet_lifted` fact names the affected tray stones.
+During a stationary visit, paper can lift from just part of a board. The same tray continues if the lift names all
+of its covered ids retired in that packet and the input is continuous. At least two other stones already linked to this tray must
+still be under paper at their previous places (within NEAR, 0.12 board units). The affected stones can be linked again by the ordinary identity rules. If a track remains unresolved
+at departure, the tray keeps the stone in its inventory with uncertain identity. A paper retirement alone supplies
+no evidence of a worker removal.
+
+With a configured tray rectangle, the uncovered faces can also establish continuity. At least two and a strict majority
+of the linked, uncovered faces directly seen inside the rectangle on the previous grid must still be directly seen at
+the same places (within NEAR) on this grid. Both outlines must fit inside the rectangle and both observations must be
+in seen mode. This lets a worker lift the last section of paper while the exposed portion of the same board stays in view.
+
+Other sheet deletions of known covered stones close the tray at that packet, including a whole layer retiring on a
+static frame. The departing tray retains its inventory and records any explicit lift. The next visit begins a fresh
+tray. A deletion of a stone the tray never observed under paper follows the ordinary accounting rules.
+
+Check C10 validates the size, membership and ordering of sheet actions on a tray. C11 checks the number on the tray
+under paper at departure. The event summary includes `events.sheet` when positive. The tray summary includes
+`sheets` (laid actions) and `under_sheet` (stones leaving under paper) when either count is positive.
+
 ### 4.7 Tray reports (simple mode)
+
+Reports include the sorted tray ids still under paper at departure, the number of laid actions and the individual
+laid and lifted facts. The report text prints each action with its time and affected stones.
 
 A tray report lists the stones removed, added or moved, their times and positions, and whether all observed changes
 can be accounted for. The SDK builds it from a single tray’s facts and final stone records. For the evidence behind

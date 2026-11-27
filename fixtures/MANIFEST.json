@@ -1,6 +1,6 @@
 {
  "made_by": "the maintainers' fixture generator (not published)",
- "made_at": "2026-11-26T11:23:57Z",
+ "made_at": "2026-11-27T09:22:00Z",
  "files": {
   "recordings/aug28-1270-1300.ndjson.gz": {
    "bytes": 243715,
@@ -272,6 +272,54 @@
      "world"
     ],
     "notes": "SYNTHETIC: 35 trays made up to show presence questions (SDK-DESIGN.md 4.6.1): a stone without a look chain that is not seen at two calm moments while nothing could have changed it is held in question, and is sure again once it is seen on its place (later, or at the doubt itself, its next calm moment then showing it) or not sure when its tray leaves; the question is refused at the doubt, or ends, after a busy or push frame while it is not detected, a hand that handled or held it or worked next to it, a pushed neighbour of its size, a stone of its size that appeared next to it or stands within NEAR of its place, a lost stone, the moving frames of a tray that goes on, a frame without a world, dropped frames (a jump in g, a gap line) and any revision; the settle goes stone by stone in tray order and still tests a stone's later reasons; the leaving's same-frame repair; a stone added for certain. Which stones end sure and which not sure: this recording's golden trays.txt and open.txt."
+   }
+  },
+  "recordings/trays-sheet-partial-synthetic.ndjson.gz": {
+   "bytes": 3258,
+   "sha256": "571bc5dff25604a1f9b5de2e1e6713e289b7de144e009f6d8ad9886ee7be754c",
+   "header": {
+    "name": "trays-sheet-partial-synthetic",
+    "video": "sample",
+    "build": null,
+    "frames": 70,
+    "g_first": 0,
+    "g_last": 69,
+    "layers": [
+     "world"
+    ],
+    "notes": "Two stationary boards with partial paper lifts. Tracking ids change on exposure, and one stone stays unobserved."
+   }
+  },
+  "recordings/trays-sheet-synthetic-nosheet.ndjson.gz": {
+   "bytes": 3940,
+   "sha256": "f55c83a78cc10f8ed4b8f4160a574e61dd5c289ecfb8fb2feadf786c86651633",
+   "header": {
+    "name": "trays-sheet-synthetic-nosheet",
+    "video": "sample",
+    "build": null,
+    "frames": 105,
+    "g_first": 0,
+    "g_last": 104,
+    "layers": [
+     "world"
+    ],
+    "notes": "Synthetic boards with an ordinary hand removal, paper sheets and a gap in the camera clock."
+   }
+  },
+  "recordings/trays-sheet-synthetic.ndjson.gz": {
+   "bytes": 4086,
+   "sha256": "5aa4b9042eda5e5fd65c609dd5a2aca6a9adaa02a7d3522d24e50008183b6edc",
+   "header": {
+    "name": "trays-sheet-synthetic",
+    "video": "sample",
+    "build": null,
+    "frames": 105,
+    "g_first": 0,
+    "g_last": 104,
+    "layers": [
+     "world"
+    ],
+    "notes": "Synthetic boards with an ordinary hand removal, paper sheets and a gap in the camera clock."
    }
   },
   "recordings/trays-speckle-synthetic.ndjson.gz": {
@@ -882,6 +930,114 @@
    "bytes": 7973,
    "sha256": "51d0af46fb4b9a866ffb8c8afa3959f857ff945ef33093872465609255fb3b1f"
   },
+  "golden/trays-sheet-partial-synthetic.activities.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/trays-sheet-partial-synthetic.events.txt": {
+   "bytes": 764,
+   "sha256": "1ae9d6c77f11a63de29171f937bc0158b788be9960f45dac36803cbce5869bab"
+  },
+  "golden/trays-sheet-partial-synthetic.open.txt": {
+   "bytes": 251,
+   "sha256": "707f87689d0b2c1e929f28ddbe4021d080c325d92ceeac6f13913b9198e40601"
+  },
+  "golden/trays-sheet-partial-synthetic.reports.txt": {
+   "bytes": 847,
+   "sha256": "c8afd1a3717951ecc0154fc0f234ae3dd2730d0d5446e446afb2a09c05ef92a5"
+  },
+  "golden/trays-sheet-partial-synthetic.speckle.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/trays-sheet-partial-synthetic.summary.json": {
+   "bytes": 1312,
+   "sha256": "175e7de7b20d1527901f3b6a7df95ea41fb8f94daca76b3105a06973ee2cf68a"
+  },
+  "golden/trays-sheet-partial-synthetic.summary.txt": {
+   "bytes": 709,
+   "sha256": "1443dcfec78160b265ef10e3591fc0b32243c029bc5c78d940bcdff7945b3826"
+  },
+  "golden/trays-sheet-partial-synthetic.tray-stones.txt": {
+   "bytes": 362,
+   "sha256": "076d4c650a7e3a1126982c6d7b42094a1e2025d325108b669ff44728ad7d99b4"
+  },
+  "golden/trays-sheet-partial-synthetic.trays.txt": {
+   "bytes": 966,
+   "sha256": "785a8096e22f11f2b1557ad5b25ee569f065e90087d22d37f88d5bee490a570c"
+  },
+  "golden/trays-sheet-synthetic-nosheet.activities.txt": {
+   "bytes": 46,
+   "sha256": "3233aad6bc89e305fcb1c929897ea0cd78fc84abe5bf43b98abcd9309f70a77e"
+  },
+  "golden/trays-sheet-synthetic-nosheet.events.txt": {
+   "bytes": 464,
+   "sha256": "ef622e0a7faa9cea3f95159a0d550ad1cf4b7d4199205880f8547f5ef017d6cc"
+  },
+  "golden/trays-sheet-synthetic-nosheet.open.txt": {
+   "bytes": 520,
+   "sha256": "b464f8f064d7891f3dae6d6a3a79f90771539b05934bda611c888821a87f0f49"
+  },
+  "golden/trays-sheet-synthetic-nosheet.reports.txt": {
+   "bytes": 346,
+   "sha256": "1cd92a848e640c683c624ecf879f2cd242e60f61c2435534b331f456a53526ea"
+  },
+  "golden/trays-sheet-synthetic-nosheet.speckle.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/trays-sheet-synthetic-nosheet.summary.json": {
+   "bytes": 1257,
+   "sha256": "d1b53edb7b5f941a29aaf97a34839d289b0072e3d612bbc6eb42a7656512bde7"
+  },
+  "golden/trays-sheet-synthetic-nosheet.summary.txt": {
+   "bytes": 670,
+   "sha256": "eb76e7b41402df780b42fbd57c7f90ddae5aff30d3ecfc32dddb2d86c60ecfe0"
+  },
+  "golden/trays-sheet-synthetic-nosheet.tray-stones.txt": {
+   "bytes": 395,
+   "sha256": "8688233f76f6356d7e6859743462455e5f2c5ccebaaf66920c0d868f1f0b51ab"
+  },
+  "golden/trays-sheet-synthetic-nosheet.trays.txt": {
+   "bytes": 531,
+   "sha256": "0fa5a9b47e8971ab21f2b88b96a5cec3da1a8a91bb8fbf6204531946c4bd7168"
+  },
+  "golden/trays-sheet-synthetic.activities.txt": {
+   "bytes": 46,
+   "sha256": "3233aad6bc89e305fcb1c929897ea0cd78fc84abe5bf43b98abcd9309f70a77e"
+  },
+  "golden/trays-sheet-synthetic.events.txt": {
+   "bytes": 878,
+   "sha256": "a347f69ee3d7cb822fcaa205851fc32ae95fb8b10057bcee84c467252cb2efec"
+  },
+  "golden/trays-sheet-synthetic.open.txt": {
+   "bytes": 345,
+   "sha256": "0a81c50a264791bc2737e84eeb122a628629645accf94bca285e8930d27cb91f"
+  },
+  "golden/trays-sheet-synthetic.reports.txt": {
+   "bytes": 941,
+   "sha256": "aaa3c7359eb589933cbb3d4e976af85d4cd2c6e68ef97dc2a41545b2ac7adb3f"
+  },
+  "golden/trays-sheet-synthetic.speckle.txt": {
+   "bytes": 0,
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "golden/trays-sheet-synthetic.summary.json": {
+   "bytes": 1313,
+   "sha256": "581ee9516bbca136a7bbc1287e596b16759152ed64d2c22c4792bd31067be4ed"
+  },
+  "golden/trays-sheet-synthetic.summary.txt": {
+   "bytes": 712,
+   "sha256": "aabb29ed205b7452636414f7c5570ea720642a677567120c36a858cef8226e12"
+  },
+  "golden/trays-sheet-synthetic.tray-stones.txt": {
+   "bytes": 395,
+   "sha256": "993837e0d51a7448aecc657e4dba8df8bcfda6ba9d677b71b42dfad02dea1301"
+  },
+  "golden/trays-sheet-synthetic.trays.txt": {
+   "bytes": 977,
+   "sha256": "6efe08e656a5d4255af2dec8433c91184a4d05146d934bb27914297602b73e6e"
+  },
   "golden/trays-speckle-synthetic.activities.txt": {
    "bytes": 300,
    "sha256": "942dd6621c324192b27742f67949f3658b0454fd8c9ec8c062b10f3a4fd1449a"
@@ -1096,7 +1252,7 @@
   },
   "api/INDEX.json": {
    "bytes": 9904,
-   "sha256": "fb3e91aeccee97f229bc520faa97a34f43ac3ef785bdb012d97ab11e8f3cccd6"
+   "sha256": "779026805b0cbe303d43112f77503f506b10192399969ed90fb18e701704e483"
   },
   "api/deleteFocus-dry.json": {
    "bytes": 342,
@@ -1147,8 +1303,8 @@
    "sha256": "3913ef43bd0a63259c3a97cba6253f686ee30b00d02f197d030b2ec74ae896d1"
   },
   "api/getOpenApi.yaml": {
-   "bytes": 275257,
-   "sha256": "12055cd312c10a338c09b89dc4705b1f2d475c760227a25884a3d773add80d69"
+   "bytes": 277501,
+   "sha256": "19afec2cf233d7ab7fceb63660f948928d5c9415c4638d390d6b341608205bfa"
   },
   "api/getReady.json": {
    "bytes": 27,

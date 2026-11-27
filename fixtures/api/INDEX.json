@@ -104,7 +104,7 @@
   "status": 200,
   "content_type": "application/yaml; charset=utf-8",
   "headers": {
-   "Content-Length": "275257",
+   "Content-Length": "277501",
    "X-Interp-Build": "claude-20261122-hr4x1"
   }
  },

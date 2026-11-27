@@ -705,6 +705,7 @@ export interface Solid {
 
 /** A stone of the world. */
 export interface StoneView {
+  under_sheet?: boolean;
   /** Persistent over the session, the same for every viewer. */
   id: number;
   mode: "seen" | "kept" | "pushed" | "hinge" | "carry" | "placed" | "transit";
@@ -826,7 +827,19 @@ export interface HandState {
 
 /** The wire names of world events. */
 export type WorldEventType =
-  "new" | "confirm" | "freeze" | "push" | "lift" | "hinge" | "carry" | "place" | "drop" | "gone" | "delete" | "split";
+  | "new"
+  | "confirm"
+  | "freeze"
+  | "push"
+  | "lift"
+  | "hinge"
+  | "carry"
+  | "place"
+  | "drop"
+  | "gone"
+  | "delete"
+  | "split"
+  | "sheet";
 
 /** Every world event type, in the order the spec lists them. */
 export const WORLD_EVENT_TYPES: readonly WorldEventType[] = [
@@ -842,6 +855,7 @@ export const WORLD_EVENT_TYPES: readonly WorldEventType[] = [
   "gone",
   "delete",
   "split",
+  "sheet",
 ];
 
 /** One event of a world frame. */
@@ -852,6 +866,7 @@ export interface WorldEvent {
   why?: string;
   /** `split`: the stone's own id, which keeps the larger part, then the new part's. */
   into?: number[];
+  ids?: number[];
   /** `new` of a stone the model never boxed: `image` (fixer thin-v1). */
   source?: "model" | "image";
 }
@@ -951,6 +966,7 @@ export interface EventLogEntry {
   side?: string;
   why?: string;
   into?: number[];
+  ids?: number[];
   source?: string;
 }
 

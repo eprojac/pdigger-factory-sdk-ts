@@ -51,7 +51,7 @@ console.log(
 | `retries` | 3 | GET retries |
 | `backoff` | `{ baseMs: 250, factor: 2, maxMs: 5000 }` | full jitter: `random() * min(maxMs, baseMs * factor^attempt)` |
 | `headers`, `token` | | extra headers; `Authorization: Bearer <token>` (20.20 ignores it; the shipped API may require it) |
-| `userAgentSuffix` | | appended to the user agent `pdigger-factory-sdk-ts/1.0.1` (a browser may send its own) |
+| `userAgentSuffix` | | appended to the user agent `pdigger-factory-sdk-ts/1.1.0` (a browser may send its own) |
 | `fetch` | the global `fetch` | any `fetch`: a proxy agent, a fake (`pdigger-factory-sdk/testing`) |
 | `clock`, `random` | the system's | injected time and randomness (tests use `InstantClock`, `seededRandom`): backoff, backfill, pacing, `waitFor`, `maxS` and the stream watchdog |
 | `observe` | `false` | the default of `observe` for streams and Interpreters |

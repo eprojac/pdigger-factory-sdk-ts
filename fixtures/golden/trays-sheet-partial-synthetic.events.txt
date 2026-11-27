@@ -1,0 +1,15 @@
+0:02.8 a sheet is laid over stones 1, 2, 3 and 4
+0:04.0 stone 1 is removed (gone from under a sheet)
+0:04.0 a sheet is lifted off stone 1
+0:05.2 a sheet is lifted off stone 2
+0:05.2 stone 2 is removed (gone from under a sheet)
+0:07.0 stone 3 is removed (gone from under a sheet)
+0:07.0 stone 4 is removed (gone from under a sheet)
+0:10.4 a sheet is laid over stones 11, 12, 13, 14, 15 and 16
+0:11.2 a sheet is lifted off stones 11, 12, 15 and 16
+0:11.2 stone 11 is removed (gone from under a sheet)
+0:11.2 stone 12 is removed (gone from under a sheet)
+0:11.2 stone 15 is removed (gone from under a sheet)
+0:11.2 stone 16 is removed (gone from under a sheet)
+0:13.4 stone 13 is removed (gone from under a sheet)
+0:13.4 stone 14 is removed (gone from under a sheet)

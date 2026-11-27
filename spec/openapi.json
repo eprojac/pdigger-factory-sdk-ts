@@ -2,9 +2,9 @@
  "openapi": "3.1.0",
  "info": {
   "title": "pDigger Factory API",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "summary": "Interpreted stone work from a factory camera: events, stones and hands, as streams and as final draw lists.",
-  "description": "The pDigger Factory API interprets stone work from a camera on the line: who handles which stone, when it is lifted,\ncarried, put down or pushed, and where every stone is, as a persistent 3-D world. It runs on a Jetson Orin NX next to\nthe camera and serves one **shared session** that every client follows.\n\n**Live cameras.** The plant cameras are listed with the recordings in `GET /api/v2/videos` (`kind: camera`,\n`live: true`, `seekable: false`, no duration). Select one (`POST /api/v2/session/select {\"video\": <camera id>}`, no\n`time`) and the session moves to it for everyone: `state.live.phase` is `connecting` until the first camera frame,\n`warming` while the interpreter runs on the first `warmup` seconds (3 s) with nothing released, then `live`: frames\nare released as they are interpreted, each with its camera picture (`GET /api/v2/session/frames/{g}/image.jpg`, the\nnewest 64 kept). A camera cannot seek; pause freezes it for everyone, and play connects again and returns to the live\nedge after a new warm-up, as does a camera that sent nothing for 5 s. The unit interprets while someone watches (an\nopen stream, the page, and for 15 s the client that sent a control). The 20.20 unit (build claude-20261123-speckle7) offers six\ncameras of three plants (at 1.6 to 3.9 frames a second on build claude-20261120-looks1; on build\nclaude-20261122-hr4x1 at about 3.6 a second, as fast as its worker goes on a camera frame). Since build\nclaude-20261120-looks1 the world also carries a `look` of each stone at rest (`StoneLook`), which the SDKs' tray rules\nuse; the recordings of 22 November (build claude-20261122-hr4x1) carry them, and those of 17 November, made before it,\ncarry none. Since build claude-20261125-dspad3 the unit offers five pallet cameras in place of the rig cameras; since worker\nclaude-20261125-dspad1 a camera picture of another shape is letterboxed into `native_wh` (earlier workers stretched it), and since\nbuild claude-20261126-handgate1 a hand in contact away from the board is sent as `free` with `away` true. The API page\nhttps://factory.pdigger.com/developers/api/ has a demo server that answers from real 20.20 recordings, in your browser.\n\n**Three levels, one resource.** A frame `g` (5 per media second on a recording, one per interpreted picture on a\ncamera) has five layers; ask for any subset.\n\n| Level | Use it for | Where |\n|---|---|---|\n| High: Interpreter | events, stones, hands, a stone's path, the shared highlight | `world` layer, `/session/world*`, SDK `interpreter()` |\n| Mid: Streams and render-ready | live delivery; final 2-D/3-D draw lists | `/frames/stream`, `/frames`, `/render/*` |\n| Low: Frames and codec | the model's own packet, maps, rasters, tensors | `raw`, `overlay`, `scene`, `cards` layers, `/raw/*`, `/frames/{g}` |\n\n**Async first.** Follow the session with `GET /api/v2/session/frames/stream` (server-sent events): each `frame`\nevent's id is `<boot>-<cursor>`; reconnect with `Last-Event-ID` and nothing is lost inside the retained window (512\nframes, about 100 s); `limit` and `max_s` end a stream and clients reconnect (the unit closes a finished stream about\n10 s later: count them yourself and close it, as the SDKs do); `gap` tells a slow consumer how many items it lost;\n`reset` means the server restarted. `clock` events carry the shared state (`media_time`, `rate`, `playing`, `session`), `worker`\nevents the interpreter's status. The worker reads up to 0.6 s of media ahead of the shared playhead, and frames arrive\n0.2 to 0.35 s of media ahead of it (on the 20.20 unit). A frame is released at most 300 ms after its packet; a layer not ready by then is listed in `missing` and is\nnever pushed again (read it with `GET /frames/{g}`); the SDKs do that for you. While the session is paused, the\npaused frame's world is refined and released again with a higher `world.rev`.\n\n**SDKs** (same features, same output): Go `pdigger-factory-sdk-go`, Python `pdigger-factory-sdk`, Rust\n`pdigger-factory-sdk`, TypeScript `pdigger-factory-sdk`. Each operation below names its method.\n\n**Coordinates.** Native px: pixels of the model crop, centres at integers (`px = u·W − 0.5`). Content units `u, v` in\n[0, 1]. Scene world: z up, board top at z = 0, template gauge (not metric). three.js: `(x, y, z) → (x, z, −y)`.\n\n**Errors.** `{\"error\": \"<message>\", \"code\": \"<stable code>\", \"retry_ms\"?, \"field\"?, \"retained\"?}`; key on `code`. Rate\nlimits are checked before anything is applied, so a 429 is always safe to retry after `retry_ms`.\n\n**Access.** Today the API is LAN-only, without authentication or CORS, and controls must be same-origin. The SDKs can\nsend a bearer token for deployments that require one.\n\n**Demo data.** The demo and the examples here come from public recordings: face keypoints, appearance masks and depth\ntextures are removed from them, so those fields are absent there, also where a schema requires them (a face joint\nis null); the unit on the LAN sends them.\n",
+  "description": "The pDigger Factory API interprets stone work from a camera on the line: who handles which stone, when it is lifted,\ncarried, put down or pushed, and where every stone is, as a persistent 3-D world. It runs on a Jetson Orin NX next to\nthe camera and serves one **shared session** that every client follows.\n\n**Live cameras.** The plant cameras are listed with the recordings in `GET /api/v2/videos` (`kind: camera`,\n`live: true`, `seekable: false`, no duration). Select one (`POST /api/v2/session/select {\"video\": <camera id>}`, no\n`time`) and the session moves to it for everyone: `state.live.phase` is `connecting` until the first camera frame,\n`warming` while the interpreter runs on the first `warmup` seconds (3 s) with nothing released, then `live`: frames\nare released as they are interpreted, each with its camera picture (`GET /api/v2/session/frames/{g}/image.jpg`, the\nnewest 64 kept). A camera cannot seek; pause freezes it for everyone, and play connects again and returns to the live\nedge after a new warm-up, as does a camera that sent nothing for 5 s. The unit interprets while someone watches (an\nopen stream, the page, and for 15 s the client that sent a control). The earlier build claude-20261123-speckle7 offered six\ncameras of three plants (at 1.6 to 3.9 frames a second on build claude-20261120-looks1; on build\nclaude-20261122-hr4x1 at about 3.6 a second, as fast as its worker goes on a camera frame). Since build\nclaude-20261120-looks1 the world also carries a `look` of each stone at rest (`StoneLook`), which the SDKs' tray rules\nuse; the recordings of 22 November (build claude-20261122-hr4x1) carry them, and those of 17 November, made before it,\ncarry none. Since build claude-20261125-dspad3 the unit offers five pallet cameras in place of the rig cameras; since worker\nclaude-20261125-dspad1 a camera picture of another shape is letterboxed into `native_wh` (earlier workers stretched it), and since\nbuild claude-20261126-handgate1 a hand in contact away from the board is sent as `free` with `away` true. On camera entries with sheet detection enabled, build round-e-20261127-sheet2 reports which stones paper was laid over\nor lifted off. A stone held under paper has `under_sheet: true` until it leaves with its board. The API page\nhttps://factory.pdigger.com/developers/api/ has a demo server that answers from real 20.20 recordings, in your browser.\n\n**Three levels, one resource.** A frame `g` (5 per media second on a recording, one per interpreted picture on a\ncamera) has five layers; ask for any subset.\n\n| Level | Use it for | Where |\n|---|---|---|\n| High: Interpreter | events, stones, hands, a stone's path, the shared highlight | `world` layer, `/session/world*`, SDK `interpreter()` |\n| Mid: Streams and render-ready | live delivery; final 2-D/3-D draw lists | `/frames/stream`, `/frames`, `/render/*` |\n| Low: Frames and codec | the model's own packet, maps, rasters, tensors | `raw`, `overlay`, `scene`, `cards` layers, `/raw/*`, `/frames/{g}` |\n\n**Async first.** Follow the session with `GET /api/v2/session/frames/stream` (server-sent events): each `frame`\nevent's id is `<boot>-<cursor>`; reconnect with `Last-Event-ID` and nothing is lost inside the retained window (512\nframes, about 100 s); `limit` and `max_s` end a stream and clients reconnect (the unit closes a finished stream about\n10 s later: count them yourself and close it, as the SDKs do); `gap` tells a slow consumer how many items it lost;\n`reset` means the server restarted. `clock` events carry the shared state (`media_time`, `rate`, `playing`, `session`), `worker`\nevents the interpreter's status. The worker reads up to 0.6 s of media ahead of the shared playhead, and frames arrive\n0.2 to 0.35 s of media ahead of it (on the 20.20 unit). A frame is released at most 300 ms after its packet; a layer not ready by then is listed in `missing` and is\nnever pushed again (read it with `GET /frames/{g}`); the SDKs do that for you. While the session is paused, the\npaused frame's world is refined and released again with a higher `world.rev`.\n\n**SDKs** (same features, same output): Go `pdigger-factory-sdk-go`, Python `pdigger-factory-sdk`, Rust\n`pdigger-factory-sdk`, TypeScript `pdigger-factory-sdk`. Each operation below names its method.\n\n**Coordinates.** Native px: pixels of the model crop, centres at integers (`px = u·W − 0.5`). Content units `u, v` in\n[0, 1]. Scene world: z up, board top at z = 0, template gauge (not metric). three.js: `(x, y, z) → (x, z, −y)`.\n\n**Errors.** `{\"error\": \"<message>\", \"code\": \"<stable code>\", \"retry_ms\"?, \"field\"?, \"retained\"?}`; key on `code`. Rate\nlimits are checked before anything is applied, so a 429 is always safe to retry after `retry_ms`.\n\n**Access.** Today the API is LAN-only, without authentication or CORS, and controls must be same-origin. The SDKs can\nsend a bearer token for deployments that require one.\n\n**Demo data.** The demo and the examples here come from public recordings: face keypoints, appearance masks and depth\ntextures are removed from them, so those fields are absent there, also where a schema requires them (a face joint\nis null); the unit on the LAN sends them.\n",
   "contact": {
    "name": "eprojac",
    "url": "https://factory.pdigger.com/"
@@ -15,9 +15,9 @@
   },
   "x-served-by": {
    "unit": "20.20 (Jetson Orin NX)",
-   "build": "claude-20261123-speckle7",
-   "api": "2.2.0",
-   "with": "HandState.away from build claude-20261126-handgate1, and the letterboxed camera pictures of worker claude-20261125-dspad1"
+   "build": "round-e-20261127-sheet2",
+   "api": "2.3.0",
+   "with": "paper sheet events from build round-e-20261127-sheet2, HandState.away from build claude-20261126-handgate1, and the letterboxed camera pictures of worker claude-20261125-dspad1"
   }
  },
  "servers": [
@@ -343,7 +343,7 @@
     "tags": [
      "Interpreter"
     ],
-    "summary": "The event log of this session (lift, carry, place, push, new, delete, split, ...).",
+    "summary": "The event log of this session (lift, carry, place, push, new, delete, split, sheet, ...).",
     "description": "A frame's events are those of its newest world revision; a revised frame's events replace its earlier ones and are never listed twice. So a reader that follows `next_after` past a frame that is revised later (a paused frame and the few after it, fixer thin-v1) does not see the events the revision adds: after a revision of frame g (the world long-poll, or `stable.hold`), read again from `after` = g - 1, or take the events from the world layer itself.\n\n**SDK** · Go `c.API().GetWorldEvents(ctx, …)` · Python `await factory.api.get_world_events(…)` · Rust `factory.api().get_world_events(…).await` · TypeScript `await factory.api.getWorldEvents(…)`\n\n**High level** · Python `async for ev in factory.interpreter().events()` · TypeScript `for await (const ev of factory.interpreter().events())`",
     "parameters": [
      {
@@ -1227,7 +1227,7 @@
           }
          },
          "ok_catalog_with_cameras": {
-          "summary": "The 20.20 unit (build claude-20261123-speckle7): four recordings and six plant cameras (one shown)",
+          "summary": "Example catalog from build claude-20261123-speckle7: four recordings and six plant cameras (one shown)",
           "value": {
            "schema": "stone-interpreter-catalog-v1",
            "title": "Stone-work interpreter",
@@ -9803,6 +9803,11 @@
       ],
       "description": "Absent or `model`: a stone the model boxed. `image`: one it never boxed, made from the image (a filled hole, or the new part of a split; fixer thin-v1)."
      },
+     "under_sheet": {
+      "type": "boolean",
+      "default": false,
+      "description": "Present (true) only on a stone under a paper sheet (fixer thin-v1 on cameras with sheet detection enabled): usually mode `kept` and `detected` false (the model rarely boxes a stone through thin paper; such a stone keeps the flag while its face still reads paper). It stays where it was last seen and is deleted with why `sheet` when its board moves, the next layer comes over it or its paper comes off (its face no longer reads paper, or it is detected on two packets that do not). See the `sheet` event."
+     },
      "look": {
       "$ref": "#/components/schemas/StoneLook"
      }
@@ -9971,7 +9976,8 @@
        "drop",
        "gone",
        "delete",
-       "split"
+       "split",
+       "sheet"
       ]
      },
      "id": {
@@ -9981,7 +9987,8 @@
       "type": "string"
      },
      "why": {
-      "type": "string"
+      "type": "string",
+      "description": "`sheet`: `laid` (a paper sheet was laid over the stones `ids`) or `lifted` (it came off them). `delete` with why `sheet`: a stone under paper left: its board moved, the next layer came over it, or its paper came off (each stone of a `lifted` is deleted so in the same frame: the paper comes off as its board leaves, and a stone seen there next is a new one)."
      },
      "into": {
       "type": "array",
@@ -9991,6 +9998,13 @@
       },
       "minItems": 2,
       "maxItems": 2
+     },
+     "ids": {
+      "type": "array",
+      "description": "`sheet`: the stones the paper was laid over or came off, ascending (an empty list identifies no stones); a sheet laid in several moves gives one `laid` per move, with the stones it newly covers. A `sheet` event has no `id`: two of them are told apart by `why` and `ids` (a frame can hold a `laid` and a `lifted`, and a revised frame can hold a `laid` of other stones).",
+      "items": {
+       "type": "integer"
+      }
      },
      "source": {
       "type": "string",
@@ -10014,6 +10028,23 @@
        57,
        61
       ]
+     },
+     {
+      "type": "sheet",
+      "why": "laid",
+      "ids": [
+       12,
+       13,
+       14,
+       17,
+       18,
+       19
+      ]
+     },
+     {
+      "type": "delete",
+      "id": 12,
+      "why": "sheet"
      }
     ]
    },
@@ -10120,7 +10151,7 @@
    },
    "WorldSpeckle": {
     "type": "object",
-    "description": "The speckle stone identification of one tray: sent once, in the world of the first frame after the unit's GPU answered (and again in that frame's revisions). The reference is the tray's arrival (its first frame with calm >= 3, quiet >= 5 and every stone confirmed), or the first later calm frame of the tray when the arrival's could not be kept; `at` is a later calm frame of the tray: a calm moment (at most one a minute) or the last calm frame before the visit ended. Nothing is matched while the unit's speckle service does not run. Every stone not held at either moment is checked at the other by its speckle: the full-resolution luma of the interpreted crop, high-passed (minus its Gaussian blur of sigma 2.5 px); its template is the inner 62 % of its outline's box (for a stone whose box is too large for the unit's GPU kernels, wider or higher than 192 px or larger than about 140 x 140 px, such as a long kerb: the central part of that box the kernels take, shaved from its longer side). It is checked where the other moment's stones (not held) are, centred on each one's inner box and up to 24 px off, and at its own place, up to 40 px off; coarse to fine: the whole template on the band image's even pixels, the 3 best places per turn (0 or 180 degrees) refined within 2 px at full resolution with that turn's five angles. A stone whose best refined place scores under 0.30 is also looked for anywhere within 128 px of its own place (up to 8 more places per turn). Everything stays within the box of both moments' outlines widened by 60 px.",
+    "description": "The speckle stone identification of one tray: sent once, in the world of the first frame after the unit's GPU answered (and again in that frame's revisions). The reference is the tray's arrival (its first frame with calm >= 3, quiet >= 5 and every stone confirmed), or the first later calm frame of the tray when the arrival's could not be kept; `at` is a later calm frame of the tray: a calm moment (at most one a minute) or the last calm frame before the visit ended. Nothing is matched while the unit's speckle service does not run. Every stone not held at either moment, and under a paper sheet (`under_sheet`) at neither, is checked at the other by its speckle: the full-resolution luma of the interpreted crop, high-passed (minus its Gaussian blur of sigma 2.5 px); its template is the inner 62 % of its outline's box (for a stone whose box is too large for the unit's GPU kernels, wider or higher than 192 px or larger than about 140 x 140 px, such as a long kerb: the central part of that box the kernels take, shaved from its longer side). It is checked where the other moment's stones (not held) are, centred on each one's inner box and up to 24 px off, and at its own place, up to 40 px off; coarse to fine: the whole template on the band image's even pixels, the 3 best places per turn (0 or 180 degrees) refined within 2 px at full resolution with that turn's five angles. A stone whose best refined place scores under 0.30 is also looked for anywhere within 128 px of its own place (up to 8 more places per turn). Everything stays within the box of both moments' outlines widened by 60 px.",
     "required": [
      "v",
      "tray",
@@ -10550,6 +10581,12 @@
          "type": "string"
         },
         "into": {
+         "type": "array",
+         "items": {
+          "type": "integer"
+         }
+        },
+        "ids": {
          "type": "array",
          "items": {
           "type": "integer"

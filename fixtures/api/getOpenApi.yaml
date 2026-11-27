@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: pDigger Factory API
-  version: 2.2.0
+  version: 2.3.0
   summary: 'Interpreted stone work from a factory camera: events, stones and hands, as streams and as final draw lists.'
   description: 'The pDigger Factory API interprets stone work from a camera on the line: who handles which stone, when it
     is lifted,
@@ -25,7 +25,7 @@ info:
 
     edge after a new warm-up, as does a camera that sent nothing for 5 s. The unit interprets while someone watches (an
 
-    open stream, the page, and for 15 s the client that sent a control). The 20.20 unit (build claude-20261123-speckle7) offers
+    open stream, the page, and for 15 s the client that sent a control). The earlier build claude-20261123-speckle7 offered
     six
 
     cameras of three plants (at 1.6 to 3.9 frames a second on build claude-20261120-looks1; on build
@@ -42,7 +42,10 @@ info:
     claude-20261125-dspad1 a camera picture of another shape is letterboxed into `native_wh` (earlier workers stretched it),
     and since
 
-    build claude-20261126-handgate1 a hand in contact away from the board is sent as `free` with `away` true. The API page
+    build claude-20261126-handgate1 a hand in contact away from the board is sent as `free` with `away` true. On camera entries
+    with sheet detection enabled, build round-e-20261127-sheet2 reports which stones paper was laid over
+
+    or lifted off. A stone held under paper has `under_sheet: true` until it leaves with its board. The API page
 
     https://factory.pdigger.com/developers/api/ has a demo server that answers from real 20.20 recordings, in your browser.
 
@@ -121,9 +124,10 @@ info:
     identifier: Apache-2.0
   x-served-by:
     unit: 20.20 (Jetson Orin NX)
-    build: claude-20261123-speckle7
-    api: 2.2.0
-    with: HandState.away from build claude-20261126-handgate1, and the letterboxed camera pictures of worker claude-20261125-dspad1
+    build: round-e-20261127-sheet2
+    api: 2.3.0
+    with: paper sheet events from build round-e-20261127-sheet2, HandState.away from build claude-20261126-handgate1, and
+      the letterboxed camera pictures of worker claude-20261125-dspad1
 servers:
 - url: '{scheme}://{host}:{port}'
   description: Your unit on the factory LAN
@@ -354,7 +358,7 @@ paths:
       operationId: getWorldEvents
       tags:
       - Interpreter
-      summary: The event log of this session (lift, carry, place, push, new, delete, split, ...).
+      summary: The event log of this session (lift, carry, place, push, new, delete, split, sheet, ...).
       description: 'A frame''s events are those of its newest world revision; a revised frame''s events replace its earlier
         ones and are never listed twice. So a reader that follows `next_after` past a frame that is revised later (a paused
         frame and the few after it, fixer thin-v1) does not see the events the revision adds: after a revision of frame g
@@ -1008,7 +1012,8 @@ paths:
                         family: dogbone
                         h: 0.093
                 ok_catalog_with_cameras:
-                  summary: 'The 20.20 unit (build claude-20261123-speckle7): four recordings and six plant cameras (one shown)'
+                  summary: 'Example catalog from build claude-20261123-speckle7: four recordings and six plant cameras (one
+                    shown)'
                   value:
                     schema: stone-interpreter-catalog-v1
                     title: Stone-work interpreter
@@ -7398,6 +7403,14 @@ components:
           - image
           description: 'Absent or `model`: a stone the model boxed. `image`: one it never boxed, made from the image (a filled
             hole, or the new part of a split; fixer thin-v1).'
+        under_sheet:
+          type: boolean
+          default: false
+          description: 'Present (true) only on a stone under a paper sheet (fixer thin-v1 on cameras with sheet detection
+            enabled): usually mode `kept` and `detected` false (the model rarely boxes a stone through thin paper; such a
+            stone keeps the flag while its face still reads paper). It stays where it was last seen and is deleted with why
+            `sheet` when its board moves, the next layer comes over it or its paper comes off (its face no longer reads paper,
+            or it is detected on two packets that do not). See the `sheet` event.'
         look:
           $ref: '#/components/schemas/StoneLook'
     StoneLook:
@@ -7581,12 +7594,17 @@ components:
           - gone
           - delete
           - split
+          - sheet
         id:
           type: integer
         side:
           type: string
         why:
           type: string
+          description: '`sheet`: `laid` (a paper sheet was laid over the stones `ids`) or `lifted` (it came off them). `delete`
+            with why `sheet`: a stone under paper left: its board moved, the next layer came over it, or its paper came off
+            (each stone of a `lifted` is deleted so in the same frame: the paper comes off as its board leaves, and a stone
+            seen there next is a new one).'
         into:
           type: array
           description: '`split`: the stone''s own id, which keeps the larger part, then the new part''s (which has no `new`
@@ -7595,6 +7613,14 @@ components:
             type: integer
           minItems: 2
           maxItems: 2
+        ids:
+          type: array
+          description: '`sheet`: the stones the paper was laid over or came off, ascending (an empty list identifies no stones);
+            a sheet laid in several moves gives one `laid` per move, with the stones it newly covers. A `sheet` event has
+            no `id`: two of them are told apart by `why` and `ids` (a frame can hold a `laid` and a `lifted`, and a revised
+            frame can hold a `laid` of other stones).'
+          items:
+            type: integer
         source:
           type: string
           enum:
@@ -7610,6 +7636,18 @@ components:
         into:
         - 57
         - 61
+      - type: sheet
+        why: laid
+        ids:
+        - 12
+        - 13
+        - 14
+        - 17
+        - 18
+        - 19
+      - type: delete
+        id: 12
+        why: sheet
     WorldDraw:
       type: object
       description: Per-packet draw terms resolved on the server.
@@ -7683,15 +7721,15 @@ components:
         >= 3, quiet >= 5 and every stone confirmed), or the first later calm frame of the tray when the arrival''s could not
         be kept; `at` is a later calm frame of the tray: a calm moment (at most one a minute) or the last calm frame before
         the visit ended. Nothing is matched while the unit''s speckle service does not run. Every stone not held at either
-        moment is checked at the other by its speckle: the full-resolution luma of the interpreted crop, high-passed (minus
-        its Gaussian blur of sigma 2.5 px); its template is the inner 62 % of its outline''s box (for a stone whose box is
-        too large for the unit''s GPU kernels, wider or higher than 192 px or larger than about 140 x 140 px, such as a long
-        kerb: the central part of that box the kernels take, shaved from its longer side). It is checked where the other moment''s
-        stones (not held) are, centred on each one''s inner box and up to 24 px off, and at its own place, up to 40 px off;
-        coarse to fine: the whole template on the band image''s even pixels, the 3 best places per turn (0 or 180 degrees)
-        refined within 2 px at full resolution with that turn''s five angles. A stone whose best refined place scores under
-        0.30 is also looked for anywhere within 128 px of its own place (up to 8 more places per turn). Everything stays within
-        the box of both moments'' outlines widened by 60 px.'
+        moment, and under a paper sheet (`under_sheet`) at neither, is checked at the other by its speckle: the full-resolution
+        luma of the interpreted crop, high-passed (minus its Gaussian blur of sigma 2.5 px); its template is the inner 62
+        % of its outline''s box (for a stone whose box is too large for the unit''s GPU kernels, wider or higher than 192
+        px or larger than about 140 x 140 px, such as a long kerb: the central part of that box the kernels take, shaved from
+        its longer side). It is checked where the other moment''s stones (not held) are, centred on each one''s inner box
+        and up to 24 px off, and at its own place, up to 40 px off; coarse to fine: the whole template on the band image''s
+        even pixels, the 3 best places per turn (0 or 180 degrees) refined within 2 px at full resolution with that turn''s
+        five angles. A stone whose best refined place scores under 0.30 is also looked for anywhere within 128 px of its own
+        place (up to 8 more places per turn). Everything stays within the box of both moments'' outlines widened by 60 px.'
       required:
       - v
       - tray
@@ -8002,6 +8040,10 @@ components:
               why:
                 type: string
               into:
+                type: array
+                items:
+                  type: integer
+              ids:
                 type: array
                 items:
                   type: integer

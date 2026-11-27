@@ -3,6 +3,10 @@
 All notable changes to this package. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 the version follows [Semantic Versioning](https://semver.org/).
 
+## [1.1.0] - Unreleased
+
+- Report sheet actions and the tray stones under paper at departure. The optional trayBounds rectangle lets visible faces establish continuity during a partial lift.
+
 ## [1.0.1] - 2026-11-26
 
 This patch release also adds a public field, `HandState.away`; by Semantic Versioning a release that adds API is a minor

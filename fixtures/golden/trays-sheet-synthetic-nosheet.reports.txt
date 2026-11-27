@@ -1,0 +1,4 @@
+tray 1 (2025-01-01T00:00:00.8Z), 0:00.8 to 0:05.4: 0 removed, 0 added, 0 moved
+tray 2 (2025-01-01T00:00:07.0Z), 0:07.0 to 0:19.4: 2 removed, 0 added, 0 moved, not complete: 2 unclear, 2 not sure
+  0:19.4 removed 20250101T000007.0Z-2-14 from (0.60, 0.00) (unclear, 0.58)
+  0:19.4 removed 20250101T000007.0Z-2-5 from (-0.50, -0.40) (unclear, 0.58)

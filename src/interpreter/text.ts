@@ -90,6 +90,7 @@ export const DELETE_REASONS: Readonly<Record<string, string>> = {
   empty: "its place is empty",
   hand: "a hand emptied its place",
   "carried-away": "carried away",
+  sheet: "gone from under a sheet",
 };
 
 function idStr(id: number | null | undefined): string {
@@ -103,8 +104,16 @@ export function joinIds(ids: readonly (number | string)[]): string {
   return `${s.slice(0, -1).join(", ")} and ${s[s.length - 1] as string}`;
 }
 
+function stoneNames(ids: readonly (string | number)[]): string {
+  if (ids.length === 0) return "stone ?";
+  if (ids.length === 1) return `stone ${String(ids[0])}`;
+  if (ids.length <= 6) return "stones " + joinIds(ids);
+  return `stones ${ids.slice(0, 6).map(String).join(", ")} and ${ids.length - 6} more`;
+}
+
 /** The fields of an event that its sentence reads. */
 export interface EventText {
+  ids?: readonly number[] | null;
   type: string;
   t: number;
   stoneId: number | null;
@@ -147,6 +156,11 @@ export function eventSentence(e: EventText): string {
     case "delete":
       if (e.why == null) return `stone ${i} is removed`;
       return `stone ${i} is removed (${ownString(DELETE_REASONS, e.why) ?? e.why})`;
+    case "sheet": {
+      if (e.why !== "laid" && e.why !== "lifted") return "a sheet event" + (e.why ? " (" + e.why + ")" : "");
+      const prep = e.why === "laid" ? " over " : " off ";
+      return "a sheet is " + e.why + (e.ids?.length ? prep + stoneNames(e.ids) : "");
+    }
     case "split": {
       const into = e.into;
       if (into == null || into.length === 0) return `stone ${i} splits`;
@@ -187,11 +201,7 @@ export function describeActivity(a: ActivityText): string {
   const v = (w: keyof typeof VERBS): string => verb(side, w);
   if (a.kind === "push") {
     const ids = a.stones ?? [];
-    let what: string;
-    if (ids.length === 0) what = "stone ?";
-    else if (ids.length === 1) what = `stone ${String(ids[0])}`;
-    else if (ids.length <= 6) what = `stones ${joinIds(ids)}`;
-    else what = `stones ${ids.slice(0, 6).map(String).join(", ")} and ${ids.length - 6} more`;
+    const what = stoneNames(ids);
     const n = a.pushes ?? 0;
     const tail = n === 1 ? "(1 push)" : `(${n} pushes in ${fmt(a.duration, 1)} s)`;
     return `${clock(a.start.t)} ${H} ${v("pushes")} ${what} ${tail}`;
@@ -227,6 +237,8 @@ export function describeActivity(a: ActivityText): string {
 
 /** The fields of a tray fact that its sentence reads. */
 export interface TrayFactText {
+  trayStones?: readonly string[];
+  underSheet?: number | null;
   kind: string;
   tray: number;
   t: number;
@@ -262,10 +274,18 @@ export function describeTrayFact(x: TrayFactText): string {
   switch (x.kind) {
     case "arrived":
       return `${head} arrived: ${n(x.stones)} stones`;
+    case "sheet":
+      return (
+        head +
+        ": a sheet was " +
+        (x.code === "sheet_laid" ? "laid over " : "lifted off ") +
+        stoneNames(x.trayStones ?? [])
+      );
     case "leaving":
       return (
         `${head} leaving: ${n(x.stones)} stones (${n(x.sure)} sure), ${n(x.added)} added, ${n(x.removed)} removed, ` +
-        `${n(x.unclear)} unclear`
+        `${n(x.unclear)} unclear` +
+        (x.underSheet ? `, ${x.underSheet} under a sheet` : "")
       );
     case "unsure": {
       const since = x.opened == null ? "" : `; open since ${clock(x.opened.t)}`;

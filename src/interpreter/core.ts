@@ -80,6 +80,8 @@ export interface InterpreterCoreOptions {
   trackStones?: number;
   /** Trays that have left that `trays()` keeps, the newest (default {@link TRAYS_KEPT}, 256; 0 keeps every one). */
   traysKept?: number;
+  /** Fixed inspection rectangle in native pixels: left, top, right, bottom. */
+  trayBounds?: readonly [number, number, number, number];
 }
 
 interface Counters {
@@ -124,6 +126,8 @@ export function handStep(prev: { g: number; t: number; step: number } | null, g:
 
 /** The key that tells one event of a frame from another: (type, id, side, into). */
 export function eventKey(e: WorldEvent): string {
+  if (e.type === "sheet")
+    return JSON.stringify(["sheet", null, e.why ?? null, [...new Set(e.ids)].sort((a, b) => a - b)]);
   return JSON.stringify([e.type ?? null, e.id ?? null, e.side ?? null, e.into ?? null]);
 }
 
@@ -198,6 +202,7 @@ export class InterpreterCore {
   /** The unit's speckle answers read, oldest first (the newest {@link SPECKLE_KEPT}, across sessions; 4.6.12). */
   private readonly answers: TraySpeckle[] = [];
   private readonly traysKept: number;
+  private readonly trayBounds: InterpreterCoreOptions["trayBounds"];
   private readonly c: Counters = {
     frames: 0,
     framesWithWorld: 0,
@@ -219,6 +224,13 @@ export class InterpreterCore {
   };
 
   constructor(options: InterpreterCoreOptions = {}) {
+    const bounds = options.trayBounds;
+    if (
+      bounds !== undefined &&
+      (bounds.length !== 4 || !bounds.every(Number.isFinite) || bounds[0] >= bounds[2] || bounds[1] >= bounds[3])
+    )
+      throw new RangeError("trayBounds must be a finite rectangle with positive width and height");
+    this.trayBounds = bounds === undefined ? undefined : [...bounds];
     this.trackPoints = options.trackPoints ?? 512;
     this.trackStones = options.trackStones ?? 4096;
     this.traysKept = options.traysKept ?? TRAYS_KEPT;
@@ -438,10 +450,16 @@ export class InterpreterCore {
   }
 
   private newLedger(session: number | null, video: string | null): TrayLedger {
-    return new TrayLedger(this.trayCounts, session, video, (tray) => {
-      this.kept.push(tray);
-      if (this.traysKept > 0 && this.kept.length > this.traysKept) this.kept.shift();
-    });
+    return new TrayLedger(
+      this.trayCounts,
+      session,
+      video,
+      (tray) => {
+        this.kept.push(tray);
+        if (this.traysKept > 0 && this.kept.length > this.traysKept) this.kept.shift();
+      },
+      this.trayBounds,
+    );
   }
 
   /** The counters so far (section 4.4). The open session's media seconds count up to its newest frame. */
@@ -495,6 +513,8 @@ export class InterpreterCore {
         removed: this.trayCounts.removed,
         removed_unclear: this.trayCounts.removedUnclear,
         unsure: this.trayCounts.unsure,
+        sheets: this.trayCounts.sheets ?? 0,
+        under_sheet: this.trayCounts.underSheet ?? 0,
       },
       hands,
     };
@@ -670,6 +690,7 @@ export class InterpreterCore {
       hand: e.side ?? null,
       why: e.why ?? null,
       into: e.into ?? null,
+      ids: e.ids ?? null,
       source: e.source ?? null,
       stone,
       trayStone: id === null ? null : (links.get(id) ?? null),

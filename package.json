@@ -1,6 +1,6 @@
 {
   "name": "pdigger-factory-sdk",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "TypeScript SDK for the pDigger Factory interpreter API: follow the shared session, typed events and activities, replays of recordings, streams, codecs and three.js visualisation helpers.",
   "keywords": [
     "pdigger",

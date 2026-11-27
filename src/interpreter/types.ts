@@ -22,6 +22,7 @@ export interface FactoryEventInit {
   hand: string | null;
   why: string | null;
   into: readonly number[] | null;
+  ids?: readonly number[] | null;
   source: string | null;
   stone: StoneView | null;
   /** The tray stone the world id stood for on the open tray before this frame (default null). */
@@ -52,6 +53,7 @@ export class FactoryEvent {
   readonly hand: string | null;
   readonly why: string | null;
   readonly into: readonly number[] | null;
+  readonly ids: readonly number[] | null;
   readonly source: string | null;
   /** The stone's snapshot in this frame's world, or null. */
   readonly stone: StoneView | null;
@@ -72,6 +74,7 @@ export class FactoryEvent {
     this.hand = init.hand;
     this.why = init.why;
     this.into = init.into;
+    this.ids = init.ids ?? null;
     this.source = init.source;
     this.stone = init.stone;
     this.trayStone = init.trayStone ?? null;
@@ -99,6 +102,7 @@ export class FactoryEvent {
       hand: this.hand,
       why: this.why,
       into: this.into,
+      ...(this.ids === null ? {} : { ids: [...this.ids] }),
       source: this.source,
       tray_stone: this.trayStone,
     };

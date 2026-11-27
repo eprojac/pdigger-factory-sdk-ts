@@ -1,0 +1,4 @@
+0:05.6 tray 1 leaving: 4 stones (4 sure), 0 added, 0 removed, 0 unclear, 4 under a sheet
+0:11.2 tray 2 leaving: 3 stones (3 sure), 0 added, 0 removed, 1 unclear, 2 under a sheet
+  stone 20250101T000007.0Z-2-14: removed lost_late, look none: gone or unseen
+0:19.6 tray 3 leaving: 3 stones (3 sure), 0 added, 1 removed, 0 unclear, 2 under a sheet

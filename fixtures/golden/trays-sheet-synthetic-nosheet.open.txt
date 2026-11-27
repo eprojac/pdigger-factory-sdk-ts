@@ -1,0 +1,6 @@
+0:05.4 tray 1 leaving: 4 stones (4 sure), 0 added, 0 removed, 0 unclear
+0:19.4 tray 2 leaving: 3 stones (1 sure), 0 added, 0 removed, 2 unclear
+  stone 20250101T000007.0Z-2-11: unsure unseen, look none: world 21 or world 22 or gone
+  stone 20250101T000007.0Z-2-12: unsure unseen, look none: world 22 or world 21 or gone
+  stone 20250101T000007.0Z-2-14: removed rivals, look none: world 22 or gone (carried_away) or unseen
+  stone 20250101T000007.0Z-2-5: removed rivals, look none: world 21 or world 22 or gone or unseen

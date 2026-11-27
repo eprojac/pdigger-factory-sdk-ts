@@ -15,6 +15,7 @@ export const SUMMARY_EVENT_KEYS = [
   "gone",
   "delete",
   "split",
+  "sheet",
   "other",
 ] as const;
 
@@ -37,7 +38,7 @@ export interface SummaryJson {
   last_t: number | null;
   media_seconds: number;
   gaps: number;
-  events: Record<SummaryEventKey, number>;
+  events: Record<Exclude<SummaryEventKey, "sheet">, number> & { sheet?: number };
   moves: {
     total: number;
     placed: number;
@@ -61,6 +62,8 @@ export interface SummaryJson {
     removed: number;
     removed_unclear: number;
     unsure: number;
+    sheets?: number;
+    under_sheet?: number;
   };
   hands: { left: Record<HandStateName, number>; right: Record<HandStateName, number> };
 }
@@ -128,7 +131,7 @@ export class Summary {
     this.lastT = json.last_t;
     this.mediaSeconds = json.media_seconds;
     this.gaps = json.gaps;
-    this.events = { ...json.events };
+    this.events = { ...json.events, sheet: json.events.sheet ?? 0 };
     const m = json.moves;
     this.moves = {
       total: m.total,
@@ -157,6 +160,7 @@ export class Summary {
             removed: tr.removed,
             removedUnclear: tr.removed_unclear,
             unsure: tr.unsure,
+            ...(tr.sheets || tr.under_sheet ? { sheets: tr.sheets ?? 0, underSheet: tr.under_sheet ?? 0 } : {}),
           };
     this.hands = { left: { ...json.hands.left }, right: { ...json.hands.right } };
   }
@@ -171,6 +175,7 @@ export class Summary {
 
   /** The JSON form, with exactly the keys of section 4.4. */
   toJSON(): SummaryJson {
+    const { sheet, ...ordinaryEvents } = this.events;
     const m = this.moves;
     return {
       frames: this.frames,
@@ -184,7 +189,7 @@ export class Summary {
       last_t: this.lastT,
       media_seconds: this.mediaSeconds,
       gaps: this.gaps,
-      events: { ...this.events },
+      events: sheet ? { ...ordinaryEvents, sheet } : ordinaryEvents,
       moves: {
         total: m.total,
         placed: m.placed,
@@ -208,6 +213,7 @@ export class Summary {
         removed: this.trays.removed,
         removed_unclear: this.trays.removedUnclear,
         unsure: this.trays.unsure,
+        ...(this.trays.sheets !== undefined ? { sheets: this.trays.sheets, under_sheet: this.trays.underSheet! } : {}),
       },
       hands: { left: { ...this.hands.left }, right: { ...this.hands.right } },
     };
@@ -229,9 +235,12 @@ export class Summary {
         `removed ${m.removed}, interrupted ${m.interrupted}, partial ${m.partial}, carried ${m.carried}), ` +
         `mean ${meanD} s, ${meanU} units`,
       `push bursts: ${p.total} (left ${p.left}, right ${p.right}, both ${p.both}), pushes ${p.pushes}`,
-      `events: ${SUMMARY_EVENT_KEYS.map((k) => `${k} ${this.events[k]}`).join(", ")}`,
+      `events: ${SUMMARY_EVENT_KEYS.filter((k) => k !== "sheet" || this.events.sheet)
+        .map((k) => `${k} ${this.events[k]}`)
+        .join(", ")}`,
       `trays: ${tr.total} (arrived ${tr.arrived}), stones at arrival ${tr.stones}, added ${tr.added} ` +
-        `(+${tr.addedUnclear} unclear), removed ${tr.removed} (+${tr.removedUnclear} unclear), not sure ${tr.unsure}`,
+        `(+${tr.addedUnclear} unclear), removed ${tr.removed} (+${tr.removedUnclear} unclear), not sure ${tr.unsure}` +
+        (tr.sheets !== undefined ? `, sheets laid ${tr.sheets}, under a sheet ${tr.underSheet}` : ""),
     ];
     for (const side of ["left", "right"] as const) {
       lines.push(`${side} hand: ${HAND_STATES.map((k) => `${k} ${clock(this.hands[side][k])}`).join(", ")}`);

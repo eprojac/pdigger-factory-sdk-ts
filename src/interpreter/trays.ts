@@ -155,7 +155,7 @@ export type TrayPoint = FrameRef;
  * What a {@link TrayFact} says: the tray arrived, a stone is not sure any more, a look or the leaving's speckle answer
  * linked it (`identified`), it was removed or added, the tray leaves.
  */
-export type TrayFactKind = "arrived" | "unsure" | "identified" | "removed" | "added" | "leaving";
+export type TrayFactKind = "arrived" | "unsure" | "identified" | "removed" | "added" | "leaving" | "sheet";
 
 /** Where a {@link TrayStone} is: on the tray, lost (its world stone went, not found again yet) or removed. */
 export type TrayStoneStatus = "on" | "lost" | "removed";
@@ -512,6 +512,8 @@ const speckleClean = (x: SpeckleFind): boolean =>
 
 /** What the fields of a new {@link TrayStone} are. */
 export interface TrayStoneInit {
+  underSheet?: boolean;
+  sheetSince?: TrayPoint | null;
   id: string;
   worldId: number | null;
   status: TrayStoneStatus;
@@ -540,6 +542,8 @@ export interface TrayStoneInit {
  * second under the same world id takes `-2` at the end, a third `-3`). An id is never given to two stones.
  */
 export class TrayStone {
+  readonly underSheet: boolean;
+  readonly sheetSince: TrayPoint | null;
   /** The tray stone's id. */
   readonly id: string;
   /** The world stone it stands for now (null while lost and once removed). */
@@ -599,6 +603,8 @@ export class TrayStone {
   readonly evidence: TrayStoneEvidence | null;
 
   constructor(init: TrayStoneInit) {
+    this.underSheet = init.underSheet ?? false;
+    this.sheetSince = init.sheetSince ?? null;
     this.id = init.id;
     this.worldId = init.worldId;
     this.status = init.status;
@@ -643,12 +649,16 @@ export class TrayStone {
       speckle: this.speckle === null ? null : this.speckle.toJSON(),
       by_speckle: this.bySpeckle,
       evidence: this.evidence,
+      ...(this.underSheet ? { under_sheet: true } : {}),
+      ...(this.sheetSince ? { sheet_since: this.sheetSince } : {}),
     };
   }
 }
 
 /** What the fields of a new {@link TrayFact} are. */
 export interface TrayFactInit {
+  trayStones?: readonly string[];
+  underSheet?: number | null;
   kind: TrayFactKind;
   tray: number;
   session: number | null;
@@ -681,6 +691,8 @@ export interface TrayFactInit {
  * unclear one is reported as such, never as a fact.
  */
 export class TrayFact {
+  readonly trayStones: readonly string[];
+  readonly underSheet: number | null;
   /** What it says. */
   readonly kind: TrayFactKind;
   /** The tray's number in its session, from 1. */
@@ -730,6 +742,8 @@ export class TrayFact {
   readonly open: readonly TrayOpen[] | null;
 
   constructor(init: TrayFactInit) {
+    this.trayStones = init.trayStones ?? [];
+    this.underSheet = init.underSheet ?? null;
     this.kind = init.kind;
     this.tray = init.tray;
     this.session = init.session;
@@ -786,6 +800,8 @@ export class TrayFact {
       removed: this.removed,
       unclear: this.unclear,
       opened: this.opened,
+      ...(this.trayStones.length ? { tray_stones: [...this.trayStones] } : {}),
+      ...(this.underSheet ? { under_sheet: this.underSheet } : {}),
       from_world: this.fromWorld,
       score: this.score,
       margin: this.margin,
@@ -996,6 +1012,9 @@ export class TrayChange {
 
 /** What the fields of a new {@link TrayReport} are. */
 export interface TrayReportInit {
+  sheets?: number;
+  underSheet?: readonly string[];
+  sheetFacts?: readonly TrayFact[];
   session: number | null;
   video: string | null;
   tray: number;
@@ -1018,6 +1037,9 @@ export interface TrayReportInit {
  * why, stone by stone. `arrived.wall` and `left.wall` are the unit's wall clock (UTC epoch seconds) when it is known.
  */
 export class TrayReport {
+  readonly sheets: number;
+  readonly underSheet: readonly string[];
+  readonly sheetFacts: readonly TrayFact[];
   readonly session: number | null;
   readonly video: string | null;
   /** The tray's number in its session, from 1. */
@@ -1042,6 +1064,9 @@ export class TrayReport {
   readonly complete: boolean;
 
   constructor(init: TrayReportInit) {
+    this.sheets = init.sheets ?? 0;
+    this.underSheet = init.underSheet ?? [];
+    this.sheetFacts = init.sheetFacts ?? [];
     this.session = init.session;
     this.video = init.video;
     this.tray = init.tray;
@@ -1065,13 +1090,17 @@ export class TrayReport {
     let head =
       `tray ${this.tray}${wall}, ${clock(this.arrived.t)} to ${clock(this.left.t)}: ${this.removed.length} removed, ` +
       `${this.added.length} added, ${this.moved.length} moved`;
+    if (this.underSheet.length) head += `, ${this.underSheet.length} under a sheet`;
     if (!this.complete) {
       const parts: string[] = [];
       if (this.unclear > 0) parts.push(`${this.unclear} unclear`);
       if (this.unsure > 0) parts.push(`${this.unsure} not sure`);
       head += `, not complete: ${parts.join(", ")}`;
     }
-    return [head, ...[...this.removed, ...this.added, ...this.moved].map((c) => `  ${c.describe()}`)].join("\n");
+    return [
+      head,
+      ...[...this.removed, ...this.added, ...this.moved, ...this.sheetFacts].map((c) => `  ${c.describe()}`),
+    ].join("\n");
   }
 
   toJSON(): Record<string, unknown> {
@@ -1088,6 +1117,13 @@ export class TrayReport {
       unclear: this.unclear,
       unsure: this.unsure,
       complete: this.complete,
+      ...(this.sheetFacts.length || this.underSheet.length
+        ? {
+            sheets: this.sheets,
+            under_sheet: [...this.underSheet],
+            sheet_facts: this.sheetFacts.map((f) => f.toJSON()),
+          }
+        : {}),
     };
   }
 }
@@ -1161,6 +1197,12 @@ export function trayReport(tray: Tray): TrayReport | null {
     unclear,
     unsure,
     complete: unclear === 0 && leaving.sure === leaving.stones,
+    underSheet: tray.stones
+      .filter((s) => s.status === "on" && s.underSheet)
+      .map((s) => s.id)
+      .sort(),
+    sheets: facts.filter((f) => f.code === "sheet_laid").length,
+    sheetFacts: facts.filter((f) => f.kind === "sheet"),
   });
 }
 
@@ -1169,6 +1211,8 @@ export function trayReport(tray: Tray): TrayReport | null {
  * and tray stones that stopped being sure.
  */
 export interface TrayCounts {
+  sheets?: number;
+  underSheet?: number;
   /** Trays (static stops of at least 2 s). */
   total: number;
   /** Trays that arrived and settled. */
@@ -1253,8 +1297,32 @@ export function checkTray(tray: Tray): string[] {
   const on = tray.stones.filter((s) => s.status === "on");
   if (first?.kind === "arrived" && first.stones !== tray.stones.filter((s) => !s.added).length) bad.add("C5");
   if (last?.kind === "leaving") checkLeaving(tray, last, on, byId, bad);
-  const worlds = new Set(on.map((s) => s.worldId));
-  if (worlds.size !== on.length || worlds.has(null)) bad.add("C6");
+  const covered = new Set<string>(),
+    lifted = new Set<string>();
+  for (const f of facts) {
+    if (f.kind !== "sheet") continue;
+    const ids = f.trayStones;
+    if (!ids.length || ids.length !== f.stones) bad.add("C10");
+    for (const [i, id] of ids.entries()) {
+      const s = byId.get(id);
+      if (s === undefined || s.born.g > f.g || (i > 0 && ids[i - 1]! >= id)) bad.add("C10");
+      if (f.code === "sheet_laid") {
+        if (covered.has(id)) bad.add("C10");
+        covered.add(id);
+      } else if (f.code === "sheet_lifted") {
+        if (!covered.delete(id)) bad.add("C10");
+        lifted.add(id);
+      } else bad.add("C10");
+    }
+  }
+  const under = on.filter((s) => s.underSheet).length;
+  if (last?.kind === "leaving" && ((last.underSheet ?? 0) !== under || under > (last.stones ?? 0))) bad.add("C11");
+  const linked = on.flatMap((s) => (s.worldId === null ? [] : [s.worldId]));
+  if (
+    new Set(linked).size !== linked.length ||
+    on.some((s) => s.worldId === null && (s.sure || s.underSheet || !lifted.has(s.id)))
+  )
+    bad.add("C6");
   for (const x of facts) {
     if (x.kind !== "identified") continue;
     const reached = x.score !== null && x.bar !== null && x.score >= x.bar && x.certain === null;
@@ -1304,7 +1372,8 @@ function checkLeaving(
     }
     if (tail === undefined) continue; // the checks below read the first and last candidate; C8 has nothing to check
     const head = c[0] as TrayCandidate;
-    if (o.kind === "unsure" && (head.kind !== "world" || head.worldId !== o.worldId)) bad.add("C7");
+    if (o.kind === "unsure" && (head.kind !== (o.worldId === null ? "unseen" : "world") || head.worldId !== o.worldId))
+      bad.add("C7");
     if (o.kind !== "added" && !c.some((x) => x.kind === "gone")) bad.add("C7");
     if ((o.kind === "removed" && tail.kind !== "unseen") || (o.kind === "added" && tail.kind !== "new")) bad.add("C7");
     for (const x of c) {
@@ -1346,6 +1415,9 @@ function compatible(a: P, b: P): boolean {
 
 /** A world stone as the rules see it. */
 interface Ws {
+  readonly underSheet: boolean;
+  readonly outline: StoneView["outline"];
+  readonly mode: StoneView["mode"];
   readonly id: number;
   readonly held: boolean;
   readonly frozen: boolean;
@@ -1368,6 +1440,9 @@ function worldStone(s: StoneView): Ws | null {
   return {
     id: s.id,
     held: HELD.has(s.mode),
+    underSheet: s.under_sheet === true,
+    outline: s.outline,
+    mode: s.mode,
     frozen: s.shape === "frozen",
     detected: Boolean(s.detected),
     pos: [pos[0], pos[1]],
@@ -1375,6 +1450,30 @@ function worldStone(s: StoneView): Ws | null {
     dims: [dims[0], dims[1]],
     look: s.look,
   };
+}
+
+type TrayBounds = readonly [number, number, number, number];
+
+function insideTray(s: Ws, b: TrayBounds): boolean {
+  return (
+    s.mode === "seen" &&
+    s.detected &&
+    !s.underSheet &&
+    s.outline?.length >= 3 &&
+    s.outline.every((p) => p.length === 2 && p[0] >= b[0] && p[0] <= b[2] && p[1] >= b[1] && p[1] <= b[3])
+  );
+}
+
+function retiredOutside(s: Ws | undefined, b: TrayBounds): boolean {
+  if (s === undefined || s.mode !== "kept" || s.detected || s.underSheet) return false;
+  const points = s.outline;
+  if (!points || points.length < 3 || !points.every((p) => p.length === 2 && p.every(Number.isFinite))) return false;
+  return (
+    points.every((p) => p[0] < b[0]) ||
+    points.every((p) => p[0] > b[2]) ||
+    points.every((p) => p[1] < b[1]) ||
+    points.every((p) => p[1] > b[3])
+  );
 }
 
 function sizeOf(w: Ws): P {
@@ -1413,7 +1512,7 @@ function overlapShare(w: Ws, world: readonly Ws[]): number {
   const reach = Math.max(d[0], d[1]);
   let best = 0;
   for (const o of world) {
-    if (o.id === w.id || dist(o.pos, w.pos) > (reach + Math.max(o.dims[0], o.dims[1])) / 2) continue;
+    if (o.underSheet || o.id === w.id || dist(o.pos, w.pos) > (reach + Math.max(o.dims[0], o.dims[1])) / 2) continue;
     best = Math.max(best, pts.filter((p) => covers(o, p, 0)).length);
   }
   return best / 25;
@@ -1475,6 +1574,8 @@ export function stamp(wall: number | null, t: number, session: number | null): s
 
 /** A world event as the rules see it. */
 interface Ev {
+  readonly why: string | undefined;
+  readonly ids: readonly number[] | undefined;
   readonly type: string;
   readonly id: number | null;
   /** A hand event: lift, hinge, carry, place, drop, gone, or a push with a side. */
@@ -1518,6 +1619,8 @@ function trayWorld(w: WorldLayer, r: FrameRef): TrayWorld {
   }
   const events = (w.events ?? []).map((e): Ev => ({
     type: e.type,
+    why: e.why,
+    ids: e.ids,
     id: typeof e.id === "number" ? e.id : null,
     hand: HAND_EVENTS.has(e.type) || (e.type === "push" && Boolean(e.side)),
     byHand: e.type === "delete" && e.why === "hand",
@@ -1667,6 +1770,9 @@ interface Run {
 
 /** A tray stone's working state. */
 interface St {
+  underSheet: boolean;
+  sheetSince: FrameRef | null;
+  sheetLoss: boolean;
   readonly id: string;
   readonly index: number;
   world: number | null;
@@ -1767,6 +1873,7 @@ function sameBlinkStone(row: Ws, blink: Blink): boolean {
       (other) =>
         other.id !== row.id &&
         other.detected &&
+        !other.underSheet &&
         !other.held &&
         compatible(size, sizeOf(other)) &&
         dist(row.pos, other.pos) <= distance,
@@ -1776,7 +1883,7 @@ function sameBlinkStone(row: Ws, blink: Blink): boolean {
 
 function observedPlace(s: St, tw: TrayWorld): P | null {
   const ws = s.world === null ? undefined : tw.byId.get(s.world);
-  return s.status === "on" && ws?.detected && !ws.held ? ws.pos : null;
+  return s.status === "on" && ws?.detected && !ws.underSheet && !ws.held ? ws.pos : null;
 }
 
 /** A complete observation from this visit with the links and positions seen there. */
@@ -1873,6 +1980,9 @@ function newStone(tr: OpenTray, id: string, w: Ws, born: FrameRef): St {
     seenT: born.t,
     born,
     firstPlace: w.pos,
+    underSheet: false,
+    sheetSince: null,
+    sheetLoss: false,
     status: "on",
     sure: true,
     added: false,
@@ -1945,6 +2055,8 @@ const stoneView = (s: St): TrayStone =>
     speckle: s.speckle,
     bySpeckle: s.bySpeckle,
     evidence: s.evidence,
+    underSheet: s.underSheet,
+    sheetSince: s.sheetSince,
   });
 
 const byNumber = (a: number, b: number): number => a - b;
@@ -1998,7 +2110,7 @@ function rivals(tr: OpenTray, s: St): boolean {
  */
 function fresh(tr: OpenTray, e: Look, tw: TrayWorld): boolean {
   const ws = tw.byId.get(e.wid);
-  if (ws === undefined || ws.held || dist(ws.pos, e.place) > NEAR) return false;
+  if (ws === undefined || ws.underSheet || ws.held || dist(ws.pos, e.place) > NEAR) return false;
   for (let i = tr.marks.length - 1; i >= 0; i--) {
     const [t, p] = tr.marks[i] as [number, P];
     if (t <= e.t) break;
@@ -2111,7 +2223,8 @@ function unread(tr: OpenTray, t: number): void {
  */
 function crowded(s: St, w: Watch, tw: TrayWorld): boolean {
   return tw.stones.some(
-    (ws) => ws.id !== w.wid && !ws.held && compatible(sizeOf(ws), s.size) && dist(ws.pos, w.place) <= NEAR,
+    (ws) =>
+      ws.id !== w.wid && !ws.underSheet && !ws.held && compatible(sizeOf(ws), s.size) && dist(ws.pos, w.place) <= NEAR,
   );
 }
 
@@ -2237,8 +2350,8 @@ function speckleTargets(tr: OpenTray, sp: WorldSpeckle, tw: TrayWorld): SpeckleT
   for (const [c, r] of sp.pairs) {
     const s = byTray.get(tr.arrivalLinks.get(r) as string); // none when r was no tray stone's at the arrival
     const ws = point.byId.get(c) ?? tw.byId.get(c);
-    const open = s !== undefined && !s.added && (s.status === "on" || s.status === "lost");
-    if (!open || ws === undefined || ws.held || claimed.has(c) || used.has(s)) continue;
+    const open = s !== undefined && !s.underSheet && !s.added && (s.status === "on" || s.status === "lost");
+    if (!open || ws === undefined || ws.underSheet || ws.held || claimed.has(c) || used.has(s)) continue;
     const y = tr.link.get(c);
     if ((trusted(s) && s.world !== c) || (y !== undefined && y !== s && trusted(y))) continue;
     const xr = refs.get(r);
@@ -2295,6 +2408,7 @@ function stoneEvidence(tr: OpenTray, s: St): TrayStoneEvidence {
  * `onClose` as its {@link Tray}. Used by {@link InterpreterCore}; pure, no I/O.
  */
 export class TrayLedger {
+  private readonly visitSeen = new Set<number>();
   private n = 0;
   private tray: OpenTray | null = null;
   /**
@@ -2324,6 +2438,7 @@ export class TrayLedger {
     private readonly session: number | null,
     private readonly video: string | null,
     private readonly onClose: (tray: Tray) => void,
+    private readonly bounds?: readonly [number, number, number, number],
   ) {}
 
   /** The open tray's links now: world id to tray stone id (empty between trays). */
@@ -2351,12 +2466,13 @@ export class TrayLedger {
     const out: TrayFact[] = [];
     const hole = this.hole;
     this.hole = false;
+    const tw = trayWorld(w, ref);
+    if (this.retireSheet(tw, w.motion === "static", hole, out)) return out;
     if (w.motion !== "static") {
       this.stop = [];
       this.on = false;
       return out;
     }
-    const tw = trayWorld(w, ref);
     if (this.on) {
       this.frame(tw, out, hole);
       return out;
@@ -2429,12 +2545,124 @@ export class TrayLedger {
     out.push(f);
   }
 
+  private sheetFact(
+    tr: OpenTray,
+    stones: readonly St[],
+    code: "sheet_laid" | "sheet_lifted",
+    r: FrameRef,
+    out: TrayFact[],
+  ): void {
+    if (stones.length)
+      this.fact("sheet", tr, null, r, out, { code, stones: stones.length, trayStones: stones.map((s) => s.id).sort() });
+  }
+
+  private sheetLaid(tr: OpenTray, stones: readonly St[], r: FrameRef, out: TrayFact[]): void {
+    const newly = stones.filter((s) => s.underSheet && s.sheetSince === null);
+    if (!newly.length) return;
+    for (const s of newly) s.sheetSince = r;
+    this.counts.sheets = (this.counts.sheets ?? 0) + 1;
+    this.sheetFact(tr, newly, "sheet_laid", r, out);
+  }
+
+  private observeSheets(tr: OpenTray, tw: TrayWorld, calm: boolean, out: TrayFact[]): void {
+    const uncovered: St[] = [];
+    for (const [id, s] of tr.link) {
+      const view = tw.byId.get(id);
+      if (view === undefined) continue;
+      if (view.underSheet) s.underSheet = true;
+      else if (s.underSheet) uncovered.push(s);
+    }
+    this.sheetLaid(tr, uncovered, tw.r, out);
+    this.sheetFact(tr, uncovered, "sheet_lifted", tw.r, out);
+    for (const s of uncovered) {
+      s.underSheet = false;
+      s.sheetSince = null;
+    }
+    if (calm) this.sheetLaid(tr, tr.stones, tw.r, out);
+  }
+
+  private onlyBackgroundRetired(tr: OpenTray, previous: TrayWorld | null, tw: TrayWorld, hole: boolean): boolean {
+    const b = this.bounds;
+    if (!b || tr.arrived !== null || hole || previous === null || previous.r.g + 1 !== tw.r.g) return false;
+    for (const e of tw.events) {
+      if (!CHANGES.has(e.type)) continue;
+      if (
+        e.type !== "delete" ||
+        (e.why !== "outside" && e.why !== "stranded") ||
+        e.id === null ||
+        this.visitSeen.has(e.id) ||
+        !retiredOutside(previous.byId.get(e.id), b)
+      )
+        return false;
+    }
+    return (
+      tw.stones.filter((s) => {
+        const old = previous.byId.get(s.id);
+        return old?.detected && !old.underSheet && insideTray(s, b) && dist(old.pos, s.pos) <= NEAR;
+      }).length >= 2
+    );
+  }
+
+  private sameExposedLayer(tr: OpenTray, tw: TrayWorld): boolean {
+    const b = this.bounds;
+    const previous = tr.last;
+    if (!b || previous === null || previous.r.g + 1 !== tw.r.g) return false;
+    const before = previous.stones.filter((s) => tr.link.get(s.id)?.underSheet === false && insideTray(s, b));
+    const same = before.filter((s) => {
+      const now = tw.byId.get(s.id);
+      return now !== undefined && insideTray(now, b) && dist(now.pos, s.pos) <= NEAR;
+    }).length;
+    return same >= 2 && same * 2 > before.length;
+  }
+
+  private retireSheet(tw: TrayWorld, stationary: boolean, hole: boolean, out: TrayFact[]): boolean {
+    const tr = this.tray;
+    if (tr === null || tr.arrived === null || tr.last === null) return false;
+    const retired = new Set(tw.events.filter((e) => e.type === "delete" && e.why === "sheet").map((e) => e.id));
+    if (!retired.size) return false;
+    const lift = new Set(tw.events.filter((e) => e.type === "sheet" && e.why === "lifted").flatMap((e) => e.ids ?? []));
+    const covered = [...tr.link].filter(([, s]) => s.underSheet);
+    const affected = covered.filter(([id]) => retired.has(id));
+    if (!affected.length) return false;
+    const anchors = covered.filter(([id, s]) => {
+      const ws = tw.byId.get(id);
+      return !retired.has(id) && ws?.underSheet && dist(ws.pos, s.place) <= NEAR;
+    }).length;
+    if (
+      this.on &&
+      !hole &&
+      stationary &&
+      affected.every(([id]) => lift.has(id)) &&
+      (anchors >= 2 || this.sameExposedLayer(tr, tw))
+    ) {
+      const stones = affected.map(([, s]) => s);
+      this.sheetLaid(tr, stones, tw.r, out);
+      this.sheetFact(tr, stones, "sheet_lifted", tw.r, out);
+      for (const [id, s] of affected) {
+        tr.link.delete(id);
+        this.lose(tr, s, tw.r);
+        s.sheetLoss = true;
+      }
+      tr.worked = true;
+      return false;
+    }
+    this.closeTray(
+      out,
+      tw.r,
+      covered.filter(([id]) => lift.has(id)).map(([, s]) => s),
+    );
+    this.stop = [];
+    this.on = false;
+    return true;
+  }
+
   private begin(out: TrayFact[]): void {
+    this.visitSeen.clear();
     const ids = new Set<number>();
     const unheld = new Set<number>();
     const first = this.stopStart();
     for (const s of first.stones) {
-      if (s.held) continue;
+      if (s.held || s.underSheet) continue;
       unheld.add(s.id);
       if (s.detected) ids.add(s.id);
     }
@@ -2550,7 +2778,7 @@ export class TrayLedger {
     }
     if (!quiet || !this.undisturbed(previous)) return;
     for (const [id, prior] of previous.byId) {
-      if (tw.byId.has(id) || !prior.detected || prior.held) continue;
+      if (tw.byId.has(id) || prior.underSheet || !prior.detected || prior.held) continue;
       const unid = tr.unid.get(id);
       if (!tr.link.has(id) && unid === undefined) continue;
       const neighbours = this.blinkNeighbours(prior, tw);
@@ -2568,6 +2796,7 @@ export class TrayLedger {
     for (const s of tw.stones) {
       if (
         s.id !== prior.id &&
+        !s.underSheet &&
         (s.detected || includeKept) &&
         !s.held &&
         compatible(sizeOf(s), size) &&
@@ -2650,8 +2879,8 @@ export class TrayLedger {
     for (const [id, first] of missing) {
       if (tw.byId.has(id) || tw.r.g - first >= BLINK_FRAMES) missing.delete(id);
     }
-    for (const id of previous.byId.keys()) {
-      if (!tw.byId.has(id)) missing.set(id, tw.r.g);
+    for (const [id, prior] of previous.byId) {
+      if (!prior.underSheet && !tw.byId.has(id)) missing.set(id, tw.r.g);
     }
     return missing.size > 0;
   }
@@ -2660,14 +2889,18 @@ export class TrayLedger {
     const tr = this.tray as OpenTray;
     const { r } = tw;
     const t = r.t;
-    for (const id of tw.byId.keys()) tr.ids.add(id);
+    for (const s of tw.stones) {
+      if (s.underSheet) continue;
+      tr.ids.add(s.id);
+      if (s.detected) this.visitSeen.add(s.id);
+    }
     const previous = tr.last;
     if (tr.arrived !== null) this.updateBlinks(tr, tw, hole);
     const paused = this.inventoryGap(tr, tw, hole) || tr.blinks.size > 0;
     tr.last = tw;
     this.storeLooks(tr, tw);
     const hand = tw.events.some((e) => e.hand);
-    const change = tw.events.some((e) => CHANGES.has(e.type));
+    const change = tw.events.some((e) => CHANGES.has(e.type)) && !this.onlyBackgroundRetired(tr, previous, tw, hole);
     this.quiet = tw.events.some((e) => e.type === "new") ? 0 : this.quiet + 1;
     const quietFrame = !hole && this.undisturbed(tw) && !change;
     this.ordinaryCalm = quietFrame ? this.ordinaryCalm + 1 : 0;
@@ -2694,6 +2927,7 @@ export class TrayLedger {
         // looks read before the calm run that ends here may show another stone: hands worked since
         for (const [wid, e] of tr.store) if (e.g < this.calmG) tr.store.delete(wid);
         this.arrive(tr, tw, out);
+        this.sheetLaid(tr, tr.stones, r, out);
         tr.arrivalLinks = new Map([...tr.link].map(([wid, s]) => [wid, s.id])); // 4.6.12
         tr.calmWorld = tw;
         tr.idsAtArrival = new Set(tr.ids);
@@ -2701,6 +2935,7 @@ export class TrayLedger {
       }
       return;
     }
+    this.observeSheets(tr, tw, !paused && this.calm >= CALM, out);
     // 1. where hands worked
     for (const e of tw.events) {
       if (!(e.hand || e.byHand) || e.id === null) continue;
@@ -2755,13 +2990,14 @@ export class TrayLedger {
     if (tr.busyT === t || tr.pushT === t) {
       for (const [id, s] of tr.link) {
         const ws = tw.byId.get(id);
-        if (ws === undefined || ws.detected) continue;
+        if (s.underSheet || ws === undefined || ws.detected) continue;
         for (const rec of runsOf(s)) if (rec !== null && t > rec.seenT) rec.spoilt = true;
       }
     }
     // 4. linked stones in this frame's world
     for (const id of [...tr.link.keys()].sort(byNumber)) {
       const s = tr.link.get(id) as St;
+      if (s.underSheet) continue;
       const ws = tw.byId.get(id);
       if (ws === undefined) {
         if (tr.blinks.has(id)) continue;
@@ -2808,12 +3044,12 @@ export class TrayLedger {
     }
     // 5. world stones no tray stone stands for
     for (const ws of tw.stones) {
-      if (tr.link.has(ws.id) || tr.unid.has(ws.id) || ws.held) continue;
+      if (tr.link.has(ws.id) || tr.unid.has(ws.id) || ws.underSheet || ws.held) continue;
       if (insideBoard(tr.board, ws.pos)) tr.unid.set(ws.id, unidOf(ws, r));
     }
     for (const [id, u] of tr.unid) {
       const ws = tw.byId.get(id);
-      if (ws === undefined) {
+      if (ws === undefined || ws.underSheet) {
         tr.unid.delete(id);
         continue;
       }
@@ -2830,7 +3066,13 @@ export class TrayLedger {
     if (paused && this.ordinaryCalm === CALM) {
       // The inventory is incomplete, but other linked rows can explicitly say they were not detected.
       for (const s of tr.stones) {
-        if (s.status === "on" && s.sure && s.world !== null && tw.byId.get(s.world)?.detected === false) {
+        if (
+          s.status === "on" &&
+          !s.underSheet &&
+          s.sure &&
+          s.world !== null &&
+          tw.byId.get(s.world)?.detected === false
+        ) {
           const earlier = this.partialUnseen.get(s);
           if (earlier !== undefined && earlier.id === s.world && earlier.epoch !== this.quietEpoch)
             this.doubt(tr, s, "not seen at two calm moments", "unseen", r, out, r.g);
@@ -2893,9 +3135,10 @@ export class TrayLedger {
     tr.board = tw.board;
     const st = stamp(r.wall, r.t, this.session);
     for (const ws of tw.stones) {
-      if (ws.held || !insideBoard(tr.board, ws.pos)) continue;
+      if (ws.held || (ws.underSheet && !this.visitSeen.has(ws.id)) || !insideBoard(tr.board, ws.pos)) continue;
       const s = newStone(tr, `${st}-${tr.n}-${ws.id}`, ws, r);
-      s.calmPlace = ws.detected ? ws.pos : null;
+      s.underSheet = ws.underSheet;
+      s.calmPlace = ws.detected && !ws.underSheet ? ws.pos : null;
       tr.stones.push(s);
       tr.link.set(ws.id, s);
     }
@@ -2924,6 +3167,9 @@ export class TrayLedger {
   }
 
   private lose(tr: OpenTray, s: St, r: FrameRef): void {
+    s.underSheet = false;
+    s.sheetSince = null;
+    s.sheetLoss = false;
     s.run1 = null; // a lost stone's unseen run ends (4.6.1): never spoilt while unlinked; on probation, it fails
     s.world = null;
     s.status = "lost";
@@ -3004,6 +3250,7 @@ export class TrayLedger {
     const u = tr.unid.get(wid) as Unid;
     tr.unid.delete(wid);
     const ws = tw.byId.get(wid) as Ws;
+    s.sheetLoss = false;
     s.world = wid;
     s.status = "on";
     s.touched = r.g;
@@ -3048,7 +3295,7 @@ export class TrayLedger {
   private settle(tr: OpenTray, tw: TrayWorld, r: FrameRef, last: boolean, out: TrayFact[]): void {
     const t = r.t;
     const k = tr.k;
-    const world = tw.stones.filter((w) => !w.held);
+    const world = tw.stones.filter((w) => !w.underSheet && !w.held);
     const births: [P, P][] = [];
     for (const u of tr.unid.values()) if (u.born.t > tr.settleT) births.push([u.place, u.size]);
     for (const s of tr.stones)
@@ -3061,7 +3308,7 @@ export class TrayLedger {
     const sp = last ? leavingAnswer(tr, r) : null;
     const paired = new Set(sp === null ? [] : speckleTargets(tr, sp, tw).map((x) => x.s));
     for (const s of tr.stones) {
-      if (s.status !== "on" || !s.sure || s.atK !== k || paired.has(s)) continue;
+      if (s.underSheet || s.status !== "on" || !s.sure || s.atK !== k || paired.has(s)) continue;
       const ws = tw.byId.get(s.world as number); // a stone on the tray stands for a world stone
       const earlier = this.partialUnseen.get(s);
       const independent = earlier !== undefined && earlier.g !== tw.r.g && (last || earlier.epoch !== this.quietEpoch);
@@ -3165,7 +3412,7 @@ export class TrayLedger {
     //    its place empty, nothing that could be it); a twin keeps a stone v1 removes, and relinks the tray
     for (const s of tr.stones) {
       if (tr.relinked) break;
-      if (s.status !== "lost" || (s.lostK >= k && t - s.lostT < RENAME_T)) continue;
+      if (s.status !== "lost" || s.sheetLoss || (s.lostK >= k && t - s.lostT < RENAME_T)) continue;
       if (world.some((w) => covers(w, s.place, MARGIN)) || rivals(tr, s) || !handTook(s)) continue;
       if (tr.twins.has(s.id)) {
         tr.relinked = true;
@@ -3305,6 +3552,11 @@ export class TrayLedger {
     }
     for (const s of tr.stones) {
       if (s.status !== "lost") continue;
+      if (s.sheetLoss) {
+        s.status = "on";
+        if (s.sure) this.unsure(tr, s, "its track ended when the paper lifted", "unseen", r, out);
+        continue;
+      }
       s.status = "removed";
       s.certain = false;
       s.leftNow = true;
@@ -3327,7 +3579,7 @@ export class TrayLedger {
         // detected, not held, in the leaving point's world: positive evidence too (no hand worked since); or kept
         // there, not held, less than OVERLAP of its box under another unheld stone's: the world kept it on the tray
         // although the model did not box it there (version 7)
-        const unheld = (tr.leaveWorld as TrayWorld).stones.filter((w) => !w.held);
+        const unheld = (tr.leaveWorld as TrayWorld).stones.filter((w) => !w.underSheet && !w.held);
         if (atPoint.detected || overlapShare(atPoint, unheld) < OVERLAP) row = atPoint;
       }
       if (row !== null) this.mint(tr, wid, row, false, r, out);
@@ -3374,7 +3626,7 @@ export class TrayLedger {
     for (const e of tw.events) if (LOOK_CLEARERS.has(e.type) && e.id !== null) store.delete(e.id);
     for (const wid of store.keys()) if (!tw.byId.has(wid)) store.delete(wid);
     for (const ws of tw.stones) {
-      if (ws.held || !insideBoard(tr.board, ws.pos)) continue;
+      if (ws.underSheet || ws.held || !insideBoard(tr.board, ws.pos)) continue;
       const c = usableCells(ws.look);
       if (c === null) continue;
       store.set(ws.id, {
@@ -3446,7 +3698,7 @@ export class TrayLedger {
 
   private anchors(tr: OpenTray, tw: TrayWorld): void {
     for (const s of tr.stones) {
-      if (s.status !== "on" || s.chain.length > 0) continue;
+      if (s.underSheet || s.status !== "on" || s.chain.length > 0) continue;
       const e = tr.store.get(s.world as number); // a stone on the tray stands for a world stone
       if (e === undefined || !e.taken || !fresh(tr, e, tw)) continue;
       if (untouched(s) && e.detected && s.ghost === 0) s.chain = [e];
@@ -3463,7 +3715,7 @@ export class TrayLedger {
     const store = tr.store;
     const rows: [St, number][] = [];
     for (const s of tr.stones) {
-      if (s.chain.length === 0 || !s.sure) continue;
+      if (s.underSheet || s.chain.length === 0 || !s.sure) continue;
       const q = s.question;
       if (s.status === "on") {
         if (q !== null) rows.push([s, q.since]);
@@ -3474,7 +3726,7 @@ export class TrayLedger {
     }
     const cols: Ws[] = [];
     for (const ws of tw.stones) {
-      if (ws.held || !insideBoard(tr.board, ws.pos)) continue;
+      if (ws.underSheet || ws.held || !insideBoard(tr.board, ws.pos)) continue;
       const e = store.get(ws.id);
       if (e === undefined || !e.taken || !fresh(tr, e, tw)) continue;
       const y = tr.link.get(ws.id);
@@ -3603,6 +3855,7 @@ export class TrayLedger {
     const u = tr.unid.get(wid);
     tr.unid.delete(wid);
     const ws = tw.byId.get(wid) as Ws;
+    s.sheetLoss = false;
     s.world = wid;
     s.status = "on";
     s.touched = r.g;
@@ -3641,7 +3894,9 @@ export class TrayLedger {
       stoneOn.set(s.world, s.id);
       if (s.sure) sureWorld.add(s.world);
     }
-    const free = tw.stones.filter((w) => !w.held && insideBoard(tr.board, w.pos) && !sureWorld.has(w.id));
+    const free = tw.stones.filter(
+      (w) => !w.underSheet && !w.held && insideBoard(tr.board, w.pos) && !sureWorld.has(w.id),
+    );
     const entries: TrayOpen[] = [];
     for (const s of tr.stones) {
       let o: TrayOpen;
@@ -3674,7 +3929,7 @@ export class TrayLedger {
     else if (tr.twins.has(s.id)) cause = "twins";
     else if (tr.relinked) cause = "relinked";
     else if (s.lostK === tr.k) cause = "lost_late";
-    else if (tw.stones.some((w) => !w.held && covers(w, s.place, MARGIN))) cause = "covered";
+    else if (tw.stones.some((w) => !w.underSheet && !w.held && covers(w, s.place, MARGIN))) cause = "covered";
     else if (rivals(tr, s)) cause = "rivals";
     else if (!handTook(s)) cause = "no_hand";
     else cause = "unchecked";
@@ -3696,7 +3951,12 @@ export class TrayLedger {
       return x === undefined ? null : x;
     };
     const cands: TrayCandidate[] = [];
-    if (s.status === "on") cands.push(candidate("world", s.world, s.id, scoreAt(s.world as number), null));
+    if (s.status === "on")
+      cands.push(
+        s.world === null
+          ? candidate("unseen", null, null, null, null)
+          : candidate("world", s.world, s.id, scoreAt(s.world), null),
+      );
     const scored: [number, number][] = [];
     const unscored: [number, number][] = [];
     for (const ws of free) {
@@ -3788,7 +4048,7 @@ export class TrayLedger {
   }
 
   /** Makes the open tray leave: its final account (section 4.6, Leaving), then it goes to `onClose`. */
-  private closeTray(out: TrayFact[]): void {
+  private closeTray(out: TrayFact[], boundary?: FrameRef, lifted: St[] = []): void {
     const tr = this.tray;
     if (tr === null) return;
     this.tray = null;
@@ -3801,7 +4061,7 @@ export class TrayLedger {
     const calm = tr.calmRef as FrameRef; // set at arrival
     const fallback = !tr.worked && calm.g < this.visitStart ? this.visitFallback : null;
     const leave = fallback?.world.r ?? (tr.worked ? tw.r : calm);
-    tr.leaving = leave;
+    tr.leaving = boundary ?? leave;
     // each stone's place at the leaving point, if it was seen there (4.7), before the last settle
     for (const s of tr.stones) {
       if (fallback !== null) {
@@ -3831,7 +4091,12 @@ export class TrayLedger {
       if (s.status === "on" && s.sure) sure += 1;
       if (s.status === "removed" && s.certain === true) removed += 1;
     }
-    this.fact("leaving", tr, null, leave, out, {
+    const covered = tr.stones.filter((s) => s.status === "on" && s.underSheet);
+    if (covered.length) this.counts.underSheet = (this.counts.underSheet ?? 0) + covered.length;
+    this.sheetLaid(tr, covered, tr.leaving, out);
+    this.sheetFact(tr, lifted, "sheet_lifted", tr.leaving, out);
+    this.fact("leaving", tr, null, tr.leaving, out, {
+      underSheet: covered.length || null,
       stones: on,
       sure,
       added: tr.certainAdded, // a stone added for certain stays counted when it is removed unclear later
